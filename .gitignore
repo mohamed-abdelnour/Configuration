@@ -50,8 +50,8 @@
 !.config/latexmk/
 !.config/latexmk/**
 
-# !.config/nixpkgs/
-# !.config/nixpkgs/**
+!.config/nixpkgs/
+!.config/nixpkgs/**
 
 !.config/nnn/
 !.config/nnn/quitcd.bash_zsh
