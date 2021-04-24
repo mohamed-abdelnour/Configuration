@@ -1,0 +1,8 @@
+#!usr/bin/env sh
+
+alias bare="git --git-dir=$HOME/.bare --work-tree=$HOME"
+alias gh='ghc -O2 -Wall -no-keep-hi-files -no-keep-o-files'
+alias grep='grep --color=auto'
+alias ll='exa -Habgl --color=always --group-directories-first -s Name --time-style=long-iso'
+alias ne='nix-env -irA nixpkgs.decPkgs'
+alias nman='MANPAGER="nvim +Man!" man'

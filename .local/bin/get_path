@@ -1,0 +1,12 @@
+#!/usr/bin/env dash
+
+copy_path() {
+    realpath "$@" | xclip -r
+}
+
+if [ -z "$1" ]; then
+    choice=$(fd -H --exact-depth 1 | fzf --reverse)
+    copy_path "$choice"
+else
+    copy_path "$1"
+fi

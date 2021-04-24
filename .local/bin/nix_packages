@@ -1,0 +1,18 @@
+#!/usr/bin/env dash
+
+printPackageList() {
+    [ -n "$1" ] &&
+        printf '%s\n' "$1" |
+        cut -d'-' -f 2- |
+            sort
+}
+
+system="$(nix-store -qR /run/current-system/sw)" 2> /dev/null
+user="$(nix-store -qR ~/.nix-profile)" 2> /dev/null
+user_nixos="$(nix-store -qR /etc/profiles/per-user/"$USER")" 2> /dev/null
+default="$(nix-store -qR /nix/var/nix/profiles/default)" 2> /dev/null
+printPackageList "$system"
+printPackageList "$user"
+printPackageList "$user_nixos"
+printPackageList "$default"
+exit 0

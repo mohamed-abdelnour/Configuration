@@ -1,0 +1,8 @@
+[user]
+	name = Mohamed Abdelnour
+	email = mohamed.k.abdelnour@gmail.com
+[core]
+	pager = bat
+	autocrlf = input
+[init]
+	defaultBranch = main

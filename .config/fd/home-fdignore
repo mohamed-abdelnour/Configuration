@@ -1,0 +1,3 @@
+#!/usr/bin/env dash
+
+sed -n 's:/home/\*/::gp' ignore > "$HOME/.fdignore"

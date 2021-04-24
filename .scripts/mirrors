@@ -1,0 +1,20 @@
+#!/usr/bin/env dash
+
+mirrorlistGenerator() {
+    curl -s 'https://archlinux.org/mirrorlist/?country=all&protocol=https&use_mirror_status=on' |
+        sed -E 's/^#Server/Server/;/^(#|$)/d' |
+        head -60 |
+        rankmirrors -m 1 -
+}
+
+mirrorlistReflector() {
+    reflector -p https -l 60 |
+        sed -E '/^(#|$)/d' |
+        rankmirrors -m 1 -
+}
+
+output='/etc/pacman.d/mirrorlist'
+mirrorlistReflector > "$output"
+# mirrorlistGenerator > "$output"
+bat --theme 'base16' "$output"
+exa -bgl --time-style=long-iso "$output"

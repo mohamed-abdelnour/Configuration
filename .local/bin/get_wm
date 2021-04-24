@@ -1,0 +1,5 @@
+#!/usr/bin/env dash
+
+ps -e | rg -m 1 -o \
+    -e "dwm" \
+    -e "xmonad"

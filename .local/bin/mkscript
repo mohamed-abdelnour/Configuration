@@ -1,0 +1,4 @@
+#!/usr/bin/env dash
+
+printf '#!/usr/bin/env %s\n' "$2" > "$1"
+chmod +x "$1"

@@ -1,0 +1,17 @@
+#!/usr/bin/sh
+
+export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
+--color=fg:#ABB2BF
+--color=bg:#282C34
+--color=hl:#5C6370
+--color=fg+:#ABB2BF
+--color=bg+:#2C323C
+--color=hl+:#C678DD
+--color=info:#E5C07B
+--color=border:#3B4048
+--color=prompt:#C678DD
+--color=pointer:#C678DD
+--color=marker:#E06C75
+--color=spinner:#C678DD
+--color=header:#5C6370
+'

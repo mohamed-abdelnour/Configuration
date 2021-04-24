@@ -1,0 +1,17 @@
+.archive
+.bare
+.cache
+.cpan*
+.icons
+.java
+.local/lib
+.local/share
+.mozilla
+.nix-*
+.npm
+.pylint.d
+.texlive
+.themes
+.thumbnails
+.tooling
+.tree-sitter

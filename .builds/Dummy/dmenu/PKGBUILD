@@ -1,0 +1,7 @@
+pkgname=dmenu-build
+pkgver=5.0
+pkgrel=1
+arch=(x86_64)
+provides=(dmenu)
+confilcts=(dmenu)
+

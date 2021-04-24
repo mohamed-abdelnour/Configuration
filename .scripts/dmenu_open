@@ -1,0 +1,16 @@
+#!/usr/bin/env dash
+
+cd "$HOME" || exit
+file="$(fd -t f -H | dmenu -i -l 5)"
+if [ -n "$file" ]; then
+    mime="$(xdg-mime query filetype "$file")"
+    case "$mime" in
+        text*)
+            st -e nvim "$file"
+            # alacritty -e sh -c "sleep 0.1 && nvim \"$file\""
+            ;;
+        *)
+            xdg-open "$file"
+            ;;
+    esac
+fi

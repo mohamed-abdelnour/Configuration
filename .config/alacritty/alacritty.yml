@@ -1,0 +1,98 @@
+env:
+  TERM: xterm-256color
+
+window:
+  padding:
+    x: 6
+    y: 6
+  dynamic_title: false
+
+font:
+  normal:
+    family: Iosevka
+    style: Regular
+  bold:
+    style: Regular
+  italic:
+    style: Regular
+  bold_italic:
+    style: Regular
+  # Terminus size: (px/dpi)*72
+  size: 11.0
+  offset:
+    x: 0
+    y: 0
+
+# cursor:
+#   style:
+#     blinking: On
+
+# mouse:
+#   hide_when_typing: true
+
+schemes:
+  OneDark: &OneDark
+    primary:
+      background: "#282C34"
+      foreground: "#ABB2BF"
+
+    cursor:
+      text: "#282C34"
+      cursor: "#ABB2BF"
+
+    search:
+      focused_match:
+        background: "#56B6C2"
+        foreground: "#282C34"
+
+      matches:
+        background: "#C678DD"
+        foreground: "#282C34"
+
+      bar:
+        background: "#ABB2BF"
+        foreground: "#282C34"
+
+    selection:
+      text: CellForeground
+      background: "#3E4452"
+
+    vi_mode_cursor:
+      text: "#282C34"
+      cursor: "#ABB2BF"
+
+    normal:
+      black: "#282C34"
+      red: "#E06C75"
+      green: "#98C379"
+      yellow: "#E5C07B"
+      blue: "#61AFEF"
+      magenta: "#C678DD"
+      cyan: "#56B6C2"
+      white: "#ABB2BF"
+
+    bright:
+      black: "#5C6370"
+      red: "#E06C75"
+      green: "#98C379"
+      yellow: "#E5C07B"
+      blue: "#61AFEF"
+      magenta: "#C678DD"
+      cyan: "#56B6C2"
+      white: "#ABB2BF"
+
+draw_bold_text_with_bright_colors: false
+
+colors: *OneDark
+
+# background_opacity: 0.80
+
+key_bindings:
+  - { key: V, mods: Control|Shift, action: Paste }
+  - { key: C, mods: Control|Shift, action: Copy }
+  - { key: Key0, mods: Control, action: ResetFontSize }
+  - { key: Equals, mods: Control, action: IncreaseFontSize }
+  - { key: Minus, mods: Control, action: DecreaseFontSize }
+  - { key: K, mods: Alt, action: ScrollPageUp }
+  - { key: J, mods: Alt, action: ScrollPageDown }
+  - { key: 5, mods: Shift, mode: Vi, action: Last }

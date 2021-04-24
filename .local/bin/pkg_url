@@ -1,0 +1,16 @@
+#!/usr/bin/env dash
+
+query_or_sync() {
+    pacman -Qi "$1" 2> /dev/null || pacman -Si "$1"
+}
+
+get_url() {
+    query_or_sync "$1" | sed -n "s/URL\s*: //gp" | xclip -r
+}
+
+if [ -z "$1" ]; then
+    choice=$(pacman -Qq | fzf --print-query --reverse | tail -1)
+    [ -n "$choice" ] && get_url "$choice"
+else
+    get_url "$1"
+fi

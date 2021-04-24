@@ -1,0 +1,17 @@
+#!/usr/bin/env dash
+
+get_battery() {
+    percentage="$(cat /sys/class/power_supply/BAT1/capacity)"
+    [ "$(cat /sys/class/power_supply/BAT1/status)" = 'Charging' ] &&
+        status='+ ' ||
+        status=''
+    battery="${status}${percentage}%"
+}
+
+path='/home/mohamed_abdelnour/.virtualMachines/shared/virtualBattery.txt'
+
+while true; do
+    get_battery
+    echo "$battery" > "$path"
+    sleep 60
+done

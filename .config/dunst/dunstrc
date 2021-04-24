@@ -1,0 +1,23 @@
+[global]
+    follow = mouse
+    font = Iosevka Regular 13
+    frame_width = 2
+    geometry = "0x0-20+44"
+    horizontal_padding = 8
+    indicate_hidden = yes
+    padding = 8
+    separator_color = frame
+    sort = yes
+
+[urgency_normal]
+    background = "#282C34"
+    foreground = "#ABB2BF"
+    frame_color = "#56B6C2"
+    timeout = 4
+
+[urgency_critical]
+    background = "#282C34"
+    foreground = "#ABB2BF"
+    frame_color = "#E06C75"
+    timeout = 0
+

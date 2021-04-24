@@ -1,0 +1,3 @@
+#!/usr/bin/env dash
+
+printf "" | dmenu -nf "#282C34" -p "$1"

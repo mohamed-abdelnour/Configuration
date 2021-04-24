@@ -1,0 +1,34 @@
+#!/usr/bin/env dash
+
+backup() {
+    rsync "$@" --delete \
+        --exclude=/home/mohamed_abdelnour/.ISO \
+        --exclude=/home/mohamed_abdelnour/.cache \
+        --exclude=/home/mohamed_abdelnour/.local/share/cargo \
+        --exclude=/home/mohamed_abdelnour/.local/share/gradle \
+        --exclude=/home/mohamed_abdelnour/.local/share/stack \
+        --exclude=/home/mohamed_abdelnour/.mozilla \
+        --exclude=/home/mohamed_abdelnour/.virtualMachines \
+        --exclude=/usr/lib \
+        --exclude=/usr/share/icons \
+        --exclude=/usr/share/locale \
+        --exclude=/usr/share/texmf-dist \
+        /etc /home /usr "$destination"
+}
+
+destination='/run/media/mohamed_abdelnour/Backup/'
+output='/home/mohamed_abdelnour/.cache/backup.txt'
+if [ -d "$destination" ]; then
+    flags='-AXahnv'
+    backup "$flags" > "$output"
+    bat --theme 'base16' "$output"
+    printf "Write? "
+    read -r choice
+    case "$choice" in
+        y | Y | yes | Yes | YES)
+            flags='-AXahv'
+            backup "$flags"
+            ;;
+    esac
+    rm "$output"
+fi

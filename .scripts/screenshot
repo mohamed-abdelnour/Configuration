@@ -1,0 +1,15 @@
+#!/usr/bin/env dash
+
+choice="$(printf "active window\nfullscreen\nselection\n" | dmenu -i)"
+destination="$HOME/Pictures/Screenshots/"
+case "$choice" in
+    'active window')
+        maim -d 1 -q -u -i "$(xdotool getactivewindow)" "$destination$(date '+%Y-%m-%d-%H-%M-%S').png"
+        ;;
+    'fullscreen')
+        maim -d 1 -q -u "$destination$(date +'%Y-%m-%d-%H-%M-%S').png"
+        ;;
+    'selection')
+        maim -d 1 -q -u -s "$destination$(date +'%Y-%m-%d-%H-%M-%S').png"
+        ;;
+esac

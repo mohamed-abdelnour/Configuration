@@ -1,0 +1,39 @@
+Config {
+
+   -- appearance
+     font = "xft:Iosevka:style=Regular:size=11:antialias=true:hinting=true:hintstyle=1"
+   , bgColor = "#282C34"
+   , fgColor = "#ABB2BF"
+   , position = Top
+
+   -- layout
+   , sepChar =  "%"   -- delineator between plugin names and straight text
+   , alignSep = "}{"  -- separator between left-right alignment
+   , template = " %StdinReader% }{ %date% | %battery% | Connection: %connection% "
+
+   -- general behavior
+   , lowerOnStart =     True
+   , hideOnStart =      False
+   , allDesktops =      True
+   , overrideRedirect = True
+   , pickBroadest =     False
+   , persistent =       True
+
+   , commands =
+        [ Run StdinReader
+
+        , Run Date "%d/%m/%Y (%a) %H:%M" "date" 10
+
+        , Run Battery [ "--template" , "Battery: <acstatus>"
+                      , "--" -- battery specific options
+                                -- discharging status
+                                , "-o"   , "<left>%"
+                                -- AC "on" status
+                                , "-O"   , "+ <left>%"
+                                -- charged status
+                                , "-i"   , "<left>%"
+                      ] 600
+
+        , Run Com "nmcli" ["network", "connectivity"] "connection" 200 ]
+
+}

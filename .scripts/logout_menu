@@ -1,0 +1,17 @@
+#!/usr/bin/env dash
+
+choice="$(printf "lock\npoweroff\nreboot\nsuspend\n" | dmenu -i)"
+case "$choice" in
+    "lock")
+        slock
+        ;;
+    "poweroff")
+        systemctl poweroff
+        ;;
+    "reboot")
+        systemctl reboot
+        ;;
+    "suspend")
+        systemctl suspend
+        ;;
+esac
