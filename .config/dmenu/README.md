@@ -1,3 +1,3 @@
-- Homepage: https://tools.suckless.org/dmenu/
+- Home page: https://tools.suckless.org/dmenu/
 - Repository: https://git.suckless.org/dmenu/
 - License: https://git.suckless.org/dmenu/file/LICENSE.html

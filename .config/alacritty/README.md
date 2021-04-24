@@ -1,0 +1,1 @@
+- Home page: https://github.com/alacritty/alacritty
