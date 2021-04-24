@@ -8,10 +8,10 @@ get_battery() {
     battery="${status}${percentage}%"
 }
 
-path='/home/mohamed_abdelnour/.virtualMachines/shared/virtualBattery.txt'
+file_path="$HOME/.virtualMachines/shared/virtualBattery.txt"
 
 while true; do
     get_battery
-    echo "$battery" > "$path"
+    echo "$battery" > "$file_path"
     sleep 60
 done
