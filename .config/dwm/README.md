@@ -1,0 +1,3 @@
+- Homepage: https://dwm.suckless.org/
+- Repository: https://git.suckless.org/dwm/
+- License: https://git.suckless.org/dwm/file/LICENSE.html

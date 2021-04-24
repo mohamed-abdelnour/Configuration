@@ -1,0 +1,3 @@
+- Homepage: https://st.suckless.org/
+- Repository: https://git.suckless.org/st/
+- License: https://git.suckless.org/st/file/LICENSE.html
