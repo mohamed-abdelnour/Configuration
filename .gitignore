@@ -58,6 +58,7 @@
 
 !.config/nvim/
 !.config/nvim/**
+.config/nvim/plugin/packer_compiled.vim
 
 !.config/pcmanfm/
 !.config/pcmanfm/**
@@ -129,6 +130,7 @@
 
 !.scripts/
 !.scripts/**
+.scripts/get_battery.py
 
 !.virtualMachines/
 !.virtualMachines/scripts/
