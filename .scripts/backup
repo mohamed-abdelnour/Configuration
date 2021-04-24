@@ -1,23 +1,48 @@
 #!/usr/bin/env dash
 
+user='mohamed_abdelnour'
+
 backup() {
     rsync "$@" --delete \
-        --exclude=/home/mohamed_abdelnour/.ISO \
-        --exclude=/home/mohamed_abdelnour/.cache \
-        --exclude=/home/mohamed_abdelnour/.local/share/cargo \
-        --exclude=/home/mohamed_abdelnour/.local/share/gradle \
-        --exclude=/home/mohamed_abdelnour/.local/share/stack \
-        --exclude=/home/mohamed_abdelnour/.mozilla \
-        --exclude=/home/mohamed_abdelnour/.virtualMachines \
-        --exclude=/usr/lib \
-        --exclude=/usr/share/icons \
-        --exclude=/usr/share/locale \
-        --exclude=/usr/share/texmf-dist \
-        /etc /home /usr "$destination"
+        --exclude="/home/$user/.archive" \
+        --exclude="/home/$user/.bare" \
+        --exclude="/home/$user/.builds" \
+        --exclude="/home/$user/.cache" \
+        --exclude="/home/$user/.config/tmux/plugins" \
+        --exclude="/home/$user/.cpan" \
+        --exclude="/home/$user/.cpanm" \
+        --exclude="/home/$user/.icons" \
+        --exclude="/home/$user/.java" \
+        --exclude="/home/$user/.keychain" \
+        --exclude="/home/$user/.local/lib" \
+        --exclude="/home/$user/.local/share" \
+        --exclude="/home/$user/.mozilla" \
+        --exclude="/home/$user/.nix-defexpr" \
+        --exclude="/home/$user/.nix-profile" \
+        --exclude="/home/$user/.npm" \
+        --exclude="/home/$user/.pylint.d" \
+        --exclude="/home/$user/.ssh" \
+        --exclude="/home/$user/.texlive" \
+        --exclude="/home/$user/.themes" \
+        --exclude="/home/$user/.thumbnails" \
+        --exclude="/home/$user/.tooling" \
+        --exclude="/home/$user/.tree-sitter" \
+        --exclude="/home/$user/.virtualMachines/ISO" \
+        --exclude="/home/$user/.virtualMachines/shared" \
+        --exclude="/home/$user/Programming/Miscellaneous/AdventOfCode" \
+        --exclude="/home/$user/Programming/Miscellaneous/HackerRank" \
+        --exclude="/home/$user/Programming/Miscellaneous/Rust" \
+        --exclude="/home/$user/.Xauthority" \
+        --exclude="/home/$user/.bash_history" \
+        --exclude="/home/$user/.mupdf.history" \
+        --exclude="/home/$user/.nix-channels" \
+        --exclude="/home/$user/.python_history" \
+        --exclude="/home/$user/.wget-hsts" \
+        /etc /home "$destination"
 }
 
-destination='/run/media/mohamed_abdelnour/Backup/'
-output='/home/mohamed_abdelnour/.cache/backup.txt'
+destination="/run/media/$user/Backup/"
+output="/home/$user/.cache/backup.txt"
 if [ -d "$destination" ]; then
     flags='-AXahnv'
     backup "$flags" > "$output"
@@ -32,3 +57,4 @@ if [ -d "$destination" ]; then
     esac
     rm "$output"
 fi
+unset user
