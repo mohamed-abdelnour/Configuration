@@ -7,15 +7,9 @@ self: super: {
     };
     buildInputs = with self.xorg; [ libX11-cursor-fix libXft ];
     configFile = super.writeText "config.def.h"
-      (builtins.readFile "${super.fetchurl {
-        url = "https://raw.githubusercontent.com/mohamed-abdelnour/Configuration/main/.config/st/config.def.h";
-        sha256 = "16b3dlbskr0wj147jh5zpqdfrgsbx828aj4avf0i3915p2w5f1ph";
-    }}");
+      (builtins.readFile ~/.config/st/config.def.h);
     patches = [
-      (super.fetchurl {
-        url = "https://raw.githubusercontent.com/mohamed-abdelnour/Configuration/main/.config/st/st.diff";
-        sha256 = "0iy7plj0gkxx3lb0mk466ik5pm22dk8dgbsarfwgh1lac9qsw4yw";
-      })
+      ~/.config/st/st.diff
     ];
     postPatch = ''
       ${oldAttrs.postPatch}

@@ -12,15 +12,9 @@ self: super: {
       xorg.libXft
     ];
     configFile = super.writeText "config.def.h"
-      (builtins.readFile "${super.fetchurl {
-        url = "https://raw.githubusercontent.com/mohamed-abdelnour/Configuration/main/.config/dmenu/config.def.h";
-        sha256 = "1dvxb0w8pj8b9njdwq2ai0bvfh90hc1r6apcw22gij5dd1aff27r";
-    }}");
+      (builtins.readFile ~/.config/dmenu/config.def.h);
     patches = [
-      (super.fetchurl {
-        url = "https://raw.githubusercontent.com/mohamed-abdelnour/Configuration/main/.config/dmenu/dmenu.diff";
-        sha256 = "1cw2ywsk0lvrfv4322w8jslnvplkxxlzsg8v3d7h0nsa1qsfpy0i";
-      })
+      ~/.config/dmenu/dmenu.diff
     ];
     postPatch = ''
       ${oldAttrs.postPatch}
