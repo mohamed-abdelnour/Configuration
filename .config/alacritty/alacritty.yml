@@ -17,7 +17,7 @@ font:
     style: Regular
   bold_italic:
     style: Regular
-  # Terminus size: (px/dpi)*72
+  # Terminus size: (px / dpi) * 72
   size: 11.0
   offset:
     x: 0
