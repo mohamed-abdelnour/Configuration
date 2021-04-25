@@ -1,34 +1,49 @@
 -- Imports --
+import           Data.Map                       ( Map )
 import qualified Data.Map                      as M
-import           Data.Maybe
 import           Data.Monoid
-import           Data.String
+import           GHC.IO.Handle
 import           System.Exit
 import           XMonad
 import           XMonad.Hooks.DynamicLog
 import           XMonad.Hooks.EwmhDesktops
 import           XMonad.Hooks.ManageDocks
 import qualified XMonad.Layout.Fullscreen      as F
+import           XMonad.Layout.Fullscreen       ( FullscreenFull )
+import           XMonad.Layout.LayoutModifier
 import           XMonad.Layout.MultiToggle
 import           XMonad.Layout.MultiToggle.Instances
 import           XMonad.Layout.ResizableTile
 import qualified XMonad.StackSet               as W
 import           XMonad.Util.Run
-import           XMonad.Util.WorkspaceCompare
 
 -- General --
+myTerminal :: String
 myTerminal = "alacritty"
+
 myFocusFollowsMouse :: Bool
 myFocusFollowsMouse = True
+
 myClickJustFocuses :: Bool
 myClickJustFocuses = False
+
+myBorderWidth :: Dimension
 myBorderWidth = 2
+
+myModMask :: KeyMask
 myModMask = mod4Mask
+
+myWorkspaces :: [String]
 myWorkspaces = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
+
+myNormalBorderColor :: String
 myNormalBorderColor = "#3B4048"
+
+myFocusedBorderColor :: String
 myFocusedBorderColor = "#56B6C2"
 
 -- Key bindings --
+myKeys :: XConfig Layout -> Map (KeyMask, KeySym) (X ())
 myKeys conf@XConfig { XMonad.modMask = modm } =
   M.fromList
     $  [ ((modm, xK_Return)              , spawn $ XMonad.terminal conf)
@@ -74,6 +89,7 @@ myKeys conf@XConfig { XMonad.modMask = modm } =
        ]
 
 -- Mouse bindings --
+myMouseBindings :: XConfig l -> Map (KeyMask, Button) (Window -> X ())
 myMouseBindings XConfig { XMonad.modMask = modm } = M.fromList
   [ ( (modm, button1)
     , \w -> focus w >> mouseMoveWindow w >> windows W.shiftMaster
@@ -85,6 +101,14 @@ myMouseBindings XConfig { XMonad.modMask = modm } = M.fromList
   ]
 
 -- Layouts --
+myLayout
+  :: ModifiedLayout
+       AvoidStruts
+       ( ModifiedLayout
+           FullscreenFull
+           (MultiToggle (HCons StdTransformers EOT) (Choose ResizableTall Full))
+       )
+       Window
 myLayout =
   avoidStruts
     .   F.fullscreenFull
@@ -93,12 +117,15 @@ myLayout =
     ||| Full
 
 -- Window rules --
+myManageHook :: ManageHook
 myManageHook = manageDocks <+> F.fullscreenManageHook
 
 -- Event handling --
+myEventHook :: Event -> X All
 myEventHook = F.fullscreenEventHook
 
 -- Status bars and logging --
+myLogHook :: Handle -> X ()
 myLogHook xmproc = dynamicLogWithPP $ xmobarPP
   { ppOutput          = hPutStrLn xmproc
   , ppCurrent         = xmobarColor "#56B6C2" "" . wrap "[" "]"
@@ -106,14 +133,16 @@ myLogHook xmproc = dynamicLogWithPP $ xmobarPP
   , ppHiddenNoWindows = xmobarColor "#ABB2BF" ""
   , ppSep             = " | "
   , ppTitle           = xmobarColor "#56B6C2" "" . shorten 50
-  , ppOrder           = \[w, l, t, x] -> [w, x, t]
+  , ppOrder           = \[w, _, t, x] -> [w, x, t]
   , ppExtras          = [windowProps]
   }
 
 -- Startup hook --
+myStartupHook :: X ()
 myStartupHook = return ()
 
 -- Defaults --
+main :: IO ()
 main = do
   xmproc <- spawnPipe "xmobar"
   xmonad . ewmh . docks $ def { terminal           = myTerminal
