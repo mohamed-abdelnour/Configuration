@@ -111,6 +111,7 @@
 !.local/bin/get_wm
 !.local/bin/mkscript
 !.local/bin/nix_packages
+!.local/bin/patch_treesitter_libs
 !.local/bin/pkg_url
 !.local/bin/search_nix
 !.local/bin/status.py

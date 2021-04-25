@@ -6,6 +6,7 @@ return require('packer').startup(function()
     use 'neovim/nvim-lspconfig'
     use 'neovimhaskell/haskell-vim'
     use 'nvim-lua/completion-nvim'
+    use 'nvim-treesitter/nvim-treesitter'
     use 'sbdchd/neoformat'
     use 'wbthomason/packer.nvim'
     use {
@@ -14,5 +15,4 @@ return require('packer').startup(function()
         run = 'cd app && yarn install'
     }
     use {'lervag/vimtex', ft = 'tex'}
-    use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
 end)

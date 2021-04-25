@@ -4,21 +4,25 @@ self: super: {
       default-cursor
       dmenu
       dwm
+      extra-libs
       ghc
       glibcLocales
       hlint
       luaformatter
+      neovim-pinned
       nix-linter
       nix-zsh-completions
       nixpkgs-fmt
       nordic
       papirus-icon-theme
+      patchelf
       pfetch
       rnix-lsp
       shellcheck
       st
       stack
       starship
+      tree-sitter
       ttfautohint
       vanilla-dmz
       # Defaults
