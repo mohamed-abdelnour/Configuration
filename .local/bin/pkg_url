@@ -5,7 +5,8 @@ query_or_sync() {
 }
 
 get_url() {
-    query_or_sync "$1" | sed -n "s/URL\s*: //gp" | xclip -r
+    query_or_sync "$1" | sed -n "s/URL\s*: //gp" | xclip &&
+        xclip -o
 }
 
 if [ -z "$1" ]; then
