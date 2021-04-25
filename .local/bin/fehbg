@@ -1,4 +1,3 @@
 #!/usr/bin/env dash
 
-feh --no-fehbg \
-    --bg-fill "$HOME/Pictures/Saved/Silhouette Of Mountains - Daniel Leone.jpg"
+feh --no-fehbg --bg-fill "$HOME/.local/share/wallpaper"
