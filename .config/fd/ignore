@@ -2,6 +2,7 @@
 /home/*/.bare
 /home/*/.cache
 /home/*/.cpan*
+/home/*/.eclipse
 /home/*/.icons
 /home/*/.java
 /home/*/.local/lib
@@ -10,6 +11,7 @@
 /home/*/.nix-*
 /home/*/.npm
 /home/*/.pylint.d
+/home/*/.swt
 /home/*/.texlive
 /home/*/.themes
 /home/*/.thumbnails

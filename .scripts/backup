@@ -11,6 +11,7 @@ backup() {
         --exclude="/home/$user/.config/tmux/plugins" \
         --exclude="/home/$user/.cpan" \
         --exclude="/home/$user/.cpanm" \
+        --exclude="/home/$user/.eclipse" \
         --exclude="/home/$user/.icons" \
         --exclude="/home/$user/.java" \
         --exclude="/home/$user/.keychain" \
@@ -22,6 +23,7 @@ backup() {
         --exclude="/home/$user/.npm" \
         --exclude="/home/$user/.pylint.d" \
         --exclude="/home/$user/.ssh" \
+        --exclude="/home/$user/.swt" \
         --exclude="/home/$user/.texlive" \
         --exclude="/home/$user/.themes" \
         --exclude="/home/$user/.thumbnails" \

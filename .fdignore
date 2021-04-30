@@ -2,6 +2,7 @@
 .bare
 .cache
 .cpan*
+.eclipse
 .icons
 .java
 .local/lib
@@ -10,6 +11,7 @@
 .nix-*
 .npm
 .pylint.d
+.swt
 .texlive
 .themes
 .thumbnails
