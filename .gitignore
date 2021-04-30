@@ -122,6 +122,7 @@
 
 !.local/share/applications/
 !.local/share/applications/**
+.local/share/applications/_nix*
 
 !.local/share/jdtls/
 !.local/share/jdtls/unpack_jdtls
