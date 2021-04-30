@@ -1,5 +1,7 @@
 self: super: {
-  decPkgs = super.decPkgs or { } // {
+  decPkgs = super.decPkgs or { }
+    // import ./tmpPkgs.nix { } self
+    // {
     inherit (self)
       default-cursor
       dmenu

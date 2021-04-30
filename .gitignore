@@ -52,6 +52,7 @@
 
 !.config/nixpkgs/
 !.config/nixpkgs/**
+.config/nixpkgs/overlays/tmpPkgs.nix
 
 !.config/nnn/
 !.config/nnn/quitcd.bash_zsh
