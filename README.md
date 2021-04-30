@@ -1,5 +1,5 @@
-
 # Configuration
+
 - [Alacritty](.config/alacritty)
 - [Dunst](.config/dunst)
 - [Eclipse JDT Language Server](.config/jdtls)
@@ -10,7 +10,6 @@
 - [Latexmk](.config/latexmk)
 - [Neovim](.config/nvim)
 - [Nixpkgs](.config/nixpkgs)
-- [PCManFM](.config/pcmanfm/default)
 - [Starship](.config/starship.toml)
 - [XMonad](.xmonad)
 - [Xmobar](.config/xmobar)

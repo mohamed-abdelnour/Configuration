@@ -61,9 +61,6 @@
 !.config/nvim/**
 .config/nvim/plugin/packer_compiled.vim
 
-!.config/pcmanfm/
-!.config/pcmanfm/**
-
 !.config/picom/
 !.config/picom/**
 
