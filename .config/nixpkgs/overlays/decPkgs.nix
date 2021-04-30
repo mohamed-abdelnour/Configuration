@@ -3,6 +3,7 @@ self: super: {
     // import ./tmpPkgs.nix { } self
     // {
     inherit (self)
+      arc-theme
       default-cursor
       dmenu
       dwm
