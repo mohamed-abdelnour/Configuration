@@ -107,6 +107,7 @@
 !.local/bin/fehbg
 !.local/bin/get_path
 !.local/bin/get_wm
+!.local/bin/google-java-format
 !.local/bin/mkscript
 !.local/bin/nix_packages
 !.local/bin/patch_treesitter_libs

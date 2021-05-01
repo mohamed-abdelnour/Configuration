@@ -1,0 +1,5 @@
+#!/usr/bin/env dash
+
+formatter='google-java-format-1.10.0-all-deps.jar'
+
+java -jar "$HOME/.local/share/google-java-format/$formatter" "$@"
