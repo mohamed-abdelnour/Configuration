@@ -1,4 +1,10 @@
 local nvim_lsp = require('lspconfig')
+
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+capabilities.textDocument.completion.completionItem.resolveSupport =
+    {properties = {'documentation', 'detail', 'additionalTextEdits'}}
+
 local on_attach = function(client, bufnr)
     local function buf_set_keymap(...)
         vim.api.nvim_buf_set_keymap(bufnr, ...)
@@ -23,13 +29,8 @@ local on_attach = function(client, bufnr)
     end
 end
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
-capabilities.textDocument.completion.completionItem.resolveSupport =
-    {properties = {'documentation', 'detail', 'additionalTextEdits'}}
-
 require'lspconfig'.rust_analyzer.setup {capabilities = capabilities}
 local servers = {'hls', 'jdtls', 'pyright', 'rnix', 'rust_analyzer', 'texlab'}
 for _, lsp in ipairs(servers) do
-    nvim_lsp[lsp].setup {on_attach = on_attach, capabilities = capabilities}
+    nvim_lsp[lsp].setup {capabilities = capabilities, on_attach = on_attach}
 end
