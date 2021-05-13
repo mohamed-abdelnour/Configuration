@@ -44,7 +44,6 @@ local on_attach = function(client, bufnr)
     end
 end
 
-require'lspconfig'.rust_analyzer.setup {capabilities = capabilities}
 local servers = {'hls', 'jdtls', 'pyright', 'rnix', 'rust_analyzer', 'texlab'}
 for _, lsp in ipairs(servers) do
     nvim_lsp[lsp].setup {capabilities = capabilities, on_attach = on_attach}
