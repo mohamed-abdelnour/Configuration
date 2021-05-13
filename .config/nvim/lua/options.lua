@@ -37,7 +37,7 @@ opt('o', 'clipboard', 'unnamedplus')
 
 -- 13 editing text
 opt('b', 'undofile', true)
-opt('o', 'completeopt', 'menuone,noinsert,noselect')
+opt('o', 'completeopt', 'menuone,noselect')
 
 -- 14 tabs and indenting
 opt('b', 'tabstop', 4)

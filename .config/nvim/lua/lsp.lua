@@ -21,9 +21,15 @@ local on_attach = function(client, bufnr)
         buf_set_keymap("v", "<space>f",
                        "<cmd>lua vim.lsp.buf.range_formatting()<CR>", opts)
     end
-
-    require('completion').on_attach()
 end
 
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+capabilities.textDocument.completion.completionItem.resolveSupport =
+    {properties = {'documentation', 'detail', 'additionalTextEdits'}}
+
+require'lspconfig'.rust_analyzer.setup {capabilities = capabilities}
 local servers = {'hls', 'jdtls', 'pyright', 'rnix', 'rust_analyzer', 'texlab'}
-for _, lsp in ipairs(servers) do nvim_lsp[lsp].setup {on_attach = on_attach} end
+for _, lsp in ipairs(servers) do
+    nvim_lsp[lsp].setup {on_attach = on_attach, capabilities = capabilities}
+end
