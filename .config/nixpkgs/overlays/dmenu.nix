@@ -1,24 +1,16 @@
 self: super: {
-  dmenu = super.dmenu.overrideAttrs (oldAttrs: rec {
-    src = super.fetchgit {
-      url = "git://git.suckless.org/dmenu";
-      sha256 = "0gjjbh49j85rpbmiqj236g4c1zb1h8xh41mcjsvnzgwn72893mk6";
-      rev = "1a13d0465d1a6f4f74bc5b07b04c9bd542f20ba6";
+  dmenu = super.dmenu.overrideAttrs (_oldAttrs: {
+    src = super.fetchFromGitHub {
+      owner = "mohamed-abdelnour";
+      repo = "dmenu";
+      rev = "c39266dee6414f839fd7e68b76b5cf63dba4c4da";
+      sha256 = "08v1w17vdwv1i04g0nzv4fbpv2rzy0vw34gj6rdwkc2xbs7y5k4g";
     };
     buildInputs = with self; [
-      zlib
       xorg.libX11-cursor-fix
-      xorg.libXinerama
       xorg.libXft
+      xorg.libXinerama
+      zlib
     ];
-    configFile = super.writeText "config.def.h"
-      (builtins.readFile ~/.config/dmenu/config.def.h);
-    patches = [
-      ~/.config/dmenu/dmenu.diff
-    ];
-    postPatch = ''
-      ${oldAttrs.postPatch}
-      cp ${configFile} config.def.h
-    '';
   });
 }
