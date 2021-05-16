@@ -47,7 +47,10 @@ nnoremap <silent> <leader>cc :execute "set colorcolumn="
 nnoremap <silent> <leader>cl :set cursorline!<CR>
 
 " linebreak
-nnoremap <silent> <leader>l :set linebreak!<CR>
+nnoremap <silent> <leader>lb :set linebreak!<CR>
+
+" list
+nnoremap <silent> <leader>lt :set list!<CR>
 
 " spell
 nnoremap <silent> <leader>s :set spell!<CR>

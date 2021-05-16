@@ -12,6 +12,7 @@ opt('o', 'smartcase', true)
 --  4 displaying text
 opt('o', 'showbreak', '--> ')
 opt('o', 'cmdheight', 2)
+opt('o', 'listchars', 'tab:<->,trail:-,nbsp:+')
 opt('w', 'relativenumber', true)
 
 --  5 syntax, highlighting and spelling
@@ -43,7 +44,6 @@ opt('o', 'completeopt', 'menuone,noselect')
 opt('b', 'tabstop', 4)
 opt('b', 'shiftwidth', 4)
 opt('b', 'softtabstop', 4)
-opt('b', 'expandtab', true)
 opt('b', 'smartindent', true)
 
 -- 25 various
