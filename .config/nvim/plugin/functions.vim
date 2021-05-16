@@ -46,6 +46,9 @@ nnoremap <silent> <leader>cc :execute "set colorcolumn="
 " cursorline
 nnoremap <silent> <leader>cl :set cursorline!<CR>
 
+" expandtab
+nnoremap <silent> <leader>et :set expandtab!<CR>
+
 " linebreak
 nnoremap <silent> <leader>lb :set linebreak!<CR>
 
