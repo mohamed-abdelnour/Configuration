@@ -15,7 +15,6 @@
 - [Xmobar](.config/xmobar)
 - [Zsh](.config/zsh)
 - [bat](.config/bat)
-- [dwm](.config/dwm)
 - [fd](.config/fd)
 - [feh](.config/feh)
 - [fzf](.config/fzf)
