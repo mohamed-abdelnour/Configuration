@@ -1,6 +1,7 @@
 [user]
 	name = Mohamed Abdelnour
 	email = mohamed.k.abdelnour@gmail.com
+
 [core]
 	pager = bat
 	autocrlf = input
@@ -10,3 +11,12 @@
 	tool = nvimdiff
 [mergetool]
 	keepBackup = false
+
+[delta]
+	line-numbers = true
+	line-numbers-minus-style = red
+	line-numbers-zero-style = brightblack
+	line-numbers-plus-style = green
+
+[alias]
+	s = status
