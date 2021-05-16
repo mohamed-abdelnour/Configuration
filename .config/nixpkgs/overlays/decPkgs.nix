@@ -5,6 +5,7 @@ self: super: {
     inherit (self)
       arc-theme
       default-cursor
+      delta
       dmenu
       dwm
       extra-libs
