@@ -1,5 +1,5 @@
 self: super: {
-  neovim-pinned = super.neovim-unwrapped.overrideAttrs (oldAttrs: rec {
+  neovim-pinned = super.neovim-unwrapped.overrideAttrs (oldAttrs: {
     src = super.fetchFromGitHub {
       owner = "neovim";
       repo = "neovim";
