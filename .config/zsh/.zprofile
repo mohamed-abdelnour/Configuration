@@ -28,7 +28,7 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 . "$HOME/.config/jdtls/environment"
 . "$HOME/.nix-profile/etc/profile.d/nix.sh"
 
-# eval "$(keychain --agents ssh --eval --quiet id_ed25519)"
+eval "$(keychain --agents ssh --eval --quiet id_ed25519)"
 
 if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
     console_session
