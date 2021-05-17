@@ -1,8 +1,10 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
-require('lsp')
-require('nvim-compe')
 require('options')
 require('plugins')
+
+require('lsp')
+require('nvim-compe')
+require('nvim-dap')
 require('treesitter')

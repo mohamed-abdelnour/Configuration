@@ -23,7 +23,7 @@ function! ColourTest()
 endfunction
 
 " DeleteBuffer
-nnoremap <silent> <leader>d :execute "bd!"<CR>
+nnoremap <silent> <leader>dd :execute "bd!"<CR>
 
 " Startup Scripts
 " :scriptnames
