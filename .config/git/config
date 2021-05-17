@@ -19,4 +19,5 @@
 	line-numbers-plus-style = green
 
 [alias]
+	d = diff
 	s = status
