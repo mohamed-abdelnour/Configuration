@@ -51,10 +51,11 @@ call plug#begin(stdpath('data') . '/plugged')
 Plug 'LnL7/vim-nix'
 Plug 'dstein64/vim-startuptime'
 Plug 'hrsh7th/nvim-compe'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 Plug 'joshdick/onedark.vim'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'lervag/vimtex', {'for': 'tex'}
+Plug 'lervag/vimtex'
 Plug 'mcchrish/nnn.vim'
 Plug 'mfussenegger/nvim-dap'
 Plug 'neovim/nvim-lspconfig'
@@ -62,10 +63,6 @@ Plug 'neovimhaskell/haskell-vim'
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'sbdchd/neoformat'
 Plug 'wbthomason/packer.nvim'
-Plug 'iamcco/markdown-preview.nvim', {
-			\ 'for': 'markdown',
-			\ 'do': 'cd app && yarn install'
-			\ }
 call plug#end()
 
 lua require('lsp')
