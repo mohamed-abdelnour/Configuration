@@ -61,7 +61,6 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'sbdchd/neoformat'
-Plug 'wbthomason/packer.nvim'
 call plug#end()
 
 lua require('lsp')
