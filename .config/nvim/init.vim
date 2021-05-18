@@ -57,7 +57,6 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'lervag/vimtex'
 Plug 'mcchrish/nnn.vim'
-Plug 'mfussenegger/nvim-dap'
 Plug 'neovim/nvim-lspconfig'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'nvim-treesitter/nvim-treesitter'
@@ -67,5 +66,4 @@ call plug#end()
 
 lua require('lsp')
 lua require('nvim-compe')
-lua require('nvim-dap')
 lua require('treesitter')
