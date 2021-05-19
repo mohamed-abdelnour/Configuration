@@ -1,6 +1,0 @@
-#!/usr/bin/env dash
-
-treesitter_path="$HOME/.local/share/nvim/plugged/nvim-treesitter/parser"
-lib_path="$HOME/.nix-profile/lib"
-
-fd -I '\.so' "$treesitter_path" -x patchelf --set-rpath "$lib_path"

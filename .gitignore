@@ -17,14 +17,8 @@
 !.config/bat/
 !.config/bat/**
 
-!.config/dmenu/
-!.config/dmenu/**
-
 !.config/dunst/
 !.config/dunst/**
-
-!.config/dwm/
-!.config/dwm/**
 
 !.config/fd/
 !.config/fd/**
@@ -67,9 +61,6 @@
 !.config/rustfmt/
 !.config/rustfmt/**
 
-!.config/st/
-!.config/st/**
-
 !.config/systemd/
 !.config/systemd/user/
 !.config/systemd/user/clipmenud.service.d/
@@ -110,7 +101,6 @@
 !.local/bin/google-java-format
 !.local/bin/mkscript
 !.local/bin/nix_packages
-!.local/bin/patch_treesitter_libs
 !.local/bin/pkg_url
 !.local/bin/search_nix
 !.local/bin/status.py
