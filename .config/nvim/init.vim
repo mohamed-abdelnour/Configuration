@@ -59,7 +59,7 @@ Plug 'lervag/vimtex'
 Plug 'mcchrish/nnn.vim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'neovimhaskell/haskell-vim'
-Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'puremourning/vimspector'
 Plug 'sbdchd/neoformat'
 call plug#end()
