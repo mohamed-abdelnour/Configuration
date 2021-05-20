@@ -26,9 +26,8 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 
 . "$HOME/.config/fzf/onedark"
 . "$HOME/.config/jdtls/environment"
+. "$HOME/.config/keychain/load_keys"
 . "$HOME/.nix-profile/etc/profile.d/nix.sh"
-
-eval "$(keychain --agents ssh --eval --quiet id_ed25519)"
 
 if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
     console_session
