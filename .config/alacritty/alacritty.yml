@@ -17,18 +17,7 @@ font:
     style: Regular
   bold_italic:
     style: Regular
-  # Terminus size: (px / dpi) * 72
   size: 11.0
-  offset:
-    x: 0
-    y: 0
-
-# cursor:
-#   style:
-#     blinking: On
-
-# mouse:
-#   hide_when_typing: true
 
 schemes:
   OneDark: &OneDark
@@ -44,14 +33,20 @@ schemes:
       focused_match:
         background: "#56B6C2"
         foreground: "#282C34"
-
       matches:
         background: "#C678DD"
         foreground: "#282C34"
-
       bar:
         background: "#ABB2BF"
         foreground: "#282C34"
+
+    hints:
+      start:
+        background: "#E5C07B"
+        foreground: "#282C34"
+      end:
+        background: "#282C34"
+        foreground: "#E5C07B"
 
     selection:
       text: CellForeground
@@ -85,14 +80,10 @@ draw_bold_text_with_bright_colors: false
 
 colors: *OneDark
 
-# background_opacity: 0.80
-
 key_bindings:
   - { key: V, mods: Control|Shift, action: Paste }
   - { key: C, mods: Control|Shift, action: Copy }
   - { key: Key0, mods: Control, action: ResetFontSize }
   - { key: Equals, mods: Control, action: IncreaseFontSize }
   - { key: Minus, mods: Control, action: DecreaseFontSize }
-  - { key: K, mods: Alt, action: ScrollPageUp }
-  - { key: J, mods: Alt, action: ScrollPageDown }
   - { key: 5, mods: Shift, mode: Vi, action: Last }
