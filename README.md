@@ -21,7 +21,6 @@
 - [htop](.config/htop)
 - [nnn](.config/nnn)
 - [picom](.config/picom)
-- [rustfmt](.config/rustfmt)
 - [tmux](.config/tmux)
 - [xinit](.config/xinit)
 - [zathura](.config/zathura)

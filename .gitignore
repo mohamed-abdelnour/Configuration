@@ -57,9 +57,6 @@
 !.config/picom/
 !.config/picom/**
 
-!.config/rustfmt/
-!.config/rustfmt/**
-
 !.config/systemd/
 !.config/systemd/user/
 !.config/systemd/user/clipmenud.service.d/
