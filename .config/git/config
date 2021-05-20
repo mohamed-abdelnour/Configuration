@@ -2,6 +2,8 @@
 	name = Mohamed Abdelnour
 	email = mohamed.k.abdelnour@gmail.com
 
+[commit]
+	gpgsign = true
 [core]
 	pager = bat
 	autocrlf = input
