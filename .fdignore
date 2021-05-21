@@ -1,8 +1,11 @@
 .archive
 .bare
+.builds
 .cache
+.config/tmux/plugins
 .cpan*
 .eclipse
+.gnupg
 .icons
 .java
 .local/lib
@@ -17,3 +20,4 @@
 .thumbnails
 .tooling
 .tree-sitter
+Programming

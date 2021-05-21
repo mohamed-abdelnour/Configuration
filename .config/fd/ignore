@@ -1,8 +1,11 @@
 /home/*/.archive
 /home/*/.bare
+/home/*/.builds
 /home/*/.cache
+/home/*/.config/tmux/plugins
 /home/*/.cpan*
 /home/*/.eclipse
+/home/*/.gnupg
 /home/*/.icons
 /home/*/.java
 /home/*/.local/lib
@@ -17,6 +20,7 @@
 /home/*/.thumbnails
 /home/*/.tooling
 /home/*/.tree-sitter
+/home/*/Programming
 
 *coc
 *node_modules
