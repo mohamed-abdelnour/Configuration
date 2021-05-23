@@ -19,6 +19,7 @@
 	line-numbers-minus-style = red
 	line-numbers-zero-style = brightblack
 	line-numbers-plus-style = green
+	syntax-theme = base16
 
 [alias]
 	d = diff
