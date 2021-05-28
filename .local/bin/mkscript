@@ -1,8 +1,0 @@
-#!/usr/bin/env dash
-
-if [ -e "$1" ]; then
-    printf '"%s" already exists\n' "$1"
-else
-    printf '#!/usr/bin/env %s\n' "$2" > "$1"
-    chmod +x "$1"
-fi
