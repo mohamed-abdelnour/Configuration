@@ -17,7 +17,7 @@ def shebang(binary: str) -> str:
 
 
 def content_from_shell(shell: str) -> str:
-    assert shell is not None, f"SHELL must be specified if file has no extension"
+    assert shell is not None, "SHELL must be specified if file has no extension"
     shells = ["dash", "bash", "zsh"]
     assert shell in shells, f"Unknown shell: '{shell}'"
     return shebang(shell)
