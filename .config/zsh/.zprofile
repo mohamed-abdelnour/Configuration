@@ -1,6 +1,8 @@
 #!/usr/bin/zsh
 
-export PATH="$PATH:$HOME/.local/bin"
+GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
+
+export PATH="$PATH:$HOME/.local/bin:$GEM_HOME/bin"
 
 eval "$(dircolors -b)"
 
