@@ -16,5 +16,5 @@ mirrorlist_reflector() {
 output='/etc/pacman.d/mirrorlist'
 mirrorlist_reflector > "$output"
 # mirrorlist_generator > "$output"
-bat --theme 'base16' "$output"
-exa -bgl --time-style=long-iso "$output"
+bat "$output"
+exa -Habgl --time-style=long-iso "$output"

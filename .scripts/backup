@@ -48,7 +48,7 @@ output="/home/$user/.cache/backup.txt"
 if [ -d "$destination" ]; then
     flags='-AXahnv'
     backup "$flags" > "$output"
-    bat --theme 'base16' "$output"
+    bat "$output"
     printf "Write? "
     read -r choice
     case "$choice" in
