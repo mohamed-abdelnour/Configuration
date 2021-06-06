@@ -81,9 +81,4 @@ draw_bold_text_with_bright_colors: false
 colors: *OneDark
 
 key_bindings:
-  - { key: V, mods: Control|Shift, action: Paste }
-  - { key: C, mods: Control|Shift, action: Copy }
-  - { key: Key0, mods: Control, action: ResetFontSize }
-  - { key: Equals, mods: Control, action: IncreaseFontSize }
-  - { key: Minus, mods: Control, action: DecreaseFontSize }
   - { key: 5, mods: Shift, mode: Vi, action: Last }
