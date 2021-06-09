@@ -15,6 +15,7 @@ let g:neoformat_rust_rustfmt = {
 " TODO: Remove when `latexindent` is bumped to V3.9.3
 let g:neoformat_tex_latexindent = {
             \ 'exe': 'latexindent',
+            \ 'args': ['-c', '~/.cache/latexindent'],
             \ 'stdin': 1,
             \ }
 
