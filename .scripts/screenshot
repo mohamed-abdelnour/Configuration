@@ -1,15 +1,18 @@
 #!/usr/bin/env dash
 
 choice="$(printf "active window\nfullscreen\nselection\n" | dmenu -i)"
-destination="$HOME/Pictures/Screenshots/"
+month="$(date +'%Y-%m')"
+destination="$HOME/Pictures/Screenshots/$month/"
+[ -d "$destination" ] || mkdir "$destination"
+file_path="$destination$(date +'%Y-%m-%d-%H-%M-%S').png"
 case "$choice" in
     'active window')
-        maim -d 1 -q -u -i "$(xdotool getactivewindow)" "$destination$(date '+%Y-%m-%d-%H-%M-%S').png"
+        maim -d 0.5 -q -u -i "$(xdotool getactivewindow)" "$file_path"
         ;;
     'fullscreen')
-        maim -d 1 -q -u "$destination$(date +'%Y-%m-%d-%H-%M-%S').png"
+        maim -d 0.5 -q -u "$file_path"
         ;;
     'selection')
-        maim -d 1 -q -u -s "$destination$(date +'%Y-%m-%d-%H-%M-%S').png"
+        maim -d 0.5 -q -u -s "$file_path"
         ;;
 esac
