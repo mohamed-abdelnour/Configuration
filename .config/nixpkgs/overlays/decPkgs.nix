@@ -32,8 +32,5 @@ self: super: {
       haskell-language-server
       xmobar
       ;
-    inherit (self.nodePackages)
-      pyright
-      ;
   };
 }
