@@ -6,6 +6,7 @@ export PATH="$PATH:$HOME/.local/bin:$GEM_HOME/bin"
 
 eval "$(dircolors -b)"
 
+export CABAL_DIR="$HOME/.local/share/cabal"
 export CARGO_HOME="$HOME/.local/share/cargo"
 export DIFFPROG="nvim -d"
 export EDITOR="nvim"
