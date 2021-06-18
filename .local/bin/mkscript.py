@@ -25,7 +25,7 @@ def content_from_shell(shell: str) -> str:
 
 def content_from_extension(extension: str) -> str:
     if extension == ".hs":
-        content = "main :: IO()\nmain = undefined"
+        content = "main :: IO ()\nmain = undefined"
     elif extension == ".py":
         content = shebang("python3")
     elif extension == ".rs":
