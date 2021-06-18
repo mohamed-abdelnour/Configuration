@@ -3,6 +3,7 @@ _self: super: {
     haskellPackages: with haskellPackages; [
       arithmoi
       hashtables
+      hspec
       implicit-hie
       regex-pcre
       regex-tdfa
