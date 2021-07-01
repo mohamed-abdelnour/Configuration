@@ -47,5 +47,9 @@ end
 
 local servers = {'hls', 'jdtls', 'pyright', 'rnix', 'rust_analyzer', 'texlab'}
 for _, lsp in ipairs(servers) do
-    nvim_lsp[lsp].setup {capabilities = capabilities, on_attach = on_attach}
+    nvim_lsp[lsp].setup {
+        capabilities = capabilities,
+        on_attach = on_attach,
+        flags = {debounce_text_changes = 500}
+    }
 end
