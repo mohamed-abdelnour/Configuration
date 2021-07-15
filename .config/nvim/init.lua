@@ -6,4 +6,5 @@ require('plugins')
 
 require('lsp')
 require('nvim-compe')
+require('nvim-telescope')
 require('treesitter')
