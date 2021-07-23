@@ -37,7 +37,7 @@ def content_from_extension(extension: str) -> str:
 
 def write_file(file_path: str, content: str) -> None:
     with open(file_path, "x") as file:
-        file.write(content)
+        file.write(f"{content}\n")
 
 
 def main() -> None:
