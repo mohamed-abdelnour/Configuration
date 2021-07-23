@@ -20,6 +20,13 @@
 !.config/dunst/
 !.config/dunst/**
 
+!.config/emacs/
+!.config/emacs/modules/
+!.config/emacs/modules/**
+!.config/emacs/.dir-locals.el
+!.config/emacs/early-init.el
+!.config/emacs/init.el
+
 !.config/fd/
 !.config/fd/**
 

@@ -47,13 +47,3 @@ Xcursor.theme: default
 
 ! Xmessage
 Xmessage*font: -xos4-terminus-medium-r-normal--22-220-72-72-c-110-iso10646-1
-
-! Emacs
-emacs.borderColor: #282C34
-emacs.font: Inconsolata-12:width=semiexpanded
-emacs.horizontalScrollBars: off
-emacs.internalBorder: 6
-emacs.menuBar: off
-emacs.scrollBar: off
-emacs.toolBar: off
-emacs.verticalScrollBars: off
