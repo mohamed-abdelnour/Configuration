@@ -47,10 +47,9 @@ myKeys :: XConfig Layout -> Map (KeyMask, KeySym) (X ())
 myKeys conf@XConfig { XMonad.modMask = modm } =
   M.fromList
     $  [ ((modm, xK_Return)              , spawn $ XMonad.terminal conf)
-       , ((mod1Mask, xK_Return)          , spawn "emacsclient -nc")
        , ((modm, xK_b)                   , spawn "firefox")
        , ((modm, xK_p)                   , spawn "dmenu_run -i")
-       , ((modm, xK_m)                   , spawn "pcmanfm")
+       , ((modm, xK_m)                   , spawn "emacsclient -nc")
        , ((modm, xK_v)                   , spawn "clipmenu -i")
        , ((modm, xK_o)                   , spawn "$HOME/.scripts/dmenu_open")
        , ((0, xK_Print)                  , spawn "$HOME/.scripts/screenshot")
