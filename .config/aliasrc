@@ -1,6 +1,5 @@
 #!/usr/bin/env sh
 
-alias bare="git --git-dir=$HOME/.bare --work-tree=$HOME"
 alias d='GIT_PAGER=delta'
 alias gh='ghc -O2 -Wall -no-keep-hi-files -no-keep-o-files'
 alias grep='grep --color=auto'

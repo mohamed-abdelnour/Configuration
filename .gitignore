@@ -95,6 +95,7 @@
 
 !.local/bin/
 !.local/bin/askpass
+!.local/bin/bare
 !.local/bin/console_session
 !.local/bin/fehbg
 !.local/bin/get_path
