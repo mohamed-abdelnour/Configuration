@@ -44,6 +44,6 @@ pkill unclutter
 fehbg &
 lxpolkit &
 picom --experimental-backends &
-setxkbmap -layout us,ara -variant ,qwerty_digits grp:alt_shift_toggle &
+setxkbmap -layout us,ara -variant ,qwerty_digits grp:shifts_toggle &
 unclutter &
 INIT
