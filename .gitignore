@@ -48,6 +48,9 @@
 !.config/jdtls/
 !.config/jdtls/**
 
+!.config/keychain/
+!.config/keychain/**
+
 !.config/latexmk/
 !.config/latexmk/**
 
@@ -108,8 +111,10 @@
 !.local/bin/get_path
 !.local/bin/get_wm
 !.local/bin/google-java-format
+!.local/bin/kill_daemon
 !.local/bin/mkscript.py
 !.local/bin/nix_packages
+!.local/bin/notifier
 !.local/bin/pkg_url
 !.local/bin/search_nix
 !.local/bin/status.py

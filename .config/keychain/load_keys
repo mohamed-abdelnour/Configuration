@@ -1,0 +1,13 @@
+#!/usr/bin/env sh
+
+get_gpg_key() {
+    gpg --with-colons --list-keys "$(git config user.email)" |
+        rg -m 1 '^fpr' |
+        cut -d: -f 10
+}
+
+gpg_key="$(get_gpg_key)"
+
+eval "$(keychain --agents 'gpg,ssh' --eval --quiet id_ed25519 "$gpg_key")"
+
+unset gpg_key

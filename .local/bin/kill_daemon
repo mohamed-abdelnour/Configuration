@@ -1,0 +1,21 @@
+#!/usr/bin/env dash
+
+daemons() {
+    printf 'emacs\ngpg-agent\nssh-agent\n' | dmenu -p 'Daemon'
+}
+
+daemon="$(daemons)"
+case "$daemon" in
+    "emacs")
+        emacsclient -e '(kill-emacs)'
+        ;;
+    "gpg-agent")
+        gpgconf --kill gpg-agent
+        ;;
+    "ssh-agent")
+        keychain -k all
+        ;;
+    *)
+        printf '%s\n' "$daemon"
+        ;;
+esac
