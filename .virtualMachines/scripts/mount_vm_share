@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/usr/bin/env sh
 
 mount -t 9p -o trans=virtio /shared /vm-share
 
