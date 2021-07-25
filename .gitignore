@@ -124,6 +124,10 @@
 !.local/share/jdtls/
 !.local/share/jdtls/unpack_jdtls
 
+!.local/share/source-code-pro-slashed/
+!.local/share/source-code-pro-slashed/freeze
+!.local/share/source-code-pro-slashed/source-code-pro-slashed
+
 !.scripts/
 !.scripts/**
 .scripts/get_battery.py

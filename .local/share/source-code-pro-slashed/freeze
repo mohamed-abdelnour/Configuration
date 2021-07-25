@@ -1,0 +1,12 @@
+#!/usr/bin/env dash
+
+replacer() {
+    cat | awk -F"$1" -v d="$1" '{print $1 "Slashed" d $2}'
+}
+
+gen_slashed_path() {
+    echo "$1" | replacer '-' | replacer '/'
+}
+
+slashed="$(gen_slashed_path "$1")"
+pyftfeatfreeze -f 'zero' -S -U 'Slashed' "$1" "$slashed"

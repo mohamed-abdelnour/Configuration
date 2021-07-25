@@ -1,0 +1,5 @@
+#!/usr/bin/env dash
+
+[ -d "SourceCodePro" ] || exit 1
+[ -d "SourceCodeProSlashed" ] || mkdir "SourceCodeProSlashed"
+fd -t f -e ttf . SourceCodePro -x "./freeze"
