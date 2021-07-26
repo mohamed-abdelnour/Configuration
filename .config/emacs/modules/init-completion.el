@@ -7,6 +7,8 @@
 ;;; Code:
 
 (use-package consult
+  :init (advice-add #'completing-read-multiple
+                    :override #'consult-completing-read-multiple)
   :custom
   (consult-async-refresh-delay 0.2)
   (consult-find-command "fd -Hp -c never -t f ARG OPTS"))
@@ -15,7 +17,6 @@
 
 (use-package corfu
   :custom
-  (corfu-auto t)
   (corfu-commit-predicate nil)
   (corfu-cycle t)
   (corfu-quit-at-boundary t)

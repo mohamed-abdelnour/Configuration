@@ -14,10 +14,16 @@
 ;; Bootstrap.
 (require 'init-bootstrap)
 
-;; No-littering
+;; No-littering.
 (require 'init-littering)
 
-;; Packages
+;; Garbage Collector Magic Hack.
+(require 'init-gcmh)
+
+;; Org-mode --- loaded as early as possible.
+(require 'init-org)
+
+;; Packages.
 (require 'init-completion)
 (require 'init-evil)
 (require 'init-flycheck)

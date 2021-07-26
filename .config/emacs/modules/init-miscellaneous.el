@@ -21,6 +21,9 @@ This forces the use of keyboard input for `yes-or-no-p'."
 
 (use-package emacs
   :init
+  ;; Default `fill-column' to 80.
+  (setq-default fill-column 80)
+
   ;; Confirm kill Emacs.
   (setq confirm-kill-emacs #'confirm-exit)
 
@@ -36,15 +39,17 @@ This forces the use of keyboard input for `yes-or-no-p'."
         #'command-completion-default-include-p)
 
   ;; Improve performance.
-  (setq gc-cons-threshold (expt 2 26)
-        read-process-output-max (expt 2 20))
-
-  ;; Short answers.
-  (setq use-short-answers t)
+  (setq read-process-output-max (expt 2 20))
 
   ;; Safe variables.
   (add-to-list 'safe-local-variable-values
                '(eval . (add-to-list 'flycheck-disabled-checkers 'emacs-lisp)))
+
+  ;; Short answers.
+  (setq use-short-answers t)
+
+  ;; Silently add a newline at the end of a file.
+  (setq require-final-newline t)
 
   ;; "Smooth-scrolling".
   (pixel-scroll-mode)

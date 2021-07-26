@@ -6,22 +6,26 @@
 
 ;;; Code:
 
+(defun set-format-key (keymap formatter)
+  "Define a key for running FORMATTER in KEYMAP."
+  (define-key keymap (kbd "C-c n") formatter))
+
 ;; C
 (use-package cc-mode
-  :bind (:map c-mode-map ("C-c n" . clang-format))
+  :config (set-format-key c-mode-map #'clang-format)
   :straight nil)
 
 ;; Haskell
 (use-package lsp-haskell)
 
 (use-package haskell-mode
-  :bind (:map haskell-mode-map ("C-c n" . brittany))
+  :config (set-format-key haskell-mode-map #'brittany)
   :custom (lsp-haskell-formatting-provider "brittany")
   :hook (haskell-mode . lsp))
 
 ;; Nix
 (use-package nix-mode
-  :bind (:map nix-mode-map ("C-c n" . nixpkgs-fmt))
+  :config (set-format-key nix-mode-map #'nixpkgs-fmt)
   :mode "\\.nix\\'")
 
 ;; Python
@@ -31,7 +35,7 @@
                          (lsp))))
 
 (use-package python
-  :bind (:map python-mode-map ("C-c n" . black))
+  :config (set-format-key python-mode-map #'black)
   :custom
   (python-indent-guess-indent-offset nil)
   (python-indent-offset 4)
@@ -39,12 +43,12 @@
 
 ;; Rust
 (use-package rustic
-  :hook (rustic-mode . lsp)
-  :bind (:map rustic-mode-map ("C-c n" . rustfmt)))
+  :config (set-format-key rustic-mode-map #'rustfmt)
+  :hook (rustic-mode . lsp))
 
 ;; Shell script
 (use-package sh-script
-  :bind (:map sh-mode-map ("C-c n" . shfmt))
+  :config (set-format-key sh-mode-map #'shfmt)
   :straight nil)
 
 (provide 'init-languages)

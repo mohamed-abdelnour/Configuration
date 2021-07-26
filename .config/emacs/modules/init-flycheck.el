@@ -8,12 +8,10 @@
 ;;; Code:
 
 (use-package flycheck
-  :init
-  (global-flycheck-mode)
-  (add-to-list 'flycheck-shellcheck-supported-shells 'dash)
-  (setq-default flycheck-disabled-checkers '(c/c++-clang
-                                             c/c++-cppcheck
-                                             c/c++-gcc)))
+  :config (add-to-list 'flycheck-shellcheck-supported-shells 'dash)
+  :init (setq-default flycheck-disabled-checkers '(c/c++-clang
+                                                   c/c++-cppcheck
+                                                   c/c++-gcc)))
 
 (provide 'init-flycheck)
 

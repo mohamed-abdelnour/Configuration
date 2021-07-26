@@ -8,34 +8,34 @@
 
 (use-package reformatter)
 
-;; C/C++
+;; ClangFormat
 (reformatter-define clang-format
   :program "clang-format"
   :args `("--assume-filename" ,buffer-file-name)
   :lighter " ClangFormat")
 
-;; Haskell
+;; brittany
 (reformatter-define brittany
   :program "brittany"
   :lighter " brittany")
 
-;; Nix
+;; nixpkgs-fmt
 (reformatter-define nixpkgs-fmt
   :program "nixpkgs-fmt"
   :lighter " nixpkgs-fmt")
 
-;; Python
+;; Black
 (reformatter-define black
   :program "black"
   :args '("-q" "-")
   :lighter " Black")
 
-;; Rust
+;; Rustfmt
 (reformatter-define rustfmt
   :program "rustfmt"
   :lighter " Rustfmt")
 
-;; Shell script
+;; shfmt
 (reformatter-define shfmt
   :program "shfmt"
   :args '("-i" "4" "-ci" "-sr")

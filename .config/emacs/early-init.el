@@ -13,6 +13,9 @@
 ;; Disable `package.el`.
 (setq package-enable-at-startup nil)
 
+;; Suppress the GC at start-up.
+(setq gc-cons-threshold most-positive-fixnum)
+
 ;; Add internal border padding.
 (add-to-list 'default-frame-alist '(internal-border-width . 6))
 

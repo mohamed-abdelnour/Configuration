@@ -11,6 +11,13 @@
   (doom-modeline-mode)
   (setq doom-modeline-icon nil))
 
+(use-package modus-themes-exporter
+  :straight (modus-themes-exporter
+             :host gitlab
+             :repo "protesilaos/dotfiles"
+             :depth 1
+             :files ("emacs/.emacs.d/prot-lisp/modus-themes-exporter.el")))
+
 (use-package pdf-tools
   :init (pdf-tools-install))
 
