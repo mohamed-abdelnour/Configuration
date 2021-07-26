@@ -107,6 +107,7 @@
 !.local/bin/askpass
 !.local/bin/bare
 !.local/bin/console_session
+!.local/bin/doom_quit_gen
 !.local/bin/fehbg
 !.local/bin/get_path
 !.local/bin/get_wm

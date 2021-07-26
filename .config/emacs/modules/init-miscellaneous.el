@@ -13,19 +13,10 @@
   (global-display-line-numbers-mode)
   :straight nil)
 
-(defun confirm-exit (prompt)
-  "Set `last-nomenu-event' to 0 and pass PROMPT to `yes-or-no-p'.
-This forces the use of keyboard input for `yes-or-no-p'."
-  (setq last-nonmenu-event 0)
-  (yes-or-no-p prompt))
-
 (use-package emacs
   :init
   ;; Default `fill-column' to 80.
   (setq-default fill-column 80)
-
-  ;; Confirm kill Emacs.
-  (setq confirm-kill-emacs #'confirm-exit)
 
   ;; Disable backup files.
   (setq make-backup-files nil)

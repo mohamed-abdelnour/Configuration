@@ -25,6 +25,7 @@
 
 ;; Packages.
 (require 'init-completion)
+(require 'init-doom-quit)
 (require 'init-evil)
 (require 'init-flycheck)
 (require 'init-formatter)
