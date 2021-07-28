@@ -7,7 +7,8 @@
 ;;; Code:
 
 (setq straight-fix-flycheck t
-      straight-use-package-by-default t)
+      straight-use-package-by-default t
+      straight-vc-git-default-clone-depth 1)
 
 (defvar bootstrap-version)
 (let ((bootstrap-file

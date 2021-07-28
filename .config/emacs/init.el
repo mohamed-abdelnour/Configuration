@@ -6,11 +6,6 @@
 
 ;;; Code:
 
-;; Add `modules` directory to `load-path`.
-(add-to-list
- 'load-path
- (expand-file-name "modules/" (file-name-directory load-file-name)))
-
 ;; Bootstrap.
 (require 'init-bootstrap)
 
@@ -19,9 +14,6 @@
 
 ;; Garbage Collector Magic Hack.
 (require 'init-gcmh)
-
-;; Org-mode --- loaded as early as possible.
-(require 'init-org)
 
 ;; Packages.
 (require 'init-completion)

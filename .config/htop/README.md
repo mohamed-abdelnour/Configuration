@@ -1,1 +1,0 @@
-- Home page: https://github.com/htop-dev/htop

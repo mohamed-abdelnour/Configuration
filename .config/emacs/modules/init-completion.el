@@ -6,7 +6,15 @@
 
 ;;; Code:
 
+(defun +vertico-crm-exit ()
+  (interactive)
+  (run-at-time 0 nil #'vertico-exit)
+  (funcall #'vertico-exit))
+
 (use-package consult
+  :bind (:map consult-crm-map
+              ("RET" . +vertico-crm-exit)
+              ("TAB" . vertico-exit))
   :init (advice-add #'completing-read-multiple
                     :override #'consult-completing-read-multiple)
   :custom
@@ -22,6 +30,12 @@
   (corfu-quit-at-boundary t)
   (corfu-quit-no-match t)
   :init (corfu-global-mode))
+
+(use-package dabbrev
+  :bind (("M-/" . dabbrev-completion)
+         ("C-M-/" . dabbrev-expand))
+  :custom (dabbrev-case-replace nil)
+  :straight nil)
 
 (use-package marginalia
   :init (marginalia-mode))

@@ -1,1 +1,0 @@
-- Home page: https://personal.psu.edu/~jcc8/software/latexmk/

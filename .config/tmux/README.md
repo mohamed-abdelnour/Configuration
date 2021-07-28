@@ -1,3 +1,0 @@
-- Home pages:
-  - tmux: https://github.com/tmux/tmux
-  - tpm: https://github.com/tmux-plugins/tpm

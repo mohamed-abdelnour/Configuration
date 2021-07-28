@@ -21,11 +21,7 @@
 !.config/dunst/**
 
 !.config/emacs/
-!.config/emacs/modules/
-!.config/emacs/modules/**
-!.config/emacs/.dir-locals.el
-!.config/emacs/early-init.el
-!.config/emacs/init.el
+!.config/emacs/**
 
 !.config/fd/
 !.config/fd/**
@@ -56,6 +52,7 @@
 
 !.config/nixpkgs/
 !.config/nixpkgs/**
+.config/nixpkgs/overlays/emacs.nix
 .config/nixpkgs/overlays/tmpPkgs.nix
 
 !.config/nnn/
@@ -123,10 +120,6 @@
 
 !.local/share/
 
-!.local/share/applications/
-!.local/share/applications/**
-.local/share/applications/_nix*
-
 !.local/share/jdtls/
 !.local/share/jdtls/unpack_jdtls
 
@@ -148,7 +141,6 @@
 !.xmonad/xmonad.hs
 
 !.Xresources
-!.fdignore
 !.gitignore
 !.haskeline
 !.inputrc

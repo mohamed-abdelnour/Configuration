@@ -10,7 +10,7 @@
   :commands lsp
   :config (define-key lsp-mode-map (kbd "C-c l") lsp-command-map)
   :custom
-  (lsp--show-message nil)
+  (lsp-completion-provider :none)
   (lsp-enable-folding nil)
   (lsp-enable-text-document-color nil)
   (lsp-headerline-breadcrumb-enable nil)

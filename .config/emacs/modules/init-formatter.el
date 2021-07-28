@@ -8,11 +8,28 @@
 
 (use-package reformatter)
 
+;; Black
+(reformatter-define black
+  :program "black"
+  :args '("-q" "-")
+  :lighter " Black")
+
 ;; ClangFormat
 (reformatter-define clang-format
   :program "clang-format"
   :args `("--assume-filename" ,buffer-file-name)
   :lighter " ClangFormat")
+
+;; Prettier
+(reformatter-define prettier
+  :program "prettier"
+  :args `("--stdin-filepath" ,buffer-file-name)
+  :lighter " Prettier")
+
+;; Rustfmt
+(reformatter-define rustfmt
+  :program "rustfmt"
+  :lighter " Rustfmt")
 
 ;; brittany
 (reformatter-define brittany
@@ -23,17 +40,6 @@
 (reformatter-define nixpkgs-fmt
   :program "nixpkgs-fmt"
   :lighter " nixpkgs-fmt")
-
-;; Black
-(reformatter-define black
-  :program "black"
-  :args '("-q" "-")
-  :lighter " Black")
-
-;; Rustfmt
-(reformatter-define rustfmt
-  :program "rustfmt"
-  :lighter " Rustfmt")
 
 ;; shfmt
 (reformatter-define shfmt

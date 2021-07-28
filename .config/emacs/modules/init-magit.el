@@ -6,10 +6,10 @@
 
 ;;; Code:
 
-(defun magit-wrapper (prog)
-  "Set `magit-git-executable' to PROG then call `magit-status' interactively."
+(defun magit-wrapper (exe)
+  "Set `magit-git-executable' to EXE then call `magit-status' interactively."
   (interactive)
-  (setq magit-git-executable prog)
+  (setq magit-git-executable exe)
   (call-interactively 'magit-status))
 
 (use-package magit

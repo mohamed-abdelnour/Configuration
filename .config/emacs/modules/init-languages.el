@@ -23,6 +23,11 @@
   :custom (lsp-haskell-formatting-provider "brittany")
   :hook (haskell-mode . lsp))
 
+;; Markdown
+(use-package markdown-mode
+  :config (set-format-key markdown-mode-map #'prettier)
+  :mode "\\.md\\'")
+
 ;; Nix
 (use-package nix-mode
   :config (set-format-key nix-mode-map #'nixpkgs-fmt)

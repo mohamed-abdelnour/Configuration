@@ -7,9 +7,9 @@
 ;;; Code:
 
 (use-package no-littering
-  :custom (auto-save-file-name-transforms
-           `((".*" ,(no-littering-expand-var-file-name "auto-save/") t))
-           custom-file (no-littering-expand-etc-file-name "custom.el")))
+  :init (setq auto-save-file-name-transforms
+              `((".*" ,(no-littering-expand-var-file-name "auto-save/") t))
+              custom-file (no-littering-expand-etc-file-name "custom.el")))
 
 (provide 'init-littering)
 

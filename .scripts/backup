@@ -59,4 +59,3 @@ if [ -d "$destination" ]; then
     esac
     rm "$output"
 fi
-unset user

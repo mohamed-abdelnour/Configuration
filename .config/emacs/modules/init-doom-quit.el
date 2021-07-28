@@ -16,7 +16,6 @@ This forces the use of keyboard input for `yes-or-no-p'."
   :straight (doom-quit
              :host github
              :repo "hlissner/doom-emacs"
-             :depth 1
              :pre-build (("doom_quit_gen"))
              :files ("modules/ui/doom-quit/doom-quit.el")))
 
