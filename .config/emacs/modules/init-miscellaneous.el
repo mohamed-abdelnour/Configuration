@@ -49,6 +49,13 @@
 
   :straight nil)
 
+(use-package server
+  :bind ("s-m" . make-frame)
+  :init
+  (setq server-name (format-time-string "%s" (current-time)))
+  (server-mode)
+  :straight nil)
+
 (provide 'init-miscellaneous)
 
 ;;; init-miscellaneous.el ends here
