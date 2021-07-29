@@ -13,14 +13,17 @@
 ;; C
 (use-package cc-mode
   :config (set-format-key c-mode-map #'clang-format)
+  :defer t
   :straight nil)
 
 ;; Haskell
-(use-package lsp-haskell)
+(use-package lsp-haskell
+  :defer t)
 
 (use-package haskell-mode
   :config (set-format-key haskell-mode-map #'brittany)
   :custom (lsp-haskell-formatting-provider "brittany")
+  :defer t
   :hook (haskell-mode . lsp))
 
 ;; Markdown
@@ -35,30 +38,33 @@
 
 ;; Python
 (use-package lsp-pyright
-  :hook (python-mode . (lambda ()
-                         (require 'lsp-pyright)
-                         (lsp))))
+  :defer t
+  :hook (python-mode . (lambda () (require 'lsp-pyright) (lsp))))
 
 (use-package python
   :config (set-format-key python-mode-map #'black)
   :custom
   (python-indent-guess-indent-offset nil)
   (python-indent-offset 4)
+  :defer t
   :straight nil)
 
 ;; Rust
 (use-package rustic
   :config (set-format-key rustic-mode-map #'rustfmt)
+  :defer t
   :hook (rustic-mode . lsp))
 
 ;; Shell script
 (use-package sh-script
   :config (set-format-key sh-mode-map #'shfmt)
+  :defer t
   :straight nil)
 
 ;; YAML
 (use-package yaml-mode
-  :config (set-format-key yaml-mode-map #'prettier))
+  :config (set-format-key yaml-mode-map #'prettier)
+  :defer t)
 
 (provide 'init-languages)
 

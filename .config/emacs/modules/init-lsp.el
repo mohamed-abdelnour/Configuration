@@ -22,7 +22,8 @@
 (use-package lsp-ui
   :custom
   (lsp-ui-doc-enable nil)
-  (lsp-ui-sideline-delay 1.0))
+  (lsp-ui-sideline-delay 1.0)
+  :defer t)
 
 (provide 'init-lsp)
 

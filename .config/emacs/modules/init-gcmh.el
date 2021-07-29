@@ -7,7 +7,7 @@
 ;;; Code:
 
 (use-package gcmh
-  :init (gcmh-mode 1))
+  :init (gcmh-mode))
 
 (provide 'init-gcmh)
 

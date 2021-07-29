@@ -7,12 +7,12 @@
 ;;; Code:
 
 (use-package evil
-  :init
-  (setq evil-undo-system 'undo-redo
-        evil-want-C-i-jump nil
-        evil-want-C-u-scroll t
-        evil-want-keybinding nil)
-  (evil-mode))
+  :custom
+  (evil-undo-system 'undo-redo)
+  (evil-want-C-i-jump nil)
+  (evil-want-C-u-scroll t)
+  (evil-want-keybinding nil)
+  :init (evil-mode))
 
 (use-package evil-collection
   :after evil

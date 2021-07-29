@@ -8,9 +8,8 @@
 
 ;; Relative line numbers.
 (use-package display-line-numbers
-  :init
-  (setq display-line-numbers-type 'relative)
-  (global-display-line-numbers-mode)
+  :custom (display-line-numbers-type 'relative)
+  :init (global-display-line-numbers-mode)
   :straight nil)
 
 (use-package emacs

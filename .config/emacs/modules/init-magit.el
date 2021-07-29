@@ -14,7 +14,8 @@
 
 (use-package magit
   :bind (("C-x g" . (lambda () (interactive) (magit-wrapper "git")))
-         ("C-c g" . (lambda () (interactive) (magit-wrapper "bare")))))
+         ("C-c g" . (lambda () (interactive) (magit-wrapper "bare"))))
+  :defer t)
 
 (provide 'init-magit)
 

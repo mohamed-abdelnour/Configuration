@@ -6,7 +6,8 @@
 
 ;;; Code:
 
-(use-package reformatter)
+(use-package reformatter
+  :defer t)
 
 ;; Black
 (reformatter-define black

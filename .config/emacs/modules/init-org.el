@@ -7,7 +7,10 @@
 ;;; Code:
 
 (use-package org
-  :config (require 'ox-md))
+  :config
+  (require 'org-tempo)
+  (require 'ox-md)
+  :defer t)
 
 (provide 'init-org)
 
