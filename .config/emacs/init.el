@@ -15,9 +15,13 @@
 ;; Garbage Collector Magic Hack.
 (require 'init-gcmh)
 
+;; Miscellaneous functions.
+(require 'init-functions)
+
 ;; Packages.
 (require 'init-completion)
 (require 'init-doom-quit)
+(require 'init-esup)
 (require 'init-evil)
 (require 'init-flycheck)
 (require 'init-formatter)

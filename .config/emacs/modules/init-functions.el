@@ -1,0 +1,15 @@
+;;; init-functions.el --- functions -*- lexical-binding: t; -*-
+
+;;; Commentary:
+;;
+;; Miscellaneous functions.
+
+;;; Code:
+
+(cl-defun append-emacs-dir (&optional (suffix ""))
+  "Return string with SUFFIX appended to Emacs's configuration directory."
+  (format "%s%s" (expand-file-name "~/.config/emacs") suffix))
+
+(provide 'init-functions)
+
+;;; init-functions.el ends here
