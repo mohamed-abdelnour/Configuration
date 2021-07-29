@@ -7,14 +7,8 @@
 ;;; Code:
 
 (use-package doom-modeline
-  :init
-  (doom-modeline-mode)
-  (setq doom-modeline-icon nil))
-
-(use-package doom-themes
-  :custom
-  (doom-themes-enable-bold nil)
-  (doom-themes-enable-italic nil))
+  :custom (doom-modeline-icon nil)
+  :init (doom-modeline-mode))
 
 (use-package hl-todo
   :init (global-hl-todo-mode))

@@ -25,6 +25,9 @@
   (setq frame-title-format '("GNU Emacs at " system-name)
         icon-title-format '("GNU Emacs at " system-name))
 
+  ;; Enable recursive minibuffers.
+  (setq enable-recursive-minibuffers t)
+
   ;; Hide commands which do not work in current mode.
   (setq read-extended-command-predicate
         #'command-completion-default-include-p)
@@ -47,13 +50,6 @@
   (setq scroll-preserve-screen-position t
         scroll-conservatively 101)
 
-  :straight nil)
-
-(use-package server
-  :bind ("s-m" . make-frame)
-  :init
-  (setq server-name (format-time-string "%s" (current-time)))
-  (server-mode)
   :straight nil)
 
 (provide 'init-miscellaneous)
