@@ -56,6 +56,10 @@
   :config (set-format-key sh-mode-map #'shfmt)
   :straight nil)
 
+;; YAML
+(use-package yaml-mode
+  :config (set-format-key yaml-mode-map #'prettier))
+
 (provide 'init-languages)
 
 ;;; init-languages.el ends here
