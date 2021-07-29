@@ -22,12 +22,11 @@
 ;; Add internal border padding.
 (add-to-list 'default-frame-alist '(internal-border-width . 6))
 
-;; Set default font.
-(add-to-list 'default-frame-alist '(font . "Iosevka-11"))
+;; Set the default background colour.
+(add-to-list 'default-frame-alist '(background-color . "#000000"))
 
-;; Set theme.
-(setq modus-themes-syntax '(faint))
-(load-theme 'modus-vivendi t)
+;; Set the default font.
+(add-to-list 'default-frame-alist '(font . "Iosevka-11"))
 
 ;; Disable unwanted UI elements.
 (blink-cursor-mode -1)

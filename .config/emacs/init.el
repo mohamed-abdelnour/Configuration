@@ -24,6 +24,7 @@
 (require 'init-languages)
 (require 'init-lsp)
 (require 'init-magit)
+(require 'init-modus)
 (require 'init-packages)
 (require 'init-projects)
 (require 'init-treesitter)
