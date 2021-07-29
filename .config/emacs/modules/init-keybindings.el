@@ -6,7 +6,6 @@
 
 ;;; Code:
 
-(global-unset-key (kbd "C-x C-b"))
 (global-unset-key (kbd "C-x C-d"))
 
 ;; `consult'

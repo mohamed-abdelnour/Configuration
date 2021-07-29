@@ -7,7 +7,9 @@
 ;;; Code:
 
 (use-package perspective
-  :bind ("C-x C-b" . persp-list-buffers)
+  :bind
+  ("C-x b" . persp-switch-to-buffer*)
+  ("C-x C-b" . persp-ibuffer)
   :init (persp-mode))
 
 (use-package projectile
