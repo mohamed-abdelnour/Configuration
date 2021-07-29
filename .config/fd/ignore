@@ -9,6 +9,7 @@
 /home/*/.icons
 /home/*/.java
 /home/*/.local/lib
+/home/*/.local/pipx
 /home/*/.local/share
 /home/*/.mozilla
 /home/*/.nix-*
