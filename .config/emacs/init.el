@@ -28,9 +28,6 @@
 (require 'init-projects)
 (require 'init-treesitter)
 
-;; Keybindings.
-(require 'init-keybindings)
-
 ;; Miscellaneous options --- loaded last.
 (require 'init-miscellaneous)
 

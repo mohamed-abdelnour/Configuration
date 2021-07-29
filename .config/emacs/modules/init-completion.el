@@ -12,14 +12,24 @@
   (funcall #'vertico-exit))
 
 (use-package consult
-  :bind (:map consult-crm-map
-              ("RET" . +vertico-crm-exit)
-              ("TAB" . vertico-exit))
-  :init (advice-add #'completing-read-multiple
-                    :override #'consult-completing-read-multiple)
+  :bind
+  ("C-c b" . consult-buffer)
+  ("C-c f" . consult-find)
+  ("C-c k" . consult-man)
+  ("C-c l" . consult-line)
+  ("C-c r" . consult-ripgrep)
+  (:map consult-crm-map
+        ("RET" . +vertico-crm-exit)
+        ("TAB" . vertico-exit))
   :custom
-  (consult-async-refresh-delay 0.2)
-  (consult-find-command "fd -Hp -c never -t f ARG OPTS"))
+  (consult-async-input-debounce 0.1)
+  (consult-async-input-throttle 0.2)
+  (consult-async-refresh-delay  0.15)
+  (consult-find-command "fd -HLp -E .git -c never -t f ARG OPTS")
+  (consult-line-numbers-widen t)
+  (consult-narrow-key "<")
+  :init (advice-add #'completing-read-multiple
+                    :override #'consult-completing-read-multiple))
 
 (use-package consult-lsp)
 
@@ -38,18 +48,18 @@
   :straight nil)
 
 (use-package marginalia
+  :bind ("M-A" . marginalia-cycle)
   :init (marginalia-mode))
 
 (use-package orderless
-  :init
-  (setq completion-styles '(orderless)
-        completion-category-defaults nil
-        completion-category-overrides '((file (styles partial-completion)))))
+  :init (setq completion-styles '(orderless)
+              completion-category-defaults nil
+              completion-category-overrides
+              '((file (styles partial-completion)))))
 
 (use-package vertico
-  :init
-  (setq vertico-cycle t)
-  (vertico-mode))
+  :custom (vertico-cycle t)
+  :init (vertico-mode))
 
 (use-package vertico-directory
   :bind (:map vertico-map
