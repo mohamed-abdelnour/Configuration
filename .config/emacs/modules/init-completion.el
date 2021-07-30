@@ -39,6 +39,16 @@
   :custom (dabbrev-case-replace nil)
   :straight nil)
 
+(use-package embark
+  :bind (("C-c a" . embark-act)
+         ("C-h B" . embark-bindings))
+  :custom (prefix-help-command #'embark-prefix-help-command))
+
+(use-package embark-consult
+  :after (embark consult)
+  :demand t
+  :hook (embark-collect-mode . consult-preview-at-point-mode))
+
 (use-package marginalia
   :bind ("M-A" . marginalia-cycle)
   :init (marginalia-mode))
