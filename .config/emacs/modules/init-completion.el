@@ -6,11 +6,6 @@
 
 ;;; Code:
 
-(defun +vertico-crm-exit ()
-  (interactive)
-  (run-at-time 0 nil #'vertico-exit)
-  (funcall #'vertico-exit))
-
 (use-package consult
   :bind
   ("C-c b" . consult-buffer)
@@ -18,9 +13,6 @@
   ("C-c k" . consult-man)
   ("C-c l" . consult-line)
   ("C-c r" . consult-ripgrep)
-  (:map consult-crm-map
-        ("RET" . +vertico-crm-exit)
-        ("TAB" . vertico-exit))
   :custom
   (consult-async-input-debounce 0.1)
   (consult-async-input-throttle 0.2)
