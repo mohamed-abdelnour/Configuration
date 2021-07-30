@@ -9,8 +9,7 @@
 (use-package org
   :config
   (require 'org-tempo)
-  (require 'ox-md)
-  :defer t)
+  (require 'ox-md))
 
 (provide 'init-org)
 

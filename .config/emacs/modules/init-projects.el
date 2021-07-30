@@ -6,6 +6,10 @@
 
 ;;; Code:
 
+(use-package ibuffer
+  :demand t
+  :straight nil)
+
 (use-package perspective
   :bind
   ("C-x b" . persp-switch-to-buffer*)

@@ -16,7 +16,8 @@
 
 (use-package evil-collection
   :after evil
-  :config (evil-collection-init))
+  :config (evil-collection-init)
+  :demand t)
 
 (provide 'init-evil)
 

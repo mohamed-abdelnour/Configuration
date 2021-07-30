@@ -13,6 +13,7 @@ This forces the use of keyboard input for `yes-or-no-p'."
   (yes-or-no-p prompt))
 
 (use-package doom-quit
+  :demand t
   :straight (doom-quit
              :host github
              :repo "hlissner/doom-emacs"

@@ -23,8 +23,7 @@
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
 
-(use-package rainbow-mode
-  :defer t)
+(use-package rainbow-mode)
 
 (use-package which-key
   :init (which-key-mode))

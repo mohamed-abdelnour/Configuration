@@ -23,6 +23,8 @@
       (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
 
+(setq use-package-always-defer t)
+
 (straight-use-package 'use-package)
 
 (provide 'init-bootstrap)

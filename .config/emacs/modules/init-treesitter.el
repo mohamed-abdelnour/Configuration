@@ -10,7 +10,8 @@
   :config (global-tree-sitter-mode)
   :hook (tree-sitter-after-on . tree-sitter-hl-mode))
 
-(use-package tree-sitter-langs)
+(use-package tree-sitter-langs
+  :demand t)
 
 (provide 'init-treesitter)
 

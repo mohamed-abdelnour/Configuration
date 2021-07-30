@@ -16,8 +16,7 @@
     (shell-command create-file)
     (esup esup-init)))
 
-(use-package esup
-  :defer t)
+(use-package esup)
 
 (provide 'init-esup)
 

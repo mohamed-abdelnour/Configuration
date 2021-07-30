@@ -23,8 +23,7 @@
   :init (advice-add #'completing-read-multiple
                     :override #'consult-completing-read-multiple))
 
-(use-package consult-lsp
-  :defer t)
+(use-package consult-lsp)
 
 (use-package corfu
   :custom
