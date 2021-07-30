@@ -7,11 +7,12 @@
 ;;; Code:
 
 (use-package modus-themes
-  :bind ("<f5>" . modus-themes-toggle)
-  :config (modus-themes-load-vivendi)
+  :custom-face (bold ((t :weight normal)))
   :init
-  (setq modus-themes-syntax '(faint))
-  (modus-themes-load-themes))
+  (setq modus-themes-mode-line '(borderless)
+        modus-themes-syntax '(faint))
+  (modus-themes-load-themes)
+  (modus-themes-load-vivendi))
 
 (provide 'init-modus)
 
