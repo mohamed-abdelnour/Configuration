@@ -26,11 +26,13 @@
 (use-package consult-lsp)
 
 (use-package corfu
+  :bind (:map corfu-map
+              ("C-n" . corfu-next)
+              ("C-p" . corfu-previous))
   :custom
   (corfu-commit-predicate nil)
   (corfu-cycle t)
-  (corfu-quit-at-boundary t)
-  (corfu-quit-no-match t)
+  (corfu-quit-no-match nil)
   :init (corfu-global-mode))
 
 (use-package dabbrev
@@ -42,7 +44,9 @@
 (use-package embark
   :bind (("C-c a" . embark-act)
          ("C-h B" . embark-bindings))
-  :custom (prefix-help-command #'embark-prefix-help-command))
+  :custom
+  (embark-indicator 'embark-minimal-indicator)
+  (prefix-help-command #'embark-prefix-help-command))
 
 (use-package embark-consult
   :after (embark consult)
@@ -56,8 +60,7 @@
 (use-package orderless
   :init (setq completion-styles '(orderless)
               completion-category-defaults nil
-              completion-category-overrides
-              '((file (styles partial-completion)))))
+              completion-category-overrides nil))
 
 (use-package vertico
   :custom (vertico-cycle t)

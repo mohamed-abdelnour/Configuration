@@ -12,7 +12,9 @@
   (evil-undo-system 'undo-redo)
   (evil-want-C-i-jump nil)
   (evil-want-keybinding nil)
-  :init (evil-mode))
+  :init
+  (setq evil-disable-insert-state-bindings t)
+  (evil-mode))
 
 (use-package evil-collection
   :after evil
