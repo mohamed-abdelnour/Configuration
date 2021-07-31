@@ -51,6 +51,10 @@
 
   :straight nil)
 
+(use-package mb-depth
+  :init (minibuffer-depth-indicate-mode)
+  :straight nil)
+
 (provide 'init-miscellaneous)
 
 ;;; init-miscellaneous.el ends here
