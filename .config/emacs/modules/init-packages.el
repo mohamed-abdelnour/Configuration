@@ -7,7 +7,9 @@
 ;;; Code:
 
 (use-package doom-modeline
-  :custom (doom-modeline-icon nil)
+  :custom
+  (doom-modeline-height 1)
+  (doom-modeline-icon nil)
   :init (doom-modeline-mode))
 
 (use-package hl-todo
