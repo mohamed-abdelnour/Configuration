@@ -7,10 +7,11 @@
 ;;; Code:
 
 (defun confirm-exit (prompt)
-  "Set `last-nomenu-event' to 0 and pass PROMPT to `yes-or-no-p'.
-This forces the use of keyboard input for `yes-or-no-p'."
-  (setq last-nonmenu-event 0)
-  (yes-or-no-p prompt))
+  "Exit all recursive editing levels (when applicable).
+Pass PROMPT to `keyboard-yes-or-no-p'."
+  (when (>= (minibuffer-depth) 1)
+    (top-level))
+  (keyboard-yes-or-no-p prompt))
 
 (use-package doom-quit
   :demand t
