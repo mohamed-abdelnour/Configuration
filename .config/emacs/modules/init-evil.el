@@ -7,7 +7,12 @@
 ;;; Code:
 
 (use-package evil
-  :bind ([remap evil-scroll-page-up] . evil-scroll-up)
+  :bind (([remap evil-scroll-page-up] . evil-scroll-up)
+         :map evil-normal-state-map
+         ("SPC fb" . consult-buffer)
+         ("SPC ff" . consult-find)
+         ("SPC fl" . consult-line)
+         ("SPC fr" . consult-ripgrep))
   :custom
   (evil-undo-system 'undo-redo)
   (evil-want-C-i-jump nil)

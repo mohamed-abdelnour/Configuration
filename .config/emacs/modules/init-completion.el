@@ -7,12 +7,10 @@
 ;;; Code:
 
 (use-package consult
-  :bind
-  ("C-c b" . consult-buffer)
-  ("C-c f" . consult-find)
-  ("C-c k" . consult-man)
-  ("C-c l" . consult-line)
-  ("C-c r" . consult-ripgrep)
+  :bind (("C-c fb" . consult-buffer)
+         ("C-c ff" . consult-find)
+         ("C-c fl" . consult-line)
+         ("C-c fr" . consult-ripgrep))
   :custom
   (consult-async-input-debounce 0.1)
   (consult-async-input-throttle 0.2)
