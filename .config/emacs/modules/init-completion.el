@@ -41,7 +41,8 @@
 
 (use-package embark
   :bind (("C-c a" . embark-act)
-         ("C-h B" . embark-bindings))
+         ("C-h B" . embark-bindings)
+         ([remap kill-buffer] . embark-kill-buffer-and-window))
   :custom
   (embark-indicator 'embark-minimal-indicator)
   (prefix-help-command #'embark-prefix-help-command))
