@@ -109,7 +109,7 @@
 !.local/bin/get_path
 !.local/bin/get_wm
 !.local/bin/google-java-format
-!.local/bin/kill_daemon
+!.local/bin/kill_keychain
 !.local/bin/mkscript.py
 !.local/bin/nix_packages
 !.local/bin/notifier
