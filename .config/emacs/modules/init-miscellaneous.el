@@ -13,7 +13,6 @@
   :straight nil)
 
 (use-package emacs
-  :bind ("s-q" . top-level)
   :init
   ;; Default `fill-column' to 80.
   (setq-default fill-column 80)
