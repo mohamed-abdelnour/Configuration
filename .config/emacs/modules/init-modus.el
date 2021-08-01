@@ -9,8 +9,7 @@
 (use-package modus-themes
   :custom-face (bold ((t :weight normal)))
   :init
-  (setq modus-themes-mode-line '(borderless)
-        modus-themes-syntax '(faint))
+  (setq modus-themes-mode-line '(borderless))
   (modus-themes-load-themes)
   (modus-themes-load-vivendi))
 
