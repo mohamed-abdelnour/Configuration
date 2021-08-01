@@ -1,7 +1,5 @@
 #!/usr/bin/env dash
 
 cd 'modules/ui/doom-quit' || exit
-confirm_exit='(declare-function confirm-exit "ext:init-doom-quit")\n'
-sed -e "/^(defun +doom-quit-fn.*$/i $confirm_exit" \
-    -e 's/(doom-quit-p/(confirm-exit/g' config.el > doom-quit.el
+sed 's/(doom-quit-p/(yes-or-no-p/g' config.el > doom-quit.el
 printf '\n%s\n' "(provide 'doom-quit)" >> doom-quit.el

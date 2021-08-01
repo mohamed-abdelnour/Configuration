@@ -6,13 +6,6 @@
 
 ;;; Code:
 
-(defun confirm-exit (prompt)
-  "Exit all recursive editing levels (when applicable).
-Pass PROMPT to `keyboard-yes-or-no-p'."
-  (when (>= (minibuffer-depth) 1)
-    (top-level))
-  (keyboard-yes-or-no-p prompt))
-
 (use-package doom-quit
   :demand t
   :straight (doom-quit
