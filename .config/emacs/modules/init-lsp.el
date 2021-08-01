@@ -20,6 +20,7 @@
   :hook ((lsp-mode . lsp-enable-which-key-integration)))
 
 (use-package lsp-ui
+  :bind ("C-c k" . lsp-ui-doc-glance)
   :custom
   (lsp-ui-doc-enable nil)
   (lsp-ui-sideline-delay 1.0))
