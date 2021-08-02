@@ -19,7 +19,9 @@
 (use-package lsp-haskell)
 
 (use-package haskell-mode
-  :config (set-format-key haskell-mode-map #'brittany)
+  :config
+  (require 'lsp-haskell)
+  (set-format-key haskell-mode-map #'brittany)
   :custom (lsp-haskell-formatting-provider "brittany")
   :hook (haskell-mode . lsp))
 
@@ -34,14 +36,16 @@
   :mode "\\.nix\\'")
 
 ;; Python
-(use-package lsp-pyright
-  :hook (python-mode . (lambda () (require 'lsp-pyright) (lsp))))
+(use-package lsp-pyright)
 
 (use-package python
-  :config (set-format-key python-mode-map #'black)
+  :config
+  (require 'lsp-pyright)
+  (set-format-key python-mode-map #'black)
   :custom
   (python-indent-guess-indent-offset nil)
   (python-indent-offset 4)
+  :hook (python-mode . lsp)
   :straight nil)
 
 ;; Rust
