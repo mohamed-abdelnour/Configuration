@@ -40,7 +40,7 @@
   :straight nil)
 
 (use-package embark
-  :bind (("C-c a" . embark-act)
+  :bind (("C-;" . embark-act)
          ("C-h B" . embark-bindings)
          ([remap kill-buffer] . embark-kill-buffer-and-window))
   :custom
