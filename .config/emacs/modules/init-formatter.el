@@ -2,7 +2,7 @@
 
 ;;; Commentary:
 ;;
-;; Configuration for `emacs-reformatter`.
+;; Configuration for `emacs-reformatter'.
 
 ;;; Code:
 

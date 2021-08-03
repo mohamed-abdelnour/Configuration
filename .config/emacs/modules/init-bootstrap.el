@@ -1,8 +1,8 @@
-;;; init-bootstrap.el --- bootstrap `straight.el` -*- lexical-binding: t; -*-
+;;; init-bootstrap.el --- bootstrap `straight.el' -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 ;;
-;; Bootstrap `straight.el` and integrate it with `use-package`.
+;; Bootstrap `straight.el' and integrate it with `use-package'.
 
 ;;; Code:
 
