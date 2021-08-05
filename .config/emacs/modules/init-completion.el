@@ -18,6 +18,7 @@
   (consult-find-command "fd -HLp -E .git -c never -t f ARG OPTS")
   (consult-line-numbers-widen t)
   (consult-narrow-key "<")
+  (consult-preview-key (list (kbd "C-S-n") (kbd "C-S-p")))
   :init (advice-add #'completing-read-multiple
                     :override #'consult-completing-read-multiple))
 
@@ -63,7 +64,10 @@
 
 (use-package vertico
   :custom (vertico-cycle t)
-  :init (vertico-mode))
+  :init
+  (vertico-mode)
+  (define-key vertico-map (kbd "C-S-n") 'vertico-next)
+  (define-key vertico-map (kbd "C-S-p") 'vertico-previous))
 
 (use-package vertico-directory
   :bind (:map vertico-map
