@@ -70,8 +70,8 @@
 (use-package vertico-directory
   :bind (:map vertico-map
               ("RET" . vertico-directory-enter)
-              ("DEL" . vertico-directory-delete-char)
-              ("M-DEL" . vertico-directory-delete-word))
+              ("<backspace>" . vertico-directory-delete-char)
+              ("C-<backspace>" . vertico-directory-delete-word))
   :hook (rfn-eshadow-update-overlay . vertico-directory-tidy)
   :load-path "./straight/repos/vertico/extensions"
   :straight nil)
