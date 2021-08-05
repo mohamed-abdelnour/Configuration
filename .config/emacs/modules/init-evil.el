@@ -20,8 +20,7 @@
 (use-package evil-collection
   :after evil
   :config (evil-collection-init)
-  :custom
-  (evil-collection-magit-want-horizontal-movement t)
+  :custom (evil-collection-magit-want-horizontal-movement t)
   :demand t)
 
 (provide 'init-evil)
