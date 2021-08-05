@@ -7,6 +7,8 @@
 
 ;;; Code:
 
+(use-package consult-flycheck)
+
 (use-package flycheck
   :config (add-to-list 'flycheck-shellcheck-supported-shells 'dash)
   :init (setq-default flycheck-disabled-checkers '(c/c++-clang

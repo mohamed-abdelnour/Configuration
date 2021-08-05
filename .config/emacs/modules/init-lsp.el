@@ -12,6 +12,8 @@
   (lsp-modeline-code-actions-mode)
   (lsp-modeline-diagnostics-mode))
 
+(use-package consult-lsp)
+
 (use-package lsp-mode
   :commands lsp
   :config (define-key lsp-mode-map (kbd "C-c l") lsp-command-map)

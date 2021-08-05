@@ -22,8 +22,6 @@
   :init (advice-add #'completing-read-multiple
                     :override #'consult-completing-read-multiple))
 
-(use-package consult-lsp)
-
 (use-package corfu
   :bind (:map corfu-map
               ("C-n" . corfu-next)
