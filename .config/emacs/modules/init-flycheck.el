@@ -15,6 +15,10 @@
                                                    c/c++-cppcheck
                                                    c/c++-gcc)))
 
+(use-package flycheck-posframe
+  :after flycheck
+  :hook (flycheck-mode . flycheck-posframe-mode))
+
 (provide 'init-flycheck)
 
 ;;; init-flycheck.el ends here
