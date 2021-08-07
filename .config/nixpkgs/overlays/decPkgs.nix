@@ -9,14 +9,17 @@ self: super: {
       ghc
       glibcLocales
       hlint
+      librsvg
       luaformatter
       nix-linter
       nix-zsh-completions
       nixpkgs-fmt
       nordic
+      pandoc
       papirus-icon-theme
       patchelf
       pfetch
+      plata-theme
       rnix-lsp
       shellcheck
       stack
