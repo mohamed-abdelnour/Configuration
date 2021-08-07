@@ -12,6 +12,7 @@
          ("C-c fl" . consult-line)
          ("C-c fr" . consult-ripgrep))
   :custom
+  (completion-in-region-function #'consult-completion-in-region)
   (consult-async-input-debounce 0.1)
   (consult-async-input-throttle 0.2)
   (consult-async-refresh-delay  0.15)
