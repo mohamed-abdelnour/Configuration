@@ -44,7 +44,7 @@
          ("C-h B" . embark-bindings)
          ([remap kill-buffer] . embark-kill-buffer-and-window))
   :custom
-  (embark-indicator 'embark-minimal-indicator)
+  (embark-indicators '(embark-minimal-indicator))
   (prefix-help-command #'embark-prefix-help-command))
 
 (use-package embark-consult
