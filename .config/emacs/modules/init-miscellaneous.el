@@ -61,6 +61,9 @@
   :init (minibuffer-depth-indicate-mode)
   :straight nil)
 
+(use-package pp
+  :bind ("C-c C-e" . pp-eval-last-sexp))
+
 (provide 'init-miscellaneous)
 
 ;;; init-miscellaneous.el ends here
