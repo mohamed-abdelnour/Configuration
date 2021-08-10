@@ -16,7 +16,6 @@
   (consult-async-input-debounce 0.1)
   (consult-async-input-throttle 0.2)
   (consult-async-refresh-delay  0.15)
-  (consult-find-command "fd -HLp -E .git -c never -t f ARG OPTS")
   (consult-line-numbers-widen t)
   (consult-narrow-key "<")
   (consult-preview-key (list (kbd "C-S-n") (kbd "C-S-p")))
