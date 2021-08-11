@@ -14,6 +14,7 @@
   :custom
   (lsp-completion-provider :none)
   (lsp-enable-folding nil)
+  (lsp-enable-symbol-highlighting nil)
   (lsp-enable-text-document-color nil)
   (lsp-headerline-breadcrumb-enable nil)
   (lsp-keep-workspace-alive nil)
