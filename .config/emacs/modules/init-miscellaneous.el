@@ -27,9 +27,6 @@
   (setq frame-title-format '("GNU Emacs at " system-name)
         icon-title-format '("GNU Emacs at " system-name))
 
-  ;; Enable completion using the TAB key.
-  (setq tab-always-indent 'complete)
-
   ;; Enable recursive minibuffers.
   (setq enable-recursive-minibuffers t)
 
