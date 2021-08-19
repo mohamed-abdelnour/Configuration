@@ -1,0 +1,2 @@
+alias clear clear t
+alias ll exa -Habgl --color=always --group-directories-first -s Name --time-style=long-iso $*

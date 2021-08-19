@@ -123,6 +123,11 @@
 
 !.local/share/
 
+!.local/share/emacs/
+!.local/share/emacs/etc/
+!.local/share/emacs/etc/eshell/
+!.local/share/emacs/etc/eshell/aliases
+
 !.local/share/jdtls/
 !.local/share/jdtls/unpack_jdtls
 

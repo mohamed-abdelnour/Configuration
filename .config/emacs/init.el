@@ -24,6 +24,7 @@
 ;; Packages.
 (require 'init-completion)
 (require 'init-doom-quit)
+(require 'init-eshell)
 (require 'init-esup)
 (require 'init-evil)
 (require 'init-flycheck)
