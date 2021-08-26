@@ -19,8 +19,10 @@
 
 (use-package eshell
   :custom
+  (eshell-banner-message "")
   (eshell-prompt-function 'eshell-prompt)
   (eshell-prompt-regexp "^[^#$\n]*[#$] ")
+  :hook (eshell-mode . (lambda () (display-line-numbers-mode -1)))
   :straight nil)
 
 (provide 'init-eshell)
