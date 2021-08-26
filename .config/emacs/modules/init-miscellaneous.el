@@ -54,6 +54,10 @@
 
   :straight nil)
 
+(use-package ibuffer
+  :bind ([remap list-buffers] . ibuffer)
+  :straight nil)
+
 (use-package mb-depth
   :init (minibuffer-depth-indicate-mode)
   :straight nil)

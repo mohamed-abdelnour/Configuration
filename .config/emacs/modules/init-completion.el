@@ -10,7 +10,8 @@
   :bind (("C-c fb" . consult-buffer)
          ("C-c ff" . consult-find)
          ("C-c fl" . consult-line)
-         ("C-c fr" . consult-ripgrep))
+         ("C-c fr" . consult-ripgrep)
+         ([remap switch-to-buffer] . consult-buffer))
   :custom
   (completion-in-region-function #'consult-completion-in-region)
   (consult-async-input-debounce 0.1)
