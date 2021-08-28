@@ -6,6 +6,10 @@
 
 ;;; Code:
 
+(use-package auth-source
+  :custom (auth-source-save-behavior nil)
+  :straight nil)
+
 ;; Relative line numbers.
 (use-package display-line-numbers
   :custom (display-line-numbers-type 'relative)
