@@ -41,7 +41,7 @@ xmonad_init() {
 pkill -f 'status.py'
 pkill unclutter
 
-fehbg &
+hsetroot -solid black &
 lxpolkit &
 picom --experimental-backends &
 setxkbmap -layout us,ara -variant ,qwerty_digits grp:shifts_toggle &

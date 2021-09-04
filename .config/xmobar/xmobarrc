@@ -2,8 +2,8 @@ Config {
 
    -- appearance
      font = "xft:Iosevka:style=Regular:size=11:antialias=true:hinting=true:hintstyle=1"
-   , bgColor = "#282C34"
-   , fgColor = "#ABB2BF"
+   , bgColor = "#000000"
+   , fgColor = "#FFFFFF"
    , position = Top
 
    -- layout

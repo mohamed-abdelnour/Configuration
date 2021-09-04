@@ -17,9 +17,18 @@
 [delta]
 	line-numbers = true
 	line-numbers-minus-style = red
-	line-numbers-zero-style = brightblack
 	line-numbers-plus-style = green
+	line-numbers-zero-style = brightblack
 	syntax-theme = base16
+    minus-emph-style              = normal "#852828"
+    minus-empty-line-marker-style = normal "#40160F"
+    minus-non-emph-style          = normal "#40160F"
+    minus-style                   = normal "#40160F"
+    plus-emph-style               = normal "#005A36"
+    plus-empty-line-marker-style  = normal "#0A280A"
+    plus-non-emph-style           = normal "#0A280A"
+    plus-style                    = normal "#0A280A"
+    zero-style                    = syntax
 
 [alias]
 	d = diff

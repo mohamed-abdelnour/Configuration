@@ -1,39 +1,39 @@
 set sandbox none
 set selection-clipboard clipboard
 
-set default-bg                  "#282C34"
-set default-fg                  "#ABB2BF"
+set default-bg                  "#000000"
+set default-fg                  "#FFFFFF"
 
-set statusbar-bg                "#282C34"
-set statusbar-fg                "#ABB2BF"
+set statusbar-bg                "#000000"
+set statusbar-fg                "#FFFFFF"
 
-set inputbar-bg                 "#282C34"
-set inputbar-fg                 "#ABB2BF"
+set inputbar-bg                 "#000000"
+set inputbar-fg                 "#FFFFFF"
 
-set notification-bg             "#282C34"
-set notification-fg             "#ABB2BF"
+set notification-bg             "#000000"
+set notification-fg             "#FFFFFF"
 
-set notification-error-bg       "#282C34"
-set notification-error-fg       "#E06C75"
+set notification-error-bg       "#A4202A"
+set notification-error-fg       "#FFFFFF"
 
-set notification-warning-bg     "#282C34"
-set notification-warning-fg     "#E5C07B"
+set notification-warning-bg     "#000000"
+set notification-warning-fg     "#874900"
 
-set highlight-color             "#E06C75"
-set highlight-active-color      "#56B6C2"
+set highlight-color             "#A4202A"
+set highlight-active-color      "#005F88"
 
 set highlight-transparency      0.30
 
-set completion-bg               "#282C34"
-set completion-fg               "#ABB2BF"
+set completion-bg               "#000000"
+set completion-fg               "#FFFFFF"
 
-set completion-group-bg         "#282C34"
-set completion-group-fg         "#56B6C2"
+set completion-group-bg         "#005F88"
+set completion-group-fg         "#FFFFFF"
 
-set completion-highlight-bg     "#3E4452"
-set completion-highlight-fg     "#ABB2BF"
+set completion-highlight-bg     "#151823"
+set completion-highlight-fg     "#FFFFFF"
 
-set recolor-lightcolor          "#282C34"
-set recolor-darkcolor           "#ABB2BF"
+set recolor-lightcolor          "#000000"
+set recolor-darkcolor           "#FFFFFF"
 
 set recolor-keephue             true

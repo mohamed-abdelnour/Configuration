@@ -10,13 +10,13 @@
     sort = yes
 
 [urgency_normal]
-    background = "#282C34"
-    foreground = "#ABB2BF"
-    frame_color = "#56B6C2"
+    background = "#000000"
+    foreground = "#FFFFFF"
+    frame_color = "#00D3D0"
     timeout = 4
 
 [urgency_critical]
-    background = "#282C34"
-    foreground = "#ABB2BF"
-    frame_color = "#E06C75"
+    background = "#000000"
+    foreground = "#FFFFFF"
+    frame_color = "#FF8059"
     timeout = 0

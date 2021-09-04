@@ -7,6 +7,7 @@
   - [Set-up a configuration repository for the first time](#set-up-a-configuration-repository-for-the-first-time)
   - [Use an existing configuration repository](#use-an-existing-configuration-repository)
 - [Applications](#applications)
+- [Credits](#credits)
 
 ## Quick-start
 
@@ -81,5 +82,10 @@ This may fail if `"$HOME"` includes any files that would be overwritten by
 - [picom](https://github.com/yshui/picom)
 - [tmux](https://github.com/tmux/tmux)
 - [zathura](https://git.pwmt.org/pwmt/zathura)
+
+## Credits
+
+The colours used in this configuration are taken from Protesilaos Stavrou's
+[Modus Vivendi](https://gitlab.com/protesilaos/modus-themes/) for GNU Emacs.
 
 <!-- TODO: Document scripts -->

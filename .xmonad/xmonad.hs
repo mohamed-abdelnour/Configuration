@@ -37,10 +37,10 @@ myWorkspaces :: [String]
 myWorkspaces = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
 
 myNormalBorderColor :: String
-myNormalBorderColor = "#3B4048"
+myNormalBorderColor = "#1E1E1E"
 
 myFocusedBorderColor :: String
-myFocusedBorderColor = "#56B6C2"
+myFocusedBorderColor = "#00D3D0"
 
 -- Key bindings --
 myKeys :: XConfig Layout -> Map (KeyMask, KeySym) (X ())
@@ -127,11 +127,11 @@ myEventHook = F.fullscreenEventHook
 myLogHook :: Handle -> X ()
 myLogHook xmproc = dynamicLogWithPP $ xmobarPP
   { ppOutput          = hPutStrLn xmproc
-  , ppCurrent         = xmobarColor "#56B6C2" "" . wrap "[" "]"
-  , ppHidden          = xmobarColor "#E06C75" "" . wrap "" "*"
-  , ppHiddenNoWindows = xmobarColor "#ABB2BF" ""
+  , ppCurrent         = xmobarColor "#00D3D0" "" . wrap "[" "]"
+  , ppHidden          = xmobarColor "#FF8059" "" . wrap "" "*"
+  , ppHiddenNoWindows = xmobarColor "#FFFFFF" ""
   , ppSep             = " | "
-  , ppTitle           = xmobarColor "#56B6C2" "" . shorten 50
+  , ppTitle           = xmobarColor "#00D3D0" "" . shorten 50
   , ppOrder           = \[w, _, t, x] -> [w, x, t]
   , ppExtras          = [windowProps]
   }

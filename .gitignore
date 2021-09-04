@@ -9,6 +9,10 @@
 !.builds/Dummy/dmenu/
 !.builds/Dummy/dmenu/PKGBUILD
 
+!.builds/modus-vivendi/
+!.builds/modus-vivendi/**
+.builds/modus-vivendi/lua/lush_theme/palette.lua
+
 !.config/
 
 !.config/Iosevka/

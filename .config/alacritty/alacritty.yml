@@ -76,9 +76,65 @@ schemes:
       cyan: "#56B6C2"
       white: "#ABB2BF"
 
+  ModusVivendi: &ModusVivendi
+    primary:
+      background: "#000000"
+      foreground: "#FFFFFF"
+
+    cursor:
+      text: "#000000"
+      cursor: "#FFFFFF"
+
+    search:
+      focused_match:
+        background: "#00D3D0"
+        foreground: "#000000"
+      matches:
+        background: "#FEACD0"
+        foreground: "#000000"
+      bar:
+        background: "#FFFFFF"
+        foreground: "#000000"
+
+    hints:
+      start:
+        background: "#D0BC00"
+        foreground: "#000000"
+      end:
+        background: "#000000"
+        foreground: "#D0BC00"
+
+    selection:
+      text: CellForeground
+      background: "#3C3C3C"
+
+    vi_mode_cursor:
+      text: "#000000"
+      cursor: "#FFFFFF"
+
+    normal:
+      black: "#000000"
+      red: "#FF8059"
+      green: "#44BC44"
+      yellow: "#D0BC00"
+      blue: "#2FAFFF"
+      magenta: "#FEACD0"
+      cyan: "#00D3D0"
+      white: "#FFFFFF"
+
+    bright:
+      black: "#A8A8A8"
+      red: "#FF8059"
+      green: "#44BC44"
+      yellow: "#D0BC00"
+      blue: "#2FAFFF"
+      magenta: "#FEACD0"
+      cyan: "#00D3D0"
+      white: "#FFFFFF"
+
 draw_bold_text_with_bright_colors: false
 
-colors: *OneDark
+colors: *ModusVivendi
 
 key_bindings:
   - { key: 5, mods: Shift, mode: Vi, action: Last }

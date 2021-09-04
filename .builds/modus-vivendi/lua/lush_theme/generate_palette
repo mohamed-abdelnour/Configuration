@@ -1,0 +1,23 @@
+#!/usr/bin/env dash
+
+get_colours() {
+    emacsclient -e '(format "%s" modus-themes-vivendi-colors)'
+}
+
+substitute() {
+    sed -E \
+        -e 's/\)+"?/",\n/g' \
+        -e 's/[" ]\(+//g' \
+        -e 's/-/_/g' \
+        -e 's/\. /= "/g'
+}
+
+assign() {
+    xargs -0 printf 'return {%s}\n'
+}
+
+generate_palette() {
+    get_colours | substitute | sort | assign | stylua -s -
+}
+
+generate_palette > palette.lua
