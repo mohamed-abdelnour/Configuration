@@ -6,6 +6,7 @@ no-cv-ss = true
 
 [buildPlans.iosevka.variants.design]
 y = "straight-turn"
+lower-delta = "flat-top"
 lower-lambda = "straight-turn"
 cyrl-capital-u = "straight-turn"
 two = "straight-neck"
@@ -22,6 +23,14 @@ shape = 600
 menu = 5
 css = "normal"
 
-  [buildPlans.iosevka.slopes]
-  upright = "normal"
-  oblique = "oblique"
+[buildPlans.iosevka.slopes.upright]
+angle = 0
+shape = "upright"
+menu = "upright"
+css = "normal"
+
+[buildPlans.iosevka.slopes.oblique]
+angle = 9.4
+shape = "oblique"
+menu = "oblique"
+css = "oblique"
