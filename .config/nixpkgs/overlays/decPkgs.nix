@@ -24,6 +24,7 @@ self: super: {
       shellcheck
       stack
       starship
+      tmpmail
       ttfautohint
       vanilla-dmz
       # Defaults
