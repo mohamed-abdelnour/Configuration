@@ -2,6 +2,7 @@
 
 rsync -ARXahv \
     /etc/X11/xorg.conf.d/ \
+    /etc/default/grub \
     /etc/environment \
     /etc/gtk-2.0/gtkrc \
     /etc/gtk-3.0/settings.ini \
