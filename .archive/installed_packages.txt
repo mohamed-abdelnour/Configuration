@@ -52,6 +52,7 @@ hunspell
 hunspell-en_gb
 hyperfine
 imagemagick
+intel-ucode
 jdk-openjdk
 keychain
 kvantum-qt5
@@ -99,6 +100,7 @@ python-pipx
 python-pygments
 python-pylint
 python-pynvim
+python-virtualenv
 python2
 qemu
 qt5ct
