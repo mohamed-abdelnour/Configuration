@@ -1,10 +1,7 @@
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+pcall(function()
+    require("impatient").enable_profile()
+end)
 
-require('options')
-require('plugins')
-
-require('lsp')
-require('nvim-compe')
-require('nvim-telescope')
-require('treesitter')
+require("init-mappings")
+require("init-options")
+require("init-plugins")

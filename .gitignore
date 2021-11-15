@@ -67,7 +67,7 @@
 
 !.config/nvim/
 !.config/nvim/**
-.config/nvim/plugin/packer_compiled.*
+.config/nvim/*/packer_compiled.*
 
 !.config/picom/
 !.config/picom/**
