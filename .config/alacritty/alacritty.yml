@@ -14,9 +14,9 @@ font:
   bold:
     style: Regular
   italic:
-    style: Regular
+    style: Oblique
   bold_italic:
-    style: Regular
+    style: Oblique
   size: 11.0
 
 schemes:
