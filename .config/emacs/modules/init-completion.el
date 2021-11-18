@@ -28,6 +28,7 @@
               ("C-n" . corfu-next)
               ("C-p" . corfu-previous))
   :custom
+  (corfu-auto t)
   (corfu-commit-predicate nil)
   (corfu-cycle t)
   (corfu-quit-no-match nil)
