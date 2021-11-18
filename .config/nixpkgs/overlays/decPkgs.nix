@@ -24,6 +24,7 @@ self: super: {
       shellcheck
       stack
       starship
+      stylua
       tmpmail
       ttfautohint
       vanilla-dmz
