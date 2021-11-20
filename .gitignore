@@ -110,6 +110,7 @@
 !.local/bin/
 !.local/bin/askpass
 !.local/bin/bare
+!.local/bin/build_treesitter_parsers
 !.local/bin/console_session
 !.local/bin/doom_quit_gen
 !.local/bin/fehbg

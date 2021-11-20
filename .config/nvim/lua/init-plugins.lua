@@ -74,7 +74,6 @@ return packer.startup({
                 require("plugins/init-treesitter")
             end,
             opt = false,
-            run = ":TSUpdate",
         })
 
         -- Miscellaneous

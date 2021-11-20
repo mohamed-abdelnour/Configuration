@@ -1,0 +1,10 @@
+#!/usr/bin/env nix-shell
+#!nix-shell -i dash -p gcc neovim-nightly
+
+nvim -c "TSUninstall all" -c "qa!"
+nvim -c "TSInstall maintained"
+
+# vim: ft=sh
+# Local Variables:
+# mode: sh
+# End:

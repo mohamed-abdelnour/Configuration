@@ -70,7 +70,6 @@ mpv
 mtools
 mtpfs
 neofetch
-neovim
 networkmanager
 ninja
 nnn
@@ -133,7 +132,6 @@ tlp
 tmux
 torbrowser-launcher
 tree
-tree-sitter
 ttf-croscore
 ttf-fira-code
 ttf-inconsolata

@@ -11,6 +11,7 @@ self: super: {
       hlint
       librsvg
       luaformatter
+      neovim-nightly
       nix-linter
       nix-zsh-completions
       nixpkgs-fmt
