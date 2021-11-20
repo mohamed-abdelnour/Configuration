@@ -60,6 +60,7 @@
 !.config/nixpkgs/
 !.config/nixpkgs/**
 .config/nixpkgs/overlays/emacs.nix
+.config/nixpkgs/overlays/neovim.nix
 .config/nixpkgs/overlays/tmpPkgs.nix
 
 !.config/nnn/
