@@ -121,7 +121,7 @@ local theme = lush(function()
         Float { Number },
 
         -- LSP
-        LspCodeLens { InfoMsg },
+        LspCodeLens { fg = p.fg_alt },
         LspDiagnosticsDefaultError { Error },
         LspDiagnosticsDefaultHint { Hint },
         LspDiagnosticsDefaultInformation { Info },
