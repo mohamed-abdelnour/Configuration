@@ -112,8 +112,8 @@ local theme = lush(function()
         Underlined { gui = styles.underline },
         ------ Extra
         Builtin { fg = p.magenta_alt },
-        Hint { fg = p.cyan },
-        Info { fg = p.purple },
+        Hint { fg = p.magenta },
+        Info { fg = p.cyan },
         Link { gui = styles.underline, fg = p.blue_alt_other },
         Warning { fg = p.yellow },
         ---- Linked
