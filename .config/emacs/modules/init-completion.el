@@ -29,6 +29,7 @@
               ("C-p" . corfu-previous))
   :custom
   (corfu-auto t)
+  (corfu-auto-prefix 1)
   (corfu-commit-predicate nil)
   (corfu-cycle t)
   (corfu-quit-no-match nil)
