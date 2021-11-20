@@ -18,9 +18,6 @@
 ;; Miscellaneous functions.
 (require 'init-functions)
 
-;; Org-mode.
-(require 'init-org)
-
 ;; Packages.
 (require 'init-completion)
 (require 'init-doom-quit)
