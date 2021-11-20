@@ -5,7 +5,7 @@ vim.g.maplocalleader = " "
 local opts = { noremap = true, silent = true }
 
 -- Delete buffer
-vim.api.nvim_set_keymap("n", "<leader>d", ":bd!<cr>", opts)
+vim.api.nvim_set_keymap("n", "<leader>d", ":bd<cr>", opts)
 
 -- Toggles
 -- colorcolumn
