@@ -236,6 +236,13 @@ local theme = lush(function()
         TSVariableBuiltin { Builtin },
         TSWarning { Warning },
 
+        -- health
+        healthSuccess { SuccessMsg },
+        healthWarning { WarningMsg },
+        healthError { ErrorMsg },
+        healthHelp { Info },
+        healthBar {},
+
         -- markdown
         markdownCode { bg = p.bg_alt, fg = p.fg_special_calm },
         markdownCodeBlock { bg = p.bg_dim },
