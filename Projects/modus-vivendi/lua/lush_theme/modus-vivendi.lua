@@ -50,8 +50,8 @@ local theme = lush(function()
         WarningMsg { bg = p.yellow_intense_bg, fg = p.fg_main },
         Whitespace { bg = p.bg_whitespace, fg = p.fg_whitespace },
         ------ Extra
-        HintMsg { bg = p.magenta_intense_bg, fg = p.fg_main },
-        InfoMsg { bg = p.cyan_intense_bg, fg = p.fg_main },
+        HintMsg { bg = p.magenta_subtle_bg, fg = p.fg_dim },
+        InfoMsg { bg = p.cyan_subtle_bg, fg = p.fg_dim },
         SuccessMsg { bg = p.green_intense_bg, fg = p.fg_main },
         ---- Linked
         Cursor { Normal },
