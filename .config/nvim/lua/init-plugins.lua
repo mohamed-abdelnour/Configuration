@@ -27,7 +27,7 @@ return packer.startup({
         use({ "rktjmp/lush.nvim", opt = false })
 
         use({
-            "~/.builds/modus-vivendi/",
+            "~/Projects/modus-vivendi/",
             config = "vim.cmd([[colorscheme modus-vivendi]])",
             opt = false,
         })

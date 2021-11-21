@@ -4,8 +4,10 @@ user='mohamed_abdelnour'
 
 backup() {
     rsync "$@" --delete \
+        --exclude="/home/$user/.Xauthority" \
         --exclude="/home/$user/.archive" \
         --exclude="/home/$user/.bare" \
+        --exclude="/home/$user/.bash_history" \
         --exclude="/home/$user/.builds" \
         --exclude="/home/$user/.cache" \
         --exclude="/home/$user/.config/tmux/plugins" \
@@ -18,10 +20,13 @@ backup() {
         --exclude="/home/$user/.local/lib" \
         --exclude="/home/$user/.local/share" \
         --exclude="/home/$user/.mozilla" \
+        --exclude="/home/$user/.mupdf.history" \
+        --exclude="/home/$user/.nix-channels" \
         --exclude="/home/$user/.nix-defexpr" \
         --exclude="/home/$user/.nix-profile" \
         --exclude="/home/$user/.npm" \
         --exclude="/home/$user/.pylint.d" \
+        --exclude="/home/$user/.python_history" \
         --exclude="/home/$user/.ssh" \
         --exclude="/home/$user/.swt" \
         --exclude="/home/$user/.texlive" \
@@ -31,15 +36,10 @@ backup() {
         --exclude="/home/$user/.tree-sitter" \
         --exclude="/home/$user/.virtualMachines/ISO" \
         --exclude="/home/$user/.virtualMachines/shared" \
-        --exclude="/home/$user/Programming/Miscellaneous/AdventOfCode" \
-        --exclude="/home/$user/Programming/Miscellaneous/HackerRank" \
-        --exclude="/home/$user/Programming/Miscellaneous/Rust" \
-        --exclude="/home/$user/.Xauthority" \
-        --exclude="/home/$user/.bash_history" \
-        --exclude="/home/$user/.mupdf.history" \
-        --exclude="/home/$user/.nix-channels" \
-        --exclude="/home/$user/.python_history" \
         --exclude="/home/$user/.wget-hsts" \
+        --exclude="/home/$user/Programming/Languages/Rust" \
+        --exclude="/home/$user/Programming/Miscellaneous/HackerRank" \
+        --exclude="/home/$user/Projects/AdventOfCode" \
         /etc /home "$destination"
 }
 

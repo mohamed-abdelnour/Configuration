@@ -9,10 +9,6 @@
 !.builds/Dummy/dmenu/
 !.builds/Dummy/dmenu/PKGBUILD
 
-!.builds/modus-vivendi/
-!.builds/modus-vivendi/**
-.builds/modus-vivendi/lua/lush_theme/palette.lua
-
 !.config/
 
 !.config/Iosevka/
@@ -153,6 +149,11 @@
 !.xmonad/Makefile
 !.xmonad/hie.yaml
 !.xmonad/xmonad.hs
+
+!Projects/
+!Projects/modus-vivendi/
+!Projects/modus-vivendi/**
+Projects/modus-vivendi/lua/lush_theme/palette.lua
 
 !.Xresources
 !.gitignore
