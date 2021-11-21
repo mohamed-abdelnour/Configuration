@@ -52,6 +52,7 @@ local theme = lush(function()
         ------ Extra
         HintMsg { bg = p.magenta_intense_bg, fg = p.fg_main },
         InfoMsg { bg = p.cyan_intense_bg, fg = p.fg_main },
+        SuccessMsg { bg = p.green_intense_bg, fg = p.fg_main },
         ---- Linked
         Cursor { Normal },
         CursorColumn { ColorColumn },
@@ -259,7 +260,7 @@ local theme = lush(function()
         -- Miscellaneous
         NvimInternalError { ErrorMsg },
         RedrawDebugClear { WarningMsg },
-        RedrawDebugComposed { Search },
+        RedrawDebugComposed { SuccessMsg },
         RedrawDebugNormal { bg = p.fg_alt, fg = p.bg_main },
         RedrawDebugRecompose { ErrorMsg },
     }
