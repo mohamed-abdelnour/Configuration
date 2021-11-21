@@ -2,12 +2,15 @@
     follow = mouse
     font = Iosevka Regular 13
     frame_width = 2
-    geometry = "0x0-20+44"
+    height = 400
     horizontal_padding = 8
     indicate_hidden = yes
+    offset = 20x44
+    origin = top-right
     padding = 8
     separator_color = frame
     sort = yes
+    width = (0, 400)
 
 [urgency_normal]
     background = "#000000"
