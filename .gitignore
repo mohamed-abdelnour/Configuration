@@ -159,6 +159,6 @@ Projects/modus-vivendi/lua/lush_theme/palette.lua
 !.gitignore
 !.haskeline
 !.inputrc
-!.zshenv
+!.pam_environment
 !LICENSE
 !README.md
