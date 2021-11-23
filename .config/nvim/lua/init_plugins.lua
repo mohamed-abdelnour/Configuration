@@ -27,8 +27,8 @@ return packer.startup({
         use({ "rktjmp/lush.nvim", opt = false })
 
         use({
-            "~/Projects/modus-vivendi/",
-            config = "vim.cmd([[colorscheme modus-vivendi]])",
+            "~/Projects/modus_vivendi/",
+            config = "vim.cmd([[colorscheme modus_vivendi]])",
             opt = false,
         })
 
@@ -36,7 +36,7 @@ return packer.startup({
         use({
             "ms-jpq/coq_nvim",
             config = function()
-                require("plugins/init-coq")
+                require("plugins/init_coq")
             end,
             opt = false,
             requires = { { "ms-jpq/coq.artifacts", opt = false } },
@@ -46,7 +46,7 @@ return packer.startup({
         use({
             "neovim/nvim-lspconfig",
             config = function()
-                require("plugins/init-lsp")
+                require("plugins/init_lsp")
             end,
             ft = { "haskell", "python", "rust" },
         })
@@ -55,7 +55,7 @@ return packer.startup({
         use({
             "nvim-telescope/telescope.nvim",
             config = function()
-                require("plugins/init-telescope")
+                require("plugins/init_telescope")
             end,
             cmd = "Telescope",
             module = "telescope.builtin",
@@ -71,7 +71,7 @@ return packer.startup({
         use({
             "nvim-treesitter/nvim-treesitter",
             config = function()
-                require("plugins/init-treesitter")
+                require("plugins/init_treesitter")
             end,
             opt = false,
         })
@@ -80,7 +80,7 @@ return packer.startup({
         use({
             "nathom/filetype.nvim",
             config = function()
-                require("plugins/init-filetype")
+                require("plugins/init_filetype")
             end,
             opt = false,
         })
@@ -90,7 +90,7 @@ return packer.startup({
         use({
             "iamcco/markdown-preview.nvim",
             config = function()
-                require("plugins/init-markdown-preview")
+                require("plugins/init_markdown_preview")
             end,
             ft = "markdown",
             run = "cd app && yarn install",
@@ -100,7 +100,7 @@ return packer.startup({
             "sbdchd/neoformat",
             cmd = "Neoformat",
             config = function()
-                require("plugins/init-neoformat")
+                require("plugins/init_neoformat")
             end,
         })
 
@@ -119,7 +119,7 @@ return packer.startup({
         use({
             "lervag/vimtex",
             config = function()
-                require("plugins/init-vimtex")
+                require("plugins/init_vimtex")
             end,
             ft = "tex",
         })

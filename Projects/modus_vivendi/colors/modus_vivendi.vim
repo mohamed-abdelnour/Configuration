@@ -1,6 +1,6 @@
 " You probably always want to set this in your vim file
 set background=dark
-let g:colors_name="modus-vivendi"
+let g:colors_name="modus_vivendi"
 
 " By setting our module to nil, we clear lua's cache,
 " which means the require ahead will *always* occur.
@@ -14,7 +14,7 @@ let g:colors_name="modus-vivendi"
 "
 " The performance impact of this call can be measured in the hundreds of
 " *nanoseconds* and such could be considered "production safe".
-lua package.loaded['lush_theme.modus-vivendi'] = nil
+lua package.loaded['lush_theme.modus_vivendi'] = nil
 
 " include our theme file and pass it to lush to apply
-lua require('lush')(require('lush_theme.modus-vivendi'))
+lua require('lush')(require('lush_theme.modus_vivendi'))
