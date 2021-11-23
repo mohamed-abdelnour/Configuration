@@ -106,6 +106,14 @@ return packer.startup({
 
         use({ "neovimhaskell/haskell-vim", ft = "haskell" })
 
+        use({
+            "simrat39/rust-tools.nvim",
+            config = function()
+                require("plugins/init_rust_tools")
+            end,
+            ft = "rust",
+        })
+
         use({ "dstein64/vim-startuptime", cmd = "StartupTime" })
 
         use({
