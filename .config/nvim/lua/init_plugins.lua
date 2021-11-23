@@ -104,6 +104,14 @@ return packer.startup({
             end,
         })
 
+        use({
+            "terrortylor/nvim-comment",
+            config = function()
+                require("nvim_comment").setup()
+            end,
+            opt = false,
+        })
+
         use({ "neovimhaskell/haskell-vim", ft = "haskell" })
 
         use({
