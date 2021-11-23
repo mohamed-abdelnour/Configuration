@@ -1,5 +1,5 @@
 # Customised
-column_width = 80
+column_width = 100
 indent_type = "Spaces"
 no_call_parentheses = true
 
