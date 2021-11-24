@@ -1,5 +1,3 @@
-local neoformat = {}
-
 -- StyLua
 vim.g.neoformat_enabled_lua = { "stylua" }
 
@@ -13,5 +11,3 @@ vim.g.neoformat_tex_latexindent = {
 
 -- shfmt
 vim.g.shfmt_opt = "-ci -sr"
-
-return neoformat

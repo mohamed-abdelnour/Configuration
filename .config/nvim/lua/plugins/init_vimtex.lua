@@ -1,5 +1,3 @@
-local vimtex = {}
-
 local opts = { noremap = true, silent = true }
 
 vim.api.nvim_set_keymap("n", "<leader>lc", ":VimtexClean<cr>", opts)
@@ -25,5 +23,3 @@ vim.g.vimtex_compiler_latexmk = {
 }
 vim.g.vimtex_mappings_enabled = 0
 vim.g.vimtex_matchparen_enabled = 0
-
-return vimtex

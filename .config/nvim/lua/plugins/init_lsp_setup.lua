@@ -1,5 +1,3 @@
-local init_lsp_setup = {}
-
 local coq = require("coq")
 
 local on_attach = function(client, bufnr)
