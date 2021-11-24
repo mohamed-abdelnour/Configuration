@@ -39,7 +39,9 @@ return packer.startup({
                 require("plugins/init_coq")
             end,
             opt = false,
-            requires = { { "ms-jpq/coq.artifacts", opt = false } },
+            requires = {
+                { "ms-jpq/coq.artifacts", opt = false },
+            },
         })
 
         -- LSP
