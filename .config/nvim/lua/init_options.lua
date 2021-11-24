@@ -16,7 +16,8 @@ opt.termguicolors = true
 opt.spelllang = "en_gb"
 
 --  6 multiple windows
-opt.statusline = "[%{mode()}] %<%F %h%m%r %= %l/%L:%c [%p%%]"
+local statusline = require("init_functions").statusline
+opt.statusline = [[%!luaeval("statusline()")]]
 opt.hidden = true
 opt.splitright = true
 

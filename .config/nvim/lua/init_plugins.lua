@@ -51,6 +51,8 @@ return packer.startup({
                 require("plugins/init_lsp")
             end,
             ft = { "haskell", "python", "rust" },
+            requires = { "nvim-lua/lsp-status.nvim" },
+            wants = { "lsp-status.nvim" },
         })
 
         -- Telescope

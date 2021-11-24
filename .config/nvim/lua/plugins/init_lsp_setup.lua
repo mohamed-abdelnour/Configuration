@@ -1,4 +1,5 @@
 local coq = require("coq")
+local lsp_status = require("plugins/init_lsp_status")
 
 local on_attach = function(client, bufnr)
     local function buf_set_keymap(...)
@@ -69,9 +70,12 @@ local on_attach = function(client, bufnr)
             opts
         )
     end
+
+    lsp_status.on_attach(client)
 end
 
 local init_lsp_setup = coq.lsp_ensure_capabilities({
+    capabilities = lsp_status.capabilities,
     on_attach = on_attach,
     flags = { debounce_text_changes = 500 },
 })
