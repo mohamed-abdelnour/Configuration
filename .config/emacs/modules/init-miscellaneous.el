@@ -17,6 +17,7 @@
   :straight nil)
 
 (use-package emacs
+  :bind ("C-S-u" . universal-argument)
   :init
   ;; Default `fill-column' to 80.
   (setq-default fill-column 80)

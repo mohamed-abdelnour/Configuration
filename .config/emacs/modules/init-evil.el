@@ -7,10 +7,10 @@
 ;;; Code:
 
 (use-package evil
-  :bind ([remap evil-scroll-page-up] . evil-scroll-up)
   :custom
   (evil-undo-system 'undo-redo)
   (evil-want-C-i-jump nil)
+  (evil-want-C-u-scroll t)
   (evil-want-keybinding nil)
   (evil-want-minibuffer t)
   :init
