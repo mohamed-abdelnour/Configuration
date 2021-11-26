@@ -57,7 +57,6 @@ This may fail if `"$HOME"` includes any files that would be overwritten by
 
 - [Alacritty](https://github.com/alacritty/alacritty)
 - [Dunst](https://github.com/dunst-project/dunst)
-- [Eclipse JDT Language Server](https://github.com/eclipse/eclipse.jdt.ls)
 - [Fontconfig](https://www.freedesktop.org/wiki/Software/fontconfig/)
 - [GHC](https://gitlab.haskell.org/ghc/ghc)
 - [GNU Emacs](https://www.gnu.org/software/emacs/)

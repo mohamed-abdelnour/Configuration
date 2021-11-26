@@ -44,9 +44,6 @@
 !.config/htop/
 !.config/htop/**
 
-!.config/jdtls/
-!.config/jdtls/**
-
 !.config/keychain/
 !.config/keychain/**
 
