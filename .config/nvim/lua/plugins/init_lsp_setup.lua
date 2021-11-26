@@ -1,30 +1,31 @@
 local coq = require("coq")
 local lsp_status = require("plugins/init_lsp_status")
 
-local on_attach = function(client, bufnr)
-    local function buf_set_keymap(...)
-        vim.api.nvim_buf_set_keymap(bufnr, ...)
+local on_attach = function(client, buffer)
+    local function buf_set_keymap(lhs, rhs)
+        local opts = { noremap = true, silent = true }
+        vim.api.nvim_buf_set_keymap(buffer, "n", lhs, rhs, opts)
     end
 
-    local opts = { noremap = true, silent = true }
-    buf_set_keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", opts)
-    buf_set_keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>", opts)
-    buf_set_keymap("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<cr>", opts)
-    buf_set_keymap("n", "<space>D", "<cmd>lua vim.lsp.buf.type_definition()<cr>", opts)
-    buf_set_keymap("n", "<space>rn", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
-    buf_set_keymap("n", "<space>ca", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
-    buf_set_keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<cr>", opts)
-    buf_set_keymap("n", "<space>e", "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<cr>", opts)
-    buf_set_keymap("n", "[d", "<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>", opts)
-    buf_set_keymap("n", "]d", "<cmd>lua vim.lsp.diagnostic.goto_next()<cr>", opts)
-    buf_set_keymap("n", "<space>q", "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", opts)
-
-    if client.resolved_capabilities.document_formatting then
-        buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<cr>", opts)
-    end
-    if client.resolved_capabilities.document_range_formatting then
-        buf_set_keymap("v", "<space>f", "<cmd>lua vim.lsp.buf.range_formatting()<cr>", opts)
-    end
+    buf_set_keymap("<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<cr>")
+    buf_set_keymap("<leader>D", "<cmd>lua vim.lsp.buf.type_definition()<cr>")
+    buf_set_keymap("<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<cr>")
+    buf_set_keymap("<leader>e", "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<cr>")
+    buf_set_keymap("<leader>q", "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>")
+    buf_set_keymap("<leader>rn", "<cmd>lua vim.lsp.buf.rename()<cr>")
+    buf_set_keymap("<leader>wa", "<cmd>lua vim.lsp.buf.add_workspace_folder()<cr>")
+    buf_set_keymap("<leader>wr", "<cmd>lua vim.lsp.buf.remove_workspace_folder()<cr>")
+    buf_set_keymap("K", "<cmd>lua vim.lsp.buf.hover()<cr>")
+    buf_set_keymap("[d", "<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>")
+    buf_set_keymap("]d", "<cmd>lua vim.lsp.diagnostic.goto_next()<cr>")
+    buf_set_keymap("gD", "<cmd>lua vim.lsp.buf.declaration()<cr>")
+    buf_set_keymap("gd", "<cmd>lua vim.lsp.buf.definition()<cr>")
+    buf_set_keymap("gi", "<cmd>lua vim.lsp.buf.implementation()<cr>")
+    buf_set_keymap("gr", "<cmd>lua vim.lsp.buf.references()<cr>")
+    buf_set_keymap(
+        "<leader>wl",
+        "<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<cr>"
+    )
 
     lsp_status.on_attach(client)
 end
