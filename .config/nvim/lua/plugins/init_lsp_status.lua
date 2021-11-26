@@ -11,7 +11,7 @@ lsp_status.config({
 })
 
 function lsp_section()
-    return lsp_status.status():gsub("^%s*(.-)%s*$", "[%1]")
+    return lsp_status.status():gsub("^%s*(..-)%s*$", "[%1]")
 end
 
 local statusline = require("init_functions").statusline
