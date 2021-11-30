@@ -6,8 +6,10 @@ rsync -ARXahv \
     /etc/environment \
     /etc/gtk-2.0/gtkrc \
     /etc/gtk-3.0/settings.ini \
-    /etc/systemd/system/getty@tty1.service.d/override.conf \
-    /etc/udev/rules.d/99-battery.rules \
+    /etc/sysctl.d/ \
+    /etc/systemd/logind.conf \
+    /etc/systemd/system/getty@tty1.service.d/ \
+    /etc/udev/rules.d/ \
     .
 
 pacman -Qeq > installed_packages.txt
