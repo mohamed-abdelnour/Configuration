@@ -107,6 +107,7 @@
 !.local/bin/build_treesitter_parsers
 !.local/bin/console_session
 !.local/bin/doom_quit_gen
+!.local/bin/drop_caches
 !.local/bin/fehbg
 !.local/bin/get_path
 !.local/bin/get_wm
