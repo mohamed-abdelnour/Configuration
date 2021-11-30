@@ -81,6 +81,14 @@ return packer.startup({
 
         -- Miscellaneous
         use({
+            "numToStr/Comment.nvim",
+            config = function()
+                require("Comment").setup()
+            end,
+            opt = false,
+        })
+
+        use({
             "nathom/filetype.nvim",
             config = function()
                 require("plugins/init_filetype")
@@ -105,14 +113,6 @@ return packer.startup({
             config = function()
                 require("plugins/init_neoformat")
             end,
-        })
-
-        use({
-            "terrortylor/nvim-comment",
-            config = function()
-                require("nvim_comment").setup()
-            end,
-            opt = false,
         })
 
         use({ "neovimhaskell/haskell-vim", ft = "haskell" })
