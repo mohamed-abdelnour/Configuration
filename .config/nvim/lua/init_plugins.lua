@@ -70,7 +70,6 @@ return packer.startup({
         })
 
         -- Tree-sitter
-        use({ "p00f/nvim-ts-rainbow", opt = false })
         use({
             "nvim-treesitter/nvim-treesitter",
             config = function()
@@ -78,6 +77,7 @@ return packer.startup({
             end,
             opt = false,
         })
+        use({ "p00f/nvim-ts-rainbow", after = "nvim-treesitter", opt = false })
 
         -- Miscellaneous
         use({
