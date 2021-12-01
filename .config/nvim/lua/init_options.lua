@@ -5,7 +5,7 @@ opt.ignorecase = true
 opt.smartcase = true
 
 --  4 displaying text
-opt.showbreak = "--> "
+opt.showbreak = "↪ "
 opt.cmdheight = 2
 opt.listchars = { tab = "<->", trail = "-", nbsp = "+" }
 opt.relativenumber = true
