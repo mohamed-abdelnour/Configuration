@@ -76,6 +76,7 @@ return packer.startup({
                 require("plugins/init_treesitter")
             end,
             opt = false,
+            run = ":TSUpdate",
         })
         use({ "p00f/nvim-ts-rainbow", after = "nvim-treesitter", opt = false })
 

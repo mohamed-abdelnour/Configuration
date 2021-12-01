@@ -70,6 +70,7 @@ mpv
 mtools
 mtpfs
 neofetch
+neovim
 networkmanager
 ninja
 nnn
