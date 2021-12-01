@@ -7,6 +7,12 @@ local opts = { noremap = true, silent = true }
 -- Delete buffer
 vim.api.nvim_set_keymap("n", "<leader>d", ":bd<cr>", opts)
 
+-- Move down/up
+vim.api.nvim_set_keymap("n", "<A-j>", ":move .+1<cr>", opts)
+vim.api.nvim_set_keymap("n", "<A-k>", ":move .-2<cr>", opts)
+vim.api.nvim_set_keymap("v", "<A-j>", ":move '>+1<cr>gv", opts)
+vim.api.nvim_set_keymap("v", "<A-k>", ":move '<-2<cr>gv", opts)
+
 -- Toggles
 -- colorcolumn
 vim.api.nvim_set_keymap(
