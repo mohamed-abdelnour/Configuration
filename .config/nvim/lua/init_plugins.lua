@@ -118,6 +118,13 @@ return packer.startup({
             end,
         })
 
+        use({
+            "bfredl/nvim-luadev",
+            cmd = "Luadev",
+            config = function()
+                require("plugins/init_luadev")
+            end,
+        })
 
         use({
             "simrat39/rust-tools.nvim",
