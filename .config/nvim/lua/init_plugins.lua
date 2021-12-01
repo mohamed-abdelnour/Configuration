@@ -97,6 +97,8 @@ return packer.startup({
             opt = false,
         })
 
+        use({ "neovimhaskell/haskell-vim", ft = "haskell" })
+
         use({ "lewis6991/impatient.nvim", opt = false })
 
         use({
@@ -116,7 +118,6 @@ return packer.startup({
             end,
         })
 
-        use({ "neovimhaskell/haskell-vim", ft = "haskell" })
 
         use({
             "simrat39/rust-tools.nvim",
