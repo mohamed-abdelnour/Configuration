@@ -18,7 +18,6 @@ opt.spelllang = "en_gb"
 --  6 multiple windows
 local statusline = require("init_functions").statusline
 opt.statusline = [[%!luaeval("statusline()")]]
-opt.hidden = true
 opt.splitright = true
 
 --  9 using the mouse
@@ -34,7 +33,6 @@ opt.clipboard = "unnamedplus"
 
 -- 13 editing text
 opt.undofile = true
-opt.completeopt = "menuone,noselect"
 
 -- 14 tabs and indenting
 opt.tabstop = 4
