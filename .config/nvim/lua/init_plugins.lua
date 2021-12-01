@@ -139,7 +139,7 @@ return packer.startup({
         use({
             "folke/which-key.nvim",
             config = function()
-                require("which-key").setup()
+                require("plugins/init_which_key")
             end,
             opt = false,
         })
