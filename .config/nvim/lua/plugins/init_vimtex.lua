@@ -1,8 +1,9 @@
+local set_keymap = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 
-vim.api.nvim_set_keymap("n", "<leader>lc", ":VimtexClean<cr>", opts)
-vim.api.nvim_set_keymap("n", "<leader>lC", ":VimtexClean!<cr>", opts)
-vim.api.nvim_set_keymap("n", "<leader>ll", ":VimtexCompileSS<cr>", opts)
+set_keymap("n", "<leader>lc", ":VimtexClean<cr>", opts)
+set_keymap("n", "<leader>lC", ":VimtexClean!<cr>", opts)
+set_keymap("n", "<leader>ll", ":VimtexCompileSS<cr>", opts)
 
 vim.g.tex_flavor = "latex"
 vim.g.tex_indent_brace = 0
