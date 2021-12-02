@@ -1,7 +1,7 @@
 [Default Applications]
 application/pdf=org.gnome.Evince.desktop
 
-image/svg+xml=feh.desktop
+image/svg+xml=firefox.desktop
 
 image/bmp=sxiv.desktop
 image/gif=sxiv.desktop
