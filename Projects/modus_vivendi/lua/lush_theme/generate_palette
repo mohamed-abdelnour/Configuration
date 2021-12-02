@@ -20,4 +20,20 @@ generate_palette() {
     get_colours | substitute | sort | assign | stylua -s -
 }
 
-generate_palette >palette.lua
+backup_old_palette() {
+    [ -e 'palette.lua' ] && mv 'palette.lua' 'palette.lua.bk'
+}
+
+diff_new_palette() {
+    [ -e 'palette.lua.bk' ] &&
+        diff -u --color=always 'palette.lua' 'palette.lua.bk' &&
+        rm 'palette.lua.bk'
+}
+
+main() {
+    backup_old_palette
+    generate_palette >'palette.lua'
+    diff_new_palette
+}
+
+main
