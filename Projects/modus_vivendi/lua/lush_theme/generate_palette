@@ -20,4 +20,4 @@ generate_palette() {
     get_colours | substitute | sort | assign | stylua -s -
 }
 
-generate_palette > palette.lua
+generate_palette >palette.lua

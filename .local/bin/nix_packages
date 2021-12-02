@@ -7,10 +7,10 @@ print_package_list() {
             sort
 }
 
-system="$(nix-store -qR /run/current-system/sw)" 2> /dev/null
-user="$(nix-store -qR ~/.nix-profile)" 2> /dev/null
-user_nixos="$(nix-store -qR /etc/profiles/per-user/"$USER")" 2> /dev/null
-default="$(nix-store -qR /nix/var/nix/profiles/default)" 2> /dev/null
+system="$(nix-store -qR /run/current-system/sw)" 2>/dev/null
+user="$(nix-store -qR ~/.nix-profile)" 2>/dev/null
+user_nixos="$(nix-store -qR /etc/profiles/per-user/"$USER")" 2>/dev/null
+default="$(nix-store -qR /nix/var/nix/profiles/default)" 2>/dev/null
 print_package_list "$system"
 print_package_list "$user"
 print_package_list "$user_nixos"

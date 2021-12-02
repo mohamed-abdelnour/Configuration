@@ -47,7 +47,7 @@ destination="/run/media/$user/Backup/"
 output="/home/$user/.cache/backup.txt"
 if [ -d "$destination" ]; then
     flags='-AXahnv'
-    backup "$flags" > "$output"
+    backup "$flags" >"$output"
     bat "$output"
     printf "Write? "
     read -r choice

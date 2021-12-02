@@ -12,6 +12,6 @@ file_path="$HOME/.virtualMachines/shared/virtualBattery.txt"
 
 while true; do
     get_battery
-    echo "$battery" > "$file_path"
+    echo "$battery" >"$file_path"
     sleep 60
 done

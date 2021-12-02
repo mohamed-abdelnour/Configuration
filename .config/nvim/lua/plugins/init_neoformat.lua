@@ -10,4 +10,4 @@ vim.g.neoformat_tex_latexindent = {
 }
 
 -- shfmt
-vim.g.shfmt_opt = "-ci -sr"
+vim.g.shfmt_opt = "-ci"

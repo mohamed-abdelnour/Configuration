@@ -14,7 +14,7 @@ mirrorlist_reflector() {
 }
 
 output='/etc/pacman.d/mirrorlist'
-mirrorlist_reflector > "$output"
-# mirrorlist_generator > "$output"
+mirrorlist_reflector >"$output"
+# mirrorlist_generator >"$output"
 bat "$output"
 exa -Habgl --time-style=long-iso "$output"

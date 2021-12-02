@@ -16,4 +16,4 @@ fi
 
 url="https://search.nixos.org/$search_path?channel=unstable&query=$query"
 
-firefox "$url" 2> /dev/null &
+firefox "$url" 2>/dev/null &

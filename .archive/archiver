@@ -12,4 +12,4 @@ rsync -ARXahv \
     /etc/udev/rules.d/ \
     .
 
-pacman -Qeq > installed_packages.txt
+pacman -Qeq >installed_packages.txt

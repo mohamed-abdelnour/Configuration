@@ -12,8 +12,8 @@ sessions="$(sed /"$last_session"/d sessions.txt)"
 this_session="$(choose_session)"
 if [ -n "$this_session" ]; then
     sed "s/INIT/${this_session}_init/g" "skeletonrc" \
-        > "$HOME/.xinitrc"
-    printf '%s\n' "$this_session" > "last-session.txt"
+        >"$HOME/.xinitrc"
+    printf '%s\n' "$this_session" >"last-session.txt"
 fi
 clear
 exit 0

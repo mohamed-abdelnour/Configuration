@@ -12,5 +12,5 @@ if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" -eq 1 ]; then
     . "$HOME/.nix-profile/etc/profile.d/nix.sh"
 
     console_session
-    exec startx > /dev/null 2>&1
+    exec startx >/dev/null 2>&1
 fi
