@@ -12,3 +12,7 @@ require("nvim-treesitter.configs").setup({
     },
     rainbow = { enable = true },
 })
+
+function treesitter_section()
+    return require("nvim-treesitter").statusline()
+end
