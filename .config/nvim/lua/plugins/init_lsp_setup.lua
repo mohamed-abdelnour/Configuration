@@ -33,7 +33,7 @@ end
 local init_lsp_setup = coq.lsp_ensure_capabilities({
     capabilities = lsp_status.capabilities,
     on_attach = on_attach,
-    flags = { debounce_text_changes = 500 },
+    flags = { debounce_text_changes = 150 },
 })
 
 return init_lsp_setup
