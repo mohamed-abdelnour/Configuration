@@ -85,6 +85,13 @@ return packer.startup({
             opt = false,
         })
 
+        use({
+            "lewis6991/spellsitter.nvim",
+            config = function()
+                require("spellsitter").setup()
+            end,
+        })
+
         -- Miscellaneous
         use({
             "numToStr/Comment.nvim",
