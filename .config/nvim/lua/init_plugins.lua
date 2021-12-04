@@ -78,7 +78,12 @@ return packer.startup({
             opt = false,
             run = ":TSUpdate",
         })
-        use({ "p00f/nvim-ts-rainbow", after = "nvim-treesitter", opt = false })
+
+        use({
+            "p00f/nvim-ts-rainbow",
+            after = "nvim-treesitter",
+            opt = false,
+        })
 
         -- Miscellaneous
         use({
