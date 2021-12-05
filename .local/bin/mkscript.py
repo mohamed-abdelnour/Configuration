@@ -8,7 +8,9 @@ from pathlib import Path
 def get_args() -> Namespace:
     parser = ArgumentParser()
     parser.add_argument("file", help="file name")
-    parser.add_argument("-s", "--shell", help="set the shell used in the shebang")
+    parser.add_argument(
+        "-s", "--shell", help="set the shell used in the shebang"
+    )
     return parser.parse_args()
 
 
@@ -49,7 +51,9 @@ def main() -> None:
             content = content_from_shell(args.shell)
             is_script = True
         else:
-            assert args.shell is None, "SHELL may not be set for files with extensions"
+            assert (
+                args.shell is None
+            ), "SHELL may not be set for files with extensions"
             content = content_from_extension(extension)
             is_script = extension in scripts
         write_file(args.file, content)

@@ -27,7 +27,9 @@ def get_date_time() -> str:
 def get_battery() -> str:
     percentage = read_file("/sys/class/power_supply/BAT1/capacity")
     indicator = (
-        "+ " if read_file("/sys/class/power_supply/BAT1/status") == "Charging" else ""
+        "+ "
+        if read_file("/sys/class/power_supply/BAT1/status") == "Charging"
+        else ""
     )
     return f"{indicator}{percentage}%"
 

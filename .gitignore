@@ -87,6 +87,7 @@
 !.config/zsh/.zshrc
 
 !.config/aliasrc
+!.config/black
 !.config/mimeapps.list
 !.config/starship.toml
 
