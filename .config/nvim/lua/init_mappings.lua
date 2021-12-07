@@ -29,9 +29,6 @@ set_keymap("n", "<leader>cl", ":set cursorline!<cr>", opts)
 -- expandtab
 set_keymap("n", "<leader>et", ":set expandtab!<cr>", opts)
 
--- hlsearch
-set_keymap("n", "<leader>h", ":set hlsearch!<cr>", opts)
-
 -- linebreak
 set_keymap("n", "<leader>lb", ":set linebreak!<cr>", opts)
 

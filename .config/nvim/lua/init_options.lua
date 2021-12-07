@@ -11,7 +11,6 @@ opt.listchars = { tab = "<->", trail = "-", nbsp = "+" }
 opt.relativenumber = true
 
 --  5 syntax, highlighting and spelling
-opt.hlsearch = false
 opt.termguicolors = true
 opt.spelllang = "en_gb"
 
