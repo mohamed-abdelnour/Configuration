@@ -46,6 +46,7 @@ return packer.startup({
 
         use({
             "nathom/filetype.nvim",
+            branch = "dev",
             config = function()
                 require("plugins/init_filetype")
             end,
