@@ -22,16 +22,14 @@ local packer = require("packer")
 -- Plugin list
 return packer.startup({
     function()
-        -- Colour scheme
-        use({ "rktjmp/lush.nvim", opt = false })
-
         use({
-            "~/Projects/modus_vivendi/",
-            config = "vim.cmd([[colorscheme modus_vivendi]])",
+            "numToStr/Comment.nvim",
+            config = function()
+                require("Comment").setup()
+            end,
             opt = false,
         })
 
-        -- Completion
         use({
             "ms-jpq/coq_nvim",
             config = function()
@@ -39,37 +37,85 @@ return packer.startup({
             end,
             opt = false,
             requires = {
-                { "ms-jpq/coq.artifacts", opt = false },
+                {
+                    "ms-jpq/coq.artifacts",
+                    opt = false,
+                },
             },
         })
 
-        -- LSP
+        use({
+            "nathom/filetype.nvim",
+            config = function()
+                require("plugins/init_filetype")
+            end,
+            opt = false,
+        })
+
+        use({
+            "neovimhaskell/haskell-vim",
+            ft = "haskell",
+        })
+
+        use({
+            "lewis6991/impatient.nvim",
+            opt = false,
+        })
+
+        use({
+            "rktjmp/lush.nvim",
+            opt = false,
+        })
+
+        use({
+            "iamcco/markdown-preview.nvim",
+            config = function()
+                require("plugins/init_markdown_preview")
+            end,
+            ft = "markdown",
+            run = "cd app && yarn install",
+        })
+
+        use({
+            "~/Projects/modus_vivendi",
+            config = "vim.cmd([[colorscheme modus_vivendi]])",
+            opt = false,
+        })
+
+        use({
+            "sbdchd/neoformat",
+            cmd = "Neoformat",
+            config = function()
+                require("plugins/init_neoformat")
+            end,
+        })
+
         use({
             "neovim/nvim-lspconfig",
             config = function()
                 require("plugins/init_lsp")
             end,
-            ft = { "haskell", "python", "rust" },
-            requires = { "nvim-lua/lsp-status.nvim" },
-            wants = { "lsp-status.nvim" },
-        })
-
-        -- Telescope
-        use({
-            "nvim-telescope/telescope.nvim",
-            config = function()
-                require("plugins/init_telescope")
-            end,
-            cmd = "Telescope",
-            module = "telescope.builtin",
-            requires = {
-                { "nvim-lua/plenary.nvim" },
-                { "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
+            ft = {
+                "haskell",
+                "python",
+                "rust",
             },
-            wants = { "plenary.nvim", "telescope-fzf-native.nvim" },
+            requires = {
+                "nvim-lua/lsp-status.nvim",
+            },
+            wants = {
+                "lsp-status.nvim",
+            },
         })
 
-        -- Tree-sitter
+        use({
+            "bfredl/nvim-luadev",
+            cmd = "Luadev",
+            config = function()
+                require("plugins/init_luadev")
+            end,
+        })
+
         use({
             "nvim-treesitter/nvim-treesitter",
             config = function()
@@ -85,58 +131,9 @@ return packer.startup({
             opt = false,
         })
 
-        use({
-            "lewis6991/spellsitter.nvim",
-            config = function()
-                require("spellsitter").setup()
-            end,
-        })
+        use("wbthomason/packer.nvim")
 
-        -- Miscellaneous
-        use({
-            "numToStr/Comment.nvim",
-            config = function()
-                require("Comment").setup()
-            end,
-            opt = false,
-        })
-
-        use({
-            "nathom/filetype.nvim",
-            config = function()
-                require("plugins/init_filetype")
-            end,
-            opt = false,
-        })
-
-        use({ "neovimhaskell/haskell-vim", ft = "haskell" })
-
-        use({ "lewis6991/impatient.nvim", opt = false })
-
-        use({
-            "iamcco/markdown-preview.nvim",
-            config = function()
-                require("plugins/init_markdown_preview")
-            end,
-            ft = "markdown",
-            run = "cd app && yarn install",
-        })
-
-        use({
-            "sbdchd/neoformat",
-            cmd = "Neoformat",
-            config = function()
-                require("plugins/init_neoformat")
-            end,
-        })
-
-        use({
-            "bfredl/nvim-luadev",
-            cmd = "Luadev",
-            config = function()
-                require("plugins/init_luadev")
-            end,
-        })
+        use("nvim-lua/plenary.nvim")
 
         use({
             "simrat39/rust-tools.nvim",
@@ -147,6 +144,32 @@ return packer.startup({
         })
 
         use({
+            "lewis6991/spellsitter.nvim",
+            config = function()
+                require("spellsitter").setup()
+            end,
+        })
+
+        use({
+            "nvim-telescope/telescope.nvim",
+            config = function()
+                require("plugins/init_telescope")
+            end,
+            cmd = "Telescope",
+            module = "telescope.builtin",
+            requires = {
+                {
+                    "nvim-telescope/telescope-fzf-native.nvim",
+                    run = "make",
+                },
+            },
+            wants = {
+                "plenary.nvim",
+                "telescope-fzf-native.nvim",
+            },
+        })
+
+        use({
             "folke/trouble.nvim",
             cmd = "Trouble",
             config = function()
@@ -154,7 +177,10 @@ return packer.startup({
             end,
         })
 
-        use({ "dstein64/vim-startuptime", cmd = "StartupTime" })
+        use({
+            "dstein64/vim-startuptime",
+            cmd = "StartupTime",
+        })
 
         use({
             "lervag/vimtex",
@@ -171,9 +197,6 @@ return packer.startup({
             end,
             opt = false,
         })
-
-        -- `packer.nvim`
-        use("wbthomason/packer.nvim")
 
         -- Bootstrap `packer.nvim`
         if packer_bootstrap then
