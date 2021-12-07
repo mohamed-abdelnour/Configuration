@@ -146,6 +146,14 @@ return packer.startup({
             ft = "rust",
         })
 
+        use({
+            "folke/trouble.nvim",
+            cmd = "Trouble",
+            config = function()
+                require("plugins/init_trouble")
+            end,
+        })
+
         use({ "dstein64/vim-startuptime", cmd = "StartupTime" })
 
         use({
