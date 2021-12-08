@@ -46,7 +46,7 @@ set_keymap("n", "<leader>n", ":Neoformat<cr>", opts)
 set_keymap("n", "<leader>fb", [[<cmd>lua require('telescope.builtin').buffers()<cr>]], opts)
 set_keymap("n", "<leader>fe", [[<cmd>lua require('telescope.builtin').builtin()<cr>]], opts)
 set_keymap("n", "<leader>ff", [[<cmd>lua require('telescope.builtin').find_files()<cr>]], opts)
-set_keymap("n", "<leader>fg", [[<cmd>lua require('telescope.builtin').live_grep()<cr>]], opts)
+set_keymap("n", "<leader>fr", [[<cmd>lua require('telescope.builtin').live_grep()<cr>]], opts)
 set_keymap("n", "<leader>fh", [[<cmd>lua require('telescope.builtin').help_tags()<cr>]], opts)
 set_keymap("n", "<leader>fn", [[<cmd>lua require('telescope.builtin').file_browser()<cr>]], opts)
 
