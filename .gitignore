@@ -148,9 +148,9 @@
 !.xmonad/xmonad.hs
 
 !Projects/
-!Projects/modus-vivendi/
-!Projects/modus-vivendi/**
-Projects/modus-vivendi/lua/lush_theme/palette.lua
+!Projects/modus_vivendi/
+!Projects/modus_vivendi/**
+Projects/modus_vivendi/lua/lush_theme/palette.lua
 
 !.Xresources
 !.gitignore
