@@ -14,5 +14,5 @@ require("nvim-treesitter.configs").setup({
 })
 
 function treesitter_section()
-    return require("nvim-treesitter").statusline()
+    return require("nvim-treesitter").statusline(40)
 end

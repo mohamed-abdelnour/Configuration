@@ -1,5 +1,4 @@
 local coq = require("coq")
-local lsp_status = require("plugins/init_lsp_status")
 
 local on_attach = function(client, buffer)
     local function buf_set_keymap(lhs, rhs)
@@ -26,12 +25,9 @@ local on_attach = function(client, buffer)
         "<leader>wl",
         "<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<cr>"
     )
-
-    lsp_status.on_attach(client)
 end
 
 local init_lsp_setup = coq.lsp_ensure_capabilities({
-    capabilities = lsp_status.capabilities,
     on_attach = on_attach,
     flags = { debounce_text_changes = 150 },
 })

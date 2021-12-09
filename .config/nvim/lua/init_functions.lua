@@ -1,20 +1,12 @@
-local functions = {}
+local M = {}
 
-local function call_or(f, default)
+function M.call_or(f, default)
     return (f and f()) or (default or false)
 end
 
-local function make_section(f)
-    return call_or(f, "") .. " "
+function M.trim_wrap(string, left, right)
+    wrapped = table.concat({ left or "[", "%1", right or "]" })
+    return string:gsub("^%s*(..-)%s*$", wrapped)
 end
 
-function statusline()
-    return table.concat({
-        "[%{mode()}] %<%F %h%m%r %=",
-        make_section(treesitter_section),
-        make_section(lsp_section),
-        "(%l/%L, %c) [%p%%]",
-    })
-end
-
-return functions
+return M

@@ -15,8 +15,6 @@ opt.termguicolors = true
 opt.spelllang = "en_gb"
 
 --  6 multiple windows
-require("init_functions")
-opt.statusline = [[%!luaeval("statusline()")]]
 opt.splitright = true
 
 --  9 using the mouse

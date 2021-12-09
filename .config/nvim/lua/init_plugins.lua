@@ -64,6 +64,14 @@ return packer.startup({
         })
 
         use({
+            "nvim-lualine/lualine.nvim",
+            config = function()
+                require("plugins/init_lualine")
+            end,
+            opt = false,
+        })
+
+        use({
             "rktjmp/lush.nvim",
             opt = false,
         })
@@ -100,12 +108,6 @@ return packer.startup({
                 "haskell",
                 "python",
                 "rust",
-            },
-            requires = {
-                "nvim-lua/lsp-status.nvim",
-            },
-            wants = {
-                "lsp-status.nvim",
             },
         })
 
