@@ -151,6 +151,7 @@ return packer.startup({
             config = function()
                 require("spellsitter").setup()
             end,
+            opt = false,
         })
 
         use({
