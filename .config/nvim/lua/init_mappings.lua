@@ -39,9 +39,6 @@ set_keymap("n", "<leader>lt", ":set list!<cr>", opts)
 set_keymap("n", "<leader>s", ":set spell!<cr>", opts)
 
 -- Plugin(s)
--- Neoformat
-set_keymap("n", "<leader>n", ":Neoformat<cr>", opts)
-
 -- Telescope
 set_keymap("n", "<leader>fb", [[<cmd>lua require('telescope.builtin').buffers()<cr>]], opts)
 set_keymap("n", "<leader>fe", [[<cmd>lua require('telescope.builtin').builtin()<cr>]], opts)

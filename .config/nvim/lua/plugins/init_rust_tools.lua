@@ -1,4 +1,4 @@
-local lsp_setup = require("plugins/init_lsp_setup")
+local lsp_setup = require("plugins/init_lsp_setup").lsp_setup()
 
 require("rust-tools").setup({
     tools = {

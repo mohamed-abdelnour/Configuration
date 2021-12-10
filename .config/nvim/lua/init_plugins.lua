@@ -92,11 +92,11 @@ return packer.startup({
         })
 
         use({
-            "sbdchd/neoformat",
-            cmd = "Neoformat",
+            "jose-elias-alvarez/null-ls.nvim",
             config = function()
-                require("plugins/init_neoformat")
+                require("plugins/init_null_ls")
             end,
+            opt = false,
         })
 
         use({
@@ -104,11 +104,7 @@ return packer.startup({
             config = function()
                 require("plugins/init_lsp")
             end,
-            ft = {
-                "haskell",
-                "python",
-                "rust",
-            },
+            opt = false,
         })
 
         use({
