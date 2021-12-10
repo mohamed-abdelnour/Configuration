@@ -19,7 +19,7 @@ end)
 
 local packer = require("packer")
 
--- Plugin list
+-- Plug-in list
 return packer.startup({
     function()
         use({
