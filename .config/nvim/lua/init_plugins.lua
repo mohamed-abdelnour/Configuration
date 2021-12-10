@@ -136,7 +136,10 @@ return packer.startup({
 
         use("wbthomason/packer.nvim")
 
-        use("nvim-lua/plenary.nvim")
+        use({
+            "nvim-lua/plenary.nvim",
+            opt = false,
+        })
 
         use({
             "simrat39/rust-tools.nvim",
@@ -155,22 +158,18 @@ return packer.startup({
         })
 
         use({
+            "nvim-telescope/telescope-fzf-native.nvim",
+            module = "telescope",
+            run = "make",
+        })
+
+        use({
             "nvim-telescope/telescope.nvim",
             config = function()
                 require("plugins/init_telescope")
             end,
             cmd = "Telescope",
             module = "telescope.builtin",
-            requires = {
-                {
-                    "nvim-telescope/telescope-fzf-native.nvim",
-                    run = "make",
-                },
-            },
-            wants = {
-                "plenary.nvim",
-                "telescope-fzf-native.nvim",
-            },
         })
 
         use({
@@ -204,7 +203,7 @@ return packer.startup({
 
         -- Bootstrap `packer.nvim`
         if packer_bootstrap then
-            require("packer").sync()
+            packer.sync()
         end
     end,
 
