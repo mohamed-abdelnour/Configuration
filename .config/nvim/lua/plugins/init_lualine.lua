@@ -32,7 +32,7 @@ local lualine_sections = {
         {
             "diagnostics",
             padding = left_padding,
-            sources = { "nvim_lsp" },
+            sources = { "nvim_diagnostic" },
         },
     },
 
