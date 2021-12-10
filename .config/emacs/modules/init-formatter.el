@@ -44,7 +44,7 @@
 ;; shfmt
 (reformatter-define shfmt
   :program "shfmt"
-  :args '("-i" "4" "-ci" "-sr")
+  :args '("-i" "4" "-ci")
   :lighter " shfmt")
 
 (provide 'init-formatter)
