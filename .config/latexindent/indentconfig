@@ -1,0 +1,3 @@
+#!/usr/bin/env dash
+
+fd -a latex -X printf 'paths:\n  - %s\n' >"${HOME}/.indentconfig.yaml"

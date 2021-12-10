@@ -47,6 +47,9 @@
 !.config/keychain/
 !.config/keychain/**
 
+!.config/latexindent/
+!.config/latexindent/**
+
 !.config/latexmk/
 !.config/latexmk/**
 
