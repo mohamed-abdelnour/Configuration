@@ -1,1 +1,2 @@
-$pdflatex = 'pdflatex -file-line-error -interaction=batchmode -shell-escape';
+$pdf_mode = 1;
+$pdflatex = 'lualatex --shell-escape';
