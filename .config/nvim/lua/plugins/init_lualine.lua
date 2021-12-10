@@ -1,5 +1,3 @@
-f = require("init_functions")
-
 local right_padding = { left = 0, right = 1 }
 local left_padding = { left = 1, right = 0 }
 
@@ -7,7 +5,7 @@ local lualine_sections = {
     lualine_a = {
         {
             "%{mode()}",
-            fmt = f.trim_wrap,
+            fmt = trim_wrap,
             padding = right_padding,
         },
     },
@@ -23,9 +21,9 @@ local lualine_sections = {
 
     lualine_x = {
         {
-            [[f.call_or(treesitter_section, "")]],
+            [[call_or(treesitter_section, "")]],
             fmt = function(string)
-                return f.trim_wrap(string, "", " |")
+                return trim_wrap(string, "", " |")
             end,
             padding = left_padding,
         },
@@ -40,7 +38,7 @@ local lualine_sections = {
         {
             "%l/%L, %c",
             fmt = function(string)
-                return f.trim_wrap(string, "(", ")")
+                return trim_wrap(string, "(", ")")
             end,
             padding = left_padding,
         },
@@ -49,7 +47,7 @@ local lualine_sections = {
     lualine_z = {
         {
             "%p%%",
-            fmt = f.trim_wrap,
+            fmt = trim_wrap,
             padding = left_padding,
         },
     },
