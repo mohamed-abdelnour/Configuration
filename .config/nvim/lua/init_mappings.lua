@@ -6,7 +6,12 @@ local set_keymap = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 
 -- Delete buffer
-set_keymap("n", "<leader>d", ":bd<cr>", opts)
+set_keymap("n", "<leader>dd", ":bd<cr>", opts)
+
+-- Diff
+set_keymap("n", "<leader>db", ":diffget BASE<cr>", opts)
+set_keymap("n", "<leader>dl", ":diffget LOCAL<cr>", opts)
+set_keymap("n", "<leader>dr", ":diffget REMOTE<cr>", opts)
 
 -- Move down/up
 set_keymap("n", "<A-j>", ":move .+1<cr>", opts)
