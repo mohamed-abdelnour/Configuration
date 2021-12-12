@@ -1,3 +1,5 @@
+local trim_wrap = require("init_functions").trim_wrap
+
 local right_padding = { left = 0, right = 1 }
 local left_padding = { left = 1, right = 0 }
 
@@ -21,7 +23,7 @@ local lualine_sections = {
 
     lualine_x = {
         {
-            [[call_or(treesitter_section, "")]],
+            [[require("init_functions").call_or(treesitter_section, "")]],
             fmt = function(string)
                 return trim_wrap(string, "", " |")
             end,

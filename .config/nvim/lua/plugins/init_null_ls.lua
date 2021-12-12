@@ -1,18 +1,3 @@
-local function extend(source, destination)
-    for _, v in ipairs(destination) do
-        table.insert(source, v)
-    end
-    return source
-end
-
-local function merge(tables)
-    local result = {}
-    for _, table in ipairs(tables) do
-        result = extend(result, table)
-    end
-    return result
-end
-
 local null_ls = require("null-ls")
 local helpers = require("null-ls/helpers")
 local methods = require("null-ls/methods")
@@ -128,6 +113,8 @@ local lint = {
     -- Shellcheck
     linters.shellcheck,
 }
+
+local merge = require("init_functions").merge
 
 null_ls.config({
     diagnostics_format = "[#{c}] #{m} (#{s})",
