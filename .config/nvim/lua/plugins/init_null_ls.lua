@@ -116,7 +116,8 @@ local lint = {
 
 local merge = require("init_functions").merge
 
-null_ls.config({
+null_ls.setup({
     diagnostics_format = "[#{c}] #{m} (#{s})",
+    on_attach = require("plugins/init_lsp_setup").base_on_attach,
     sources = merge({ act, format, lint }),
 })

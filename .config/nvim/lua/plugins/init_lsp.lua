@@ -16,22 +16,10 @@ local function init_server(arg)
 end
 
 local servers = {
-    define_server({
-        name = "hls",
-    }),
-    define_server({
-        name = "null-ls",
-        on_attach = setup.base_on_attach,
-    }),
-    define_server({
-        name = "pyright",
-    }),
+    define_server({ name = "hls" }),
+    define_server({ name = "pyright" }),
 }
 
 for _, server in ipairs(servers) do
-    init_server({
-        name = server.name,
-        on_attach = server.on_attach,
-        settings = server.settings,
-    })
+    init_server(server)
 end
