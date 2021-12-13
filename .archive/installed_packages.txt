@@ -204,6 +204,7 @@ xorg-xwayland
 xorg-xwd
 xorg-xwininfo
 xorg-xwud
+xss-lock
 yarn
 zathura
 zathura-pdf-mupdf

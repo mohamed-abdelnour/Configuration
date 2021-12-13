@@ -3,7 +3,7 @@
 choice="$(printf "lock\npoweroff\nreboot\nsuspend\n" | dmenu -i)"
 case "$choice" in
     "lock")
-        slock
+        loginctl lock-session
         ;;
     "poweroff")
         systemctl poweroff
