@@ -6,7 +6,7 @@ local set_keymap = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 
 -- Delete buffer
-set_keymap("n", "<leader>dd", ":bd<cr>", opts)
+set_keymap("n", "<leader>k", ":bd<cr>", opts)
 
 -- Diff
 set_keymap("n", "<leader>db", ":diffget BASE<cr>", opts)
