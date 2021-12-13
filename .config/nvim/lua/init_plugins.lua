@@ -32,9 +32,6 @@ return packer.startup({
 
         use({
             "ms-jpq/coq_nvim",
-            config = function()
-                require("plugins/init_coq")
-            end,
             opt = false,
             requires = {
                 {
@@ -42,6 +39,9 @@ return packer.startup({
                     opt = false,
                 },
             },
+            setup = function()
+                require("plugins/init_coq")
+            end,
         })
 
         use({
