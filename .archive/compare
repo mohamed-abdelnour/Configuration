@@ -1,0 +1,3 @@
+#!/usr/bin/env dash
+
+fd --type f . 'etc' --exec diff --color=always --unified '{}' '/{}'
