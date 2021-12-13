@@ -179,6 +179,9 @@ return packer.startup({
         use({
             "dstein64/vim-startuptime",
             cmd = "StartupTime",
+            config = function()
+                require("plugins/init_startuptime")
+            end,
         })
 
         use({
