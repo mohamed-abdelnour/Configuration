@@ -1,25 +1,25 @@
 [user]
-	name = Mohamed Abdelnour
-	email = mohamed.k.abdelnour@gmail.com
+    name = Mohamed Abdelnour
+    email = mohamed.k.abdelnour@gmail.com
 
 [commit]
-	gpgsign = true
+    gpgsign = true
 [core]
-	pager = bat
-	autocrlf = input
+    pager = bat
+    autocrlf = input
 [init]
-	defaultBranch = main
+    defaultBranch = main
 [merge]
-	tool = nvimdiff
+    tool = nvimdiff
 [mergetool]
-	keepBackup = false
+    keepBackup = false
 
 [delta]
-	line-numbers = true
-	line-numbers-minus-style = red
-	line-numbers-plus-style = green
-	line-numbers-zero-style = brightblack
-	syntax-theme = base16
+    line-numbers = true
+    line-numbers-minus-style = red
+    line-numbers-plus-style = green
+    line-numbers-zero-style = brightblack
+    syntax-theme = base16
     minus-emph-style              = "#FFD9EB" "#852828"
     minus-empty-line-marker-style = "#EEBDBA" "#500F29"
     minus-non-emph-style          = "#EEBDBA" "#500F29"
@@ -31,5 +31,5 @@
     zero-style                    = syntax
 
 [alias]
-	d = diff
-	s = status
+    d = diff
+    s = status
