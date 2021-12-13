@@ -21,13 +21,13 @@
 	line-numbers-zero-style = brightblack
 	syntax-theme = base16
     minus-emph-style              = "#FFD9EB" "#852828"
-    minus-empty-line-marker-style = "#EEBDBA" "#5E2526"
-    minus-non-emph-style          = "#EEBDBA" "#5E2526"
-    minus-style                   = "#EEBDBA" "#5E2526"
+    minus-empty-line-marker-style = "#EEBDBA" "#500F29"
+    minus-non-emph-style          = "#EEBDBA" "#500F29"
+    minus-style                   = "#EEBDBA" "#500F29"
     plus-emph-style               = "#E0F6E0" "#005A36"
-    plus-empty-line-marker-style  = "#B4DDB4" "#203D20"
-    plus-non-emph-style           = "#B4DDB4" "#203D20"
-    plus-style                    = "#B4DDB4" "#203D20"
+    plus-empty-line-marker-style  = "#B4DDB4" "#1D3C25"
+    plus-non-emph-style           = "#B4DDB4" "#1D3C25"
+    plus-style                    = "#B4DDB4" "#1D3C25"
     zero-style                    = syntax
 
 [alias]
