@@ -89,6 +89,7 @@ return packer.startup({
             "~/Projects/modus_vivendi",
             config = "vim.cmd([[colorscheme modus_vivendi]])",
             opt = false,
+            requires = "lush.nvim",
         })
 
         use({
@@ -97,6 +98,7 @@ return packer.startup({
                 require("plugins/init_null_ls")
             end,
             opt = false,
+            requires = "plenary.nvim",
         })
 
         use({
@@ -128,6 +130,7 @@ return packer.startup({
             "p00f/nvim-ts-rainbow",
             after = "nvim-treesitter",
             opt = false,
+            requires = "nvim-treesitter",
         })
 
         use("wbthomason/packer.nvim")
@@ -166,6 +169,7 @@ return packer.startup({
             end,
             cmd = "Telescope",
             module = "telescope.builtin",
+            requires = "plenary.nvim",
         })
 
         use({
