@@ -32,6 +32,8 @@ M.full_on_attach = function(client, buffer, arg)
         "<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<cr>"
     )
 
+    local arg = arg or {}
+
     if not arg.formatting then
         client.resolved_capabilities.document_formatting = false
         client.resolved_capabilities.document_range_formatting = false
