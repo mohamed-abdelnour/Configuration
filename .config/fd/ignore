@@ -24,7 +24,4 @@
 **/Programming
 **/Projects
 
-*coc
-*node_modules
-*neovim
-*plugged
+*.git
