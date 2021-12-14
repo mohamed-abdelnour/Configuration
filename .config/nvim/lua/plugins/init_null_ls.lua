@@ -2,20 +2,36 @@ local null_ls = require("null-ls")
 local helpers = require("null-ls/helpers")
 local methods = require("null-ls/methods")
 
-local function make_formatter(arg)
-    local opts = {
+local function make_tool(overrides)
+    local function tool(arg)
+        local defaults = {
+            filetypes = arg.ft,
+            generator_opts = vim.tbl_extend("keep", arg, overrides.opts),
+        }
+        return helpers.make_builtin(vim.tbl_extend("keep", overrides, defaults))
+    end
+
+    return tool
+end
+
+local make_formatter = make_tool({
+    method = methods.internal.FORMATTING,
+    factory = helpers.formatter_factory,
+    opts = {
         cwd = function()
             return vim.fn.expand("%:p:h")
         end,
         to_stdin = true,
-    }
-    return helpers.make_builtin({
-        method = methods.internal.FORMATTING,
-        filetypes = arg.ft,
-        generator_opts = vim.tbl_extend("keep", arg, opts),
-        factory = helpers.formatter_factory,
-    })
-end
+    },
+})
+
+local make_linter = make_tool({
+    method = methods.internal.DIAGNOSTICS_ON_SAVE,
+    factory = helpers.generator_factory,
+    opts = {
+        to_stdin = true,
+    },
+})
 
 local builtins = null_ls.builtins
 local actions = builtins.code_actions
