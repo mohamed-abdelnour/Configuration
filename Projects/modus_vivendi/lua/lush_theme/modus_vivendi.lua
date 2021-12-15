@@ -149,9 +149,6 @@ local theme = lush(function()
         LspReferenceText { ColorColumn },
         LspReferenceWrite { ColorColumn },
 
-        -- Telescope
-        TelescopeMatching { fg = p.blue_alt_other },
-
         -- Tree-sitter
         TSAnnotation { Label },
         TSAttribute { Label },
@@ -261,6 +258,10 @@ local theme = lush(function()
         rainbowcol5 { fg = p.purple_intense },
         rainbowcol6 { fg = p.red_intense },
         rainbowcol7 { fg = p.blue_intense },
+
+        ---- telescope.nvim
+        TelescopeBorder { fg = p.fg_window_divider_outer },
+        TelescopeMatching { fg = p.blue_alt_other },
 
         -- Miscellaneous
         NvimInternalError { DiagnosticVirtualTextError },
