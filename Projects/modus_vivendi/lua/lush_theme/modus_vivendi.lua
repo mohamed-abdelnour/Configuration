@@ -110,15 +110,17 @@ local theme = lush(function()
 
         -- Diagnostic
         ---- Base
-        DiagnosticError { fg = p.red },
-        DiagnosticHint { fg = p.cyan },
-        DiagnosticInfo { fg = p.magenta },
+        DiagnosticError { fg = p.red_intense },
+        DiagnosticHint { fg = p.blue_intense },
+        DiagnosticInfo { fg = p.purple_intense },
+        DiagnosticWarn { fg = p.yellow_intense },
         DiagnosticVirtualTextError { bg = p.red_intense_bg, fg = p.fg_main },
         DiagnosticVirtualTextHint { bg = p.cyan_subtle_bg, fg = p.fg_dim },
         DiagnosticVirtualTextInfo { bg = p.magenta_subtle_bg, fg = p.fg_dim },
         DiagnosticVirtualTextWarn { bg = p.yellow_intense_bg, fg = p.fg_main },
-        DiagnosticWarn { fg = p.yellow },
         ---- Extra
+        DiagnosticDebug { fg = p.fg_alt },
+        DiagnosticVirtualTextDebug { bg = p.fg_alt, fg = p.bg_main },
         DiagnosticVirtualTextSuccess { bg = p.green_intense_bg, fg = p.fg_main },
         ---- Linked
         DiagnosticFloatingError { DiagnosticError },
@@ -264,7 +266,7 @@ local theme = lush(function()
         NvimInternalError { DiagnosticVirtualTextError },
         RedrawDebugClear { DiagnosticVirtualTextWarn },
         RedrawDebugComposed { DiagnosticVirtualTextSuccess },
-        RedrawDebugNormal { bg = p.fg_alt, fg = p.bg_main },
+        RedrawDebugNormal { DiagnosticVirtualTextDebug },
         RedrawDebugRecompose { DiagnosticVirtualTextError },
     }
 end)
