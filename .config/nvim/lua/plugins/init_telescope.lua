@@ -1,4 +1,5 @@
-require("telescope").setup({
+local telescope = require("telescope")
+telescope.setup({
     pickers = {
         file_browser = {
             disable_devicons = true,
@@ -15,4 +16,4 @@ require("telescope").setup({
         },
     },
 })
-require("telescope").load_extension("fzf")
+telescope.load_extension("fzf")
