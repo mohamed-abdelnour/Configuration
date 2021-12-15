@@ -22,7 +22,7 @@ local theme = lush(function()
         DiffText { bg = p.bg_diff_refine_changed, fg = p.fg_diff_refine_changed },
         Directory { fg = p.blue },
         EndOfBuffer { fg = p.bg_main },
-        FloatBorder { bg = p.bg_dim, fg = p.fg_window_divider_inner },
+        FloatBorder { bg = p.bg_dim, fg = p.fg_window_divider_outer },
         Folded { bg = p.bg_alt, fg = p.fg_alt },
         IncSearch { bg = p.cyan_refine_bg, fg = p.cyan_refine_fg },
         LineNr { bg = p.bg_dim, fg = p.fg_alt },
