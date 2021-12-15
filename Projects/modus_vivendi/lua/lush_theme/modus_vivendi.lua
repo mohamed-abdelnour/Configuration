@@ -144,10 +144,12 @@ local theme = lush(function()
         WarningMsg { DiagnosticVirtualTextWarn },
 
         -- LSP
+        ---- Base
         LspCodeLens { fg = p.fg_alt },
-        LspReferenceRead { ColorColumn },
-        LspReferenceText { ColorColumn },
-        LspReferenceWrite { ColorColumn },
+        LspReferenceText { bg = p.bg_hl_alt },
+        ---- Linked
+        LspReferenceRead { LspReferenceText },
+        LspReferenceWrite { LspReferenceText },
 
         -- Tree-sitter
         TSAnnotation { Label },
