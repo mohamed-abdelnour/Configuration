@@ -16,6 +16,17 @@ M.on_attach = function(client, buffer, arg)
         buf_set_keymap("[d", "<cmd>lua vim.diagnostic.goto_prev()<cr>")
         buf_set_keymap("]d", "<cmd>lua vim.diagnostic.goto_next()<cr>")
 
+        if client.resolved_capabilities.document_highlight then
+            vim.cmd([[
+                augroup LSP
+                    autocmd!
+                    autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
+                    autocmd CursorHoldI <buffer> lua vim.lsp.buf.document_highlight()
+                    autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
+                augroup END
+            ]])
+        end
+
         if not arg.formatting then
             client.resolved_capabilities.document_formatting = false
             client.resolved_capabilities.document_range_formatting = false
