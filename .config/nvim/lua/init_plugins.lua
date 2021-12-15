@@ -167,7 +167,8 @@ return packer.startup({
 
         use({
             "nvim-telescope/telescope-fzf-native.nvim",
-            module = "telescope",
+            opt = false,
+            requires = "telescope.nvim",
             run = "make",
         })
 
@@ -176,8 +177,7 @@ return packer.startup({
             config = function()
                 require("plugins/init_telescope")
             end,
-            cmd = "Telescope",
-            module = "telescope.builtin",
+            opt = false,
             requires = "plenary.nvim",
         })
 
