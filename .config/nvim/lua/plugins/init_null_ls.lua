@@ -40,6 +40,9 @@ local linters = builtins.diagnostics
 local act = {
     -- Shellcheck
     actions.shellcheck,
+
+    -- gitsigns.nvim
+    actions.gitsigns,
 }
 
 local format = {

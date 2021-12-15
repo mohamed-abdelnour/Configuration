@@ -233,7 +233,25 @@ local theme = lush(function()
         markdownHeadingDelimiter { fg = p.fg_dim },
         markdownLinkText { Link },
 
-        -- nvim-ts-rainbow
+        -- Plugins
+        ---- gitsigns.nvim
+        GitSignsAdd { DiffAdd },
+        GitSignsAddLn { DiffAdd },
+        GitSignsAddNr { DiffAdd },
+        GitSignsChange { DiffChange },
+        GitSignsChange { DiffChange },
+        GitSignsChangeLn { DiffChange },
+        GitSignsChangeLn { DiffChange },
+        GitSignsChangeNr { DiffChange },
+        GitSignsChangeNr { DiffChange },
+        GitSignsDelete { DiffDelete },
+        GitSignsDelete { DiffDelete },
+        GitSignsDeleteLn { DiffDelete },
+        GitSignsDeleteLn { DiffDelete },
+        GitSignsDeleteNr { DiffDelete },
+        GitSignsDeleteNr { DiffDelete },
+
+        ---- nvim-ts-rainbow
         rainbowcol1 { Normal },
         rainbowcol2 { fg = p.magenta_intense },
         rainbowcol3 { fg = p.cyan_intense },

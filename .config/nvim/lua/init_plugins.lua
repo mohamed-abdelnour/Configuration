@@ -54,6 +54,15 @@ return packer.startup({
         })
 
         use({
+            "lewis6991/gitsigns.nvim",
+            config = function()
+                require("plugins/init_gitsigns")
+            end,
+            opt = false,
+            requires = "plenary.nvim",
+        })
+
+        use({
             "neovimhaskell/haskell-vim",
             ft = "haskell",
         })
