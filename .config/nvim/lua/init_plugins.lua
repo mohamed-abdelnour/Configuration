@@ -45,6 +45,15 @@ return packer.startup({
         })
 
         use({
+            "stevearc/dressing.nvim",
+            config = function()
+                require("plugins/init_dressing")
+            end,
+            opt = false,
+            requires = "telescope.nvim",
+        })
+
+        use({
             "nathom/filetype.nvim",
             branch = "dev",
             config = function()
