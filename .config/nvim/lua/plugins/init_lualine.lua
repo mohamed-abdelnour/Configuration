@@ -59,7 +59,7 @@ local lualine_sections = {
 
     lualine_y = {
         {
-            "%l/%L, %c",
+            "%l/%L, %v",
             fmt = function(string)
                 return trim_wrap(string, "(", ")")
             end,
