@@ -1,3 +1,4 @@
+local palette = require("lush_theme/palette")
 local trim_wrap = require("init_functions").trim_wrap
 
 local right_padding = { left = 0, right = 1 }
@@ -24,7 +25,22 @@ local lualine_sections = {
         },
     },
 
-    lualine_c = {},
+    lualine_c = {
+        {
+            "branch",
+            color = { fg = palette.cyan },
+            padding = right_padding,
+        },
+        {
+            "diff",
+            diff_color = {
+                added = { fg = palette.green },
+                modified = { fg = palette.yellow },
+                removed = { fg = palette.red },
+            },
+            padding = right_padding,
+        },
+    },
 
     lualine_x = {
         {
