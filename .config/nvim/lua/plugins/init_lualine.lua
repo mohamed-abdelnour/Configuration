@@ -14,8 +14,13 @@ local lualine_sections = {
 
     lualine_b = {
         {
-            "%<%F %h%m%r",
+            "filename",
             padding = right_padding,
+            path = 1,
+            symbols = {
+                modified = " [+]",
+                readonly = " [RO]",
+            },
         },
     },
 
