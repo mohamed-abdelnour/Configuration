@@ -137,8 +137,10 @@ local merge = require("init_functions").merge
 
 null_ls.setup({
     diagnostics_format = "[#{c}] #{m} (#{s})",
-    on_attach = function(...)
-        require("plugins/init_lsp").on_attach(...).base()
+    on_attach = function(client, buffer)
+        require("plugins/init_lsp").on_attach(client, buffer, {
+            formatting = true,
+        }).base()
     end,
     sources = merge({ act, format, lint }),
 })
