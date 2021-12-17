@@ -24,7 +24,7 @@ set_keymap("v", "<A-k>", ":move '<-2<cr>gv", opts)
 set_keymap(
     "n",
     "<leader>cc",
-    ':execute "set colorcolumn=" . (&colorcolumn == "" ? "80" : "")<cr>',
+    [[:execute "set colorcolumn=" . (&colorcolumn == "" ? "80" : "")<cr>]],
     opts
 )
 
@@ -45,12 +45,12 @@ set_keymap("n", "<leader>s", ":set spell!<cr>", opts)
 
 -- Plugin(s)
 ---- Telescope
-set_keymap("n", "<leader>fb", [[<cmd>lua require('telescope.builtin').buffers()<cr>]], opts)
-set_keymap("n", "<leader>fe", [[<cmd>lua require('telescope.builtin').builtin()<cr>]], opts)
-set_keymap("n", "<leader>ff", [[<cmd>lua require('telescope.builtin').find_files()<cr>]], opts)
-set_keymap("n", "<leader>fr", [[<cmd>lua require('telescope.builtin').live_grep()<cr>]], opts)
-set_keymap("n", "<leader>fh", [[<cmd>lua require('telescope.builtin').help_tags()<cr>]], opts)
-set_keymap("n", "<leader>fn", [[<cmd>lua require('telescope.builtin').file_browser()<cr>]], opts)
+set_keymap("n", "<leader>fb", [[<cmd>lua require("telescope.builtin").buffers()<cr>]], opts)
+set_keymap("n", "<leader>fe", [[<cmd>lua require("telescope.builtin").builtin()<cr>]], opts)
+set_keymap("n", "<leader>ff", [[<cmd>lua require("telescope.builtin").find_files()<cr>]], opts)
+set_keymap("n", "<leader>fr", [[<cmd>lua require("telescope.builtin").live_grep()<cr>]], opts)
+set_keymap("n", "<leader>fh", [[<cmd>lua require("telescope.builtin").help_tags()<cr>]], opts)
+set_keymap("n", "<leader>fn", [[<cmd>lua require("telescope.builtin").file_browser()<cr>]], opts)
 
 ---- Trouble
 set_keymap("n", "<leader>xx", "<cmd>Trouble<cr>", opts)
