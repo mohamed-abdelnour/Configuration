@@ -54,7 +54,7 @@
   (setq require-final-newline t)
 
   ;; "Smooth-scrolling".
-  (pixel-scroll-mode)
+  (pixel-scroll-precision-mode)
   (setq scroll-preserve-screen-position t
         scroll-conservatively 101)
 
