@@ -16,6 +16,11 @@
 ;; Set `user-emacs-directory`.
 (setq user-emacs-directory (expand-file-name "~/.local/share/emacs"))
 
+;; Set `native-comp-eln-load-path`.
+(setcar native-comp-eln-load-path
+        (expand-file-name (convert-standard-filename "var/eln-cache/")
+                          user-emacs-directory))
+
 ;; Add `modules` directory to `load-path`.
 (add-to-list 'load-path (expand-file-name "~/.config/emacs/modules"))
 
