@@ -22,7 +22,7 @@ check_plugin_order: init_plugins.lua
 	@rm $(actual) $(reference)
 
 files := lua/packer_compiled.lua $\
-		 $(HOME)/.local/share/nvim/site/pack/packer
+		 $(HOME)/.local/share/nvim/site/pack/packer $\
+		 $(wildcard $(HOME)/.cache/nvim/*)
 clean:
-	@nvim --headless -c 'LuaCacheClear' -c 'q'
 	@rm -rf $(files)
