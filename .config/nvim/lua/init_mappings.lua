@@ -23,28 +23,28 @@ set_keymap("v", "<A-k>", ":move '<-2<cr>gv", opts)
 ---- colorcolumn
 set_keymap(
     "n",
-    "<leader>cc",
+    "<leader>tcc",
     [[:execute "set colorcolumn=" . (&colorcolumn == "" ? "80" : "")<cr>]],
     opts
 )
 
 ---- cursorline
-set_keymap("n", "<leader>cl", ":set cursorline!<cr>", opts)
+set_keymap("n", "<leader>tcl", ":set cursorline!<cr>", opts)
 
 ---- expandtab
-set_keymap("n", "<leader>et", ":set expandtab!<cr>", opts)
+set_keymap("n", "<leader>tet", ":set expandtab!<cr>", opts)
 
 ---- ignorecase
-set_keymap("n", "<leader>ic", ":set ignorecase!<cr>", opts)
+set_keymap("n", "<leader>tic", ":set ignorecase!<cr>", opts)
 
 ---- linebreak
-set_keymap("n", "<leader>lb", ":set linebreak!<cr>", opts)
+set_keymap("n", "<leader>tlb", ":set linebreak!<cr>", opts)
 
 ---- list
-set_keymap("n", "<leader>lt", ":set list!<cr>", opts)
+set_keymap("n", "<leader>tlt", ":set list!<cr>", opts)
 
 ---- spell
-set_keymap("n", "<leader>s", ":set spell!<cr>", opts)
+set_keymap("n", "<leader>ts", ":set spell!<cr>", opts)
 
 -- Plugin(s)
 ---- Telescope
