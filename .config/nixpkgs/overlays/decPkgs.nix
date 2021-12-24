@@ -6,11 +6,13 @@ self: super: {
       arc-theme
       default-cursor
       delta
+      emacsPgtkGcc
       ghc
       glibcLocales
       hlint
       librsvg
       luaformatter
+      neovim-nightly
       nix-linter
       nix-zsh-completions
       nixpkgs-fmt

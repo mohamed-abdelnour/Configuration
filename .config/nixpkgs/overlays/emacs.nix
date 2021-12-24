@@ -1,5 +1,5 @@
 import (
   builtins.fetchTarball {
-    url = https://github.com/nix-community/emacs-overlay/archive/0530bb0e8c1220c9b94c35f47084d780fb8cf132.tar.gz;
+    url = https://github.com/nix-community/emacs-overlay/archive/29631d89adfa8b3cdf35d2f65ce34a0b9dffdb20.tar.gz;
   }
 )
