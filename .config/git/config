@@ -5,7 +5,7 @@
 [commit]
     gpgsign = true
 [core]
-    pager = bat
+    pager = less
     autocrlf = input
 [init]
     defaultBranch = main
