@@ -46,7 +46,7 @@ set_keymap("n", "<leader>tlt", ":set list!<cr>", opts)
 ---- spell
 set_keymap("n", "<leader>ts", ":set spell!<cr>", opts)
 
--- Plugin(s)
+-- Plug-in(s)
 ---- Telescope
 set_keymap("n", "<leader>fb", [[<cmd>lua require("telescope.builtin").buffers()<cr>]], opts)
 set_keymap("n", "<leader>fe", [[<cmd>lua require("telescope.builtin").builtin()<cr>]], opts)

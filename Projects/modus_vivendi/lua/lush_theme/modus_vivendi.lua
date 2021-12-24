@@ -234,7 +234,7 @@ local theme = lush(function()
         markdownHeadingDelimiter { fg = p.fg_dim },
         markdownLinkText { Link },
 
-        -- Plugins
+        -- Plug-ins
         ---- gitsigns.nvim
         GitSignsAdd { DiffAdd },
         GitSignsAddLn { DiffAdd },
