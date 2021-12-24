@@ -10,9 +10,6 @@
 ;; Suppress the GC at start-up.
 (setq gc-cons-threshold most-positive-fixnum)
 
-;; Disable `package.el`.
-(setq package-enable-at-startup nil)
-
 ;; Set `user-emacs-directory`.
 (setq user-emacs-directory (expand-file-name "~/.local/share/emacs"))
 
@@ -20,6 +17,9 @@
 (setcar native-comp-eln-load-path
         (expand-file-name (convert-standard-filename "var/eln-cache/")
                           user-emacs-directory))
+
+;; Disable `package.el`.
+(setq package-enable-at-startup nil)
 
 ;; Add `modules` directory to `load-path`.
 (add-to-list 'load-path (expand-file-name "~/.config/emacs/modules"))
