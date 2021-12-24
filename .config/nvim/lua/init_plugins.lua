@@ -141,7 +141,6 @@ return packer.startup({
                 require("plugins/init_treesitter")
             end,
             opt = false,
-            run = ":TSUpdate",
         })
 
         use({
