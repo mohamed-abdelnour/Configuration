@@ -39,7 +39,6 @@ gcc
 git
 gnome-themes-extra
 gparted
-gradle
 grub
 gst-plugins-good
 gtk-engine-murrine
@@ -71,7 +70,6 @@ mpv
 mtools
 mtpfs
 neofetch
-neovim
 networkmanager
 ninja
 nnn
@@ -115,7 +113,6 @@ rust-analyzer
 rustup
 shfmt
 sudo
-swi-prolog
 sxiv
 terminus-font
 texinfo
