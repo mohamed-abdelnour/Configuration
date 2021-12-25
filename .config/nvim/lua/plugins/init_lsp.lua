@@ -1,7 +1,7 @@
 local M = {}
 
 M.on_attach = function(client, buffer, arg)
-    local arg = arg or {}
+    arg = arg or {}
 
     local function buf_set_keymap(lhs, rhs)
         local opts = { noremap = true, silent = true }
@@ -66,7 +66,7 @@ local coq = require("coq")
 local lsp = require("lspconfig")
 
 M.lsp_setup = function(arg)
-    local arg = arg or {}
+    arg = arg or {}
 
     local defaults = {
         on_attach = function(client, buffer)

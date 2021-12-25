@@ -21,7 +21,7 @@ local packer = require("packer")
 
 -- Plug-in list
 return packer.startup({
-    function()
+    function(use)
         use({
             "numToStr/Comment.nvim",
             config = function()

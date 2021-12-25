@@ -25,6 +25,7 @@ local make_formatter = make_tool({
     },
 })
 
+---@diagnostic disable-next-line: unused-local
 local make_linter = make_tool({
     method = methods.internal.DIAGNOSTICS_ON_SAVE,
     factory = helpers.generator_factory,
