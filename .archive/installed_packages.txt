@@ -60,6 +60,7 @@ libnotify
 linux
 linux-firmware
 linux-lts
+lua-language-server
 luit
 lxappearance
 lxsession
