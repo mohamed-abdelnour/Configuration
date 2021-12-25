@@ -8,7 +8,7 @@
 
 (defun eshell-directory ()
   "Format Eshell's current working directory."
-  (let* ((directory (abbreviate-file-name (eshell/pwd))))
+  (let ((directory (abbreviate-file-name (eshell/pwd))))
     (if (string= "/" directory)
         "/"
       (eshell/basename directory))))
