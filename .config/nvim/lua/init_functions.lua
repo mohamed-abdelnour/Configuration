@@ -9,7 +9,7 @@ function M.trim_wrap(string, left, right)
     return string:gsub("^%s*(..-)%s*$", wrapped)
 end
 
-local function extend(source, destination)
+function M.extend(source, destination)
     for _, v in ipairs(destination) do
         table.insert(source, v)
     end
@@ -19,7 +19,7 @@ end
 function M.merge(tables)
     local result = {}
     for _, table in ipairs(tables) do
-        result = extend(result, table)
+        result = M.extend(result, table)
     end
     return result
 end
