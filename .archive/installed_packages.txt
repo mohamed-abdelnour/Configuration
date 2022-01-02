@@ -54,7 +54,7 @@ imagemagick
 intel-ucode
 jdk-openjdk
 keychain
-kvantum-qt5
+kvantum
 libnotify
 linux
 linux-firmware
