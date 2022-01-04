@@ -79,7 +79,7 @@ M.lsp_setup = function(arg)
     return coq.lsp_ensure_capabilities(vim.tbl_extend("keep", arg, defaults))
 end
 
-local function init_server(arg)
+M.init_server = function(arg)
     local lsp_setup = vim.tbl_extend("keep", M.lsp_setup(arg), arg)
     lsp[arg.name].setup(lsp_setup)
 end
@@ -126,7 +126,7 @@ local servers = {
 }
 
 for _, server in ipairs(servers) do
-    init_server(server)
+    M.init_server(server)
 end
 
 return M
