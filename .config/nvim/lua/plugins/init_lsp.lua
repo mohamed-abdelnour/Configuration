@@ -120,9 +120,9 @@ local sumneko_lua = {
 }
 
 local servers = {
+    sumneko_lua,
     { name = "hls" },
     { name = "pyright" },
-    sumneko_lua,
 }
 
 for _, server in ipairs(servers) do
