@@ -122,6 +122,7 @@ local sumneko_lua = {
 local servers = {
     sumneko_lua,
     { name = "hls" },
+    { name = "html" },
     { name = "pyright" },
 }
 
