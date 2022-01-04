@@ -105,6 +105,7 @@ python-virtualenv
 python2
 qemu
 qt5ct
+qt6ct
 reflector
 ripgrep
 rsync
@@ -113,6 +114,7 @@ rust-analyzer
 rustup
 shfmt
 sudo
+swtpm
 sxiv
 terminus-font
 texinfo
