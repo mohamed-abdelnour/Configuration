@@ -5,6 +5,7 @@ local methods = require("null-ls/methods")
 local function make_tool(overrides)
     local function tool(arg)
         local defaults = {
+            name = arg.name,
             filetypes = arg.ft,
             generator_opts = vim.tbl_extend("keep", arg, overrides.opts),
         }
@@ -47,22 +48,22 @@ local act = {
 }
 
 local format = {
-    -- Black
     make_formatter({
+        name = "Black",
         command = "black",
         args = { "-q", "-" },
         ft = { "python" },
     }),
 
-    -- ClangFormat
     make_formatter({
+        name = "ClangFormat",
         command = "clang-format",
         args = { "--assume-filename", "$FILENAME" },
         ft = { "c", "cpp", "cs" },
     }),
 
-    -- Prettier
     make_formatter({
+        name = "Prettier",
         command = "prettier",
         args = { "--stdin-filepath", "$FILENAME" },
         ft = {
@@ -82,41 +83,41 @@ local format = {
         },
     }),
 
-    -- Rustfmt
     make_formatter({
+        name = "Rustfmt",
         command = "rustfmt",
         ft = { "rust" },
     }),
 
-    -- StyLua
     make_formatter({
+        name = "StyLua",
         command = "stylua",
         args = { "-s", "-" },
         ft = { "lua" },
     }),
 
-    -- brittany
     make_formatter({
+        name = "brittany",
         command = "brittany",
         ft = { "haskell" },
     }),
 
-    -- latexindent
     make_formatter({
+        name = "latexindent",
         command = "latexindent",
         -- TODO: Remove when `latexindent` is bumped to V3.9.3
         args = { "-c", vim.fn.expand("~/.cache/latexindent") },
         ft = { "tex" },
     }),
 
-    -- nixpkgs-fmt
     make_formatter({
+        name = "nixpkgs-fmt",
         command = "nixpkgs-fmt",
         ft = { "nix" },
     }),
 
-    -- shfmt
     make_formatter({
+        name = "shfmt",
         command = "shfmt",
         args = { "-i", "4", "-ci" },
         ft = { "sh" },
