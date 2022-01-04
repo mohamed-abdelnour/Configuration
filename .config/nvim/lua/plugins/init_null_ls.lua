@@ -105,8 +105,7 @@ local format = {
     make_formatter({
         name = "latexindent",
         command = "latexindent",
-        -- TODO: Remove when `latexindent` is bumped to V3.9.3
-        args = { "-c", vim.fn.expand("~/.cache/latexindent") },
+        args = { "-g", "/dev/null" },
         ft = { "tex" },
     }),
 
