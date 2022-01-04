@@ -120,6 +120,21 @@ return packer.startup({
         })
 
         use({
+            "jose-elias-alvarez/nvim-lsp-ts-utils",
+            config = function()
+                require("plugins/init_ts_utils")
+            end,
+            ft = {
+                "javascript",
+                "javascript.jsx",
+                "javascriptreact",
+                "typescript",
+                "typescript.tsx",
+                "typescriptreact",
+            },
+        })
+
+        use({
             "neovim/nvim-lspconfig",
             config = function()
                 require("plugins/init_lsp")
