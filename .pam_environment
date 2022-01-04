@@ -33,5 +33,6 @@ UNCRUSTIFY_CONFIG DEFAULT=${XDG_CONFIG_HOME}/uncrustify/uncrustify.cfg
 VISUAL DEFAULT=nvim
 ZDOTDIR DEFAULT=@{HOME}/.config/zsh
 _JAVA_AWT_WM_NONREPARENTING DEFAULT=1
+npm_config_prefix DEFAULT=@{HOME}/.local
 
 PATH DEFAULT=@{HOME}/.local/bin:${CARGO_HOME}/bin:${PATH}
