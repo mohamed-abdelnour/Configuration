@@ -43,6 +43,9 @@ local act = {
     -- Shellcheck
     actions.shellcheck,
 
+    -- eslint_d
+    actions.eslint_d,
+
     -- gitsigns.nvim
     actions.gitsigns,
 }
@@ -132,6 +135,12 @@ local lint = {
 
     -- Shellcheck
     linters.shellcheck,
+
+    -- eslint_d
+    linters.eslint_d.with({
+        args = { "-f", "json", "$FILENAME" },
+        method = null_ls.methods.DIAGNOSTICS_ON_SAVE,
+    }),
 }
 
 local merge = require("init_functions").merge
