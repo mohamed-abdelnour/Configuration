@@ -6,6 +6,7 @@ rsync -ARXahv \
     /etc/environment \
     /etc/gtk-2.0/gtkrc \
     /etc/gtk-3.0/settings.ini \
+    /etc/samba/smb.conf \
     /etc/sysctl.d/ \
     /etc/systemd/logind.conf \
     /etc/systemd/system/getty@tty1.service.d/ \
