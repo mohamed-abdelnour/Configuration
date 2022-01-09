@@ -1,3 +1,5 @@
+---@diagnostic disable: undefined-global
+
 local lush = require "lush"
 local p = require "lush_theme/palette"
 local styles = {
