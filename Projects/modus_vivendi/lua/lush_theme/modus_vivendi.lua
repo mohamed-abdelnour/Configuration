@@ -238,20 +238,14 @@ local theme = lush(function()
 
         -- Plug-ins
         ---- gitsigns.nvim
-        GitSignsAdd { DiffAdd },
+        GitSignsAdd { bg = p.bg_dim, fg = p.green_alt_other },
         GitSignsAddLn { DiffAdd },
         GitSignsAddNr { DiffAdd },
-        GitSignsChange { DiffChange },
-        GitSignsChange { DiffChange },
-        GitSignsChangeLn { DiffChange },
+        GitSignsChange { bg = p.bg_dim, fg = p.yellow_alt_other },
         GitSignsChangeLn { DiffChange },
         GitSignsChangeNr { DiffChange },
-        GitSignsChangeNr { DiffChange },
-        GitSignsDelete { DiffDelete },
-        GitSignsDelete { DiffDelete },
+        GitSignsDelete { bg = p.bg_dim, fg = p.red_alt_other },
         GitSignsDeleteLn { DiffDelete },
-        GitSignsDeleteLn { DiffDelete },
-        GitSignsDeleteNr { DiffDelete },
         GitSignsDeleteNr { DiffDelete },
 
         ---- nvim-ts-rainbow
