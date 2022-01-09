@@ -120,6 +120,15 @@ return packer.startup({
         })
 
         use({
+            "norcalli/nvim-colorizer.lua",
+            cmd = {
+                "ColorizerAttachToBuffer",
+                "ColorizerReloadAllBuffers",
+                "ColorizerToggle",
+            },
+        })
+
+        use({
             "jose-elias-alvarez/nvim-lsp-ts-utils",
             config = function()
                 require("plugins/init_ts_utils")
