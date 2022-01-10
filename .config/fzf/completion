@@ -1,9 +1,9 @@
 #!/usr/bin/env sh
 
 _fzf_compgen_path() {
-    fd --hidden --follow --exclude ".git" . "$1"
+    fd -HL . "$1"
 }
 
 _fzf_compgen_dir() {
-    fd --type d --hidden --follow --exclude ".git" . "$1"
+    fd -HL -t d . "$1"
 }
