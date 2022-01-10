@@ -2,6 +2,8 @@
 **/.bare
 **/.builds
 **/.cache
+**/.config/GIMP/
+**/.config/swi-prolog/
 **/.config/tmux/plugins
 **/.cpan*
 **/.eclipse
