@@ -52,8 +52,8 @@ myKeys conf@XConfig { XMonad.modMask = modm } =
        , ((modm, xK_m)                   , spawn "emacs")
        , ((modm, xK_n)                   , spawn "emacsclient -nc")
        , ((modm, xK_b)                   , spawn "firefox")
-       , ((modm, xK_o)                   , spawn "$HOME/.scripts/dmenu_open")
-       , ((0, xK_Print)                  , spawn "$HOME/.scripts/screenshot")
+       , ((modm, xK_o)                   , spawn "dmenu_open")
+       , ((0, xK_Print)                  , spawn "screenshot")
        , ((0, 0X1008FF02)                , spawn "brightnessctl -q s +10%")
        , ((0, 0X1008FF03)                , spawn "brightnessctl -q s 10%-")
        , ((0, 0x1008FF11)                , spawn "amixer set Master 10%-")
@@ -81,7 +81,7 @@ myKeys conf@XConfig { XMonad.modMask = modm } =
        , ((modm .|. shiftMask, xK_b)     , sendMessage ToggleStruts)
        , ((modm .|. shiftMask, xK_x)     , io exitSuccess)
        , ((modm, xK_q), spawn "xmonad --recompile; xmonad --restart")
-       , ((modm .|. shiftMask, xK_q)     , spawn "$HOME/.scripts/logout_menu")
+       , ((modm .|. shiftMask, xK_q)     , spawn "logout_menu")
        ]
     ++ [ ((m .|. modm, k), windows $ f i)
        | (i, k) <- zip (XMonad.workspaces conf) [xK_1 .. xK_9]

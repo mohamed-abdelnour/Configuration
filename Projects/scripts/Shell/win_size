@@ -1,0 +1,14 @@
+#!/usr/bin/env dash
+
+window() {
+    if [ "$1" = '-a' ]; then
+        xdotool getactivewindow |
+            xargs xwininfo -id
+    else
+        xwininfo
+    fi
+}
+
+window "$1" |
+    awk '/Width|Height/ {printf "%sx", $2}' |
+    sed 's/x$/\n/g'

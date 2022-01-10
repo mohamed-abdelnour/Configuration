@@ -102,27 +102,6 @@
 !.gnupg/gpg.conf
 
 !.local/
-
-!.local/bin/
-!.local/bin/askpass
-!.local/bin/bare
-!.local/bin/build_treesitter_parsers
-!.local/bin/console_session
-!.local/bin/doom_quit_gen
-!.local/bin/drop_caches
-!.local/bin/fehbg
-!.local/bin/get_path
-!.local/bin/get_wm
-!.local/bin/google-java-format
-!.local/bin/kill_keychain
-!.local/bin/mkscript.py
-!.local/bin/nix_packages
-!.local/bin/notifier
-!.local/bin/pkg_url
-!.local/bin/search_nix
-!.local/bin/status.py
-!.local/bin/virtual_battery
-
 !.local/share/
 
 !.local/share/emacs/
@@ -137,10 +116,6 @@
 !.local/share/source-code-pro-slashed/freeze
 !.local/share/source-code-pro-slashed/source-code-pro-slashed
 
-!.scripts/
-!.scripts/**
-.scripts/get_battery.py
-
 !.virtualMachines/
 !.virtualMachines/scripts/
 !.virtualMachines/scripts/**
@@ -151,9 +126,13 @@
 !.xmonad/xmonad.hs
 
 !Projects/
+
 !Projects/modus_vivendi/
 !Projects/modus_vivendi/**
 Projects/modus_vivendi/lua/lush_theme/palette.lua
+
+!Projects/scripts/
+!Projects/scripts/**
 
 !.Xresources
 !.gitignore

@@ -1,0 +1,9 @@
+#!/usr/bin/env dash
+
+get_ip() {
+    ip route get '1.1.1.1' | rg --engine auto -o '(?<=src )[0-9.]*'
+}
+
+ip_address="$(get_ip)"
+printf 'IP: %s\n' "$ip_address"
+printf 'Samba vm-share: \\\\%s\\vm-share\n' "$ip_address"
