@@ -26,7 +26,7 @@ backup_old_palette() {
 
 diff_new_palette() {
     [ -e 'palette.lua.bk' ] &&
-        diff -u --color=always 'palette.lua' 'palette.lua.bk' &&
+        diff -u --color=always 'palette.lua.bk' 'palette.lua' &&
         rm 'palette.lua.bk'
 }
 
