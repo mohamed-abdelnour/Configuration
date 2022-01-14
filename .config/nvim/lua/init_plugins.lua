@@ -6,7 +6,7 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
         "clone",
         "--depth",
         "1",
-        "git@github.com:wbthomason/packer.nvim.git",
+        "https://github.com/wbthomason/packer.nvim.git",
         install_path,
     })
 end
