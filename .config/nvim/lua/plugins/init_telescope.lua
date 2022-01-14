@@ -15,5 +15,12 @@ telescope.setup({
             },
         },
     },
+    extensions = {
+        file_browser = {
+            disable_devicons = true,
+            hidden = true,
+        },
+    },
 })
+telescope.load_extension("file_browser")
 telescope.load_extension("fzf")

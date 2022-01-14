@@ -198,6 +198,12 @@ return packer.startup({
         })
 
         use({
+            "nvim-telescope/telescope-file-browser.nvim",
+            opt = false,
+            requires = "telescope.nvim",
+        })
+
+        use({
             "nvim-telescope/telescope-fzf-native.nvim",
             opt = false,
             requires = "telescope.nvim",
