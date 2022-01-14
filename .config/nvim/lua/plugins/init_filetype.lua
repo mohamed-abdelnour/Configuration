@@ -6,6 +6,9 @@ require("filetype").setup({
             ejs = "html",
             xinitrc = "sh",
         },
+        literal = {
+            ["fonts.conf"] = "xml",
+        },
         shebang = {
             dash = "sh",
         },
