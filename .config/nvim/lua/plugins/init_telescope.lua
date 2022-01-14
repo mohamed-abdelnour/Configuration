@@ -1,10 +1,22 @@
+local set_keymap = vim.keymap.set
+local opts = { silent = true }
+
+set_keymap("n", "<leader>fb", [[<cmd>lua require("telescope.builtin").buffers()<cr>]], opts)
+set_keymap("n", "<leader>fe", [[<cmd>lua require("telescope.builtin").builtin()<cr>]], opts)
+set_keymap("n", "<leader>ff", [[<cmd>lua require("telescope.builtin").find_files()<cr>]], opts)
+set_keymap("n", "<leader>fh", [[<cmd>lua require("telescope.builtin").help_tags()<cr>]], opts)
+set_keymap("n", "<leader>fr", [[<cmd>lua require("telescope.builtin").live_grep()<cr>]], opts)
+
+set_keymap(
+    "n",
+    "<leader>fn",
+    [[<cmd>lua require("telescope").extensions.file_browser.file_browser()<cr>]],
+    opts
+)
+
 local telescope = require("telescope")
 telescope.setup({
     pickers = {
-        file_browser = {
-            disable_devicons = true,
-            hidden = true,
-        },
         find_files = {
             find_command = {
                 "fd",

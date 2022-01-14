@@ -47,14 +47,6 @@ set_keymap("n", "<leader>tlt", ":set list!<cr>", opts)
 set_keymap("n", "<leader>ts", ":set spell!<cr>", opts)
 
 -- Plug-in(s)
----- Telescope
-set_keymap("n", "<leader>fb", [[<cmd>lua require("telescope.builtin").buffers()<cr>]], opts)
-set_keymap("n", "<leader>fe", [[<cmd>lua require("telescope.builtin").builtin()<cr>]], opts)
-set_keymap("n", "<leader>ff", [[<cmd>lua require("telescope.builtin").find_files()<cr>]], opts)
-set_keymap("n", "<leader>fr", [[<cmd>lua require("telescope.builtin").live_grep()<cr>]], opts)
-set_keymap("n", "<leader>fh", [[<cmd>lua require("telescope.builtin").help_tags()<cr>]], opts)
-set_keymap("n", "<leader>fn", [[<cmd>lua require("telescope.builtin").file_browser()<cr>]], opts)
-
 ---- Trouble
 set_keymap("n", "<leader>xx", "<cmd>Trouble<cr>", opts)
 set_keymap("n", "<leader>xw", "<cmd>Trouble lsp_workspace_diagnostics<cr>", opts)
