@@ -1,5 +1,5 @@
-local set_keymap = vim.api.nvim_set_keymap
-local opts = { noremap = true, silent = true }
+local set_keymap = vim.keymap.set
+local opts = { silent = true }
 
 set_keymap("n", "<leader>lc", ":VimtexClean<cr>", opts)
 set_keymap("n", "<leader>lC", ":VimtexClean!<cr>", opts)

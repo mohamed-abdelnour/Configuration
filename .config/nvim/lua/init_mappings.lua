@@ -2,8 +2,8 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-local set_keymap = vim.api.nvim_set_keymap
-local opts = { noremap = true, silent = true }
+local set_keymap = vim.keymap.set
+local opts = { silent = true }
 
 -- Delete buffer
 set_keymap("n", "<leader>k", ":bd<cr>", opts)

@@ -1,4 +1,4 @@
-local set_keymap = vim.api.nvim_set_keymap
+local set_keymap = vim.keymap.set
 local opts = { silent = true }
 
 set_keymap("n", "<leader>rr", "<plug>(Luadev-Run)<cr>", opts)

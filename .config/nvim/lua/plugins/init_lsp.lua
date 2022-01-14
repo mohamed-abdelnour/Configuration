@@ -4,8 +4,8 @@ M.on_attach = function(client, buffer, arg)
     arg = arg or {}
 
     local function buf_set_keymap(lhs, rhs)
-        local opts = { noremap = true, silent = true }
-        vim.api.nvim_buf_set_keymap(buffer, "n", lhs, rhs, opts)
+        local opts = { buffer = buffer, silent = true }
+        vim.keymap.set("n", lhs, rhs, opts)
     end
 
     local base = function()
