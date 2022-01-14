@@ -38,6 +38,8 @@ M.on_attach = function(client, buffer, arg)
         if arg.hook then
             arg.hook(client, buffer)
         end
+
+        M.status.on_attach(client)
     end
 
     local full = function()
@@ -65,6 +67,9 @@ M.on_attach = function(client, buffer, arg)
     }
 end
 
+M.status = require("lsp-status")
+M.status.register_progress()
+
 local coq = require("coq")
 local lsp = require("lspconfig")
 
@@ -79,7 +84,7 @@ M.lsp_setup = function(arg)
             debounce_text_changes = 150,
         },
     }
-    return coq.lsp_ensure_capabilities(vim.tbl_extend("keep", arg, defaults))
+    return coq.lsp_ensure_capabilities(vim.tbl_extend("keep", arg, defaults, M.status.capabilities))
 end
 
 M.init_server = function(arg)

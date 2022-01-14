@@ -44,6 +44,13 @@ local lualine_sections = {
 
     lualine_x = {
         {
+            [[require("lsp-status/statusline").progress()]],
+            fmt = function(string)
+                return trim_wrap(string, "", " |")
+            end,
+            padding = left_padding,
+        },
+        {
             [[require("init_functions").call_or(treesitter_section, "")]],
             fmt = function(string)
                 return trim_wrap(string, "", " |")

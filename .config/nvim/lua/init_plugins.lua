@@ -73,6 +73,11 @@ return packer.startup({
         })
 
         use({
+            "nvim-lua/lsp-status.nvim",
+            opt = false,
+        })
+
+        use({
             "nvim-lualine/lualine.nvim",
             config = function()
                 require("plugins/init_lualine")
