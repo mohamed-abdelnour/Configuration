@@ -9,12 +9,15 @@ M.on_attach = function(client, buffer, arg)
     end
 
     local base = function()
-        buf_set_keymap("<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<cr>")
         buf_set_keymap("<leader>e", "<cmd>lua vim.diagnostic.open_float()<cr>")
         buf_set_keymap("<leader>n", "<cmd>lua vim.lsp.buf.formatting()<cr>")
         buf_set_keymap("<leader>q", "<cmd>lua vim.diagnostic.setloclist()<cr>")
         buf_set_keymap("[d", "<cmd>lua vim.diagnostic.goto_prev()<cr>")
         buf_set_keymap("]d", "<cmd>lua vim.diagnostic.goto_next()<cr>")
+        buf_set_keymap(
+            "<leader>ca",
+            [[<cmd>lua require("telescope.builtin").lsp_code_actions()<cr>]]
+        )
 
         if client.resolved_capabilities.document_highlight then
             vim.cmd([[
