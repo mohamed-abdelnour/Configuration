@@ -17,7 +17,7 @@
   :straight nil)
 
 (use-package emacs
-  :bind (("C-S-u" . universal-argument)
+  :bind (("C-c u" . universal-argument)
          ("C-c k" . kill-all-buffers))
   :init
   ;; Default `fill-column' to 80.
