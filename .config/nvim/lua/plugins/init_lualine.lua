@@ -4,32 +4,52 @@ local trim_wrap = require("init_functions").trim_wrap
 local right_padding = { left = 0, right = 1 }
 local left_padding = { left = 1, right = 0 }
 
+local function pad(tables, padding)
+    for _, table in ipairs(tables) do
+        table.padding = padding
+    end
+    return tables
+end
+
+local function right_pad(tables)
+    return pad(tables, right_padding)
+end
+
+local function left_pad(tables)
+    return pad(tables, left_padding)
+end
+
+local function trim_wrap_rbar(string)
+    return trim_wrap(string, "", " |")
+end
+
+local function trim_wrap_parens(string)
+    return trim_wrap(string, "(", ")")
+end
+
 local lualine_sections = {
-    lualine_a = {
+    lualine_a = right_pad({
         {
             "%{mode()}",
             fmt = trim_wrap,
-            padding = right_padding,
         },
-    },
+    }),
 
-    lualine_b = {
+    lualine_b = right_pad({
         {
             "filename",
-            padding = right_padding,
             path = 1,
             symbols = {
                 modified = " [+]",
                 readonly = " [RO]",
             },
         },
-    },
+    }),
 
-    lualine_c = {
+    lualine_c = right_pad({
         {
             "branch",
             color = { fg = palette.cyan },
-            padding = right_padding,
         },
         {
             "diff",
@@ -38,49 +58,43 @@ local lualine_sections = {
                 modified = { fg = palette.yellow },
                 removed = { fg = palette.red },
             },
-            padding = right_padding,
         },
-    },
+    }),
 
-    lualine_x = {
+    lualine_x = left_pad({
         {
             [[require("lsp-status/statusline").progress()]],
-            fmt = function(string)
-                return trim_wrap(string, "", " |")
-            end,
-            padding = left_padding,
+            fmt = trim_wrap_rbar,
         },
         {
             [[require("init_functions").call_or(treesitter_section, "")]],
-            fmt = function(string)
-                return trim_wrap(string, "", " |")
-            end,
-            padding = left_padding,
+            fmt = trim_wrap_rbar,
         },
         {
             "diagnostics",
-            padding = left_padding,
             sources = { "nvim_diagnostic" },
         },
-    },
+    }),
 
-    lualine_y = {
+    lualine_y = left_pad({
         {
             "%l/%L, %v",
-            fmt = function(string)
-                return trim_wrap(string, "(", ")")
-            end,
-            padding = left_padding,
+            fmt = trim_wrap_parens,
         },
-    },
+    }),
 
-    lualine_z = {
+    lualine_z = left_pad({
         {
             "%p%%",
             fmt = trim_wrap,
-            padding = left_padding,
         },
-    },
+    }),
+}
+
+local lualine_inactive_sections = {
+    lualine_a = {},
+    lualine_c = {},
+    lualine_x = {},
 }
 
 require("lualine").setup({
@@ -91,12 +105,5 @@ require("lualine").setup({
         theme = require("lush_theme/lualine/modus_vivendi"),
     },
     sections = lualine_sections,
-    inactive_sections = {
-        lualine_a = {},
-        lualine_b = lualine_sections.lualine_b,
-        lualine_c = {},
-        lualine_x = {},
-        lualine_y = lualine_sections.lualine_y,
-        lualine_z = lualine_sections.lualine_z,
-    },
+    inactive_sections = vim.tbl_extend("keep", lualine_inactive_sections, lualine_sections),
 })
