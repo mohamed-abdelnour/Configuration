@@ -148,14 +148,6 @@ return packer.startup({
         })
 
         use({
-            "bfredl/nvim-luadev",
-            cmd = "Luadev",
-            config = function()
-                require("plugins/init_luadev")
-            end,
-        })
-
-        use({
             "nvim-treesitter/nvim-treesitter",
             config = function()
                 require("plugins/init_treesitter")
