@@ -13,7 +13,7 @@
 
 ### Prerequisites
 
-- Make sure that [`bare`](.local/bin/bare) is available in `"$PATH"`.
+- Make sure that [`bare`](Projects/scripts/Shell/bare) is available in `"$PATH"`.
 
 - Have `git` ignore _everything_ inside `"$HOME"`:
 
