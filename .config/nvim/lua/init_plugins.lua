@@ -33,12 +33,6 @@ return packer.startup({
         use({
             "ms-jpq/coq_nvim",
             opt = false,
-            requires = {
-                {
-                    "ms-jpq/coq.artifacts",
-                    opt = false,
-                },
-            },
             setup = function()
                 require("plugins/init_coq")
             end,
