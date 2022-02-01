@@ -1,13 +1,38 @@
-require("trouble").setup({
-    fold_closed = ">",
-    fold_open = "v",
-    icons = false,
-    indent_lines = false,
-    signs = {
-        error = "E",
-        warning = "W",
-        hint = "H",
-        information = "I",
+local M = {
+    trouble = {
+        "folke/trouble.nvim",
+        cmd = "Trouble",
     },
-    use_lsp_diagnostic_signs = false,
-})
+}
+
+M.trouble.config = function()
+    require("trouble").setup({
+        fold_closed = ">",
+        fold_open = "v",
+        icons = false,
+        indent_lines = false,
+        signs = {
+            error = "E",
+            warning = "W",
+            hint = "H",
+            information = "I",
+        },
+        use_lsp_diagnostic_signs = false,
+    })
+end
+
+local function main()
+    local set_keymap = vim.keymap.set
+    local opts = { silent = true }
+
+    set_keymap("n", "<leader>xx", "<cmd>Trouble<cr>", opts)
+    set_keymap("n", "<leader>xw", "<cmd>Trouble lsp_workspace_diagnostics<cr>", opts)
+    set_keymap("n", "<leader>xd", "<cmd>Trouble lsp_document_diagnostics<cr>", opts)
+    set_keymap("n", "<leader>xl", "<cmd>Trouble loclist<cr>", opts)
+    set_keymap("n", "<leader>xq", "<cmd>Trouble quickfix<cr>", opts)
+    set_keymap("n", "gR", "<cmd>Trouble lsp_references<cr>", opts)
+end
+
+main()
+
+return M

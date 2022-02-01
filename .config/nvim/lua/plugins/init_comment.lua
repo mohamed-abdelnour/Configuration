@@ -1,10 +1,21 @@
-require("Comment").setup({
-    toggler = {
-        line = ";;",
-        block = ";b",
+local M = {
+    comment = {
+        "numToStr/Comment.nvim",
+        opt = false,
     },
-    opleader = {
-        line = "g;",
-        block = "gb",
-    },
-})
+}
+
+M.comment.config = function()
+    require("Comment").setup({
+        toggler = {
+            line = ";;",
+            block = ";b",
+        },
+        opleader = {
+            line = "g;",
+            block = "gb",
+        },
+    })
+end
+
+return M
