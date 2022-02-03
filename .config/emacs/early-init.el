@@ -15,7 +15,7 @@
 
 ;; Set `native-comp-eln-load-path`.
 (setcar native-comp-eln-load-path
-        (expand-file-name (convert-standard-filename "var/eln-cache/")
+        (expand-file-name (convert-standard-filename "eln-cache/")
                           user-emacs-directory))
 
 ;; Disable `package.el`.
