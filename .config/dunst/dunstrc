@@ -1,6 +1,6 @@
 [global]
     follow = mouse
-    font = Iosevka Regular 13
+    font = monospace Regular 13
     frame_width = 2
     height = 400
     horizontal_padding = 8

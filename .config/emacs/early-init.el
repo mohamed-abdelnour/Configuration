@@ -31,7 +31,7 @@
 (add-to-list 'default-frame-alist '(background-color . "#000000"))
 
 ;; Set the default font.
-(add-to-list 'default-frame-alist '(font . "Iosevka-11"))
+(add-to-list 'default-frame-alist '(font . "monospace-11"))
 
 ;; Disable unwanted UI elements.
 (blink-cursor-mode -1)
