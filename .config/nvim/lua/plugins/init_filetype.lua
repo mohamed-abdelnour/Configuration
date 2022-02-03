@@ -16,6 +16,7 @@ M.filetype.config = function()
             },
             literal = {
                 ["fonts.conf"] = "xml",
+                ["tmux.conf"] = "sh",
             },
             shebang = {
                 dash = "sh",
