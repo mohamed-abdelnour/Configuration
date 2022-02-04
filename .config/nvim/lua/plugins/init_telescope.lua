@@ -24,7 +24,13 @@ local M = {
 
 M.telescope.config = function()
     local telescope = require("telescope")
+    local ivy = require("telescope/themes").get_ivy({
+        layout_config = {
+            height = 20,
+        },
+    })
     telescope.setup({
+        defaults = ivy,
         pickers = {
             find_files = {
                 find_command = {
