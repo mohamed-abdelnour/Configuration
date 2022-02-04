@@ -6,6 +6,7 @@ autoload -U colors && colors
 stty stop undef
 unsetopt beep
 setopt HIST_IGNORE_DUPS
+setopt ignoreeof
 
 HISTFILE=$HOME/.cache/zsh/histfile
 HISTSIZE=10000
