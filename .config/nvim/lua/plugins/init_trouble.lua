@@ -21,7 +21,7 @@ M.trouble.config = function()
     })
 end
 
-local function main()
+local function init()
     local set_keymap = vim.keymap.set
     local opts = { silent = true }
 
@@ -33,6 +33,6 @@ local function main()
     set_keymap("n", "gR", "<cmd>Trouble lsp_references<cr>", opts)
 end
 
-main()
+init()
 
 return M

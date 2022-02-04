@@ -1,6 +1,6 @@
 local M = {}
 
-local function main()
+local function init()
     vim.cmd([[
         augroup term
             autocmd!
@@ -12,6 +12,6 @@ local function main()
     ]])
 end
 
-main()
+init()
 
 return M
