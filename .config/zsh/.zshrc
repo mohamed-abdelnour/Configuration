@@ -32,8 +32,8 @@ bindkey -M menuselect '^l' vi-forward-char
 . "$HOME/.config/aliasrc"
 . "$HOME/.config/fzf/completion"
 . "$HOME/.config/nnn/quitcd.bash_zsh"
-. '/usr/share/fzf/key-bindings.zsh'
 . '/usr/share/fzf/completion.zsh'
+. '/usr/share/fzf/key-bindings.zsh'
 
 zle_highlight=(region:bg='#3C3C3C',fg=white special:none suffix:none isearch:none paste:none)
 
