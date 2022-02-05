@@ -35,6 +35,13 @@ M.lualine.config = function()
         return trim_wrap(string, "(", ")")
     end
 
+    local diagnostic_icons = require("modules/init_icons").set_icons({
+        input = { "error", "warn", "info", "hint" },
+        fn = function(r, _, v, icon)
+            r[v] = icon .. " "
+        end,
+    })
+
     local lualine_sections = {
         lualine_a = right_pad({
             {
@@ -44,6 +51,10 @@ M.lualine.config = function()
         }),
 
         lualine_b = right_pad({
+            {
+                "filetype",
+                icon_only = true,
+            },
             {
                 "filename",
                 path = 1,
@@ -81,6 +92,7 @@ M.lualine.config = function()
             {
                 "diagnostics",
                 sources = { "nvim_diagnostic" },
+                symbols = diagnostic_icons,
             },
         }),
 
@@ -108,7 +120,6 @@ M.lualine.config = function()
     require("lualine").setup({
         options = {
             component_separators = "",
-            icons_enabled = false,
             section_separators = "",
             theme = require("lush_theme/lualine/modus_vivendi"),
         },

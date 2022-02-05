@@ -7,17 +7,9 @@ local M = {
 
 M.trouble.config = function()
     require("trouble").setup({
-        fold_closed = ">",
-        fold_open = "v",
-        icons = false,
-        indent_lines = false,
-        signs = {
-            error = "E",
-            warning = "W",
-            hint = "H",
-            information = "I",
-        },
-        use_lsp_diagnostic_signs = false,
+        fold_closed = "▶",
+        fold_open = "▼",
+        use_diagnostic_signs = true,
     })
 end
 

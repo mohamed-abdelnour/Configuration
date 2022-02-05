@@ -7,16 +7,13 @@ local M = {
 }
 
 M.gitsigns.config = function()
-    local signs = {
-        add = {},
-        change = {},
-        delete = {},
-        changedelete = {},
-        topdelete = {},
-    }
-    for k, _ in pairs(signs) do
-        signs[k].text = "┃"
-    end
+    local signs = require("modules/init_icons").set_icons({
+        input = { "add", "change", "delete", "changedelete", "topdelete" },
+        icon = "U_2503",
+        fn = function(r, _, v, icon)
+            r[v] = { text = icon }
+        end,
+    })
 
     require("gitsigns").setup({
         signs = signs,

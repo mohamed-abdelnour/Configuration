@@ -44,7 +44,7 @@ M.telescope.config = function()
         },
         extensions = {
             file_browser = {
-                disable_devicons = true,
+                dir_icon = "○",
                 hidden = true,
             },
         },

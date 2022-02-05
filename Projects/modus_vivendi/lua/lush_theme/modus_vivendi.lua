@@ -116,6 +116,10 @@ local theme = lush(function()
         DiagnosticHint { fg = p.blue_intense },
         DiagnosticInfo { fg = p.purple_intense },
         DiagnosticWarn { fg = p.yellow_intense },
+        DiagnosticSignError { bg = p.bg_dim, fg = p.red_intense },
+        DiagnosticSignHint { bg = p.bg_dim, fg = p.blue_intense },
+        DiagnosticSignInfo { bg = p.bg_dim, fg = p.purple_intense },
+        DiagnosticSignWarn { bg = p.bg_dim, fg = p.yellow_intense },
         DiagnosticVirtualTextError { bg = p.red_intense_bg, fg = p.fg_main },
         DiagnosticVirtualTextHint { bg = p.cyan_subtle_bg, fg = p.fg_dim },
         DiagnosticVirtualTextInfo { bg = p.magenta_subtle_bg, fg = p.fg_dim },
@@ -129,10 +133,6 @@ local theme = lush(function()
         DiagnosticFloatingHint { DiagnosticHint },
         DiagnosticFloatingInfo { DiagnosticInfo },
         DiagnosticFloatingWarn { DiagnosticWarn },
-        DiagnosticSignError { DiagnosticVirtualTextError },
-        DiagnosticSignHint { DiagnosticVirtualTextHint },
-        DiagnosticSignInfo { DiagnosticVirtualTextInfo },
-        DiagnosticSignWarn { DiagnosticVirtualTextWarn },
         DiagnosticUnderlineError { DiagnosticError },
         DiagnosticUnderlineHint { DiagnosticHint },
         DiagnosticUnderlineInfo { DiagnosticInfo },
@@ -260,6 +260,15 @@ local theme = lush(function()
         ---- telescope.nvim
         TelescopeBorder { fg = p.fg_window_divider_outer },
         TelescopeMatching { fg = p.blue_alt_other },
+
+        ---- trouble.nvim
+        TroubleFoldIcon { fg = p.fg_dim },
+        TroubleIndent { fg = p.fg_window_divider_inner },
+        TroubleSignError { DiagnosticError },
+        TroubleSignHint { DiagnosticHint },
+        TroubleSignInformation { DiagnosticInfo },
+        TroubleSignOther { DiagnosticInfo },
+        TroubleSignWarning { DiagnosticWarn },
 
         -- Miscellaneous
         NvimInternalError { DiagnosticVirtualTextError },
