@@ -86,10 +86,6 @@ M.lualine.config = function()
                 fmt = trim_wrap_rbar,
             },
             {
-                [[require("modules/init_treesitter").treesitter_section()]],
-                fmt = trim_wrap_rbar,
-            },
-            {
                 "diagnostics",
                 sources = { "nvim_diagnostic" },
                 symbols = diagnostic_icons,
