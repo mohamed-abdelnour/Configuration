@@ -133,6 +133,9 @@ Projects/modus_vivendi/lua/lush_theme/palette.lua
 
 !Projects/scripts/
 !Projects/scripts/**
+Projects/scripts/Python/src/bare_ignore/
+Projects/scripts/Python/src/get_battery.py
+Projects/scripts/Shell/backup
 
 !.Xresources
 !.gitignore

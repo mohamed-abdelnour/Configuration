@@ -3,6 +3,5 @@
 dummy:
 	@true
 
-ignore := --ignore-file='.gitignore'
 link:
-	@fd $(ignore) -t x -x ln -frs '{}' '$(HOME)/.local/bin/{/}'
+	@fd -t x -x ln -frs '{}' '$(HOME)/.local/bin/{/}'
