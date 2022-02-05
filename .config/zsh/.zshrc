@@ -31,6 +31,7 @@ bindkey -M menuselect '^l' vi-forward-char
 
 . "$HOME/.config/aliasrc"
 . "$HOME/.config/fzf/completion"
+. "$HOME/.config/git/alias"
 . "$HOME/.config/nnn/quitcd.bash_zsh"
 . '/usr/share/fzf/completion.zsh'
 . '/usr/share/fzf/key-bindings.zsh'

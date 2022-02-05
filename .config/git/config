@@ -41,6 +41,51 @@
     syntax-theme = base16
     zero-style = syntax
 
+# Aliases
 [alias]
+    a = add
+    ap = a --patch
+
+    b = branch -vv --all
+
+    c = commit
+    ca = c --amend
+    ce = ca --no-edit
+
+    co = checkout
+
     d = diff
+    ds = d --staged
+
+    l = log --graph --oneline
+    la = l --all
+
+    m = merge
+
+    mt = mergetool
+
+    p = push
+    pf = p --force-with-lease
+    pff = p --force
+
+    r = rebase
+    ra = r --abort
+    rc = r --continue
+    ri = r --interactive
+
+    rs = restore
+    rss = rs --staged
+    rsf = rss --worktree
+
+    rv = revert --no-commit
+
     s = status
+
+    st = stash
+    sta = st apply
+    std = st drop
+    stl = st list
+    stp = st pop
+    sts = st show
+
+    sw = show --patch --stat

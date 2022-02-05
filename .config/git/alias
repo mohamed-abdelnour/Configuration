@@ -1,0 +1,19 @@
+#!/usr/bin/env dash
+
+__alias() {
+    cmd="$1"
+    shift
+    if [ "$#" -eq 0 ]; then
+        "$cmd" status --short
+    else
+        "$cmd" "$@"
+    fi
+}
+
+g() {
+    __alias "git" "$@"
+}
+
+e() {
+    __alias "bare" "$@"
+}
