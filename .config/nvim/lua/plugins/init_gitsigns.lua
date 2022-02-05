@@ -7,41 +7,19 @@ local M = {
 }
 
 M.gitsigns.config = function()
-    local U2053 = "┃"
+    local signs = {
+        add = {},
+        change = {},
+        delete = {},
+        changedelete = {},
+        topdelete = {},
+    }
+    for k, _ in pairs(signs) do
+        signs[k].text = "┃"
+    end
 
     require("gitsigns").setup({
-        signs = {
-            add = {
-                hl = "GitSignsAdd",
-                linehl = "GitSignsAddLn",
-                numhl = "GitSignsAddNr",
-                text = U2053,
-            },
-            change = {
-                hl = "GitSignsChange",
-                linehl = "GitSignsChangeLn",
-                numhl = "GitSignsChangeNr",
-                text = U2053,
-            },
-            delete = {
-                hl = "GitSignsDelete",
-                linehl = "GitSignsDeleteLn",
-                numhl = "GitSignsDeleteNr",
-                text = U2053,
-            },
-            changedelete = {
-                hl = "GitSignsChange",
-                linehl = "GitSignsChangeLn",
-                numhl = "GitSignsChangeNr",
-                text = U2053,
-            },
-            topdelete = {
-                hl = "GitSignsDelete",
-                linehl = "GitSignsDeleteLn",
-                numhl = "GitSignsDeleteNr",
-                text = U2053,
-            },
-        },
+        signs = signs,
 
         on_attach = function(buffer)
             local gs = package.loaded.gitsigns
