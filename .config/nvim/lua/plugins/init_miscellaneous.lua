@@ -18,6 +18,14 @@ local M = {
         opt = false,
     },
 
+    spaceless = {
+        "lewis6991/spaceless.nvim",
+        config = function()
+            require("spaceless").setup()
+        end,
+        opt = false,
+    },
+
     startuptime = {
         "dstein64/vim-startuptime",
         cmd = "StartupTime",
