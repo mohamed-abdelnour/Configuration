@@ -3,7 +3,7 @@ _: _: {
     overlays = [
       (import
         (builtins.fetchTarball {
-          url = "https://github.com/nix-community/neovim-nightly-overlay/archive/19311b9ef8f8f8c71b2f41b59ec9e436646b667c.tar.gz";
+          url = "https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz";
         }))
     ];
   }).neovim-nightly;
