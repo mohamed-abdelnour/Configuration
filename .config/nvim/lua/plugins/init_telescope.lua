@@ -57,18 +57,16 @@ local function init()
     local set_keymap = vim.keymap.set
     local opts = { silent = true }
 
-    set_keymap("n", "<leader>fb", [[<cmd>lua require("telescope.builtin").buffers()<cr>]], opts)
-    set_keymap("n", "<leader>fe", [[<cmd>lua require("telescope.builtin").builtin()<cr>]], opts)
-    set_keymap("n", "<leader>ff", [[<cmd>lua require("telescope.builtin").find_files()<cr>]], opts)
-    set_keymap("n", "<leader>fh", [[<cmd>lua require("telescope.builtin").help_tags()<cr>]], opts)
-    set_keymap("n", "<leader>fr", [[<cmd>lua require("telescope.builtin").live_grep()<cr>]], opts)
+    local builtin = require("telescope/builtin")
 
-    set_keymap(
-        "n",
-        "<leader>fn",
-        [[<cmd>lua require("telescope").extensions.file_browser.file_browser()<cr>]],
-        opts
-    )
+    set_keymap("n", "<leader>ca", builtin.lsp_code_actions, opts)
+    set_keymap("n", "<leader>fb", builtin.buffers, opts)
+    set_keymap("n", "<leader>fe", builtin.builtin, opts)
+    set_keymap("n", "<leader>ff", builtin.find_files, opts)
+    set_keymap("n", "<leader>fh", builtin.help_tags, opts)
+    set_keymap("n", "<leader>fr", builtin.live_grep, opts)
+
+    set_keymap("n", "<leader>fn", require("telescope").extensions.file_browser.file_browser, opts)
 end
 
 init()

@@ -30,7 +30,7 @@ local M = {
 
 M.markdown.config = function()
     opts = { silent = true }
-    vim.keymap.set("n", "<leader>m", ":MarkdownPreviewToggle<cr>", opts)
+    vim.keymap.set("n", "<leader>m", "<cmd>MarkdownPreviewToggle<cr>", opts)
 end
 
 M.rust.config = function()

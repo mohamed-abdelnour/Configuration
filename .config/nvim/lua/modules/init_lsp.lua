@@ -18,15 +18,11 @@ M.on_attach = function(client, buffer, arg)
     end
 
     local base = function()
-        buf_set_keymap("<leader>e", "<cmd>lua vim.diagnostic.open_float()<cr>")
-        buf_set_keymap("<leader>n", "<cmd>lua vim.lsp.buf.formatting()<cr>")
-        buf_set_keymap("<leader>q", "<cmd>lua vim.diagnostic.setloclist()<cr>")
-        buf_set_keymap("[d", "<cmd>lua vim.diagnostic.goto_prev()<cr>")
-        buf_set_keymap("]d", "<cmd>lua vim.diagnostic.goto_next()<cr>")
-        buf_set_keymap(
-            "<leader>ca",
-            [[<cmd>lua require("telescope.builtin").lsp_code_actions()<cr>]]
-        )
+        buf_set_keymap("<leader>e", vim.diagnostic.open_float)
+        buf_set_keymap("<leader>n", vim.lsp.buf.formatting)
+        buf_set_keymap("<leader>q", vim.diagnostic.setloclist)
+        buf_set_keymap("[d", vim.diagnostic.goto_prev)
+        buf_set_keymap("]d", vim.diagnostic.goto_next)
 
         if client.resolved_capabilities.document_highlight then
             vim.cmd([[
@@ -54,20 +50,19 @@ M.on_attach = function(client, buffer, arg)
     local full = function()
         base()
 
-        buf_set_keymap("<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<cr>")
-        buf_set_keymap("<leader>D", "<cmd>lua vim.lsp.buf.type_definition()<cr>")
-        buf_set_keymap("<leader>rn", "<cmd>lua vim.lsp.buf.rename()<cr>")
-        buf_set_keymap("<leader>wa", "<cmd>lua vim.lsp.buf.add_workspace_folder()<cr>")
-        buf_set_keymap("<leader>wr", "<cmd>lua vim.lsp.buf.remove_workspace_folder()<cr>")
-        buf_set_keymap("K", "<cmd>lua vim.lsp.buf.hover()<cr>")
-        buf_set_keymap("gD", "<cmd>lua vim.lsp.buf.declaration()<cr>")
-        buf_set_keymap("gd", "<cmd>lua vim.lsp.buf.definition()<cr>")
-        buf_set_keymap("gi", "<cmd>lua vim.lsp.buf.implementation()<cr>")
-        buf_set_keymap("gr", "<cmd>lua vim.lsp.buf.references()<cr>")
-        buf_set_keymap(
-            "<leader>wl",
-            "<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<cr>"
-        )
+        buf_set_keymap("<C-k>", vim.lsp.buf.signature_help)
+        buf_set_keymap("<leader>D", vim.lsp.buf.type_definition)
+        buf_set_keymap("<leader>rn", vim.lsp.buf.rename)
+        buf_set_keymap("<leader>wa", vim.lsp.buf.add_workspace_folder)
+        buf_set_keymap("<leader>wr", vim.lsp.buf.remove_workspace_folder)
+        buf_set_keymap("K", vim.lsp.buf.hover)
+        buf_set_keymap("gD", vim.lsp.buf.declaration)
+        buf_set_keymap("gd", vim.lsp.buf.definition)
+        buf_set_keymap("gi", vim.lsp.buf.implementation)
+        buf_set_keymap("gr", vim.lsp.buf.references)
+        buf_set_keymap("<leader>wl", function()
+            print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+        end)
     end
 
     return {

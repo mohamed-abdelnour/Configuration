@@ -9,9 +9,9 @@ M.vimtex.config = function()
     local set_keymap = vim.keymap.set
     local opts = { silent = true }
 
-    set_keymap("n", "<leader>lc", ":VimtexClean<cr>", opts)
-    set_keymap("n", "<leader>lC", ":VimtexClean!<cr>", opts)
-    set_keymap("n", "<leader>ll", ":VimtexCompileSS<cr>", opts)
+    set_keymap("n", "<leader>lc", "<cmd>VimtexClean<cr>", opts)
+    set_keymap("n", "<leader>lC", "<cmd>VimtexClean!<cr>", opts)
+    set_keymap("n", "<leader>ll", "<cmd>VimtexCompileSS<cr>", opts)
 
     vim.g.tex_flavor = "latex"
     vim.g.tex_indent_brace = 0
