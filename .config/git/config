@@ -1,34 +1,45 @@
-[user]
-    name = Mohamed Abdelnour
-    email = mohamed.k.abdelnour@gmail.com
+# General
+[core]
+    autocrlf = input
+    pager = less
 
+[user]
+    email = mohamed.k.abdelnour@gmail.com
+    name = Mohamed Abdelnour
+
+# Subcommands
 [commit]
     gpgsign = true
-[core]
-    pager = less
-    autocrlf = input
+
 [init]
     defaultBranch = main
+
 [merge]
     tool = nvimdiff
+
 [mergetool]
     keepBackup = false
 
+[stash]
+    showPatch = true
+    showStat = true
+
+# Delta
 [delta]
     line-numbers = true
     line-numbers-minus-style = red
     line-numbers-plus-style = green
     line-numbers-zero-style = brightblack
-    syntax-theme = base16
-    minus-emph-style              = "#FFD9EB" "#852828"
+    minus-emph-style = "#FFD9EB" "#852828"
     minus-empty-line-marker-style = "#EEBDBA" "#500F29"
-    minus-non-emph-style          = "#EEBDBA" "#500F29"
-    minus-style                   = "#EEBDBA" "#500F29"
-    plus-emph-style               = "#E0F6E0" "#005A36"
-    plus-empty-line-marker-style  = "#B4DDB4" "#1D3C25"
-    plus-non-emph-style           = "#B4DDB4" "#1D3C25"
-    plus-style                    = "#B4DDB4" "#1D3C25"
-    zero-style                    = syntax
+    minus-non-emph-style = "#EEBDBA" "#500F29"
+    minus-style = "#EEBDBA" "#500F29"
+    plus-emph-style = "#E0F6E0" "#005A36"
+    plus-empty-line-marker-style = "#B4DDB4" "#1D3C25"
+    plus-non-emph-style = "#B4DDB4" "#1D3C25"
+    plus-style = "#B4DDB4" "#1D3C25"
+    syntax-theme = base16
+    zero-style = syntax
 
 [alias]
     d = diff
