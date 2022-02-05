@@ -15,13 +15,13 @@ local function make_mode(bg, fg)
 end
 
 local function make_modes()
-    local active_section = make_mode(p.bg_active, p.fg_active)
+    local active_section = make_mode(p.bg_dim, p.fg_active)
     local active_modes = { "normal", "insert", "visual", "replace", "command" }
     local result = {}
     for _, active_mode in ipairs(active_modes) do
         result[active_mode] = active_section
     end
-    result.inactive = make_mode(p.bg_inactive, p.fg_inactive)
+    result.inactive = make_mode(p.bg_dim, p.fg_inactive)
     return result
 end
 
