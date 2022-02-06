@@ -69,6 +69,6 @@ local function init()
     set_keymap("n", "<leader>fn", require("telescope").extensions.file_browser.file_browser, opts)
 end
 
-init()
+pcall(init)
 
 return M
