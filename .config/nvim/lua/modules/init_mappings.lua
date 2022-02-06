@@ -22,6 +22,9 @@ local function init()
     set_keymap("v", "<A-j>", "<cmd>move '>+1<cr>gv", opts)
     set_keymap("v", "<A-k>", "<cmd>move '<-2<cr>gv", opts)
 
+    -- nohlsearch
+    set_keymap("n", "<c-l>", "<cmd>nohlsearch<cr>", opts)
+
     -- Toggles
     ---- colorcolumn
     set_keymap(
