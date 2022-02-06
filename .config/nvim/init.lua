@@ -1,8 +1,14 @@
-pcall(function()
+local function impatient()
     require("impatient").enable_profile()
-end)
+end
 
-require("modules/init_autocommands")
-require("modules/init_mappings")
-require("modules/init_options")
-require("modules/init_plugins")
+local function main()
+    pcall(impatient)
+
+    require("modules/init_autocommands")
+    require("modules/init_mappings")
+    require("modules/init_options")
+    require("modules/init_plugins")
+end
+
+main()
