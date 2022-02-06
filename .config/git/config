@@ -46,16 +46,22 @@
     a = add
     ap = a --patch
 
-    b = branch -vv --all
+    b = branch
+    ba = b -vv --all
 
     c = commit
     ca = c --amend
     ce = ca --no-edit
 
+    cl = clone
+    cls = cl --depth 1
+
     co = checkout
 
     d = diff
     ds = d --staged
+
+    f = fetch
 
     l = log --graph --oneline
     la = l --all
@@ -89,3 +95,10 @@
     sts = st show
 
     sw = show --patch --stat
+
+    w = worktree
+    wa = w add
+    wl = w list
+    wm = w move
+    wp = w prune
+    wr = w remove
