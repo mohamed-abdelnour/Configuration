@@ -19,6 +19,14 @@ local M = {
         },
     },
 
+    nvim_luapad = {
+        "rafcamlet/nvim-luapad",
+        cmd = {
+            "LuaRun",
+            "Luapad",
+        },
+    },
+
     plenary = {
         "nvim-lua/plenary.nvim",
         opt = false,
