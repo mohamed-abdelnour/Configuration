@@ -22,7 +22,7 @@ end
 
 function M.link_ts_queries(lang, queries)
     return table.concat({
-        "ln -sfr ",
+        "ln -srf ",
         queries or "queries",
         " ",
         vim.fn.stdpath("data"),

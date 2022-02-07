@@ -6,7 +6,7 @@ dummy:
 	@true
 
 link:
-	@fd -t x -x ln -frs '{}' '$(LOCAL_BIN){/}'
+	@fd -t x -x ln -srf '{}' '$(LOCAL_BIN){/}'
 
 clean:
 	@fd -t l . '$(LOCAL_BIN)' -x dash -c '[ -e "{}" ] || rm {}'
