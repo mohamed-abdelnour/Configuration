@@ -17,7 +17,7 @@ local s = {
 local theme = lush(function()
     return {
         -- Default groups
-        ---- Base
+        -- Base
         ColorColumn { bg = p.bg_hl_line },
         Comment { fg = p.fg_alt },
         Conceal { fg = p.blue },
@@ -53,7 +53,7 @@ local theme = lush(function()
         VertSplit { fg = p.fg_window_divider_inner },
         Visual { bg = p.bg_region, fg = p.fg_main },
         Whitespace { bg = p.bg_whitespace, fg = p.fg_whitespace },
-        ---- Linked
+        -- Linked
         Cursor { Normal },
         CursorColumn { ColorColumn },
         CursorIM { Normal },
@@ -73,7 +73,7 @@ local theme = lush(function()
         lCursor { Normal },
 
         -- Standard groups
-        ---- Base
+        -- Base
         Bold { gui = s.b },
         Boolean { fg = p.magenta_alt },
         Character { fg = p.cyan_alt_other },
@@ -107,15 +107,15 @@ local theme = lush(function()
         Type { fg = p.cyan_alt_other },
         Typedef { fg = p.cyan_alt_other },
         Underlined { gui = s.ul },
-        ---- Extra
+        -- Extra
         Builtin { fg = p.magenta_alt },
         Link { gui = s.ul, fg = p.blue_alt_other },
-        ---- Linked
+        -- Linked
         Delimiter { Normal },
         Float { Number },
 
         -- Diagnostic
-        ---- Base
+        -- Base
         DiagnosticError { fg = p.red_intense },
         DiagnosticHint { fg = p.blue_intense },
         DiagnosticInfo { fg = p.purple_intense },
@@ -128,11 +128,11 @@ local theme = lush(function()
         DiagnosticVirtualTextHint { bg = p.cyan_subtle_bg, fg = p.fg_dim },
         DiagnosticVirtualTextInfo { bg = p.magenta_subtle_bg, fg = p.fg_dim },
         DiagnosticVirtualTextWarn { bg = p.yellow_intense_bg, fg = p.fg_main },
-        ---- Extra
+        -- Extra
         DiagnosticDebug { fg = p.fg_alt },
         DiagnosticVirtualTextDebug { bg = p.fg_alt, fg = p.bg_main },
         DiagnosticVirtualTextSuccess { bg = p.green_intense_bg, fg = p.fg_main },
-        ---- Linked
+        -- Linked
         DiagnosticFloatingError { DiagnosticError },
         DiagnosticFloatingHint { DiagnosticHint },
         DiagnosticFloatingInfo { DiagnosticInfo },
@@ -150,10 +150,10 @@ local theme = lush(function()
         WarningMsg { DiagnosticVirtualTextWarn },
 
         -- LSP
-        ---- Base
+        -- Base
         LspCodeLens { fg = p.fg_alt },
         LspReferenceText { bg = p.bg_hl_alt },
-        ---- Linked
+        -- Linked
         LspReferenceRead { LspReferenceText },
         LspReferenceWrite { LspReferenceText },
 
@@ -241,7 +241,7 @@ local theme = lush(function()
         markdownLinkText { Link },
 
         -- Plug-ins
-        ---- gitsigns.nvim
+        -- gitsigns.nvim
         GitSignsAdd { bg = p.bg_dim, fg = p.green_alt_other },
         GitSignsAddLn { DiffAdd },
         GitSignsAddNr { DiffAdd },
@@ -272,7 +272,7 @@ local theme = lush(function()
         LightspeedPendingOpArea { LightspeedShortcut },
         LightspeedUniqueChar { LightspeedUnlabeledMatch },
 
-        ---- nvim-ts-rainbow
+        -- nvim-ts-rainbow
         rainbowcol1 { Normal },
         rainbowcol2 { fg = p.magenta_intense },
         rainbowcol3 { fg = p.cyan_intense },
@@ -281,11 +281,11 @@ local theme = lush(function()
         rainbowcol6 { fg = p.red_intense },
         rainbowcol7 { fg = p.blue_intense },
 
-        ---- telescope.nvim
+        -- telescope.nvim
         TelescopeBorder { fg = p.fg_window_divider_outer },
         TelescopeMatching { fg = p.blue_alt_other },
 
-        ---- trouble.nvim
+        -- trouble.nvim
         TroubleFoldIcon { fg = p.fg_dim },
         TroubleIndent { fg = p.fg_window_divider_inner },
         TroubleSignError { DiagnosticError },
