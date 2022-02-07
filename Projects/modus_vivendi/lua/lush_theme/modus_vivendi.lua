@@ -2,12 +2,16 @@
 
 local lush = require "lush"
 local p = require "lush_theme/palette"
-local styles = {
-    bold = "bold",
-    italic = "italic",
-    none = "none",
-    strike = "strikethrough",
-    underline = "underline",
+local s = {
+    b = "bold",
+    i = "italic",
+    n = "NONE",
+    nc = "nocombine",
+    r = "reverse",
+    so = "standout",
+    st = "strikethrough",
+    uc = "undercurl",
+    ul = "underline",
 }
 
 local theme = lush(function()
@@ -70,7 +74,7 @@ local theme = lush(function()
 
         -- Standard groups
         ---- Base
-        Bold { gui = styles.bold },
+        Bold { gui = s.b },
         Boolean { fg = p.magenta_alt },
         Character { fg = p.cyan_alt_other },
         Conditional { fg = p.magenta_alt_other },
@@ -82,7 +86,7 @@ local theme = lush(function()
         Identifier { fg = p.cyan },
         Ignore { bg = p.bg_alt, fg = p.fg_alt },
         Include { fg = p.red_alt_other },
-        Italic { gui = styles.italic },
+        Italic { gui = s.i },
         Keyword { fg = p.magenta_alt_other },
         Label { fg = p.red_alt_other },
         Macro { fg = p.magenta_alt },
@@ -102,10 +106,10 @@ local theme = lush(function()
         Todo { fg = p.red_alt_other },
         Type { fg = p.cyan_alt_other },
         Typedef { fg = p.cyan_alt_other },
-        Underlined { gui = styles.underline },
+        Underlined { gui = s.ul },
         ---- Extra
         Builtin { fg = p.magenta_alt },
-        Link { gui = styles.underline, fg = p.blue_alt_other },
+        Link { gui = s.ul, fg = p.blue_alt_other },
         ---- Linked
         Delimiter { Normal },
         Float { Number },
@@ -196,7 +200,7 @@ local theme = lush(function()
         TSPunctDelimiter { Delimiter },
         TSPunctSpecial { Keyword },
         TSRepeat { Repeat },
-        TSStrike { gui = styles.strike },
+        TSStrike { gui = s.st },
         TSString { String },
         TSStringEscape { Keyword },
         TSStringRegex { String },
