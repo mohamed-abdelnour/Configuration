@@ -1,6 +1,11 @@
 local M = {}
 
-local function init()
+local function man()
+    vim.g.man_hardwrap = false
+    vim.g.no_man_maps = true
+end
+
+local function options()
     local opt = vim.opt
 
     --  2 moving around, searching and patterns
@@ -44,6 +49,11 @@ local function init()
 
     -- 25 various
     opt.signcolumn = "yes"
+end
+
+local function init()
+    man()
+    options()
 end
 
 init()
