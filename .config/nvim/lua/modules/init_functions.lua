@@ -20,15 +20,4 @@ function M.merge(tables)
     return result
 end
 
-function M.link_ts_queries(lang, queries)
-    return table.concat({
-        "ln -srf ",
-        queries or "queries",
-        " ",
-        vim.fn.stdpath("data"),
-        "/site/queries/",
-        lang,
-    })
-end
-
 return M
