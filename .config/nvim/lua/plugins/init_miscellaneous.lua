@@ -4,6 +4,12 @@ local M = {
         opt = false,
     },
 
+    lightspeed = {
+        "ggandor/lightspeed.nvim",
+        opt = false,
+        requires = "vim-repeat",
+    },
+
     nvim_colorizer = {
         "norcalli/nvim-colorizer.lua",
         cmd = {
@@ -29,6 +35,11 @@ local M = {
     startuptime = {
         "dstein64/vim-startuptime",
         cmd = "StartupTime",
+    },
+
+    vim_repeat = {
+        "tpope/vim-repeat",
+        opt = false,
     },
 
     which_key = {

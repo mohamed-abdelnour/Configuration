@@ -31,7 +31,7 @@ local theme = lush(function()
         MatchParen { bg = p.bg_paren_match, fg = p.fg_main },
         MoreMsg { fg = p.cyan_alt_other },
         MsgSeparator { bg = p.bg_alt },
-        NonText { fg = p.fg_alt },
+        NonText { fg = p.fg_unfocused },
         Normal { fg = p.fg_main },
         NormalFloat { bg = p.bg_dim },
         Pmenu { bg = p.bg_alt },
@@ -247,6 +247,26 @@ local theme = lush(function()
         GitSignsDelete { bg = p.bg_dim, fg = p.red_alt_other },
         GitSignsDeleteLn { DiffDelete },
         GitSignsDeleteNr { DiffDelete },
+
+        -- lightspeed.nvim
+        -- Base
+        LightspeedLabel { fg = p.red_intense, gui = s.ul },
+        LightspeedLabelOverlapped { fg = p.red_faint, gui = s.ul },
+
+        LightspeedLabelDistant { fg = p.blue_intense, gui = s.ul },
+        LightspeedLabelDistantOverlapped { fg = p.blue_faint, gui = s.ul },
+
+        LightspeedShortcut { bg = p.red_intense_bg, fg = p.fg_main, gui = s.ul },
+        LightspeedShortcutOverlapped { bg = p.red_subtle_bg, fg = p.fg_dim, gui = s.ul },
+
+        LightspeedMaskedChar { fg = p.fg_special_warm },
+        LightspeedUnlabeledMatch { fg = p.fg_special_cold },
+        -- Linked
+        LightspeedCursor { Cursor },
+        LightspeedGreyWash { NonText },
+        LightspeedOneCharMatch { LightspeedShortcut },
+        LightspeedPendingOpArea { LightspeedShortcut },
+        LightspeedUniqueChar { LightspeedUnlabeledMatch },
 
         ---- nvim-ts-rainbow
         rainbowcol1 { Normal },
