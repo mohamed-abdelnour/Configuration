@@ -52,7 +52,6 @@ myKeys conf@XConfig { XMonad.modMask = modm } =
        , ((modm, xK_m)                   , spawn "emacs")
        , ((modm, xK_n)                   , spawn "emacsclient -nc")
        , ((modm, xK_b)                   , spawn "firefox")
-       , ((modm, xK_o)                   , spawn "dmenu_open")
        , ((0, xK_Print)                  , spawn "screenshot")
        , ((0, 0X1008FF02)                , spawn "brightnessctl -q s +10%")
        , ((0, 0X1008FF03)                , spawn "brightnessctl -q s 10%-")
