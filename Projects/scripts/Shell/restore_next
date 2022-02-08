@@ -1,0 +1,14 @@
+#!/usr/bin/env dash
+
+restore() {
+    git clean --force
+    git restore .
+}
+
+main() {
+    cd "$HOME/Projects/Configuration/next" &&
+        restore ||
+        exit
+}
+
+main

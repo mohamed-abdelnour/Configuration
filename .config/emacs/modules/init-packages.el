@@ -15,6 +15,8 @@
 (use-package hl-todo
   :init (global-hl-todo-mode))
 
+(use-package magit)
+
 (use-package modus-themes-exporter
   :commands modus-themes-exporter-export
   :straight (modus-themes-exporter

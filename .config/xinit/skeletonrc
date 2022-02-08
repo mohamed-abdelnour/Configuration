@@ -45,6 +45,7 @@ pkill unclutter
 hsetroot -solid black &
 lxpolkit &
 picom --experimental-backends &
+restore_next &
 setxkbmap -layout us,ara -variant ,qwerty_digits grp:shifts_toggle &
 unclutter &
 xss-lock slock &
