@@ -6,6 +6,7 @@ local main = function()
     pcall(impatient)
 
     require("modules/init_autocommands")
+    require("modules/init_functions")
     require("modules/init_icons")
     require("modules/init_mappings")
     require("modules/init_options")

@@ -11,7 +11,7 @@ local M = {
 }
 
 M.lsp_config.config = function()
-    local extend = require("modules/init_functions").extend
+    local extend = package.loaded["modules/init_functions"].extend
 
     local sumneko_lua = {
         name = "sumneko_lua",

@@ -7,7 +7,7 @@ local M = {
 
 M.lualine.config = function()
     local palette = require("lush_theme/palette")
-    local trim_wrap = require("modules/init_functions").trim_wrap
+    local trim_wrap = package.loaded["modules/init_functions"].trim_wrap
 
     local right_padding = { left = 0, right = 1 }
     local left_padding = { left = 1, right = 0 }

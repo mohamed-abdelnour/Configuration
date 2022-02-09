@@ -58,7 +58,6 @@ local main = function()
     local opts = { silent = true }
 
     local builtin = require("telescope/builtin")
-
     set_keymap("n", "<leader>ca", builtin.lsp_code_actions, opts)
     set_keymap("n", "<leader>fb", builtin.buffers, opts)
     set_keymap("n", "<leader>fe", builtin.builtin, opts)
@@ -66,7 +65,8 @@ local main = function()
     set_keymap("n", "<leader>fh", builtin.help_tags, opts)
     set_keymap("n", "<leader>fr", builtin.live_grep, opts)
 
-    set_keymap("n", "<leader>fn", require("telescope").extensions.file_browser.file_browser, opts)
+    local telescope = package.loaded.telescope
+    set_keymap("n", "<leader>fn", telescope.extensions.file_browser.file_browser, opts)
 end
 
 pcall(main)
