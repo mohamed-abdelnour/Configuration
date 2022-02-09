@@ -21,7 +21,7 @@ M.gitsigns.config = function()
         on_attach = function(buffer)
             local gs = package.loaded.gitsigns
 
-            local function set_keymap(mode, l, r, extra_opts)
+            local set_keymap = function(mode, l, r, extra_opts)
                 opts = { buffer = buffer, silent = true }
                 if extra_opts then
                     opts = vim.tbl_extend("keep", extra_opts, opts)

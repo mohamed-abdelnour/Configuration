@@ -13,7 +13,7 @@ M.trouble.config = function()
     })
 end
 
-local function init()
+local init = function()
     local set_keymap = vim.keymap.set
     local opts = { silent = true }
 

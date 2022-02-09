@@ -11,8 +11,8 @@ M.null_ls.config = function()
     local helpers = require("null-ls/helpers")
     local methods = require("null-ls/methods")
 
-    local function make_tool(overrides)
-        local function tool(arg)
+    local make_tool = function(overrides)
+        local tool = function(arg)
             local defaults = {
                 name = arg.name,
                 filetypes = arg.ft,

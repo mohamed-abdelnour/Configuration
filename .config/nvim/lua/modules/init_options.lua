@@ -1,6 +1,6 @@
 local M = {}
 
-local function init()
+local init = function()
     local opt = vim.opt
 
     --  2 moving around, searching and patterns

@@ -1,6 +1,6 @@
 local M = {}
 
-local function bootstrap()
+local bootstrap = function()
     local install_path = vim.fn.stdpath("data") .. "/site/pack/packer/opt/packer.nvim"
     if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
         packer_bootstrap = vim.fn.system({
@@ -14,7 +14,7 @@ local function bootstrap()
     end
 end
 
-local function init()
+local init = function()
     bootstrap()
 
     -- Load `packer.nvim`
@@ -30,7 +30,7 @@ init()
 
 M = packer.startup({
     function(use)
-        local function use_plugin(suffix)
+        local use_plugin = function(suffix)
             plugins = require("plugins/init_" .. suffix)
             for _, plugin in pairs(plugins) do
                 use(plugin)

@@ -1,6 +1,6 @@
 local M = {}
 
-local function init()
+local init = function()
     -- Leader keys
     vim.g.mapleader = " "
     vim.g.maplocalleader = " "

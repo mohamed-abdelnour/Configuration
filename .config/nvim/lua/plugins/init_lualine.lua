@@ -12,26 +12,26 @@ M.lualine.config = function()
     local right_padding = { left = 0, right = 1 }
     local left_padding = { left = 1, right = 0 }
 
-    local function pad(tables, padding)
+    local pad = function(tables, padding)
         for _, table in ipairs(tables) do
             table.padding = padding
         end
         return tables
     end
 
-    local function right_pad(tables)
+    local right_pad = function(tables)
         return pad(tables, right_padding)
     end
 
-    local function left_pad(tables)
+    local left_pad = function(tables)
         return pad(tables, left_padding)
     end
 
-    local function trim_wrap_rbar(string)
+    local trim_wrap_rbar = function(string)
         return trim_wrap(string, "", " |")
     end
 
-    local function trim_wrap_parens(string)
+    local trim_wrap_parens = function(string)
         return trim_wrap(string, "(", ")")
     end
 

@@ -5,13 +5,13 @@ local M = {
 
 M.icon = M.U_25CF
 
-local function diagnostic()
+local diagnostic = function()
     vim.diagnostic.config({
         severity_sort = true,
     })
 end
 
-local function gutter()
+local gutter = function()
     local signs = { "Error", "Warn", "Hint", "Info" }
     for _, type in ipairs(signs) do
         local hl = "DiagnosticSign" .. type

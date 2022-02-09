@@ -1,6 +1,6 @@
 local M = {}
 
-local function init()
+local init = function()
     coq = require("coq")
     lsp = require("lspconfig")
     status = require("lsp-status")
@@ -12,7 +12,7 @@ init()
 M.on_attach = function(client, buffer, arg)
     arg = arg or {}
 
-    local function buf_set_keymap(lhs, rhs)
+    local buf_set_keymap = function(lhs, rhs)
         local opts = { buffer = buffer, silent = true }
         vim.keymap.set("n", lhs, rhs, opts)
     end
