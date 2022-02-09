@@ -1,9 +1,13 @@
 local M = {
+    U_2190 = "←",
+    U_21AA = "↪",
+    U_21D2 = "⇒",
     U_2503 = "┃",
+    U_25B6 = "▶",
+    U_25BC = "▼",
+    U_25CB = "○",
     U_25CF = "●",
 }
-
-M.icon = M.U_25CF
 
 local diagnostic = function()
     vim.diagnostic.config({
@@ -16,25 +20,13 @@ local gutter = function()
     for _, type in ipairs(signs) do
         local hl = "DiagnosticSign" .. type
         vim.fn.sign_define(hl, {
-            text = M.icon,
+            text = M.U_25CF,
             texthl = hl,
         })
     end
 end
 
-M.set_icons = function(arg)
-    if arg.icon then
-        arg.icon = M[arg.icon]
-    else
-        arg.icon = M.icon
-    end
-    local t = arg.result or arg.input
-    local r = arg.result or {}
-    for k, v in pairs(t) do
-        arg.fn(r, k, v, arg.icon)
-    end
-    return r
-end
+M.overrides = {}
 
 M.main = function()
     diagnostic()

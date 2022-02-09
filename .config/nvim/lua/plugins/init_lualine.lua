@@ -35,12 +35,14 @@ M.lualine.config = function()
         return trim_wrap(string, "(", ")")
     end
 
-    local diagnostic_icons = require("modules/init_icons").set_icons({
-        input = { "error", "warn", "info", "hint" },
-        fn = function(r, _, v, icon)
-            r[v] = icon .. " "
-        end,
-    })
+    local diagnostic_icons = (function()
+        local keys = { "error", "warn", "info", "hint" }
+        local icons = {}
+        for _, k in ipairs(keys) do
+            icons[k] = package.loaded["modules/init_icons"].U_25CF .. " "
+        end
+        return icons
+    end)()
 
     local lualine_sections = {
         lualine_a = right_pad({

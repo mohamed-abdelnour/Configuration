@@ -44,11 +44,15 @@ M.rust.config = function()
         },
     }
 
+    local icons = function(k)
+        return package.loaded["modules/init_icons"][k] .. " "
+    end
+
     require("rust-tools").setup({
         tools = {
             inlay_hints = {
-                parameter_hints_prefix = "← ",
-                other_hints_prefix = "⇒ ",
+                parameter_hints_prefix = icons("U_2190"),
+                other_hints_prefix = icons("U_21D2"),
             },
         },
         server = lsp_setup,

@@ -7,23 +7,26 @@ local M = {
 
 M.nvim_web_devicons.config = function()
     local devicons = require("nvim-web-devicons")
-    local module = require("modules/init_icons")
+    local init_icons = package.loaded["modules/init_icons"]
     local icons = devicons.get_icons()
     icons.default_icon = {
         color = "Normal",
         name = "Default",
     }
-    icons = module.set_icons({
-        result = icons,
-        fn = function(result, k, _, icon)
-            result[k].icon = icon
-        end,
-    })
+    local override
+    for k, _ in pairs(icons) do
+        override = init_icons.overrides[k]
+        if override then
+            icons[k] = override
+        else
+            icons[k].icon = init_icons.U_25CF
+        end
+    end
     devicons.setup({
         default = true,
         override = icons,
     })
-    module.main()
+    init_icons.main()
 end
 
 return M

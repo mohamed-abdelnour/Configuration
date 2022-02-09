@@ -6,9 +6,10 @@ local M = {
 }
 
 M.trouble.config = function()
+    local icons = package.loaded["modules/init_icons"]
     require("trouble").setup({
-        fold_closed = "▶",
-        fold_open = "▼",
+        fold_closed = icons.U_25B6,
+        fold_open = icons.U_25BC,
         use_diagnostic_signs = true,
     })
 end
