@@ -2,12 +2,9 @@ local M = {}
 
 local function init()
     vim.cmd([[
-        augroup term
+        augroup INIT
             autocmd!
-            autocmd FileType gitcommit setlocal spell
-            autocmd TermOpen * setlocal nornu
-            autocmd TermOpen * setlocal signcolumn=no
-            autocmd TermOpen * startinsert
+            autocmd TermOpen * lua require("modules/init_term").term_open()
         augroup END
     ]])
 end
