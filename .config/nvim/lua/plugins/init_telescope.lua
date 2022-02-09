@@ -53,7 +53,7 @@ M.telescope.config = function()
     telescope.load_extension("fzf")
 end
 
-local init = function()
+local main = function()
     local set_keymap = vim.keymap.set
     local opts = { silent = true }
 
@@ -69,6 +69,6 @@ local init = function()
     set_keymap("n", "<leader>fn", require("telescope").extensions.file_browser.file_browser, opts)
 end
 
-pcall(init)
+pcall(main)
 
 return M

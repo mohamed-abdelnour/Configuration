@@ -1,6 +1,6 @@
 local M = {}
 
-local init = function()
+local main = function()
     -- Leader keys
     vim.g.mapleader = " "
     vim.g.maplocalleader = " "
@@ -53,6 +53,6 @@ local init = function()
     set_keymap("n", "<leader>ts", "<cmd>set spell!<cr>", opts)
 end
 
-init()
+main()
 
 return M

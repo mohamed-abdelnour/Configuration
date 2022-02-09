@@ -1,13 +1,13 @@
 local M = {}
 
-local init = function()
+local main = function()
     coq = require("coq")
     lsp = require("lspconfig")
     status = require("lsp-status")
     status.register_progress()
 end
 
-init()
+main()
 
 M.on_attach = function(client, buffer, arg)
     arg = arg or {}

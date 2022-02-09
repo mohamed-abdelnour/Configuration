@@ -36,7 +36,7 @@ M.set_icons = function(arg)
     return r
 end
 
-M.init = function()
+M.main = function()
     diagnostic()
     gutter()
 end

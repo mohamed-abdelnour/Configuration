@@ -1,5 +1,5 @@
-local init = function()
+local main = function()
     vim.opt_local.spell = true
 end
 
-init()
+main()

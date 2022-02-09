@@ -23,7 +23,7 @@ M.nvim_web_devicons.config = function()
         default = true,
         override = icons,
     })
-    module.init()
+    module.main()
 end
 
 return M

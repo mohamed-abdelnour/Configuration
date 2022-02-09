@@ -1,6 +1,6 @@
 local M = {}
 
-local init = function()
+local main = function()
     local opt = vim.opt
 
     --  2 moving around, searching and patterns
@@ -46,6 +46,6 @@ local init = function()
     opt.signcolumn = "yes"
 end
 
-init()
+main()
 
 return M

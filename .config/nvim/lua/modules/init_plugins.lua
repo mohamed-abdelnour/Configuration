@@ -14,7 +14,7 @@ local bootstrap = function()
     end
 end
 
-local init = function()
+local main = function()
     bootstrap()
 
     -- Load `packer.nvim`
@@ -26,7 +26,7 @@ local init = function()
     packer = require("packer")
 end
 
-init()
+main()
 
 M = packer.startup({
     function(use)
