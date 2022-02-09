@@ -4,20 +4,14 @@ DIR="$HOME/Projects/Configuration"
 DIR_MAIN="$DIR/main"
 DIR_HOME="$DIR/home"
 
-push() {
-    git push --set-upstream origin "$1"
-}
-
 init_main() {
     cd "$DIR_MAIN" || exit
-    push 'main'
+    git branch --set-upstream-to 'origin'
 }
 
 init_next() {
-    git worktree add "$DIR_HOME" next
-    cd "$HOME" || exit
-    ln -s "$DIR_HOME/.git" .
-    push 'next'
+    git worktree add "$DIR_HOME" 'next'
+    ln -srf "$DIR_HOME/.git" "$HOME/.git"
 }
 
 main() {
