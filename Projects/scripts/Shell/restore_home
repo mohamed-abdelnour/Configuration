@@ -6,7 +6,8 @@ restore() {
 }
 
 main() {
-    cd "$HOME/Projects/Configuration/next" &&
+    git_file="$(realpath "$HOME/.git")"
+    cd "$(dirname "$git_file")" &&
         restore ||
         exit
 }
