@@ -61,6 +61,12 @@ M.null_ls.config = function()
 
     local format = {
         make_formatter({
+            name = "Alejandra",
+            command = "alejandra",
+            ft = { "nix" },
+        }),
+
+        make_formatter({
             name = "Black",
             command = "black",
             args = { "-q", "-" },
@@ -119,12 +125,6 @@ M.null_ls.config = function()
             command = "latexindent",
             args = { "-g", "/dev/null" },
             ft = { "tex" },
-        }),
-
-        make_formatter({
-            name = "nixpkgs-fmt",
-            command = "nixpkgs-fmt",
-            ft = { "nix" },
         }),
 
         make_formatter({
