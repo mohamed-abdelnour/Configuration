@@ -43,3 +43,5 @@ zle_highlight=(region:bg='#3C3C3C',fg=white special:none suffix:none isearch:non
 if [ "$TERM" != 'linux' ]; then
     eval "$(starship init zsh)"
 fi
+
+eval "$(direnv hook zsh)"

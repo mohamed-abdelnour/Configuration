@@ -20,6 +20,9 @@
 !.config/bat/
 !.config/bat/**
 
+!.config/direnv/
+!.config/direnv/**
+
 !.config/dunst/
 !.config/dunst/**
 
