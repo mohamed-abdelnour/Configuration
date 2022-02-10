@@ -51,6 +51,7 @@ M.lsp_config.config = function()
         { name = "hls" },
         { name = "html" },
         { name = "pyright" },
+        { name = "rnix" },
     }
 
     local init_server = require("modules/init_lsp").init_server
