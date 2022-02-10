@@ -56,6 +56,9 @@
 !.config/latexmk/
 !.config/latexmk/**
 
+!.config/nix/
+!.config/nix/**
+
 !.config/nixpkgs/
 !.config/nixpkgs/**
 .config/nixpkgs/overlays/tmpPkgs.nix
