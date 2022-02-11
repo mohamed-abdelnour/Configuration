@@ -30,14 +30,14 @@
     line-numbers-minus-style = red
     line-numbers-plus-style = green
     line-numbers-zero-style = brightblack
-    minus-emph-style = "#FFD9EB" "#852828"
-    minus-empty-line-marker-style = "#EEBDBA" "#500F29"
-    minus-non-emph-style = "#EEBDBA" "#500F29"
-    minus-style = "#EEBDBA" "#500F29"
-    plus-emph-style = "#E0F6E0" "#005A36"
-    plus-empty-line-marker-style = "#B4DDB4" "#1D3C25"
-    plus-non-emph-style = "#B4DDB4" "#1D3C25"
-    plus-style = "#B4DDB4" "#1D3C25"
+    minus-emph-style = "#ffd9eb" "#852828"
+    minus-empty-line-marker-style = "#eebdba" "#500f29"
+    minus-non-emph-style = "#eebdba" "#500f29"
+    minus-style = "#eebdba" "#500f29"
+    plus-emph-style = "#e0f6e0" "#005a36"
+    plus-empty-line-marker-style = "#b4ddb4" "#1d3c25"
+    plus-non-emph-style = "#b4ddb4" "#1d3c25"
+    plus-style = "#b4ddb4" "#1d3c25"
     syntax-theme = base16
     zero-style = syntax
 

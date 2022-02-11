@@ -36,7 +36,7 @@ bindkey -M menuselect '^l' vi-forward-char
 . '/usr/share/fzf/completion.zsh'
 . '/usr/share/fzf/key-bindings.zsh'
 
-zle_highlight=(region:bg='#3C3C3C',fg=white special:none suffix:none isearch:none paste:none)
+zle_highlight=(region:bg='#3c3c3c',fg=white special:none suffix:none isearch:none paste:none)
 
 . /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2> /dev/null
 

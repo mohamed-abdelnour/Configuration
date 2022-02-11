@@ -14,12 +14,12 @@
 
 [urgency_normal]
     background = "#000000"
-    foreground = "#FFFFFF"
-    frame_color = "#00D3D0"
+    foreground = "#ffffff"
+    frame_color = "#00d3d0"
     timeout = 4
 
 [urgency_critical]
     background = "#000000"
-    foreground = "#FFFFFF"
-    frame_color = "#FF8059"
+    foreground = "#ffffff"
+    frame_color = "#ff8059"
     timeout = 0

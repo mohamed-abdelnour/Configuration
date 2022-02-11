@@ -37,10 +37,10 @@ myWorkspaces :: [String]
 myWorkspaces = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
 
 myNormalBorderColor :: String
-myNormalBorderColor = "#1E1E1E"
+myNormalBorderColor = "#1e1e1e"
 
 myFocusedBorderColor :: String
-myFocusedBorderColor = "#00D3D0"
+myFocusedBorderColor = "#00d3d0"
 
 -- Key bindings --
 myKeys :: XConfig Layout -> Map (KeyMask, KeySym) (X ())
@@ -55,9 +55,9 @@ myKeys conf@XConfig { XMonad.modMask = modm } =
        , ((0, xK_Print)                  , spawn "screenshot")
        , ((0, 0X1008FF02)                , spawn "brightnessctl -q s +10%")
        , ((0, 0X1008FF03)                , spawn "brightnessctl -q s 10%-")
-       , ((0, 0x1008FF11)                , spawn "amixer set Master 10%-")
-       , ((0, 0x1008FF12)                , spawn "amixer set Master toggle")
-       , ((0, 0x1008FF13)                , spawn "amixer set Master 10%+")
+       , ((0, 0x1008ff11)                , spawn "amixer set Master 10%-")
+       , ((0, 0x1008ff12)                , spawn "amixer set Master toggle")
+       , ((0, 0x1008ff13)                , spawn "amixer set Master 10%+")
        , ((modm, xK_f), sendMessage (Toggle NBFULL) >> sendMessage ToggleStruts)
        , ((modm, xK_c)                   , kill)
        , ((modm, xK_space)               , sendMessage NextLayout)
@@ -127,11 +127,11 @@ myEventHook = F.fullscreenEventHook
 myLogHook :: Handle -> X ()
 myLogHook xmproc = dynamicLogWithPP $ xmobarPP
   { ppOutput          = hPutStrLn xmproc
-  , ppCurrent         = xmobarColor "#00D3D0" "" . wrap "[" "]"
-  , ppHidden          = xmobarColor "#FF8059" "" . wrap "" "*"
-  , ppHiddenNoWindows = xmobarColor "#FFFFFF" ""
+  , ppCurrent         = xmobarColor "#00d3d0" "" . wrap "[" "]"
+  , ppHidden          = xmobarColor "#ff8059" "" . wrap "" "*"
+  , ppHiddenNoWindows = xmobarColor "#ffffff" ""
   , ppSep             = " | "
-  , ppTitle           = xmobarColor "#00D3D0" "" . shorten 50
+  , ppTitle           = xmobarColor "#00d3d0" "" . shorten 50
   , ppOrder           = \[w, _, t, x] -> [w, x, t]
   , ppExtras          = [windowProps]
   }

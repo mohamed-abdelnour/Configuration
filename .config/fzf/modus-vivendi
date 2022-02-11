@@ -1,17 +1,17 @@
 #!/usr/bin/env sh
 
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
---color=fg:#FFFFFF
+--color=fg:#ffffff
 --color=bg:#000000
---color=hl:#FEACD0
---color=fg+:#FFFFFF
+--color=hl:#feacd0
+--color=fg+:#ffffff
 --color=bg+:#151823
---color=hl+:#00D3D0
---color=info:#D0BC00
---color=border:#1E1E1E
---color=prompt:#FEACD0
---color=pointer:#FEACD0
---color=marker:#FF8059
---color=spinner:#FEACD0
---color=header:#00D3D0
+--color=hl+:#00d3d0
+--color=info:#d0bc00
+--color=border:#1e1e1e
+--color=prompt:#feacd0
+--color=pointer:#feacd0
+--color=marker:#ff8059
+--color=spinner:#feacd0
+--color=header:#00d3d0
 '
