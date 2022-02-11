@@ -241,6 +241,10 @@ local theme = lush(function()
         markdownLinkText { Link },
 
         -- Plug-ins
+        -- fidget.nvim
+        FidgetTask { NonText },
+        FidgetTitle { TSTitle },
+
         -- gitsigns.nvim
         GitSignsAdd { bg = p.bg_dim, fg = p.green_alt_other },
         GitSignsAddInline { DiffAdd },

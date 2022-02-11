@@ -1,14 +1,22 @@
 local M = {
+    fidget = {
+        "j-hui/fidget.nvim",
+        opt = false,
+    },
+
     lsp_config = {
         "neovim/nvim-lspconfig",
         opt = false,
     },
-
-    lsp_status = {
-        "nvim-lua/lsp-status.nvim",
-        opt = false,
-    },
 }
+
+M.fidget.config = function()
+    require("fidget").setup({
+        window = {
+            blend = 0,
+        },
+    })
+end
 
 M.lsp_config.config = function()
     local extend = package.loaded["modules/init_functions"].extend

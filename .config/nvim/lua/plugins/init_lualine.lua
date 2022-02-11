@@ -27,10 +27,6 @@ M.lualine.config = function()
         return pad(tables, left_padding)
     end
 
-    local trim_wrap_rbar = function(string)
-        return trim_wrap(string, "", " |")
-    end
-
     local trim_wrap_parens = function(string)
         return trim_wrap(string, "(", ")")
     end
@@ -79,10 +75,6 @@ M.lualine.config = function()
         }),
 
         lualine_x = left_pad({
-            {
-                [[require("lsp-status/statusline").progress()]],
-                fmt = trim_wrap_rbar,
-            },
             {
                 "diagnostics",
                 sources = { "nvim_diagnostic" },
