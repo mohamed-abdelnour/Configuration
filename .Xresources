@@ -9,41 +9,41 @@ Xft.rgba: rgb
 Xcursor.theme: default
 
 ! special
-*.foreground:   #ffffff
-*.background:   #000000
-*.cursorColor:  #ffffff
+*.foreground: #ffffff
+*.background: #000000
+*.cursorColor: #ffffff
 
 ! black
-*.color0:       #000000
-*.color8:       #a8a8a8
+*.color0: #000000
+*.color8: #a8a8a8
 
 ! red
-*.color1:       #ff8059
-*.color9:       #ff8059
+*.color1: #ff8059
+*.color9: #ff8059
 
 ! green
-*.color2:       #44bc44
-*.color10:      #44bc44
+*.color2: #44bc44
+*.color10: #44bc44
 
 ! yellow
-*.color3:       #d0bc00
-*.color11:      #d0bc00
+*.color3: #d0bc00
+*.color11: #d0bc00
 
 ! blue
-*.color4:       #2fafff
-*.color12:      #2fafff
+*.color4: #2fafff
+*.color12: #2fafff
 
 ! magenta
-*.color5:       #feacd0
-*.color13:      #feacd0
+*.color5: #feacd0
+*.color13: #feacd0
 
 ! cyan
-*.color6:       #00d3d0
-*.color14:      #00d3d0
+*.color6: #00d3d0
+*.color14: #00d3d0
 
 ! white
-*.color7:       #ffffff
-*.color15:      #ffffff
+*.color7: #ffffff
+*.color15: #ffffff
 
 ! Xmessage
 Xmessage*font: -xos4-terminus-medium-r-normal--22-220-72-72-c-110-iso10646-1

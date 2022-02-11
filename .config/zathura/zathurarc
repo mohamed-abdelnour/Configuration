@@ -1,39 +1,39 @@
 set sandbox none
 set selection-clipboard clipboard
 
-set default-bg                  "#000000"
-set default-fg                  "#ffffff"
+set default-bg "#000000"
+set default-fg "#ffffff"
 
-set statusbar-bg                "#000000"
-set statusbar-fg                "#ffffff"
+set statusbar-bg "#000000"
+set statusbar-fg "#ffffff"
 
-set inputbar-bg                 "#000000"
-set inputbar-fg                 "#ffffff"
+set inputbar-bg "#000000"
+set inputbar-fg "#ffffff"
 
-set notification-bg             "#000000"
-set notification-fg             "#ffffff"
+set notification-bg "#000000"
+set notification-fg "#ffffff"
 
-set notification-error-bg       "#a4202a"
-set notification-error-fg       "#ffffff"
+set notification-error-bg "#a4202a"
+set notification-error-fg "#ffffff"
 
-set notification-warning-bg     "#000000"
-set notification-warning-fg     "#874900"
+set notification-warning-bg "#000000"
+set notification-warning-fg "#874900"
 
-set highlight-color             "#a4202a"
-set highlight-active-color      "#005f88"
+set highlight-color "#a4202a"
+set highlight-active-color "#005f88"
 
-set highlight-transparency      0.30
+set highlight-transparency 0.30
 
-set completion-bg               "#000000"
-set completion-fg               "#ffffff"
+set completion-bg "#000000"
+set completion-fg "#ffffff"
 
-set completion-group-bg         "#005f88"
-set completion-group-fg         "#ffffff"
+set completion-group-bg "#005f88"
+set completion-group-fg "#ffffff"
 
-set completion-highlight-bg     "#151823"
-set completion-highlight-fg     "#ffffff"
+set completion-highlight-bg "#151823"
+set completion-highlight-fg "#ffffff"
 
-set recolor-lightcolor          "#000000"
-set recolor-darkcolor           "#ffffff"
+set recolor-lightcolor "#000000"
+set recolor-darkcolor "#ffffff"
 
-set recolor-keephue             true
+set recolor-keephue true
