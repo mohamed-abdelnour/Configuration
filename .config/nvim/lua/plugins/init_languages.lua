@@ -51,8 +51,9 @@ M.rust.config = function()
     require("rust-tools").setup({
         tools = {
             inlay_hints = {
-                parameter_hints_prefix = icons("U_2190"),
+                highlight = "NonText",
                 other_hints_prefix = icons("U_21D2"),
+                parameter_hints_prefix = icons("U_2190"),
             },
         },
         server = lsp_setup,
