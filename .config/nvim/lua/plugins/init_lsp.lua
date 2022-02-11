@@ -54,7 +54,7 @@ M.lsp_config.config = function()
         { name = "rnix" },
     }
 
-    local init_server = require("modules/init_lsp").init_server
+    local init_server = package.loaded["modules/init_lsp"].init_server
 
     for _, server in ipairs(servers) do
         init_server(server)

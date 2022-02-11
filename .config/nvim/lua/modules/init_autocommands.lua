@@ -1,7 +1,6 @@
 local M = {}
 
 local main = function()
-    require("modules/init_term")
     vim.cmd([[
         augroup INIT
             autocmd!
