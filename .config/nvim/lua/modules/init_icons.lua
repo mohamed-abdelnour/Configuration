@@ -5,7 +5,6 @@ local M = {
     U_2503 = "┃",
     U_25B6 = "▶",
     U_25BC = "▼",
-    U_25CB = "○",
     U_25CF = "●",
 }
 
@@ -26,11 +25,11 @@ local gutter = function()
     end
 end
 
-M.overrides = {}
-
-M.main = function()
+local main = function()
     diagnostic()
     gutter()
 end
+
+main()
 
 return M

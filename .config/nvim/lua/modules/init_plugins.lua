@@ -41,7 +41,6 @@ M = packer.startup({
         use_plugin("coq")
         use_plugin("filetype")
         use_plugin("gitsigns")
-        use_plugin("icons")
         use_plugin("languages")
         use_plugin("lsp")
         use_plugin("lualine")

@@ -54,10 +54,6 @@ M.lualine.config = function()
 
         lualine_b = right_pad({
             {
-                "filetype",
-                icon_only = true,
-            },
-            {
                 "filename",
                 path = 1,
                 symbols = {

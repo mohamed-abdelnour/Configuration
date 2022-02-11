@@ -10,6 +10,7 @@ M.trouble.config = function()
     require("trouble").setup({
         fold_closed = icons.U_25B6,
         fold_open = icons.U_25BC,
+        icons = false,
         use_diagnostic_signs = true,
     })
 end

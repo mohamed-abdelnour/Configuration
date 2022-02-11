@@ -44,7 +44,7 @@ M.telescope.config = function()
         },
         extensions = {
             file_browser = {
-                dir_icon = package.loaded["modules/init_icons"].U_25CB,
+                disable_devicons = true,
                 hidden = true,
             },
         },
