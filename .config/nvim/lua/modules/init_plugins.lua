@@ -37,20 +37,28 @@ M = packer.startup({
             end
         end
 
-        use_plugin("comment")
-        use_plugin("coq")
-        use_plugin("filetype")
-        use_plugin("gitsigns")
-        use_plugin("languages")
-        use_plugin("lsp")
-        use_plugin("lualine")
-        use_plugin("miscellaneous")
-        use_plugin("null_ls")
-        use_plugin("telescope")
-        use_plugin("theme")
-        use_plugin("treesitter")
-        use_plugin("trouble")
-        use_plugin("vimtex")
+        local use_plugins = function(plugins)
+            for _, v in ipairs(plugins) do
+                use_plugin(v)
+            end
+        end
+
+        use_plugins({
+            "comment",
+            "coq",
+            "filetype",
+            "gitsigns",
+            "languages",
+            "lsp",
+            "lualine",
+            "miscellaneous",
+            "null_ls",
+            "telescope",
+            "theme",
+            "treesitter",
+            "trouble",
+            "vimtex",
+        })
 
         use("wbthomason/packer.nvim")
 
