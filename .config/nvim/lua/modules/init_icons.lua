@@ -8,13 +8,7 @@ local M = {
     U_25CF = "●",
 }
 
-local diagnostic = function()
-    vim.diagnostic.config({
-        severity_sort = true,
-    })
-end
-
-local gutter = function()
+local main = function()
     local signs = { "Error", "Warn", "Hint", "Info" }
     for _, type in ipairs(signs) do
         local hl = "DiagnosticSign" .. type
@@ -23,11 +17,6 @@ local gutter = function()
             texthl = hl,
         })
     end
-end
-
-local main = function()
-    diagnostic()
-    gutter()
 end
 
 main()

@@ -7,4 +7,12 @@ function vim.diagnostic.open_float(opts, ...)
     return original_open_float(opts, ...)
 end
 
+local main = function()
+    vim.diagnostic.config({
+        severity_sort = true,
+    })
+end
+
+main()
+
 return M
