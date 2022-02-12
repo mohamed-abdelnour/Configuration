@@ -1,12 +1,5 @@
 local M = {}
 
-local main = function()
-    coq = require("coq")
-    lsp = require("lspconfig")
-end
-
-main()
-
 M.on_attach = function(client, buffer, arg)
     arg = arg or {}
 
@@ -78,11 +71,13 @@ M.lsp_setup = function(arg)
             debounce_text_changes = 150,
         },
     }
+    local coq = package.loaded.coq
     return coq.lsp_ensure_capabilities(vim.tbl_extend("keep", arg, defaults))
 end
 
 M.init_server = function(arg)
     local lsp_setup = vim.tbl_extend("keep", M.lsp_setup(arg), arg)
+    local lsp = package.loaded.lspconfig
     lsp[arg.name].setup(lsp_setup)
 end
 

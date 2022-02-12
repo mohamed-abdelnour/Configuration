@@ -6,6 +6,7 @@ local M = {
 
     lsp_config = {
         "neovim/nvim-lspconfig",
+        after = "coq_nvim",
         opt = false,
     },
 }
@@ -20,6 +21,7 @@ end
 
 M.lsp_config.config = function()
     local extend = package.loaded["modules/init_functions"].extend
+    require("lspconfig")
 
     local sumneko_lua = {
         name = "sumneko_lua",

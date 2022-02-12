@@ -5,7 +5,7 @@ local M = {
     },
 }
 
-M.coq.setup = function()
+M.coq.config = function()
     vim.g.coq_settings = {
         auto_start = "shut-up",
         clients = {
@@ -22,6 +22,7 @@ M.coq.setup = function()
             },
         },
     }
+    require("coq")
 end
 
 return M
