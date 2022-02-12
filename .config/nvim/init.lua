@@ -13,6 +13,7 @@ local main = function()
 
     use_modules({
         "autocommands",
+        "diagnostic",
         "functions",
         "icons",
         "lsp",
