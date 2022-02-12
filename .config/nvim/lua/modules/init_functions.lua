@@ -42,9 +42,9 @@ M.merge = function(ts)
     return r
 end
 
-M.trim_wrap = function(string, left, right)
-    local wrapped = table.concat({ left or "[", "%1", right or "]" })
-    return string:gsub("^%s*(..-)%s*$", wrapped)
+M.wrap = function(arg)
+    local wrapped = table.concat({ arg.l or "[", "%1", arg.r or "]" })
+    return arg.s:gsub("^.*$", wrapped)
 end
 
 return M
