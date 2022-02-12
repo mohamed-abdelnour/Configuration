@@ -1,8 +1,19 @@
 local M = {}
 
-M.trim_wrap = function(string, left, right)
-    local wrapped = table.concat({ left or "[", "%1", right or "]" })
-    return string:gsub("^%s*(..-)%s*$", wrapped)
+M.all = function(f, t)
+    local g = function(v)
+        return not f(v)
+    end
+    return not M.any(g, t)
+end
+
+M.any = function(f, t)
+    for _, v in ipairs(t) do
+        if f(v) then
+            return true
+        end
+    end
+    return false
 end
 
 M.extend = function(source, destination)
@@ -12,12 +23,28 @@ M.extend = function(source, destination)
     return source
 end
 
-M.merge = function(tables)
-    local result = {}
-    for _, table in ipairs(tables) do
-        result = M.extend(result, table)
+M.intersperse = function(t, separator)
+    local r = {}
+    local length = #t
+    for i = 1, length - 1 do
+        table.insert(r, t[i])
+        table.insert(r, separator)
     end
-    return result
+    table.insert(r, t[length])
+    return r
+end
+
+M.merge = function(ts)
+    local r = {}
+    for _, t in ipairs(ts) do
+        r = M.extend(r, t)
+    end
+    return r
+end
+
+M.trim_wrap = function(string, left, right)
+    local wrapped = table.concat({ left or "[", "%1", right or "]" })
+    return string:gsub("^%s*(..-)%s*$", wrapped)
 end
 
 return M
