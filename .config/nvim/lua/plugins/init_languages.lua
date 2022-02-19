@@ -50,6 +50,7 @@ M.rust.config = function()
 
     require("rust-tools").setup({
         tools = {
+            autoSetHints = false,
             inlay_hints = {
                 highlight = "NonText",
                 other_hints_prefix = icons("U_21D2"),
