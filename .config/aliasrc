@@ -1,8 +1,6 @@
 #!/usr/bin/env sh
 
 alias d='GIT_PAGER=delta'
-alias gh='ghc -O2 -Wall -no-keep-hi-files -no-keep-o-files'
-alias grep='grep --color=auto'
-alias ll='exa -Habgl --color=always --group-directories-first -s Name --time-style=long-iso'
+alias ll='exa -Habgln --color=always --group-directories-first -s Name --time-style=long-iso'
 alias ne='nix-env -irA nixpkgs.decPkgs'
 alias nman='MANPAGER=nmanpager man'
