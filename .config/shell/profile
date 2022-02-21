@@ -1,5 +1,18 @@
 #!/usr/bin/env dash
 
+. "$HOME/.nix-profile/etc/profile.d/nix.sh"
+
+case "$-" in
+    *i*)
+        if [ -n "$BASH_VERSION" ]; then
+            . "$HOME/.bashrc"
+        fi
+        ;;
+    *)
+        exit 1
+        ;;
+esac
+
 if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" -eq 1 ]; then
     LS_COLORS="$(vivid generate modus-vivendi)"
     export LS_COLORS
@@ -14,7 +27,5 @@ if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" -eq 1 ]; then
         . "$XDG_CONFIG_HOME/fzf/modus-vivendi"
         . "$XDG_CONFIG_HOME/keychain/load_keys"
     }
-    . "$HOME/.nix-profile/etc/profile.d/nix.sh"
-
     exec startx "$XINITRC" >/dev/null 2>&1
 fi

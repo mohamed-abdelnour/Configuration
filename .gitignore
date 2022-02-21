@@ -159,7 +159,6 @@ Projects/scripts/Python/src/bare_ignore/
 Projects/scripts/Python/src/get_battery.py
 Projects/scripts/Shell/backup
 
-!.bash_profile
 !.bashrc
 !.gitignore
 !.haskeline
