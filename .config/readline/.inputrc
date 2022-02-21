@@ -1,6 +1,7 @@
 set colored-stats On
 set editing-mode vi
 set keyseq-timeout 1
+set show-all-if-ambiguous On
 set show-mode-in-prompt On
 set vi-cmd-mode-string "[n] "
 set vi-ins-mode-string ""
