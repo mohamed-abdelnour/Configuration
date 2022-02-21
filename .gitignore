@@ -50,9 +50,6 @@
 !.config/htop/
 !.config/htop/**
 
-!.config/keychain/
-!.config/keychain/**
-
 !.config/latexindent/
 !.config/latexindent/**
 
@@ -137,6 +134,9 @@
 !.local/share/source-code-pro-slashed/
 !.local/share/source-code-pro-slashed/freeze
 !.local/share/source-code-pro-slashed/source-code-pro-slashed
+
+!.ssh/
+!.ssh/config
 
 !.virtualMachines/
 !.virtualMachines/scripts/

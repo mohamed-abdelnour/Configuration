@@ -23,9 +23,6 @@ if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" -eq 1 ]; then
     export PATH="$PATH:$GEM_HOME/bin"
 
     # shellcheck disable=1091
-    {
-        . "$XDG_CONFIG_HOME/fzf/modus-vivendi"
-        . "$XDG_CONFIG_HOME/keychain/load_keys"
-    }
+    . "$XDG_CONFIG_HOME/fzf/modus-vivendi"
     exec startx "$XINITRC" >/dev/null 2>&1
 fi
