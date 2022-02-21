@@ -73,6 +73,9 @@
 !.config/picom/
 !.config/picom/**
 
+!.config/readline/
+!.config/readline/**
+
 !.config/systemd/
 !.config/systemd/user/
 !.config/systemd/user/clipmenud.service.d/
@@ -146,7 +149,6 @@ Projects/scripts/Shell/backup
 !.Xresources
 !.gitignore
 !.haskeline
-!.inputrc
 !.pam_environment
 !LICENSE
 !README.md
