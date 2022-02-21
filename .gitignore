@@ -14,6 +14,9 @@
 !.config/Iosevka/
 !.config/Iosevka/**
 
+!.config/X11/
+!.config/X11/**
+
 !.config/alacritty/
 !.config/alacritty/**
 
@@ -66,6 +69,9 @@
 !.config/nnn/
 !.config/nnn/quitcd.bash_zsh
 
+!.config/npm/
+!.config/npm/**
+
 !.config/nvim/
 !.config/nvim/**
 .config/nvim/*/packer_compiled.*
@@ -73,8 +79,14 @@
 !.config/picom/
 !.config/picom/**
 
+!.config/python/
+!.config/python/**
+
 !.config/readline/
 !.config/readline/**
+
+!.config/shell/
+!.config/shell/**
 
 !.config/systemd/
 !.config/systemd/user/
@@ -87,9 +99,8 @@
 !.config/vivid/
 !.config/vivid/**
 
-!.config/xinit/
-!.config/xinit/sessions.txt
-!.config/xinit/skeletonrc
+!.config/wget/
+!.config/wget/**
 
 !.config/xmobar/
 !.config/xmobar/**
@@ -98,7 +109,6 @@
 !.config/zathura/**
 
 !.config/zsh/
-!.config/zsh/.zprofile
 !.config/zsh/.zshrc
 
 !.config/aliasrc
@@ -149,7 +159,6 @@ Projects/scripts/Python/src/bare_ignore/
 Projects/scripts/Python/src/get_battery.py
 Projects/scripts/Shell/backup
 
-!.Xresources
 !.gitignore
 !.haskeline
 !.pam_environment

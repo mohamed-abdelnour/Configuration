@@ -8,7 +8,7 @@ unsetopt beep
 setopt HIST_IGNORE_DUPS
 setopt ignoreeof
 
-HISTFILE=$HOME/.cache/zsh/histfile
+HISTFILE="$XDG_STATE_HOME/zsh/histfile"
 HISTSIZE=10000
 SAVEHIST=10000
 
@@ -29,10 +29,10 @@ bindkey -M menuselect '^j' vi-down-line-or-history
 bindkey -M menuselect '^k' vi-up-line-or-history
 bindkey -M menuselect '^l' vi-forward-char
 
-. "$HOME/.config/aliasrc"
-. "$HOME/.config/fzf/completion"
-. "$HOME/.config/git/alias"
-. "$HOME/.config/nnn/quitcd.bash_zsh"
+. "$XDG_CONFIG_HOME/shell/aliasrc"
+. "$XDG_CONFIG_HOME/fzf/completion"
+. "$XDG_CONFIG_HOME/git/alias"
+. "$XDG_CONFIG_HOME/nnn/quitcd.bash_zsh"
 . '/usr/share/fzf/completion.zsh'
 . '/usr/share/fzf/key-bindings.zsh'
 

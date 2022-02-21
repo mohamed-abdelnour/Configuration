@@ -1,0 +1,20 @@
+#!/usr/bin/env dash
+
+if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" -eq 1 ]; then
+    LS_COLORS="$(vivid generate modus-vivendi)"
+    export LS_COLORS
+
+    GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
+    export GEM_HOME
+
+    export PATH="$PATH:$GEM_HOME/bin"
+
+    # shellcheck disable=1091
+    {
+        . "$XDG_CONFIG_HOME/fzf/modus-vivendi"
+        . "$XDG_CONFIG_HOME/keychain/load_keys"
+    }
+    . "$HOME/.nix-profile/etc/profile.d/nix.sh"
+
+    exec startx "$XINITRC" >/dev/null 2>&1
+fi
