@@ -1,0 +1,131 @@
+colors:
+  bg: "000000"
+  cyan_subtle_bg: "00415e"
+  red_intense_bg: "a4202a"
+  yellow_intense_bg: "874900"
+
+  fg: "ffffff"
+  fg_alt: "a8a8a8"
+  fg_dim: "e0e6f0"
+  fg_unfocused: "93959b"
+
+  green: "44bc44"
+  yellow: "d0bc00"
+  blue: "2fafff"
+  magenta: "feacd0"
+
+  cyan_alt_other: "6ae4b9"
+  magenta_alt_other: "b6a0ff"
+  red_alt_other: "ff9077"
+  yellow_alt_other: "d3b55f"
+
+core:
+  block_device:
+    foreground: yellow
+
+  broken_symlink:
+    background: red_intense_bg
+    font-style: italic
+
+  character_device:
+    foreground: yellow
+    font-style: italic
+
+  directory:
+    foreground: blue
+
+  door:
+    foreground: magenta
+
+  executable_file:
+    foreground: green
+
+  fifo:
+    foreground: magenta
+
+  file_with_capability:
+    background: red_intense_bg
+
+  missing_symlink_target:
+    background: red_intense_bg
+
+  multi_hard_link:
+    font-style: underline
+
+  normal_text:
+    background: bg
+    foreground: fg
+
+  other_writable:
+    foreground: green
+
+  regular_file:
+    background: bg
+    foreground: fg
+
+  reset_to_normal: {}
+
+  setgid:
+    background: yellow_intense_bg
+
+  setuid:
+    background: red_intense_bg
+
+  socket:
+    foreground: magenta
+
+  sticky:
+    background: cyan_subtle_bg
+    foreground: fg_dim
+
+  sticky_other_writable:
+    background: cyan_subtle_bg
+    foreground: fg_dim
+    font-style: italic
+
+  symlink:
+    foreground: cyan_alt_other
+    font-style: italic
+
+archives:
+  foreground: red_alt_other
+
+executable:
+  foreground: green
+
+markup:
+  foreground: yellow_alt_other
+
+media:
+  foreground: red_alt_other
+
+office:
+  foreground: red_alt_other
+
+programming:
+  source:
+    foreground: magenta_alt_other
+
+  tooling:
+    foreground: magenta_alt_other
+    font-style: italic
+
+text:
+  configuration:
+    foreground: yellow_alt_other
+
+  licenses:
+    foreground: fg_alt
+    font-style: italic
+
+  other:
+    foreground: fg
+
+  special:
+    foreground: yellow_alt_other
+
+  todo:
+    foreground: green
+
+unimportant:
+  foreground: fg_unfocused

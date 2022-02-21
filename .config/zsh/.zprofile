@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
 if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" -eq 1 ]; then
-    eval "$(dircolors -b)"
+    export LS_COLORS="$(vivid generate modus-vivendi)"
 
     export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
 

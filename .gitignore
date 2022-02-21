@@ -84,6 +84,9 @@
 !.config/tmux/
 !.config/tmux/tmux.conf
 
+!.config/vivid/
+!.config/vivid/**
+
 !.config/xinit/
 !.config/xinit/sessions.txt
 !.config/xinit/skeletonrc
