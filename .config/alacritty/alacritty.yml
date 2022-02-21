@@ -5,15 +5,13 @@ window:
   dynamic_title: false
 
 font:
-  normal:
+  normal: &default_font
     family: monospace
     style: Regular
-  bold:
-    style: Regular
-  italic:
+  bold: *default_font
+  italic: &italic_font
     style: Oblique
-  bold_italic:
-    style: Oblique
+  bold_italic: *italic_font
   size: 11.0
 
 schemes:
@@ -22,9 +20,11 @@ schemes:
       background: "#000000"
       foreground: "#ffffff"
 
-    cursor:
+    cursor: &cursor
       text: "#000000"
       cursor: "#ffffff"
+
+    vi_mode_cursor: *cursor
 
     search:
       focused_match:
@@ -48,10 +48,6 @@ schemes:
     selection:
       text: CellForeground
       background: "#3c3c3c"
-
-    vi_mode_cursor:
-      text: "#000000"
-      cursor: "#ffffff"
 
     normal:
       black: "#000000"
