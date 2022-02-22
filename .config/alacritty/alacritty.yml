@@ -5,6 +5,7 @@ window:
   dynamic_title: false
 
 font:
+  builtin_box_drawing: false
   normal: &default_font
     family: monospace
     style: Regular
