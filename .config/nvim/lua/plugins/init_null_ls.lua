@@ -145,11 +145,18 @@ M.null_ls.config = function()
         -- Shellcheck
         linters.shellcheck,
 
+        -- TODO: enable when deadnix is bumped to 0.1.4
+        -- deadnix
+        -- linters.deadnix,
+
         -- eslint_d
         linters.eslint_d.with({
             args = { "-f", "json", "$FILENAME" },
             method = null_ls.methods.DIAGNOSTICS_ON_SAVE,
         }),
+
+        -- statix
+        linters.statix,
     }
 
     local merge = package.loaded["modules/init_functions"].merge

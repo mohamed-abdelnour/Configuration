@@ -1,10 +1,13 @@
-_: _: {
-  neovim-nightly = (import <nixpkgs> {
+let
+  overlay = builtins.fetchTarball {
+    url = "https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz";
+  };
+  nixpkgs = import <nixpkgs> {
     overlays = [
-      (import
-        (builtins.fetchTarball {
-          url = "https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz";
-        }))
+      (import overlay)
     ];
-  }).neovim-nightly;
-}
+  };
+in
+  _: _: {
+    inherit (nixpkgs) neovim-nightly;
+  }
