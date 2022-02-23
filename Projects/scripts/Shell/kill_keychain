@@ -1,4 +1,0 @@
-#!/usr/bin/env dash
-
-gpgconf --kill gpg-agent
-keychain -k all

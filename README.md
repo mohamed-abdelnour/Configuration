@@ -10,7 +10,6 @@
 - [Git](https://git-scm.com/)
 - [GnuPG](https://gnupg.org/)
 - [Iosevka](https://github.com/be5invis/Iosevka)
-- [Keychain](https://www.funtoo.org/Keychain)
 - [Latexmk](https://personal.psu.edu/~jcc8/software/latexmk/)
 - [Neovim](https://github.com/neovim/neovim)
 - [Nixpkgs](https://github.com/NixOS/nixpkgs)
@@ -27,6 +26,7 @@
 - [nnn](https://github.com/jarun/nnn/)
 - [picom](https://github.com/yshui/picom)
 - [tmux](https://github.com/tmux/tmux)
+- [vivid](https://github.com/sharkdp/vivid)
 - [zathura](https://git.pwmt.org/pwmt/zathura)
 
 ## Credits

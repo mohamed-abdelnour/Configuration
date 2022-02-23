@@ -10,6 +10,7 @@ base
 bat
 binutils
 bison
+bitwarden
 brightnessctl
 checkbashisms
 clang
@@ -17,6 +18,7 @@ clipmenu
 cmake
 connman
 dash
+direnv
 dmenu-build
 dmidecode
 dnsmasq
@@ -53,7 +55,7 @@ hyperfine
 imagemagick
 intel-ucode
 jdk-openjdk
-keychain
+jq
 kvantum
 libnotify
 linux
@@ -112,6 +114,7 @@ rsync
 ruby
 rust-analyzer
 rustup
+sad
 samba
 shfmt
 sudo
@@ -147,6 +150,7 @@ unclutter
 unzip
 veracrypt
 virt-manager
+vivid
 wget
 which
 wpa_supplicant
