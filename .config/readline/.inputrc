@@ -1,3 +1,4 @@
+set colored-completion-prefix On
 set colored-stats On
 set editing-mode vi
 set keyseq-timeout 1
