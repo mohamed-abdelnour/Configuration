@@ -46,6 +46,7 @@ M.telescope.config = function()
             file_browser = {
                 disable_devicons = true,
                 hidden = true,
+                respect_gitignore = false,
             },
         },
     })
