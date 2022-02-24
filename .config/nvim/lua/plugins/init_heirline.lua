@@ -44,7 +44,7 @@ M.heirline.config = function()
         return result
     end
 
-    local control_map = { [""] = "^V", [""] = "^S" }
+    local control_map = { ["\19"] = "^S", ["\22"] = "^V" }
     local mode = {
         provider = function()
             return wrap({ s = vim.fn.mode(1):gsub("%c", control_map) })
