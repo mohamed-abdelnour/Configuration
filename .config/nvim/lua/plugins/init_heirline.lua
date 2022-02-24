@@ -10,7 +10,7 @@ M.heirline.config = function()
     local conditions = require("heirline.conditions")
     local utils = require("heirline.utils")
 
-    local palette = package.loaded["lush_theme/palette"]
+    local palette = package.loaded["modus_vivendi/palette"]
     local functions = package.loaded["modules/init_functions"]
     local icon = package.loaded["modules/init_icons"].U_25CF .. " "
 

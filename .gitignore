@@ -151,7 +151,7 @@
 
 !Projects/modus_vivendi/
 !Projects/modus_vivendi/**
-Projects/modus_vivendi/lua/lush_theme/palette.lua
+Projects/modus_vivendi/lua/modus_vivendi/palette.lua
 
 !Projects/scripts/
 !Projects/scripts/**

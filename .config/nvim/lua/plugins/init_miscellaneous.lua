@@ -10,6 +10,12 @@ local M = {
         requires = "vim-repeat",
     },
 
+    modus_vivendi = {
+        "~/Projects/modus_vivendi",
+        config = "vim.cmd([[colorscheme modus_vivendi]])",
+        opt = false,
+    },
+
     nvim_colorizer = {
         "norcalli/nvim-colorizer.lua",
         cmd = {
