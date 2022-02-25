@@ -33,7 +33,6 @@ g.Number = { fg = p.blue_alt_other }
 g.Pmenu = { bg = p.bg_alt }
 g.PmenuSel = { bg = p.cyan_subtle_bg }
 g.PmenuThumb = { bg = p.fg_alt }
-g.Question = { fg = p.cyan_alt }
 g.SpecialKey = { fg = p.fg_escape_char_construct }
 g.StatusLine = { bg = p.bg_dim, fg = p.fg_active }
 g.StatusLineNC = { bg = p.bg_dim, fg = p.fg_inactive }
@@ -69,7 +68,7 @@ g.Identifier = g.Title
 g.Include = g.Label
 g.Macro = g.Boolean
 g.ModeMsg = g.Normal
-g.MoreMsg = g.Question
+g.MoreMsg = g.Type
 g.MsgArea = g.Normal
 g.MsgSeparator = g.Pmenu
 g.NormalNC = g.Normal
@@ -77,6 +76,7 @@ g.Operator = g.Keyword
 g.PmenuSbar = g.Pmenu
 g.PreCondit = g.Label
 g.PreProc = g.Label
+g.Question = g.Type
 g.Repeat = g.Boolean
 g.SignColumn = g.LineNr
 g.Special = g.Keyword
