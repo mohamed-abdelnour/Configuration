@@ -60,13 +60,13 @@ M.heirline.config = function()
     end
     local file = {
         file_modifiers({
-            fg = palette.blue_intense,
+            fg = palette.blue_alt_other,
             predicate = function()
                 return vim.bo.modified
             end,
         }),
         file_modifiers({
-            fg = palette.red_intense,
+            fg = palette.red_alt_other,
             predicate = function()
                 return not vim.bo.modifiable or vim.bo.readonly
             end,
@@ -121,10 +121,10 @@ M.heirline.config = function()
     local diagnostic_sections = function()
         local arg = {}
         arg.map = {
-            { type = "ERROR", fg = palette.red_intense },
-            { type = "HINT", fg = palette.blue_intense },
-            { type = "INFO", fg = palette.purple_intense },
-            { type = "WARN", fg = palette.yellow_intense },
+            { type = "ERROR", fg = palette.red_alt_other },
+            { type = "HINT", fg = palette.blue_alt_other },
+            { type = "INFO", fg = palette.purple_alt_other },
+            { type = "WARN", fg = palette.yellow_alt_other },
         }
         arg.f = function(_, v)
             return count_diagnostics(v.type)

@@ -27,6 +27,7 @@ g.Label = { fg = p.red_alt_other }
 g.LineNr = { bg = p.bg_dim, fg = p.fg_alt }
 g.MatchParen = { bg = p.bg_paren_match, fg = p.fg_main }
 g.NonText = { fg = p.fg_unfocused }
+g.None = { fg = "none" }
 g.Normal = { fg = p.fg_main }
 g.NormalFloat = { bg = p.bg_dim }
 g.Number = { fg = p.blue_alt_other }
@@ -38,7 +39,6 @@ g.StatusLine = { bg = p.bg_dim, fg = p.fg_active }
 g.StatusLineNC = { bg = p.bg_dim, fg = p.fg_inactive }
 g.String = { fg = p.blue_alt }
 g.Substitute = { bg = p.yellow_refine_bg, fg = p.yellow_refine_fg }
-g.TabLineFill = {}
 g.TermCursor = { bg = p.fg_main, fg = p.bg_main }
 g.Title = { fg = p.cyan }
 g.Type = { fg = p.cyan_alt_other }
@@ -86,6 +86,7 @@ g.Statement = g.Keyword
 g.StorageClass = g.Type
 g.Structure = g.Type
 g.TabLine = g.Ignore
+g.TabLineFill = g.None
 g.TabLineSel = g.PmenuSel
 g.Tag = g.Boolean
 g.TermCursorNC = g.TermCursor
@@ -96,18 +97,18 @@ g.WildMenu = g.PmenuSel
 g.lCursor = g.Normal
 
 -- Diagnostic
-g.DiagnosticError = { fg = p.red_intense }
-g.DiagnosticHint = { fg = p.blue_intense }
-g.DiagnosticInfo = { fg = p.purple_intense }
-g.DiagnosticSignError = { bg = p.bg_dim, fg = p.red_intense }
-g.DiagnosticSignHint = { bg = p.bg_dim, fg = p.blue_intense }
-g.DiagnosticSignInfo = { bg = p.bg_dim, fg = p.purple_intense }
-g.DiagnosticSignWarn = { bg = p.bg_dim, fg = p.yellow_intense }
+g.DiagnosticError = { fg = p.red_alt_other }
+g.DiagnosticHint = { fg = p.blue_alt_other }
+g.DiagnosticInfo = { fg = p.magenta_alt_other }
+g.DiagnosticSignError = { bg = p.bg_dim, fg = p.red_alt_other }
+g.DiagnosticSignHint = { bg = p.bg_dim, fg = p.blue_alt_other }
+g.DiagnosticSignInfo = { bg = p.bg_dim, fg = p.magenta_alt_other }
+g.DiagnosticSignWarn = { bg = p.bg_dim, fg = p.yellow_alt_other }
 g.DiagnosticVirtualTextError = { bg = p.red_intense_bg, fg = p.fg_main }
 g.DiagnosticVirtualTextHint = { bg = p.cyan_subtle_bg, fg = p.fg_dim }
 g.DiagnosticVirtualTextInfo = { bg = p.magenta_subtle_bg, fg = p.fg_dim }
 g.DiagnosticVirtualTextWarn = { bg = p.yellow_intense_bg, fg = p.fg_main }
-g.DiagnosticWarn = { fg = p.yellow_intense }
+g.DiagnosticWarn = { fg = p.yellow_alt_other }
 -- Extra
 g.DiagnosticVirtualTextDebug = { bg = p.fg_alt, fg = p.bg_main }
 g.DiagnosticVirtualTextSuccess = { bg = p.green_intense_bg, fg = p.fg_main }
@@ -203,8 +204,7 @@ g.TSVariableBuiltin = g.Builtin
 g.TSWarning = g.DiagnosticWarn
 
 -- health
-g.healthBar = {}
--- Linked
+g.healthBar = g.None
 g.healthError = g.DiagnosticVirtualTextError
 g.healthHelp = g.DiagnosticInfo
 g.healthSuccess = g.DiagnosticVirtualTextSuccess
@@ -254,8 +254,8 @@ g.GitSignsDeleteLnVirtLineInline = g.DiffDelete
 g.GitSignsDeleteNr = g.DiffDelete
 
 -- lightspeed.nvim
-g.LightspeedLabel = { fg = p.red_intense, underline = true }
-g.LightspeedLabelDistant = { fg = p.blue_intense, underline = true }
+g.LightspeedLabel = { fg = p.red_alt_other, underline = true }
+g.LightspeedLabelDistant = { fg = p.blue_alt_other, underline = true }
 g.LightspeedLabelDistantOverlapped = { fg = p.blue_faint, underline = true }
 g.LightspeedLabelOverlapped = { fg = p.red_faint, underline = true }
 g.LightspeedMaskedChar = { fg = p.fg_special_warm }
@@ -270,12 +270,13 @@ g.LightspeedPendingOpArea = g.LightspeedShortcut
 g.LightspeedUniqueChar = g.LightspeedUnlabeledMatch
 
 -- nvim-ts-rainbow
-g.rainbowcol1 = g.Normal
 g.rainbowcol2 = { fg = p.magenta_intense }
-g.rainbowcol3 = g.DiagnosticInfo
-g.rainbowcol4 = g.DiagnosticHint
 g.rainbowcol5 = { fg = p.cyan_intense }
 g.rainbowcol6 = { fg = p.orange_intense }
+-- Linked
+g.rainbowcol1 = g.Normal
+g.rainbowcol3 = g.DiagnosticInfo
+g.rainbowcol4 = g.DiagnosticHint
 g.rainbowcol7 = g.DiagnosticError
 
 -- telescope.nvim
@@ -300,8 +301,13 @@ g.RedrawDebugNormal = g.DiagnosticVirtualTextDebug
 g.RedrawDebugRecompose = g.DiagnosticVirtualTextError
 
 M.main = function()
+    local next = next
     for name, group in pairs(g) do
-        vim.api.nvim_set_hl(0, name, group)
+        if next(group) == nil then
+            vim.notify(name .. " is not defined.", vim.log.levels.WARN)
+        else
+            vim.api.nvim_set_hl(0, name, group)
+        end
     end
 end
 
