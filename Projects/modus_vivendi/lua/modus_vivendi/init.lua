@@ -256,18 +256,11 @@ g.GitSignsDeleteNr = g.DiffDelete
 -- lightspeed.nvim
 g.LightspeedLabel = { fg = p.red_alt_other, underline = true }
 g.LightspeedLabelDistant = { fg = p.blue_alt_other, underline = true }
-g.LightspeedLabelDistantOverlapped = { fg = p.blue_faint, underline = true }
-g.LightspeedLabelOverlapped = { fg = p.red_faint, underline = true }
 g.LightspeedMaskedChar = { fg = p.fg_special_warm }
 g.LightspeedShortcut = { bg = p.red_intense_bg, fg = p.fg_main, underline = true }
-g.LightspeedShortcutOverlapped = { bg = p.red_subtle_bg, fg = p.fg_dim, underline = true }
 g.LightspeedUnlabeledMatch = { fg = p.fg_special_cold }
 -- Linked
-g.LightspeedCursor = g.Cursor
 g.LightspeedGreyWash = g.NonText
-g.LightspeedOneCharMatch = g.LightspeedShortcut
-g.LightspeedPendingOpArea = g.LightspeedShortcut
-g.LightspeedUniqueChar = g.LightspeedUnlabeledMatch
 
 -- nvim-ts-rainbow
 g.rainbowcol2 = { fg = p.magenta_intense }
