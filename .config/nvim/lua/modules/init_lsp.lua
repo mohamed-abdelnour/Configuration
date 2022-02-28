@@ -16,14 +16,19 @@ M.on_attach = function(client, buffer, arg)
         buf_set_keymap("]d", vim.diagnostic.goto_next)
 
         if client.resolved_capabilities.document_highlight then
-            vim.cmd([[
-                augroup LSP
-                    autocmd!
-                    autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
-                    autocmd CursorHoldI <buffer> lua vim.lsp.buf.document_highlight()
-                    autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
-                augroup END
-            ]])
+            vim.api.nvim_create_augroup({ name = "LSP", clear = true })
+
+            local autocmd = function(event, callback)
+                vim.api.nvim_create_autocmd({
+                    group = "LSP",
+                    event = event,
+                    pattern = "<buffer>",
+                    callback = callback,
+                })
+            end
+
+            autocmd({ "CursorHold", "CursorHoldI" }, vim.lsp.buf.document_highlight)
+            autocmd("CursorMoved", vim.lsp.buf.clear_references)
         end
 
         if not arg.formatting then
