@@ -48,6 +48,14 @@ g.Visual = { bg = p.bg_region, fg = p.fg_main }
 g.Whitespace = { bg = p.bg_whitespace, fg = p.fg_whitespace }
 -- Extra
 g.Link = { underline = true, fg = p.blue_alt_other }
+g.S1 = g.Normal
+g.S2 = { fg = p.fg_special_warm }
+g.S3 = { fg = p.fg_special_cold }
+g.S4 = { fg = p.fg_special_mild }
+g.S5 = { fg = p.fg_special_calm }
+g.S6 = { fg = p.yellow_nuanced_fg }
+g.S7 = { fg = p.red_nuanced_fg }
+g.S8 = { fg = p.magenta_nuanced_fg }
 -- Linked
 g.Builtin = g.Boolean
 g.Character = g.Type
@@ -97,19 +105,23 @@ g.WildMenu = g.PmenuSel
 g.lCursor = g.Normal
 
 -- Diagnostic
-g.DiagnosticError = { fg = p.red_alt_other }
-g.DiagnosticHint = { fg = p.blue_alt_other }
-g.DiagnosticInfo = { fg = p.magenta_alt_other }
+-- Base
+g.DiagnosticError = g.Label
+g.DiagnosticHint = g.Number
+g.DiagnosticInfo = g.Keyword
+g.DiagnosticWarn = { fg = p.yellow_alt_other }
+-- Signs
 g.DiagnosticSignError = { bg = p.bg_dim, fg = p.red_alt_other }
 g.DiagnosticSignHint = { bg = p.bg_dim, fg = p.blue_alt_other }
 g.DiagnosticSignInfo = { bg = p.bg_dim, fg = p.magenta_alt_other }
 g.DiagnosticSignWarn = { bg = p.bg_dim, fg = p.yellow_alt_other }
+-- Virtual Text
 g.DiagnosticVirtualTextError = { bg = p.red_intense_bg, fg = p.fg_main }
 g.DiagnosticVirtualTextHint = { bg = p.cyan_subtle_bg, fg = p.fg_dim }
 g.DiagnosticVirtualTextInfo = { bg = p.magenta_subtle_bg, fg = p.fg_dim }
 g.DiagnosticVirtualTextWarn = { bg = p.yellow_intense_bg, fg = p.fg_main }
-g.DiagnosticWarn = { fg = p.yellow_alt_other }
 -- Extra
+g.DiagnosticSignSuccess = { bg = p.bg_dim, fg = p.green_alt_other }
 g.DiagnosticVirtualTextDebug = { bg = p.fg_alt, fg = p.bg_main }
 g.DiagnosticVirtualTextSuccess = { bg = p.green_intense_bg, fg = p.fg_main }
 -- Linked
@@ -212,15 +224,15 @@ g.healthWarning = g.DiagnosticVirtualTextWarn
 
 -- markdown
 g.markdownCode = { bg = p.bg_dim, fg = p.fg_dim }
-g.markdownH1 = { fg = p.red_faint }
-g.markdownH2 = { fg = p.yellow_faint }
-g.markdownH3 = { fg = p.green_faint }
-g.markdownH4 = { fg = p.cyan_faint }
-g.markdownH5 = { fg = p.blue_faint }
-g.markdownH6 = { fg = p.magenta_faint }
-g.markdownHeadingDelimiter = { fg = p.fg_dim }
 -- Linked
 g.markdownCodeBlock = g.NormalFloat
+g.markdownH1 = g.S1
+g.markdownH2 = g.S2
+g.markdownH3 = g.S3
+g.markdownH4 = g.S4
+g.markdownH5 = g.S5
+g.markdownH6 = g.S6
+g.markdownHeadingDelimiter = g.Normal
 g.markdownLinkText = g.Link
 
 -- Plug-ins
@@ -229,16 +241,14 @@ g.FidgetTask = g.NonText
 g.FidgetTitle = g.Title
 
 -- gitsigns.nvim
-g.GitSignsAdd = { bg = p.bg_dim, fg = p.green_alt_other }
-g.GitSignsChange = { bg = p.bg_dim, fg = p.yellow_alt_other }
-g.GitSignsDelete = { bg = p.bg_dim, fg = p.red_alt_other }
--- Linked
+g.GitSignsAdd = g.DiagnosticSignSuccess
 g.GitSignsAddInline = g.DiffAdd
 g.GitSignsAddLn = g.DiffAdd
 g.GitSignsAddLnInline = g.DiffAdd
 g.GitSignsAddLnVirtLn = g.DiffAdd
 g.GitSignsAddLnVirtLnInline = g.DiffAdd
 g.GitSignsAddNr = g.DiffAdd
+g.GitSignsChange = g.DiagnosticSignWarn
 g.GitSignsChangeInline = g.DiffChange
 g.GitSignsChangeLn = g.DiffChange
 g.GitSignsChangeLnInline = g.DiffChange
@@ -246,6 +256,7 @@ g.GitSignsChangeLnVirtLine = g.DiffChange
 g.GitSignsChangeLnVirtLineInline = g.DiffChange
 g.GitSignsChangeNr = g.DiffChange
 g.GitSignsCurrentLineBlame = g.NonText
+g.GitSignsDelete = g.DiagnosticSignError
 g.GitSignsDeleteInline = g.DiffDelete
 g.GitSignsDeleteLn = g.DiffDelete
 g.GitSignsDeleteLnInline = g.DiffDelete
@@ -256,11 +267,11 @@ g.GitSignsDeleteNr = g.DiffDelete
 -- lightspeed.nvim
 g.LightspeedLabel = { fg = p.red_alt_other, underline = true }
 g.LightspeedLabelDistant = { fg = p.blue_alt_other, underline = true }
-g.LightspeedMaskedChar = { fg = p.fg_special_warm }
 g.LightspeedShortcut = { bg = p.red_intense_bg, fg = p.fg_main, underline = true }
-g.LightspeedUnlabeledMatch = { fg = p.fg_special_cold }
 -- Linked
 g.LightspeedGreyWash = g.NonText
+g.LightspeedMaskedChar = g.S2
+g.LightspeedUnlabeledMatch = g.S3
 
 -- nvim-ts-rainbow
 g.rainbowcol2 = { fg = p.magenta_intense }
