@@ -1,9 +1,0 @@
-#!/usr/bin/env dash
-
-g() {
-    if [ "$#" -eq 0 ]; then
-        git status --short
-    else
-        git "$@"
-    fi
-}

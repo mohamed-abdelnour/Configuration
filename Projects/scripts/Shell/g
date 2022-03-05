@@ -1,0 +1,7 @@
+#!/usr/bin/env dash
+
+if [ "$#" -eq 0 ]; then
+    git status --short
+else
+    git "$@"
+fi

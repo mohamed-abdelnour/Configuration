@@ -4,7 +4,6 @@
 {
     . "$XDG_CONFIG_HOME/shell/aliasrc"
     . "$XDG_CONFIG_HOME/fzf/completion"
-    . "$XDG_CONFIG_HOME/git/alias"
     . "$XDG_CONFIG_HOME/nnn/quitcd.bash_zsh"
 }
 
