@@ -16,13 +16,12 @@ M.on_attach = function(client, buffer, arg)
         buf_set_keymap("]d", vim.diagnostic.goto_next)
 
         if client.resolved_capabilities.document_highlight then
-            vim.api.nvim_create_augroup({ name = "LSP", clear = true })
+            vim.api.nvim_create_augroup("LSP", { clear = true })
 
             local autocmd = function(event, callback)
-                vim.api.nvim_create_autocmd({
+                vim.api.nvim_create_autocmd(event, {
                     group = "LSP",
-                    event = event,
-                    pattern = "<buffer>",
+                    buffer = 0,
                     callback = callback,
                 })
             end
