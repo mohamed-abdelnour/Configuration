@@ -31,6 +31,11 @@ local M = {
 M.markdown.config = function()
     opts = { silent = true }
     vim.keymap.set("n", "<leader>m", "<cmd>MarkdownPreviewToggle<cr>", opts)
+
+    vim.g.markdown_fenced_languages = {
+        "console=sh",
+        "rust",
+    }
 end
 
 M.rust.config = function()
