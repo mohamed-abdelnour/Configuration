@@ -4,6 +4,11 @@ local M = {
         opt = false,
     },
 
+    nvim_treesitter_playground = {
+        "nvim-treesitter/playground",
+        opt = false,
+    },
+
     nvim_ts_rainbow = {
         "p00f/nvim-ts-rainbow",
         after = "nvim-treesitter",
