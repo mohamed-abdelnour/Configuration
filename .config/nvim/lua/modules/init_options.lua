@@ -18,6 +18,7 @@ local main = function()
     opt.spelllang = "en_gb"
 
     --  6 multiple windows
+    opt.laststatus = 3
     opt.splitbelow = true
     opt.splitright = true
 
