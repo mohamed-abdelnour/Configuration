@@ -1,7 +1,7 @@
 #!/usr/bin/env dash
 
 restore() {
-    git clean --force
+    git clean --force .
     git restore .
 }
 
