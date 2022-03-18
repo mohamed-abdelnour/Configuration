@@ -13,10 +13,7 @@ local M = {
 
 M.fidget.config = function()
     require("fidget").setup({
-        window = {
-            blend = 0,
-            relative = "editor",
-        },
+        window = { blend = 0 },
     })
 end
 
