@@ -41,6 +41,13 @@
     syntax-theme = base16
     zero-style = syntax
 
+# Git LFS
+[filter "lfs"]
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
+
 # Aliases
 [alias]
     a = add
