@@ -264,14 +264,12 @@ g.GitSignsDeleteLnVirtLine = g.DiffDelete
 g.GitSignsDeleteLnVirtLineInline = g.DiffDelete
 g.GitSignsDeleteNr = g.DiffDelete
 
--- lightspeed.nvim
-g.LightspeedLabel = { fg = p.red_alt_other, underline = true }
-g.LightspeedLabelDistant = { fg = p.blue_alt_other, underline = true }
-g.LightspeedShortcut = { bg = p.red_intense_bg, fg = p.fg_main, underline = true }
+-- leap.nvim
+g.LeapLabelPrimary = { bg = p.red_intense_bg, fg = p.fg_main, underline = true }
+g.LeapLabelSecondary = { bg = p.cyan_subtle_bg, fg = p.fg_dim, underline = true }
+g.LeapMatch = { fg = p.red_alt_other, underline = true }
 -- Linked
-g.LightspeedGreyWash = g.NonText
-g.LightspeedMaskedChar = g.S2
-g.LightspeedUnlabeledMatch = g.S3
+g.LeapBackdrop = g.None
 
 -- nvim-ts-rainbow
 g.rainbowcol2 = { fg = p.magenta_intense }

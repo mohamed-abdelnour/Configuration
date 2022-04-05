@@ -4,10 +4,13 @@ local M = {
         opt = false,
     },
 
-    lightspeed = {
-        "ggandor/lightspeed.nvim",
+    leap = {
+        "ggandor/leap.nvim",
         opt = false,
         requires = "vim-repeat",
+        config = function()
+            require("leap").set_default_keymaps()
+        end,
     },
 
     modus_vivendi = {
