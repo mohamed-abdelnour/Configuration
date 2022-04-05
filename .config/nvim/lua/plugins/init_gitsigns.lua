@@ -22,7 +22,7 @@ M.gitsigns.config = function()
             local gs = package.loaded.gitsigns
 
             local set_keymap = function(mode, l, r, extra_opts)
-                opts = { buffer = buffer, silent = true }
+                local opts = { buffer = buffer, silent = true }
                 if extra_opts then
                     opts = vim.tbl_extend("keep", extra_opts, opts)
                 end

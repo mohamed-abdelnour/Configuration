@@ -21,44 +21,9 @@ M.fidget.config = function()
 end
 
 M.lsp_config.config = function()
-    local extend = package.loaded["modules/init_functions"].extend
     require("lspconfig")
 
-    local sumneko_lua = {
-        name = "sumneko_lua",
-        cmd = {
-            "lua-language-server",
-            table.concat({
-                "--logpath=",
-                vim.fn.stdpath("cache"),
-                "/sumneko",
-            }),
-        },
-        settings = {
-            Lua = {
-                runtime = {
-                    version = "LuaJIT",
-                    path = extend(vim.split(package.path, ";"), {
-                        "lua/?.lua",
-                        "lua/?/init.lua",
-                    }),
-                },
-                diagnostics = {
-                    disable = { "lowercase-global" },
-                    globals = { "vim" },
-                },
-                workspace = {
-                    library = vim.api.nvim_get_runtime_file("", true),
-                },
-                telemetry = {
-                    enable = false,
-                },
-            },
-        },
-    }
-
     local servers = {
-        sumneko_lua,
         { name = "hls" },
         { name = "html" },
         { name = "pyright" },

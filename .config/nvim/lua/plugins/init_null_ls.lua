@@ -35,7 +35,7 @@ M.null_ls.config = function()
         },
     })
 
-    ---@diagnostic disable-next-line: unused-local
+    -- selene: allow(unused_variable)
     local make_linter = make_tool({
         method = methods.internal.DIAGNOSTICS_ON_SAVE,
         factory = helpers.generator_factory,
@@ -154,6 +154,9 @@ M.null_ls.config = function()
             args = { "-f", "json", "$FILENAME" },
             method = null_ls.methods.DIAGNOSTICS_ON_SAVE,
         }),
+
+        -- selene
+        linters.selene,
 
         -- statix
         linters.statix,
