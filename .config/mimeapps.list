@@ -3,18 +3,18 @@ application/pdf=org.pwmt.zathura.desktop
 
 image/svg+xml=firefox.desktop
 
-image/bmp=sxiv.desktop
-image/gif=sxiv.desktop
-image/jpeg=sxiv.desktop
-image/jpg=sxiv.desktop
-image/png=sxiv.desktop
-image/tiff=sxiv.desktop
-image/x-bmp=sxiv.desktop
-image/x-portable-anymap=sxiv.desktop
-image/x-portable-bitmap=sxiv.desktop
-image/x-portable-graymap=sxiv.desktop
-image/x-tga=sxiv.desktop
-image/x-xpixmap=sxiv.desktop
+image/bmp=nsxiv.desktop
+image/gif=nsxiv.desktop
+image/jpeg=nsxiv.desktop
+image/jpg=nsxiv.desktop
+image/png=nsxiv.desktop
+image/tiff=nsxiv.desktop
+image/x-bmp=nsxiv.desktop
+image/x-portable-anymap=nsxiv.desktop
+image/x-portable-bitmap=nsxiv.desktop
+image/x-portable-graymap=nsxiv.desktop
+image/x-tga=nsxiv.desktop
+image/x-xpixmap=nsxiv.desktop
 
 text/english=nvim.desktop
 text/plain=nvim.desktop
