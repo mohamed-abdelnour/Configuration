@@ -14,8 +14,10 @@ local M = {
     },
 
     modus_vivendi = {
-        "~/Projects/modus_vivendi",
-        config = "vim.cmd([[colorscheme modus_vivendi]])",
+        "mohamed-abdelnour/modus_themes.nvim",
+        config = function()
+            require("modus_themes").vivendi()
+        end,
         opt = false,
     },
 

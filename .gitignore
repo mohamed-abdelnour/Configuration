@@ -149,10 +149,6 @@
 
 !Projects/
 
-!Projects/modus_vivendi/
-!Projects/modus_vivendi/**
-Projects/modus_vivendi/lua/modus_vivendi/palette.lua
-
 !Projects/scripts/
 !Projects/scripts/**
 Projects/scripts/Python/src/bare_ignore/
