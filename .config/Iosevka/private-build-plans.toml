@@ -34,3 +34,6 @@ angle = 9.4
 shape = "oblique"
 menu = "oblique"
 css = "oblique"
+
+[collectPlans.iosevka]
+from = ["iosevka"]
