@@ -14,7 +14,7 @@ local M = {
     },
 
     modus_vivendi = {
-        "mohamed-abdelnour/modus_themes.nvim",
+        "~/Projects/modus_themes.nvim",
         config = function()
             require("modus_themes").vivendi()
         end,
