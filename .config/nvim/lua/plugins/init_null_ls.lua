@@ -145,9 +145,10 @@ M.null_ls.config = function()
         -- Shellcheck
         linters.shellcheck,
 
-        -- TODO: enable when deadnix is bumped to 0.1.4
         -- deadnix
-        -- linters.deadnix,
+        linters.deadnix.with({
+            method = null_ls.methods.DIAGNOSTICS_ON_SAVE,
+        }),
 
         -- eslint_d
         linters.eslint_d.with({

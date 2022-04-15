@@ -1,7 +1,13 @@
-final: prev: {
+final: _: {
   decPkgs =
-    prev.decPkgs
-    or {}
+    # Defaults
+    {
+      inherit
+        (final)
+        cacert
+        nix
+        ;
+    }
     // import ./tmpPkgs.nix {} final
     // {
       inherit
@@ -23,6 +29,7 @@ final: prev: {
         nix-zsh-completions
         nixpkgs-fmt
         nordic
+        nsxiv
         pandoc
         papirus-icon-theme
         patchelf
@@ -37,9 +44,6 @@ final: prev: {
         tmpmail
         ttfautohint
         vanilla-dmz
-        # Defaults
-        cacert
-        nix
         ;
       inherit
         (final.haskellPackages)
