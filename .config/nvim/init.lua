@@ -4,7 +4,7 @@ end
 
 local use_modules = function(modules)
     for _, v in ipairs(modules) do
-        require("modules/init_" .. v)
+        require("modules/" .. v)
     end
 end
 
@@ -23,7 +23,7 @@ local main = function()
         "mappings",
         "options",
         "term",
-        -- Call require("modules/init_plugins") last.
+        -- Call require("modules/plugins") last.
         "plugins",
     })
 end

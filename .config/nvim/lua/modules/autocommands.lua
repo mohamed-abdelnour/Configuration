@@ -6,7 +6,7 @@ local main = function()
         group = "INIT",
         pattern = "*",
         callback = function()
-            package.loaded["modules/init_term"].term_open()
+            package.loaded["modules/term"].term_open()
         end,
     })
 end

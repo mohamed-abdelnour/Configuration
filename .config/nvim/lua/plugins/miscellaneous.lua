@@ -77,7 +77,7 @@ end
 M.which_key.config = function()
     require("which-key").setup({
         icons = {
-            separator = package.loaded["modules/init_icons"].U_2192,
+            separator = package.loaded["modules/icons"].U_2192,
         },
         plugins = {
             spelling = {

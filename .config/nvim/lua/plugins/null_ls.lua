@@ -163,12 +163,12 @@ M.null_ls.config = function()
         linters.statix,
     }
 
-    local merge = package.loaded["modules/init_functions"].merge
+    local merge = package.loaded["modules/functions"].merge
 
     null_ls.setup({
         diagnostics_format = "[#{c}] #{m} (#{s})",
         on_attach = function(client, buffer)
-            package.loaded["modules/init_lsp"].on_attach(client, buffer, {
+            package.loaded["modules/lsp"].on_attach(client, buffer, {
                 formatting = true,
             }).base()
         end,

@@ -11,8 +11,8 @@ M.heirline.config = function()
     local utils = require("heirline.utils")
 
     local palette = package.loaded["modus_themes"].palette
-    local functions = package.loaded["modules/init_functions"]
-    local icon = package.loaded["modules/init_icons"].U_25CF .. " "
+    local functions = package.loaded["modules/functions"]
+    local icon = package.loaded["modules/icons"].U_25CF .. " "
 
     local align = { provider = "%=" }
     local space = { provider = " " }
