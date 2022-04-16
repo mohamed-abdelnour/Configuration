@@ -49,7 +49,6 @@ M = packer.startup({
         use_plugins({
             "comment",
             "coq",
-            "filetype",
             "gitsigns",
             "heirline",
             "languages",
