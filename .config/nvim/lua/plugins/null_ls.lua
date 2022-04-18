@@ -166,7 +166,7 @@ M.null_ls.config = function()
         builtin_linter("statix"),
     }
 
-    local merge = package.loaded["modules/functions"].merge
+    local merge = package.loaded["modules/functions"].tbl.merge
 
     null_ls.setup({
         diagnostics_format = "[#{c}] #{m} (#{s})",

@@ -17,7 +17,7 @@ M.heirline.config = function()
     local align = { provider = "%=" }
     local space = { provider = " " }
 
-    local wrap = functions.wrap
+    local wrap = functions.str.wrap
 
     local normalise_count = function(arg)
         arg.c = arg.c or 0
@@ -28,7 +28,7 @@ M.heirline.config = function()
     end
 
     local intersperse_space = function(t)
-        return functions.intersperse(t, space)
+        return functions.tbl.intersperse(t, space)
     end
 
     local generate_section = function(arg)
