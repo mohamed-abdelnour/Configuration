@@ -135,32 +135,35 @@ M.null_ls.config = function()
         }),
     }
 
+    local builtin_linter = function(linter, arg)
+        local defaults = {
+            method = null_ls.methods.DIAGNOSTICS_ON_SAVE,
+        }
+        return linters[linter].with(vim.tbl_extend("keep", arg or {}, defaults))
+    end
+
     local lint = {
         -- Pylint
-        linters.pylint.with({
+        builtin_linter("pylint", {
             args = { "-j0", "-f", "json", "$FILENAME" },
-            method = null_ls.methods.DIAGNOSTICS_ON_SAVE,
         }),
 
         -- Shellcheck
-        linters.shellcheck,
+        builtin_linter("shellcheck"),
 
         -- deadnix
-        linters.deadnix.with({
-            method = null_ls.methods.DIAGNOSTICS_ON_SAVE,
-        }),
+        builtin_linter("deadnix"),
 
         -- eslint_d
-        linters.eslint_d.with({
+        builtin_linter("eslint_d", {
             args = { "-f", "json", "$FILENAME" },
-            method = null_ls.methods.DIAGNOSTICS_ON_SAVE,
         }),
 
         -- selene
-        linters.selene,
+        builtin_linter("selene"),
 
         -- statix
-        linters.statix,
+        builtin_linter("statix"),
     }
 
     local merge = package.loaded["modules/functions"].merge
