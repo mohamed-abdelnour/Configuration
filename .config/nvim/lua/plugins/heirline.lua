@@ -123,7 +123,7 @@ M.heirline.config = function()
         arg.map = {
             { type = "ERROR", fg = palette.red_alt_other },
             { type = "HINT", fg = palette.blue_alt_other },
-            { type = "INFO", fg = palette.purple_alt_other },
+            { type = "INFO", fg = palette.magenta_alt_other },
             { type = "WARN", fg = palette.yellow_alt_other },
         }
         arg.f = function(_, v)
