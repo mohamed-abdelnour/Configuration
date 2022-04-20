@@ -11,7 +11,7 @@ font:
     style: Regular
   bold: *default_font
   italic: &italic_font
-    style: Oblique
+    style: Italic
   bold_italic: *italic_font
   size: 11.0
 

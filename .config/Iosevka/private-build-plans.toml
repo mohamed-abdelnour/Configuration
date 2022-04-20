@@ -29,6 +29,12 @@ shape = "upright"
 menu = "upright"
 css = "normal"
 
+[buildPlans.iosevka.slopes.italic]
+angle = 9.4
+shape = "oblique"
+menu = "italic"
+css = "italic"
+
 [buildPlans.iosevka.slopes.oblique]
 angle = 9.4
 shape = "oblique"
