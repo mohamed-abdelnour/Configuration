@@ -10,7 +10,7 @@ local main = function()
     --  4 displaying text
     opt.showbreak = package.loaded["modules/icons"].U_21AA .. " "
     opt.cmdheight = 2
-    opt.listchars = { tab = "<->", trail = "-", nbsp = "+" }
+    opt.listchars = { tab = "<->", trail = "-", nbsp = " " }
     opt.relativenumber = true
 
     --  5 syntax, highlighting and spelling
