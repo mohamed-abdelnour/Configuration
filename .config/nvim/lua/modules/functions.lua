@@ -109,6 +109,23 @@ M.tbl.merge = function(ts)
 end
 
 M.toggles = {
+    toggle = function(option)
+        vim.opt[option] = not vim.opt[option]._value
+    end,
+
+    colour_column = function()
+        if vim.opt.colorcolumn._value == "" then
+            local textwidth = vim.opt.textwidth._value
+            if textwidth ~= 0 then
+                vim.opt.colorcolumn = tostring(textwidth)
+            else
+                vim.opt.colorcolumn = "80"
+            end
+        else
+            vim.opt.colorcolumn = ""
+        end
+    end,
+
     spaceless = function()
         local spaceless = { group = "Spaceless" }
         if next(api.nvim_get_autocmds(spaceless)) == nil then

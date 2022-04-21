@@ -31,34 +31,21 @@ local main = function()
     set_keymap("n", "<c-l>", "<cmd>nohlsearch<cr>", opts)
 
     -- Toggles
-    ---- colorcolumn
-    set_keymap(
-        "n",
-        "<leader>tcc",
-        [[<cmd>execute "set colorcolumn=" . (&colorcolumn == "" ? "80" : "")<cr>]],
-        opts
-    )
-
-    ---- cursorline
-    set_keymap("n", "<leader>tcl", "<cmd>set cursorline!<cr>", opts)
-
-    ---- expandtab
-    set_keymap("n", "<leader>tet", "<cmd>set expandtab!<cr>", opts)
-
-    ---- ignorecase
-    set_keymap("n", "<leader>tic", "<cmd>set ignorecase!<cr>", opts)
-
-    ---- linebreak
-    set_keymap("n", "<leader>tlb", "<cmd>set linebreak!<cr>", opts)
-
-    ---- list
-    set_keymap("n", "<leader>tlt", "<cmd>set list!<cr>", opts)
-
-    ---- spaceless
     set_keymap("n", "<leader>t ", functions.toggles.spaceless, opts)
+    set_keymap("n", "<leader>tcc", functions.toggles.colour_column, opts)
 
-    ---- spell
-    set_keymap("n", "<leader>ts", "<cmd>set spell!<cr>", opts)
+    local toggle = function(option)
+        return function()
+            functions.toggles.toggle(option)
+        end
+    end
+
+    set_keymap("n", "<leader>tcl", toggle("cursorline"), opts)
+    set_keymap("n", "<leader>tet", toggle("expandtab"), opts)
+    set_keymap("n", "<leader>tic", toggle("ignorecase"), opts)
+    set_keymap("n", "<leader>tlb", toggle("linebreak"), opts)
+    set_keymap("n", "<leader>tlt", toggle("list"), opts)
+    set_keymap("n", "<leader>ts", toggle("spell"), opts)
 end
 
 main()
