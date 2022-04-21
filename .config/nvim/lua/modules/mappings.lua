@@ -54,6 +54,9 @@ local main = function()
     ---- list
     set_keymap("n", "<leader>tlt", "<cmd>set list!<cr>", opts)
 
+    ---- spaceless
+    set_keymap("n", "<leader>t ", functions.toggles.spaceless, opts)
+
     ---- spell
     set_keymap("n", "<leader>ts", "<cmd>set spell!<cr>", opts)
 end

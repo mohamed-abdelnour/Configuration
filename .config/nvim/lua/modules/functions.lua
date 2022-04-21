@@ -1,8 +1,9 @@
 local M = {}
 
+local api = vim.api
+
 M.buffer = {
     del_coq_marks = function()
-        local api = vim.api
         local BUFFER = 0
         for ns, ns_id in pairs(api.nvim_get_namespaces()) do
             if M.str.is_uuid(ns) then
@@ -106,5 +107,16 @@ M.tbl.merge = function(ts)
     end
     return r
 end
+
+M.toggles = {
+    spaceless = function()
+        local spaceless = { group = "Spaceless" }
+        if next(api.nvim_get_autocmds(spaceless)) == nil then
+            package.loaded.spaceless.setup()
+        else
+            api.nvim_clear_autocmds(spaceless)
+        end
+    end,
+}
 
 return M
