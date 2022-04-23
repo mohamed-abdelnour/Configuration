@@ -109,3 +109,7 @@
     wm = w move
     wp = w prune
     wr = w remove
+
+    # LFS
+    # Switch from large objects to pointer files
+    lc = "!f() { GIT_LFS_SKIP_SMUDGE=1 git read-tree -u --reset HEAD; }; f"
