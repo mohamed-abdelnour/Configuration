@@ -9,6 +9,7 @@ M.on_attach = function(client, buffer, arg)
     end
 
     local base = function()
+        buf_set_keymap("<leader>ca", vim.lsp.buf.code_action)
         buf_set_keymap("<leader>e", vim.diagnostic.open_float)
         buf_set_keymap("<leader>n", vim.lsp.buf.formatting)
         buf_set_keymap("<leader>q", vim.diagnostic.setloclist)

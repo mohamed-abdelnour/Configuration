@@ -4,6 +4,12 @@ local M = {
         opt = false,
     },
 
+    dressing = {
+        "stevearc/dressing.nvim",
+        opt = false,
+        requires = "telescope.nvim",
+    },
+
     leap = {
         "ggandor/leap.nvim",
         opt = false,
@@ -66,6 +72,19 @@ local M = {
         opt = false,
     },
 }
+
+M.dressing.config = function()
+    require("dressing").setup({
+        input = {
+            insert_only = false,
+            winblend = 0,
+        },
+        select = {
+            backend = { "telescope" },
+            telescope = package.loaded["modules/telescope"].ivy,
+        },
+    })
+end
 
 M.startuptime.config = function()
     vim.g.startuptime_exe_args = {

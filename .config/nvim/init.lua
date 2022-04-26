@@ -22,6 +22,7 @@ local main = function()
         "lsp",
         "mappings",
         "options",
+        "telescope",
         "term",
         -- Call require("modules/plugins") last.
         "plugins",

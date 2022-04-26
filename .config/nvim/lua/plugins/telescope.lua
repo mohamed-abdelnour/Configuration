@@ -24,11 +24,7 @@ local M = {
 
 M.telescope.config = function()
     local telescope = require("telescope")
-    local ivy = require("telescope/themes").get_ivy({
-        layout_config = {
-            height = 20,
-        },
-    })
+    local ivy = package.loaded["modules/telescope"].ivy
     telescope.setup({
         defaults = ivy,
         pickers = {
@@ -59,7 +55,6 @@ local main = function()
     local opts = { silent = true }
 
     local builtin = require("telescope/builtin")
-    set_keymap("n", "<leader>ca", builtin.lsp_code_actions, opts)
     set_keymap("n", "<leader>fb", builtin.buffers, opts)
     set_keymap("n", "<leader>fe", builtin.builtin, opts)
     set_keymap("n", "<leader>ff", builtin.find_files, opts)
