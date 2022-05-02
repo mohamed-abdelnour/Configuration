@@ -13,7 +13,6 @@ local M = {
     leap = {
         "ggandor/leap.nvim",
         opt = false,
-        requires = "vim-repeat",
         config = function()
             require("leap").set_default_keymaps()
         end,
@@ -25,23 +24,6 @@ local M = {
             require("modus_themes").vivendi()
         end,
         opt = false,
-    },
-
-    nvim_colorizer = {
-        "norcalli/nvim-colorizer.lua",
-        cmd = {
-            "ColorizerAttachToBuffer",
-            "ColorizerReloadAllBuffers",
-            "ColorizerToggle",
-        },
-    },
-
-    nvim_luapad = {
-        "rafcamlet/nvim-luapad",
-        cmd = {
-            "LuaRun",
-            "Luapad",
-        },
     },
 
     plenary = {
@@ -56,21 +38,6 @@ local M = {
         end,
         opt = false,
     },
-
-    startuptime = {
-        "dstein64/vim-startuptime",
-        cmd = "StartupTime",
-    },
-
-    vim_repeat = {
-        "tpope/vim-repeat",
-        opt = false,
-    },
-
-    which_key = {
-        "folke/which-key.nvim",
-        opt = false,
-    },
 }
 
 M.dressing.config = function()
@@ -82,29 +49,6 @@ M.dressing.config = function()
         select = {
             backend = { "telescope" },
             telescope = require("modules/telescope").ivy,
-        },
-    })
-end
-
-M.startuptime.config = function()
-    vim.g.startuptime_exe_args = {
-        "-R",
-        vim.fn.expand("%:p"),
-    }
-end
-
-M.which_key.config = function()
-    require("which-key").setup({
-        icons = {
-            separator = package.loaded["modules/icons"].U_2192,
-        },
-        plugins = {
-            spelling = {
-                enabled = true,
-            },
-        },
-        window = {
-            border = "single",
         },
     })
 end
