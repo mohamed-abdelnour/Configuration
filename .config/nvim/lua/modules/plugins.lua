@@ -57,7 +57,6 @@ M = packer.startup({
             "null_ls",
             "telescope",
             "treesitter",
-            "trouble",
             "vimtex",
         })
 
