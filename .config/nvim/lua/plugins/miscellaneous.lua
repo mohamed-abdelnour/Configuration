@@ -81,7 +81,7 @@ M.dressing.config = function()
         },
         select = {
             backend = { "telescope" },
-            telescope = package.loaded["modules/telescope"].ivy,
+            telescope = require("modules/telescope").ivy,
         },
     })
 end

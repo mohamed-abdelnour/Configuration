@@ -10,7 +10,7 @@ M.gitsigns.config = function()
     require("gitsigns").setup({
         signs = (function()
             local keys = { "add", "change", "delete", "changedelete", "topdelete" }
-            local icon = package.loaded["modules/icons"].U_2503
+            local icon = require("modules/icons").U_2503
             local icons = {}
             for _, k in ipairs(keys) do
                 icons[k] = { text = icon }
@@ -19,7 +19,7 @@ M.gitsigns.config = function()
         end)(),
 
         on_attach = function(buffer)
-            local gs = package.loaded.gitsigns
+            local gs = require("gitsigns")
 
             local set_keymap = function(mode, l, r, extra_opts)
                 local opts = { buffer = buffer, silent = true }

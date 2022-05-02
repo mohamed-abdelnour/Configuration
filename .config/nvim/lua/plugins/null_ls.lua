@@ -166,12 +166,12 @@ M.null_ls.config = function()
         builtin_linter("statix"),
     }
 
-    local merge = package.loaded["modules/functions"].tbl.merge
+    local merge = require("modules/functions").tbl.merge
 
     null_ls.setup({
         diagnostics_format = "[#{c}] #{m} (#{s})",
         on_attach = function(client, buffer)
-            package.loaded["modules/lsp"].on_attach(client, buffer).base()
+            require("modules/lsp").on_attach(client, buffer).base()
         end,
         sources = merge({ act, format, lint }),
     })

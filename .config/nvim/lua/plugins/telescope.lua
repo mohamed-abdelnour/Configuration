@@ -24,7 +24,7 @@ local M = {
 
 M.telescope.config = function()
     local telescope = require("telescope")
-    local ivy = package.loaded["modules/telescope"].ivy
+    local ivy = require("modules/telescope").ivy
     telescope.setup({
         defaults = ivy,
         pickers = {
@@ -61,7 +61,7 @@ local main = function()
     set_keymap("n", "<leader>fh", builtin.help_tags, opts)
     set_keymap("n", "<leader>fr", builtin.live_grep, opts)
 
-    local telescope = package.loaded.telescope
+    local telescope = require("telescope")
     set_keymap("n", "<leader>fn", telescope.extensions.file_browser.file_browser, opts)
 end
 

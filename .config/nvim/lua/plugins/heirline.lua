@@ -1,7 +1,6 @@
 local M = {
     heirline = {
         "rebelot/heirline.nvim",
-        after = "modus_themes.nvim",
         opt = false,
     },
 }
@@ -10,9 +9,9 @@ M.heirline.config = function()
     local conditions = require("heirline.conditions")
     local utils = require("heirline.utils")
 
-    local palette = package.loaded["modus_themes"].palette
-    local functions = package.loaded["modules/functions"]
-    local icon = package.loaded["modules/icons"].U_25CF .. " "
+    local palette = require("modus_themes").palette
+    local functions = require("modules/functions")
+    local icon = require("modules/icons").U_25CF .. " "
 
     local align = { provider = "%=" }
     local space = { provider = " " }

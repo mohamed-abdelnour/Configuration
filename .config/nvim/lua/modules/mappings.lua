@@ -8,7 +8,7 @@ local main = function()
     local set_keymap = vim.keymap.set
     local opts = { silent = true }
 
-    local functions = package.loaded["modules/functions"]
+    local functions = require("modules/functions")
 
     -- COQ marks
     set_keymap({ "i", "n", "v" }, "<c-j>", functions.buffer.del_coq_marks, opts)
