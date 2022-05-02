@@ -1,5 +1,16 @@
 local M = {}
 
+M.format = function()
+    vim.lsp.buf.format({
+        async = true,
+        filter = function(clients)
+            return vim.tbl_filter(function(client)
+                return client.name == "null-ls"
+            end, clients)
+        end,
+    })
+end
+
 M.on_attach = function(client, buffer, arg)
     arg = arg or {}
 
@@ -11,15 +22,10 @@ M.on_attach = function(client, buffer, arg)
     local base = function()
         buf_set_keymap("<leader>ca", vim.lsp.buf.code_action)
         buf_set_keymap("<leader>e", vim.diagnostic.open_float)
-        buf_set_keymap("<leader>n", vim.lsp.buf.formatting)
+        buf_set_keymap("<leader>n", M.format)
         buf_set_keymap("<leader>q", vim.diagnostic.setloclist)
         buf_set_keymap("[d", vim.diagnostic.goto_prev)
         buf_set_keymap("]d", vim.diagnostic.goto_next)
-
-        if not arg.formatting then
-            client.resolved_capabilities.document_formatting = false
-            client.resolved_capabilities.document_range_formatting = false
-        end
 
         if arg.hook then
             arg.hook(client, buffer)

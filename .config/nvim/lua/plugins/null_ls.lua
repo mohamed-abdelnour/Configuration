@@ -171,9 +171,7 @@ M.null_ls.config = function()
     null_ls.setup({
         diagnostics_format = "[#{c}] #{m} (#{s})",
         on_attach = function(client, buffer)
-            package.loaded["modules/lsp"].on_attach(client, buffer, {
-                formatting = true,
-            }).base()
+            package.loaded["modules/lsp"].on_attach(client, buffer).base()
         end,
         sources = merge({ act, format, lint }),
     })
