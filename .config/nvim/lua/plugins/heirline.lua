@@ -1,6 +1,7 @@
 local M = {
     heirline = {
         "rebelot/heirline.nvim",
+        after = "modus_themes.nvim",
         opt = false,
     },
 }
