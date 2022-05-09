@@ -1,0 +1,5 @@
+#!/usr/bin/env dash
+
+curl -SLfs 'https://api.github.com/repos/google/google-java-format/releases/latest' |
+    rg -o 'https.*all-deps.jar' |
+    xargs curl -Lf -o 'google-java-format.jar'

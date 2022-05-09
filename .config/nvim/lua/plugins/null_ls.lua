@@ -121,6 +121,13 @@ M.null_ls.config = function()
         }),
 
         make_formatter({
+            name = "google-java-format",
+            command = "google-java-format",
+            args = { "-" },
+            ft = { "java" },
+        }),
+
+        make_formatter({
             name = "latexindent",
             command = "latexindent",
             args = { "-g", "/dev/null" },

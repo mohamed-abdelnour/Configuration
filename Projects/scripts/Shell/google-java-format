@@ -1,0 +1,3 @@
+#!/usr/bin/env dash
+
+java -jar "${XDG_DATA_HOME}/java/google-java-format/google-java-format.jar" "$@"
