@@ -1,0 +1,14 @@
+#!/usr/bin/env dash
+
+DIR='server'
+
+launcher() {
+    fd -I -e 'jar' 'org.eclipse.equinox.launcher_'
+}
+
+[ -d "$DIR" ] || mkdir "$DIR"
+
+curl -fLO 'https://download.eclipse.org/jdtls/snapshots/jdt-language-server-latest.tar.gz' &&
+    tar -xzvf 'jdt-language-server-latest.tar.gz' -C "$DIR"
+
+ln -sf "$(launcher)" 'launcher'

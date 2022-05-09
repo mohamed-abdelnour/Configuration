@@ -1,4 +1,0 @@
-#!/usr/bin/env dash
-
-wget 'http://download.eclipse.org/jdtls/snapshots/jdt-language-server-latest.tar.gz' &&
-    tar -xzvf 'jdt-language-server-latest.tar.gz'

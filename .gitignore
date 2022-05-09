@@ -129,11 +129,9 @@
 !.local/share/emacs/etc/eshell/aliases
 
 !.local/share/java/
-!.local/share/java/**
-.local/share/java/google-java-format/google-java-format.jar
-
-!.local/share/jdtls/
-!.local/share/jdtls/unpack_jdtls
+!.local/share/java/google-java-format/
+!.local/share/java/jdtls/
+!.local/share/java/*/fetch
 
 !.local/share/source-code-pro-slashed/
 !.local/share/source-code-pro-slashed/freeze

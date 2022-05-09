@@ -1,0 +1,16 @@
+#!/usr/bin/env dash
+
+JDTLS_HOME="$XDG_DATA_HOME/java/jdtls"
+
+java -Declipse.application=org.eclipse.jdt.ls.core.id1 \
+    -Declipse.product=org.eclipse.jdt.ls.core.product \
+    -Dlog.level=ALL \
+    -Dlog.protocol=true \
+    -Dosgi.bundles.defaultStartLevel=4 \
+    -Xms1g \
+    --add-modules=ALL-SYSTEM \
+    --add-opens java.base/java.lang=ALL-UNNAMED \
+    --add-opens java.base/java.util=ALL-UNNAMED \
+    -jar "$JDTLS_HOME/launcher" \
+    -configuration "$JDTLS_HOME/server/config_linux" \
+    "$@"
