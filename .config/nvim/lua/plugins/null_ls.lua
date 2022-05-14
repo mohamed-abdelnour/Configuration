@@ -153,6 +153,7 @@ M.null_ls.config = function()
         -- Pylint
         builtin_linter("pylint", {
             args = { "-j0", "-f", "json", "$FILENAME" },
+            timeout = 10000,
         }),
 
         -- Shellcheck
