@@ -26,12 +26,15 @@ local M = {
 }
 
 M.nvim_treesitter.config = function()
+    local disable = {
+        "latex",
+        "make",
+    }
+
     require("nvim-treesitter.configs").setup({
         highlight = {
             enable = true,
-            disable = {
-                "make",
-            },
+            disable = disable,
         },
         incremental_selection = {
             enable = true,
@@ -44,6 +47,7 @@ M.nvim_treesitter.config = function()
         },
         rainbow = {
             enable = true,
+            disable = disable,
         },
     })
 end
