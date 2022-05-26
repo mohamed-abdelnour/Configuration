@@ -6,11 +6,13 @@ rsync -ARXahv \
     /etc/environment \
     /etc/gtk-2.0/gtkrc \
     /etc/gtk-3.0/settings.ini \
+    /etc/pacman.d/hooks/ \
     /etc/samba/smb.conf \
     /etc/sysctl.d/ \
     /etc/systemd/logind.conf \
     /etc/systemd/system/getty@tty1.service.d/ \
     /etc/udev/rules.d/ \
+    /usr/local/bin/supress_cockpit \
     .
 
 pacman -Qeq >installed_packages.txt

@@ -1,0 +1,10 @@
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Type = Package
+Target = cockpit
+
+[Action]
+Description = Suppressing cockpit.issue and MOTD...
+When = PostTransaction
+Exec = /usr/local/bin/supress_cockpit

@@ -1,0 +1,4 @@
+#!/usr/bin/env dash
+
+/usr/bin/ln -sf /dev/null /etc/issue.d/cockpit.issue
+/usr/bin/ln -sf /dev/null /etc/motd.d/cockpit
