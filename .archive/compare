@@ -1,3 +1,4 @@
 #!/usr/bin/env dash
 
-fd --type f . 'etc' --exec diff --color=always --unified '{}' '/{}'
+fd -t f -E 'archiver' -E 'compare' -E 'installed_packages.txt' \
+    -x diff -u --color=always '{}' '/{}'
