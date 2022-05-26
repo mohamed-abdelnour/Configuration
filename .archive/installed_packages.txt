@@ -232,6 +232,7 @@ xorg-xwayland
 xorg-xwd
 xorg-xwininfo
 xorg-xwud
+xsecurelock
 xss-lock
 yarn
 zathura

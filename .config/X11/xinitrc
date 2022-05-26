@@ -29,5 +29,5 @@ picom --experimental-backends &
 restore_home &
 setxkbmap -layout us,ara -variant ,qwerty_digits grp:shifts_toggle &
 unclutter &
-xss-lock slock &
+xss-lock -l -- secure_lock &
 dwm_init
