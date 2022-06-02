@@ -1,8 +1,0 @@
-#!/usr/bin/env sh
-
-mount -t 9p -o trans=virtio /shared /vm-share
-
-# fstab
-# /shared /vm-share 9p trans=virtio,verison=9p2000.L,rw,nofail 0 0
-# /shared /vm-share 9p trans=virtio,verison=9p2000.L,rw,nofail,_netdev 0 0
-# /shared /vm-share 9p defaults 0 2
