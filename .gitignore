@@ -58,6 +58,7 @@
 
 !.config/nix/
 !.config/nix/**
+.config/nix/registry.json
 
 !.config/nixpkgs/
 !.config/nixpkgs/**
