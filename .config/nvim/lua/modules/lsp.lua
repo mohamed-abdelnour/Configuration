@@ -1,13 +1,25 @@
 local M = {}
 
+local filter = function(f)
+    return function(clients)
+        return vim.tbl_filter(f, clients)
+    end
+end
+
 M.format = function()
     vim.lsp.buf.format({
         async = true,
-        filter = function(clients)
-            return vim.tbl_filter(function(client)
-                return client.name == "null-ls"
-            end, clients)
-        end,
+        filter = filter(function(client)
+            return client.name == "null-ls"
+        end),
+    })
+end
+
+M.rename = function()
+    vim.lsp.buf.rename(nil, {
+        filter = filter(function(client)
+            return client.name ~= "null-ls"
+        end),
     })
 end
 
@@ -37,7 +49,7 @@ M.on_attach = function(client, buffer, arg)
 
         buf_set_keymap("<C-k>", vim.lsp.buf.signature_help)
         buf_set_keymap("<leader>D", vim.lsp.buf.type_definition)
-        buf_set_keymap("<leader>rn", vim.lsp.buf.rename)
+        buf_set_keymap("<leader>rn", M.rename)
         buf_set_keymap("<leader>wa", vim.lsp.buf.add_workspace_folder)
         buf_set_keymap("<leader>wr", vim.lsp.buf.remove_workspace_folder)
         buf_set_keymap("K", vim.lsp.buf.hover)
