@@ -1,25 +1,17 @@
 local M = {}
 
-local filter = function(f)
-    return function(clients)
-        return vim.tbl_filter(f, clients)
-    end
-end
-
 M.format = function()
     vim.lsp.buf.format({
         async = true,
-        filter = filter(function(client)
-            return client.name == "null-ls"
-        end),
+        name = "null-ls",
     })
 end
 
 M.rename = function()
     vim.lsp.buf.rename(nil, {
-        filter = filter(function(client)
+        filter = function(client)
             return client.name ~= "null-ls"
-        end),
+        end,
     })
 end
 
