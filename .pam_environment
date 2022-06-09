@@ -53,4 +53,4 @@ _JAVA_AWT_WM_NONREPARENTING DEFAULT=1
 npm_config_prefix DEFAULT=@{HOME}/.local
 npm_config_userconfig DEFAULT=${XDG_CONFIG_HOME}/npm/npmrc
 
-PATH DEFAULT=@{HOME}/.local/bin:${CARGO_HOME}/bin:${PATH}
+PATH DEFAULT=@{HOME}/.local/bin:${CARGO_HOME}/bin
