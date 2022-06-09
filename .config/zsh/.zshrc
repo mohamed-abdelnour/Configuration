@@ -29,7 +29,7 @@ bindkey -M menuselect '^j' vi-down-line-or-history
 bindkey -M menuselect '^k' vi-up-line-or-history
 bindkey -M menuselect '^l' vi-forward-char
 
-. "$XDG_CONFIG_HOME/shellrc"
+. "$XDG_CONFIG_HOME/shell/shellrc"
 . '/usr/share/fzf/completion.zsh'
 . '/usr/share/fzf/key-bindings.zsh'
 
