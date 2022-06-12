@@ -33,7 +33,7 @@
   (corfu-commit-predicate nil)
   (corfu-cycle t)
   (corfu-quit-no-match nil)
-  :init (corfu-global-mode))
+  :init (global-corfu-mode))
 
 (use-package dabbrev
   :bind (("M-/" . dabbrev-completion)
