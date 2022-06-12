@@ -1,10 +1,7 @@
 local M = {
     telescope_fzf_native = {
         "nvim-telescope/telescope-fzf-native.nvim",
-        module = {
-            "telescope",
-            "telescope.builtin",
-        },
+        opt = false,
         run = "make",
     },
 
@@ -24,7 +21,7 @@ local M = {
 
 M.telescope.config = function()
     local telescope = require("telescope")
-    local ivy = require("modules/telescope").ivy
+    local ivy = require("modules/telescope").ivy()
     telescope.setup({
         defaults = ivy,
         pickers = {
