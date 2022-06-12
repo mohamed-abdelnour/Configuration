@@ -1,6 +1,6 @@
 #!/usr/bin/env dash
 
-rsync -ARXahv \
+rsync -ARXahv --delete \
     /etc/X11/xorg.conf.d/ \
     /etc/default/grub \
     /etc/environment \
