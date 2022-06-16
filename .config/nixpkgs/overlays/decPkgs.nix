@@ -14,10 +14,11 @@ final: _: {
         (final)
         alejandra
         arc-theme
+        cachix
         deadnix
         default-cursor
         delta
-        emacsPgtkGcc
+        emacsGitNativeComp
         ghc
         glibcLocales
         hlint
