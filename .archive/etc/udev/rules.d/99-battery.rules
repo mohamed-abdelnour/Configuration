@@ -4,7 +4,7 @@ SUBSYSTEM=="power_supply", \
 ATTR{status}=="Discharging", \
 ATTR{capacity}=="[0-9]", \
 ENV{DISPLAY}=":0", \
-ENV{XAUTHORITY}="/home/mohamed_abdelnour/.Xauthority", \
+ENV{XAUTHORITY}="/run/user/1000/Xauthority", \
 ENV{DBUS_SESSION_BUS_ADDRESS}="unix:path=/run/user/1000/bus", \
 RUN+="/usr/bin/su mohamed_abdelnour -c '/usr/bin/notify-send -u critical \"Battery low. Connect charger.\"'"
 #
@@ -13,6 +13,6 @@ ACTION=="change", \
 SUBSYSTEM=="power_supply", \
 ATTR{status}=="Full", \
 ENV{DISPLAY}=":0", \
-ENV{XAUTHORITY}="/home/mohamed_abdelnour/.Xauthority", \
+ENV{XAUTHORITY}="/run/user/1000/Xauthority", \
 ENV{DBUS_SESSION_BUS_ADDRESS}="unix:path=/run/user/1000/bus", \
 RUN+="/usr/bin/su mohamed_abdelnour -c '/usr/bin/notify-send -u critical \"Battery Full.\"'"

@@ -76,6 +76,7 @@ jq
 jupyter-notebook
 kvantum
 libnotify
+libreoffice-fresh
 linux
 linux-firmware
 linux-lts
