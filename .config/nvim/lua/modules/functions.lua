@@ -127,7 +127,7 @@ M.toggles = {
     end,
 
     spaceless = function()
-        local spaceless = { group = "Spaceless" }
+        local spaceless = { group = "spaceless" }
         if next(api.nvim_get_autocmds(spaceless)) == nil then
             require("spaceless").setup()
         else
