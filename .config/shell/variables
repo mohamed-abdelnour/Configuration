@@ -1,0 +1,58 @@
+#!/usr/bin/env dash
+
+# shellcheck disable=2034
+
+# XDG system directories
+XDG_DATA_DIRS='/usr/local/share:/usr/share'
+
+# XDG user directories
+XDG_CACHE_HOME="${HOME}/.cache"
+XDG_CONFIG_HOME="${HOME}/.config"
+XDG_DATA_HOME="${HOME}/.local/share"
+XDG_STATE_HOME="${HOME}/.local/state"
+
+ANDROID_SDK_HOME="${XDG_DATA_HOME}/android"
+CABAL_DIR="${XDG_DATA_HOME}/cabal"
+CARGO_HOME="${XDG_DATA_HOME}/cargo"
+DIFFPROG='nvim -d'
+EDITOR='nvim'
+EXA_COLORS='reset:uu=0:gu=0:lm=35'
+FZF_CTRL_T_COMMAND='fd --strip-cwd-prefix -H -t f'
+FZF_DEFAULT_COMMAND="${FZF_CTRL_T_COMMAND}"
+GRADLE_USER_HOME="${XDG_DATA_HOME}/gradle"
+GTK2_RC_FILES="${XDG_CONFIG_HOME}/gtk-2.0/gtkrc"
+HISTCONTROL='erasedups:ignoreboth'
+HISTFILE="${XDG_STATE_HOME}/bash/history"
+INPUTRC="${XDG_CONFIG_HOME}/readline/.inputrc"
+LC_COLLATE='C'
+LESS='-FR'
+LOCALE_ARCHIVE="${HOME}/.nix-profile/lib/locale/locale-archive"
+NIX_PAGER='less'
+NNN_FCOLORS='000304020005060805030501'
+NNN_OPTS='Hde'
+NODE_REPL_HISTORY="${XDG_STATE_HOME}/node/node_repl_history"
+PG_COLOR='auto'
+PSQLRC="${XDG_CONFIG_HOME}/psql/psqlrc"
+PSQL_HISTORY="${XDG_CACHE_HOME}/psql/psql_history"
+PYTHONSTARTUP="${XDG_CONFIG_HOME}/python/startup.py"
+QT_QPA_PLATFORMTHEME='qt5ct'
+RUSTDOCFLAGS="-e ${XDG_CONFIG_HOME}/rustdoc/monospace.css"
+RUSTUP_HOME="${XDG_DATA_HOME}/rustup"
+SSH_AGENT_PID=''
+SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/gnupg/S.gpg-agent.ssh"
+STACK_ROOT="${XDG_DATA_HOME}/stack"
+SUDO_ASKPASS="${HOME}/.local/bin/askpass"
+TEXMFCONFIG="${XDG_CONFIG_HOME}/texlive/texmf-config"
+TEXMFHOME="${XDG_DATA_HOME}/texmf"
+TEXMFVAR="${XDG_CACHE_HOME}/texlive/texmf-var"
+UNCRUSTIFY_CONFIG="${XDG_CONFIG_HOME}/uncrustify/uncrustify.cfg"
+VISUAL='nvim'
+WGETRC="${XDG_CONFIG_HOME}/wget/wgetrc"
+XAUTHORITY="${XDG_RUNTIME_DIR}/Xauthority"
+XINITRC="${XDG_CONFIG_HOME}/X11/xinitrc"
+ZDOTDIR="${HOME}/.config/zsh"
+_JAVA_AWT_WM_NONREPARENTING='1'
+npm_config_prefix="${HOME}/.local"
+npm_config_userconfig="${XDG_CONFIG_HOME}/npm/npmrc"
+
+PATH="${HOME}/.local/bin:${CARGO_HOME}/bin:${PATH}"

@@ -1,28 +1,46 @@
 #!/usr/bin/env dash
 
-. "$HOME/.nix-profile/etc/profile.d/nix.sh"
+source_rc() {
+    case "$-" in
+        *i*)
+            if [ -n "$BASH_VERSION" ]; then
+                . "${HOME}/.bashrc"
+            fi
+            ;;
+        *)
+            exit 1
+            ;;
+    esac
+}
 
-case "$-" in
-    *i*)
-        if [ -n "$BASH_VERSION" ]; then
-            . "$HOME/.bashrc"
-        fi
-        ;;
-    *)
-        exit 1
-        ;;
-esac
+# shellcheck disable=1091,2034
+set_env() {
+    set -o allexport
 
-if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" -eq 1 ]; then
+    . "${HOME}/.config/shell/variables"
+
+    . "${HOME}/.nix-profile/etc/profile.d/nix.sh"
+    . "${XDG_CONFIG_HOME}/fzf/modus-vivendi"
+
     LS_COLORS="$(vivid generate modus-vivendi)"
-    export LS_COLORS
-
     GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
-    export GEM_HOME
 
-    export PATH="$PATH:$GEM_HOME/bin"
+    PATH="${PATH}:${GEM_HOME}/bin"
 
-    # shellcheck disable=1091
-    . "$XDG_CONFIG_HOME/fzf/modus-vivendi"
-    exec startx "$XINITRC" >/dev/null 2>&1
-fi
+    set +o allexport
+}
+
+start_xserver() {
+    if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" -eq 1 ]; then
+        exec startx "$XINITRC"
+    fi
+
+}
+
+main() {
+    source_rc
+    which 'nix' || set_env
+    start_xserver
+} >/dev/null 2>&1
+
+main

@@ -32,6 +32,9 @@
 !.config/emacs/
 !.config/emacs/**
 
+!.config/environment.d/
+!.config/environment.d/**
+
 !.config/fd/
 !.config/fd/**
 
@@ -161,6 +164,5 @@ Projects/scripts/Shell/backup
 !.bashrc
 !.gitignore
 !.haskeline
-!.pam_environment
 !LICENSE
 !README.md
