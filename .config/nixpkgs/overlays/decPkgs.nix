@@ -18,6 +18,7 @@ final: _: {
         deadnix
         default-cursor
         delta
+        dwm-status
         emacsGitNativeComp
         ghc
         glibcLocales

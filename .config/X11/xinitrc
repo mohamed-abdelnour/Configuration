@@ -1,6 +1,6 @@
 #!/usr/bin/env dash
 
-xrdb -merge "$XDG_CONFIG_HOME/X11/Xresources"
+xrdb -merge "${XDG_CONFIG_HOME}/X11/Xresources"
 
 if [ -d /etc/X11/xinit/xinitrc.d ]; then
     for f in /etc/X11/xinit/xinitrc.d/?*.sh; do
@@ -11,7 +11,7 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
 fi
 
 dwm_init() {
-    status.py &
+    dwm-status "${XDG_CONFIG_HOME}/dwm-status/config.toml" &
     exec dwm
 }
 
@@ -20,7 +20,7 @@ xmonad_init() {
     exec xmonad
 }
 
-pkill -f 'status.py'
+pkill dwm-status
 pkill unclutter
 
 hsetroot -solid black &

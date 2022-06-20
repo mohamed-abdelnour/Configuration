@@ -1,0 +1,8 @@
+order = ["time", "battery", "network"]
+separator = " | "
+
+[time]
+format = " %d/%m/%Y (%a) %H:%M"
+
+[network]
+template = "{ESSID}"

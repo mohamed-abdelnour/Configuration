@@ -29,6 +29,9 @@
 !.config/dunst/
 !.config/dunst/**
 
+!.config/dwm-status/
+!.config/dwm-status/**
+
 !.config/emacs/
 !.config/emacs/**
 
