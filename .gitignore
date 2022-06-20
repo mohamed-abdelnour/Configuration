@@ -144,10 +144,6 @@
 !.ssh/
 !.ssh/config
 
-!.virtualMachines/
-!.virtualMachines/scripts/
-!.virtualMachines/scripts/**
-
 !.xmonad/
 !.xmonad/Makefile
 !.xmonad/hie.yaml
