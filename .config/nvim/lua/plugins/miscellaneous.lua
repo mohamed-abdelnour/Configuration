@@ -13,9 +13,6 @@ local M = {
     leap = {
         "ggandor/leap.nvim",
         opt = false,
-        config = function()
-            require("leap").set_default_keymaps()
-        end,
     },
 
     modus_vivendi = {
@@ -51,6 +48,12 @@ M.dressing.config = function()
             telescope = require("modules/telescope").ivy(),
         },
     })
+end
+
+M.leap.config = function()
+    local leap = require("leap")
+    leap.setup({ highlight_unlabeled = true })
+    leap.set_default_keymaps()
 end
 
 return M
