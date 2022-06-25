@@ -1,26 +1,30 @@
 local M = {
-    telescope_fzf_native = {
+    fzf_native = {
         "nvim-telescope/telescope-fzf-native.nvim",
         opt = false,
         run = "make",
     },
 
-    telescope = {
-        "nvim-telescope/telescope.nvim",
-        after = "telescope-fzf-native.nvim",
+    file_browser = {
+        "nvim-telescope/telescope-file-browser.nvim",
         opt = false,
-        requires = "plenary.nvim",
     },
 
-    telescope_file_browser = {
-        "nvim-telescope/telescope-file-browser.nvim",
-        after = "telescope.nvim",
+    live_grep_args = {
+        "nvim-telescope/telescope-live-grep-args.nvim",
         opt = false,
+    },
+
+    telescope = {
+        "nvim-telescope/telescope.nvim",
+        opt = false,
+        requires = "plenary.nvim",
     },
 }
 
 M.telescope.config = function()
     local telescope = require("telescope")
+
     local ivy = require("modules/telescope").ivy()
     telescope.setup({
         defaults = ivy,
@@ -43,11 +47,7 @@ M.telescope.config = function()
             },
         },
     })
-    telescope.load_extension("file_browser")
-    telescope.load_extension("fzf")
-end
 
-local main = function()
     local set_keymap = vim.keymap.set
     local opts = { silent = true }
 
@@ -56,12 +56,15 @@ local main = function()
     set_keymap("n", "<leader>fe", builtin.builtin, opts)
     set_keymap("n", "<leader>ff", builtin.find_files, opts)
     set_keymap("n", "<leader>fh", builtin.help_tags, opts)
-    set_keymap("n", "<leader>fr", builtin.live_grep, opts)
 
-    local telescope = require("telescope")
-    set_keymap("n", "<leader>fn", telescope.extensions.file_browser.file_browser, opts)
+    pcall(function()
+        telescope.load_extension("file_browser")
+        telescope.load_extension("fzf")
+        telescope.load_extension("live_grep_args")
+
+        set_keymap("n", "<leader>fn", telescope.extensions.file_browser.file_browser, opts)
+        set_keymap("n", "<leader>fr", telescope.extensions.live_grep_args.live_grep_args, opts)
+    end)
 end
-
-pcall(main)
 
 return M
