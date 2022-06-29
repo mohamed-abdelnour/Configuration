@@ -45,6 +45,14 @@ M.num = {
 M.str = {
     UUID_LENGTH = 32,
 
+    extract = function(s, pattern)
+        local t = {}
+        for match in s:gmatch(pattern) do
+            table.insert(t, match)
+        end
+        return t
+    end,
+
     is_hex = function(s)
         for i = 1, #s do
             if not M.byte.is_hex(s:byte(i)) then
@@ -52,6 +60,18 @@ M.str = {
             end
         end
         return true
+    end,
+
+    trim = function(s)
+        return s:gsub("^%s*(.-)%s*$", "%1")
+    end,
+
+    trim_end = function(s)
+        return s:gsub("^(.-)%s*$", "%1")
+    end,
+
+    trim_start = function(s)
+        return s:gsub("^%s*(.-)$", "%1")
     end,
 
     wrap = function(arg)
@@ -62,6 +82,10 @@ M.str = {
 
 M.str.is_uuid = function(s)
     return #s == M.str.UUID_LENGTH and M.str.is_hex(s)
+end
+
+M.str.split_whitespace = function(s)
+    return M.str.extract(s, "%S+")
 end
 
 M.tbl = {
