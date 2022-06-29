@@ -21,8 +21,6 @@ M.fidget.config = function()
 end
 
 M.lsp_config.config = function()
-    require("lspconfig")
-
     local servers = {
         { name = "hls" },
         { name = "html" },
