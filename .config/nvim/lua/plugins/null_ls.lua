@@ -104,6 +104,7 @@ M.null_ls.config = function()
         make_formatter({
             name = "Rustfmt",
             command = "rustfmt",
+            args = { "--edition=2021" },
             ft = { "rust" },
         }),
 
