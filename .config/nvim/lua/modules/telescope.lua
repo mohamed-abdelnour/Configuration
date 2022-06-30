@@ -40,7 +40,7 @@ M.fd = function(opts)
     local command = generator({
         key = "find_command",
         opts = opts,
-        default = { "fd", "--type", "f", "--strip-cwd-prefix" },
+        default = { "fd" },
     })
 
     pickers.new(opts, {
@@ -59,7 +59,7 @@ M.rg = function(opts)
     local command = generator({
         key = "vimgrep_arguments",
         opts = opts,
-        default = conf.vimgrep_arguments,
+        default = { "rg", "--smart-case", "--vimgrep" },
     })
 
     pickers.new(opts, {
