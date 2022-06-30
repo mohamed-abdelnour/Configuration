@@ -8,19 +8,11 @@ local sorters = require("telescope.sorters")
 
 local split_whitespace = require("modules/functions").str.split_whitespace
 
-local parse = function(prompt)
-    if prompt then
-        local query, args = prompt:match("^(.-)%s*%-%-%s*(.-)$")
-        return (query or prompt):gsub("\\(.)", "%1"), args and split_whitespace(args)
-    end
-end
-
 local generator = function(arg)
     local command = arg.opts[arg.key] or arg.default
     arg.opts[arg.key] = command
     return function(prompt)
-        local query, args = parse(prompt)
-        return vim.tbl_flatten({ command, args, query })
+        return vim.tbl_flatten({ command, prompt and split_whitespace(prompt) })
     end
 end
 
