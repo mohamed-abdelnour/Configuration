@@ -154,11 +154,8 @@
 
 !Projects/
 
-!Projects/scripts/
-!Projects/scripts/**
-Projects/scripts/Python/src/bare_ignore/
-Projects/scripts/Python/src/get_battery.py
-Projects/scripts/Shell/backup
+!Projects/Utils/
+!Projects/Utils/**
 
 !.bashrc
 !.gitignore
