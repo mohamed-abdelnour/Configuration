@@ -21,7 +21,7 @@ M.telescope.config = function()
     local telescope = require("telescope")
     local module = require("modules/telescope")
 
-    local ivy = module.ivy()
+    local ivy = module.ivy
     telescope.setup({
         defaults = ivy,
         extensions = {

@@ -1,12 +1,19 @@
-local M = {}
-
-local conf = require("telescope.config").values
-local finders = require("telescope.finders")
-local make_entry = require("telescope.make_entry")
-local pickers = require("telescope.pickers")
-local sorters = require("telescope.sorters")
+local config = require("telescope/config").values
+local ivy = require("telescope/themes").get_ivy
+local make_entry = require("telescope/make_entry")
+local new_job = require("telescope/finders").new_job
+local picker = require("telescope/pickers").new
+local sorter = require("telescope/sorters").highlighter_only
 
 local split_whitespace = require("modules/functions").str.split_whitespace
+
+local M = {
+    ivy = ivy({
+        layout_config = {
+            height = 20,
+        },
+    }),
+}
 
 local generator = function(arg)
     local command = arg.opts[arg.key] or arg.default
@@ -16,50 +23,43 @@ local generator = function(arg)
     end
 end
 
-M.ivy = function()
-    return require("telescope/themes").get_ivy({
-        layout_config = {
-            height = 20,
-        },
-    })
+local tool = function(opts, builder)
+    opts = opts or {}
+    opts.cwd = opts.cwd and vim.fn.expand(opts.cwd)
+    opts.entry_maker = opts.entry_maker or builder.make_entry(opts)
+
+    local command = builder.command
+    command.opts = opts
+    command = generator(command)
+
+    picker(opts, {
+        prompt_title = builder.title,
+        finder = new_job(command, opts.entry_maker, opts.max_results, opts.cwd),
+        previewer = builder.previewer(opts),
+        sorter = sorter(opts),
+    }):find()
 end
 
 M.fd = function(opts)
-    opts = opts or {}
-    opts.cwd = opts.cwd and vim.fn.expand(opts.cwd)
-    opts.entry_maker = opts.entry_maker or make_entry.gen_from_file(opts)
-
-    local command = generator({
-        key = "find_command",
-        opts = opts,
-        default = { "fd" },
+    tool(opts, {
+        command = {
+            key = "find_command",
+            default = { "fd", "--full-path" },
+        },
+        make_entry = make_entry.gen_from_file,
+        previewer = config.file_previewer,
     })
-
-    pickers.new(opts, {
-        prompt_title = "fd",
-        finder = finders.new_job(command, opts.entry_maker, opts.max_results, opts.cwd),
-        previewer = conf.file_previewer(opts),
-        sorter = sorters.highlighter_only(opts),
-    }):find()
 end
 
 M.rg = function(opts)
-    opts = opts or {}
-    opts.cwd = opts.cwd and vim.fn.expand(opts.cwd)
-    opts.entry_maker = opts.entry_maker or make_entry.gen_from_vimgrep(opts)
-
-    local command = generator({
-        key = "vimgrep_arguments",
-        opts = opts,
-        default = { "rg", "--smart-case", "--vimgrep" },
+    tool(opts, {
+        command = {
+            key = "vimgrep_arguments",
+            default = { "rg", "--smart-case", "--vimgrep" },
+        },
+        make_entry = make_entry.gen_from_vimgrep,
+        previewer = config.grep_previewer,
     })
-
-    pickers.new(opts, {
-        prompt_title = "rg",
-        finder = finders.new_job(command, opts.entry_maker, opts.max_results, opts.cwd),
-        previewer = conf.grep_previewer(opts),
-        sorter = sorters.highlighter_only(opts),
-    }):find()
 end
 
 return M
