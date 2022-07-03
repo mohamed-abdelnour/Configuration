@@ -109,6 +109,9 @@
 !.config/xmobar/
 !.config/xmobar/**
 
+!.config/xmonad/
+!.config/xmonad/**
+
 !.config/zathura/
 !.config/zathura/**
 
@@ -147,13 +150,7 @@
 !.ssh/
 !.ssh/config
 
-!.xmonad/
-!.xmonad/Makefile
-!.xmonad/hie.yaml
-!.xmonad/xmonad.hs
-
 !Projects/
-
 !Projects/Utils/
 !Projects/Utils/**
 
