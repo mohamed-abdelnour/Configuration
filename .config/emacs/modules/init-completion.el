@@ -19,9 +19,7 @@
   (consult-async-refresh-delay  0.15)
   (consult-line-numbers-widen t)
   (consult-narrow-key "<")
-  (consult-preview-key (list (kbd "C-S-n") (kbd "C-S-p")))
-  :init (advice-add #'completing-read-multiple
-                    :override #'consult-completing-read-multiple))
+  (consult-preview-key (list (kbd "C-S-n") (kbd "C-S-p"))))
 
 (use-package corfu
   :bind (:map corfu-map
