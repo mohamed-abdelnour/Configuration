@@ -42,6 +42,7 @@ end
 
 M.fd = function(opts)
     tool(opts, {
+        title = "fd",
         command = {
             key = "find_command",
             default = { "fd", "--full-path" },
@@ -53,6 +54,7 @@ end
 
 M.rg = function(opts)
     tool(opts, {
+        title = "rg",
         command = {
             key = "vimgrep_arguments",
             default = { "rg", "--smart-case", "--vimgrep" },
