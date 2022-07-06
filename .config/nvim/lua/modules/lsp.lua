@@ -67,9 +67,6 @@ M.lsp_setup = function(arg)
         on_attach = function(client, buffer)
             M.on_attach(client, buffer, arg).full()
         end,
-        flags = {
-            debounce_text_changes = 150,
-        },
     }
     local coq = require("coq")
     return coq.lsp_ensure_capabilities(vim.tbl_extend("keep", arg, defaults))
