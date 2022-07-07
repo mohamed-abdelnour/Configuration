@@ -38,7 +38,7 @@ M.markdown.config = function()
 end
 
 M.rust.config = function()
-    local lsp_setup = require("modules/lsp").lsp_setup()
+    local lsp_setup = require("modules.lsp").lsp_setup()
 
     lsp_setup.settings = {
         ["rust-analyzer"] = {
@@ -49,7 +49,7 @@ M.rust.config = function()
     }
 
     local icons = function(k)
-        return require("modules/icons")[k] .. " "
+        return require("modules.icons")[k] .. " "
     end
 
     require("rust-tools").setup({
@@ -67,7 +67,7 @@ end
 
 M.typescript.config = function()
     local ts_utils = require("nvim-lsp-ts-utils")
-    require("modules/lsp").init_server({
+    require("modules.lsp").init_server({
         name = "tsserver",
         init_options = ts_utils.init_options,
         hook = function(client, _)

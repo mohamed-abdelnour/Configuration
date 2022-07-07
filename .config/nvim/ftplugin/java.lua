@@ -1,4 +1,4 @@
-local root = require("jdtls/setup").find_root({ "gradlew", ".git" })
+local root = require("jdtls.setup").find_root({ "gradlew", ".git" })
 
 local workspace = table.concat({
     os.getenv("XDG_DATA_HOME"),
@@ -6,7 +6,7 @@ local workspace = table.concat({
     vim.fn.fnamemodify(root, ":p:h:t"),
 })
 
-local setup = require("modules/lsp").lsp_setup({
+local setup = require("modules.lsp").lsp_setup({
     cmd = { "jdtls", "-data", workspace },
 })
 

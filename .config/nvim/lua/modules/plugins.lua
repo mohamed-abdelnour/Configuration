@@ -34,7 +34,7 @@ main()
 M = packer.startup({
     function(use)
         local use_plugin = function(suffix)
-            local plugins = require("plugins/" .. suffix)
+            local plugins = require("plugins." .. suffix)
             for _, plugin in pairs(plugins) do
                 use(plugin)
             end

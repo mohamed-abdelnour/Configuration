@@ -6,7 +6,7 @@ local main = function()
         group = "INIT",
         pattern = "*",
         callback = function()
-            require("modules/term").term_open()
+            require("modules.term").term_open()
         end,
     })
 end

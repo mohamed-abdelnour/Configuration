@@ -10,7 +10,7 @@ M.gitsigns.config = function()
     require("gitsigns").setup({
         signs = (function()
             local keys = { "add", "change", "delete", "changedelete", "topdelete" }
-            local icon = require("modules/icons").U_2503
+            local icon = require("modules.icons").U_2503
             local icons = {}
             for _, k in ipairs(keys) do
                 icons[k] = { text = icon }

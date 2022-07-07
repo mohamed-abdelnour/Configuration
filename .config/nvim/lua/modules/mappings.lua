@@ -8,7 +8,7 @@ local main = function()
     local set_keymap = vim.keymap.set
     local opts = { silent = true }
 
-    local functions = require("modules/functions")
+    local functions = require("modules.functions")
 
     -- Delete buffer
     set_keymap("n", "<leader>k", "<cmd>bd<cr>", opts)

@@ -8,8 +8,8 @@ local M = {
 
 M.null_ls.config = function()
     local null_ls = require("null-ls")
-    local helpers = require("null-ls/helpers")
-    local methods = require("null-ls/methods")
+    local helpers = require("null-ls.helpers")
+    local methods = require("null-ls.methods")
 
     local make_tool = function(overrides)
         local tool = function(arg)
@@ -175,12 +175,12 @@ M.null_ls.config = function()
         builtin_linter("statix"),
     }
 
-    local merge = require("modules/functions").tbl.merge
+    local merge = require("modules.functions").tbl.merge
 
     null_ls.setup({
         diagnostics_format = "[#{c}] #{m} (#{s})",
         on_attach = function(client, buffer)
-            require("modules/lsp").on_attach(client, buffer).base()
+            require("modules.lsp").on_attach(client, buffer).base()
         end,
         sources = merge({ act, format, lint }),
     })

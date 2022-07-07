@@ -1,11 +1,11 @@
-local config = require("telescope/config").values
-local ivy = require("telescope/themes").get_ivy
-local make_entry = require("telescope/make_entry")
-local new_job = require("telescope/finders").new_job
-local picker = require("telescope/pickers").new
-local sorter = require("telescope/sorters").highlighter_only
+local config = require("telescope.config").values
+local ivy = require("telescope.themes").get_ivy
+local make_entry = require("telescope.make_entry")
+local new_job = require("telescope.finders").new_job
+local picker = require("telescope.pickers").new
+local sorter = require("telescope.sorters").highlighter_only
 
-local split_whitespace = require("modules/functions").str.split_whitespace
+local split_whitespace = require("modules.functions").str.split_whitespace
 
 local M = {
     ivy = ivy({

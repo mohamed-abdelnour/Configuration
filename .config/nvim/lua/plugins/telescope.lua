@@ -19,7 +19,7 @@ local M = {
 
 M.telescope.config = function()
     local telescope = require("telescope")
-    local module = require("modules/telescope")
+    local module = require("modules.telescope")
 
     local ivy = module.ivy
     telescope.setup({
@@ -36,7 +36,7 @@ M.telescope.config = function()
     local set_keymap = vim.keymap.set
     local opts = { silent = true }
 
-    local builtin = require("telescope/builtin")
+    local builtin = require("telescope.builtin")
     set_keymap("n", "<leader>fb", builtin.buffers, opts)
     set_keymap("n", "<leader>fe", builtin.builtin, opts)
     set_keymap("n", "<leader>fh", builtin.help_tags, opts)
