@@ -6,7 +6,6 @@ local M = {
 
     lsp_config = {
         "neovim/nvim-lspconfig",
-        after = "coq_nvim",
         opt = false,
     },
 }

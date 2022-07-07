@@ -63,13 +63,12 @@ end
 M.lsp_setup = function(arg)
     arg = arg or {}
 
-    local defaults = {
-        on_attach = function(client, buffer)
-            M.on_attach(client, buffer, arg).full()
-        end,
-    }
-    local coq = require("coq")
-    return coq.lsp_ensure_capabilities(vim.tbl_extend("keep", arg, defaults))
+    local defaults = vim.lsp.protocol.make_client_capabilities()
+    defaults.on_attach = function(client, buffer)
+        M.on_attach(client, buffer, arg).full()
+    end
+
+    return require("cmp_nvim_lsp").update_capabilities(vim.tbl_extend("keep", arg, defaults))
 end
 
 M.init_server = function(arg)

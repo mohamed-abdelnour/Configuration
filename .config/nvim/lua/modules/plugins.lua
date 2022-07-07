@@ -48,7 +48,7 @@ M = packer.startup({
 
         use_plugins({
             "comment",
-            "coq",
+            "completion",
             "gitsigns",
             "heirline",
             "languages",

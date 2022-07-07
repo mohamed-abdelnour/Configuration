@@ -2,22 +2,6 @@ local M = {}
 
 local api = vim.api
 
-M.buffer = {
-    del_coq_marks = function()
-        local BUFFER = 0
-        for ns, ns_id in pairs(api.nvim_get_namespaces()) do
-            if M.str.is_uuid(ns) then
-                local marks = api.nvim_buf_get_extmarks(BUFFER, ns_id, 0, -1, {})
-                for _, mark in ipairs(marks) do
-                    for _, id in ipairs(mark) do
-                        api.nvim_buf_del_extmark(BUFFER, ns_id, id)
-                    end
-                end
-            end
-        end
-    end,
-}
-
 M.byte = {
     is_hex = function(b)
         local ZERO = 48
