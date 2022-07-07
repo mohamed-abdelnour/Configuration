@@ -26,6 +26,17 @@ M.cmp.config = function()
             completeopt = vim.o.completeopt,
         },
 
+        formatting = {
+            format = function(entry, item)
+                item.menu = ({
+                    buffer = "[Buffer]",
+                    nvim_lsp = "[LSP]",
+                    path = "[Path]",
+                })[entry.source.name]
+                return item
+            end,
+        },
+
         mapping = cmp.mapping.preset.insert({
             ["<c-space>"] = cmp.mapping.complete(),
             ["<cr>"] = cmp.mapping.confirm({ select = false }),
