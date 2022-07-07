@@ -28,12 +28,6 @@ local M = {
         opt = false,
     },
 
-    sniprun = {
-        "michaelb/sniprun",
-        opt = false,
-        run = "bash install.sh 1",
-    },
-
     spaceless = {
         "lewis6991/spaceless.nvim",
         config = function()
@@ -60,16 +54,6 @@ M.leap.config = function()
     local leap = require("leap")
     leap.setup({ highlight_unlabeled = true })
     leap.set_default_keymaps()
-end
-
-M.sniprun.config = function()
-    require("sniprun").setup({
-        selected_interpreters = {
-            "Lua_nvim",
-        },
-        display = { "Classic" },
-    })
-    vim.keymap.set({ "n", "v" }, "<leader>x", "<plug>SnipRun", { silent = true })
 end
 
 return M
