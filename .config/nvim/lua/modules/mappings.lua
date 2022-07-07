@@ -21,12 +21,6 @@ local main = function()
     set_keymap("n", "<leader>dl", "<cmd>diffget LOCAL<cr>", opts)
     set_keymap("n", "<leader>dr", "<cmd>diffget REMOTE<cr>", opts)
 
-    -- Move down/up
-    set_keymap("n", "<A-j>", "<cmd>move .+1<cr>", opts)
-    set_keymap("n", "<A-k>", "<cmd>move .-2<cr>", opts)
-    set_keymap("v", "<A-j>", "<cmd>move '>+1<cr>gv", opts)
-    set_keymap("v", "<A-k>", "<cmd>move '<-2<cr>gv", opts)
-
     -- nohlsearch
     set_keymap("n", "<c-l>", "<cmd>nohlsearch<cr>", opts)
 
