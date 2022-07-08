@@ -33,8 +33,6 @@ M.gitsigns.config = function()
             set_keymap("n", "<leader>hu", gs.undo_stage_hunk)
             set_keymap("n", "<leader>tb", gs.toggle_current_line_blame)
             set_keymap("n", "<leader>td", gs.toggle_deleted)
-            set_keymap("n", "[c", "&diff ? '[c' : '<cmd>Gitsigns prev_hunk<cr>'", { expr = true })
-            set_keymap("n", "]c", "&diff ? ']c' : '<cmd>Gitsigns next_hunk<cr>'", { expr = true })
             set_keymap({ "n", "v" }, "<leader>hr", ":Gitsigns reset_hunk<cr>")
             set_keymap({ "n", "v" }, "<leader>hs", ":Gitsigns stage_hunk<cr>")
             set_keymap({ "o", "x" }, "ih", ":<c-u>Gitsigns select_hunk<cr>")
@@ -43,6 +41,27 @@ M.gitsigns.config = function()
             end)
             set_keymap("n", "<leader>hb", function()
                 gs.blame_line({ full = true })
+            end)
+
+            local hunk = function(lhs, rhs)
+                local navigate = function()
+                    return function()
+                        if vim.wo.diff then
+                            return lhs
+                        end
+                        vim.schedule(rhs)
+                        return "<ignore>"
+                    end
+                end
+
+                set_keymap("n", lhs, navigate(), { expr = true })
+            end
+
+            hunk("[c", function()
+                gs.prev_hunk()
+            end)
+            hunk("]c", function()
+                gs.next_hunk()
             end)
         end,
     })
