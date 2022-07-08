@@ -72,10 +72,9 @@ M.cmp.config = function()
 end
 
 M.luasnip.config = function()
-    local set_keymap = function(key, f, opts)
-        opts = opts or {}
-        opts.silent = true
-        vim.keymap.set({ "i", "s" }, key, f, opts)
+    local keymap = require("modules.functions").keymap
+    local set_keymap = function(lhs, rhs, opts)
+        keymap.set({ "i", "s" }, lhs, rhs, opts)
     end
 
     local luasnip = require("luasnip")

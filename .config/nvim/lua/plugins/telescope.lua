@@ -33,22 +33,21 @@ M.telescope.config = function()
         },
     })
 
-    local set_keymap = vim.keymap.set
-    local opts = { silent = true }
+    local set_keymap = require("modules.functions").keymap.set
 
     local builtin = require("telescope.builtin")
-    set_keymap("n", "<leader>fb", builtin.buffers, opts)
-    set_keymap("n", "<leader>fe", builtin.builtin, opts)
-    set_keymap("n", "<leader>fh", builtin.help_tags, opts)
+    set_keymap("n", "<leader>fb", builtin.buffers)
+    set_keymap("n", "<leader>fe", builtin.builtin)
+    set_keymap("n", "<leader>fh", builtin.help_tags)
 
-    set_keymap("n", "<leader>ff", module.fd, opts)
-    set_keymap("n", "<leader>fr", module.rg, opts)
+    set_keymap("n", "<leader>ff", module.fd)
+    set_keymap("n", "<leader>fr", module.rg)
 
     pcall(function()
         telescope.load_extension("file_browser")
         telescope.load_extension("fzf")
 
-        set_keymap("n", "<leader>fn", telescope.extensions.file_browser.file_browser, opts)
+        set_keymap("n", "<leader>fn", telescope.extensions.file_browser.file_browser)
     end)
 end
 

@@ -34,7 +34,7 @@ local M = {
 }
 
 M.markdown.config = function()
-    vim.keymap.set("n", "<leader>m", "<cmd>MarkdownPreviewToggle<cr>", { silent = true })
+    require("modules.functions").keymap.set("n", "<leader>m", "<cmd>MarkdownPreviewToggle<cr>")
 end
 
 M.rust.config = function()

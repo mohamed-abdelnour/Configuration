@@ -18,18 +18,18 @@ end
 M.on_attach = function(client, buffer, arg)
     arg = arg or {}
 
-    local buf_set_keymap = function(lhs, rhs)
-        local opts = { buffer = buffer, silent = true }
-        vim.keymap.set("n", lhs, rhs, opts)
+    local keymap = require("modules.functions").keymap
+    local set_keymap = function(lhs, rhs)
+        keymap.buffer_set(buffer, "n", lhs, rhs)
     end
 
     local base = function()
-        buf_set_keymap("<leader>ca", vim.lsp.buf.code_action)
-        buf_set_keymap("<leader>e", vim.diagnostic.open_float)
-        buf_set_keymap("<leader>n", M.format)
-        buf_set_keymap("<leader>q", vim.diagnostic.setloclist)
-        buf_set_keymap("[d", vim.diagnostic.goto_prev)
-        buf_set_keymap("]d", vim.diagnostic.goto_next)
+        set_keymap("<leader>ca", vim.lsp.buf.code_action)
+        set_keymap("<leader>e", vim.diagnostic.open_float)
+        set_keymap("<leader>n", M.format)
+        set_keymap("<leader>q", vim.diagnostic.setloclist)
+        set_keymap("[d", vim.diagnostic.goto_prev)
+        set_keymap("]d", vim.diagnostic.goto_next)
 
         if arg.hook then
             arg.hook(client, buffer)
@@ -39,17 +39,17 @@ M.on_attach = function(client, buffer, arg)
     local full = function()
         base()
 
-        buf_set_keymap("<C-k>", vim.lsp.buf.signature_help)
-        buf_set_keymap("<leader>D", vim.lsp.buf.type_definition)
-        buf_set_keymap("<leader>rn", M.rename)
-        buf_set_keymap("<leader>wa", vim.lsp.buf.add_workspace_folder)
-        buf_set_keymap("<leader>wr", vim.lsp.buf.remove_workspace_folder)
-        buf_set_keymap("K", vim.lsp.buf.hover)
-        buf_set_keymap("gD", vim.lsp.buf.declaration)
-        buf_set_keymap("gd", vim.lsp.buf.definition)
-        buf_set_keymap("gi", vim.lsp.buf.implementation)
-        buf_set_keymap("gr", vim.lsp.buf.references)
-        buf_set_keymap("<leader>wl", function()
+        set_keymap("<C-k>", vim.lsp.buf.signature_help)
+        set_keymap("<leader>D", vim.lsp.buf.type_definition)
+        set_keymap("<leader>rn", M.rename)
+        set_keymap("<leader>wa", vim.lsp.buf.add_workspace_folder)
+        set_keymap("<leader>wr", vim.lsp.buf.remove_workspace_folder)
+        set_keymap("K", vim.lsp.buf.hover)
+        set_keymap("gD", vim.lsp.buf.declaration)
+        set_keymap("gd", vim.lsp.buf.definition)
+        set_keymap("gi", vim.lsp.buf.implementation)
+        set_keymap("gr", vim.lsp.buf.references)
+        set_keymap("<leader>wl", function()
             print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
         end)
     end

@@ -20,6 +20,20 @@ M.byte = {
     end,
 }
 
+M.keymap = {
+    set = function(mode, lhs, rhs, opts)
+        opts = opts or {}
+        opts.silent = true
+        vim.keymap.set(mode, lhs, rhs, opts)
+    end,
+}
+
+M.keymap.buffer_set = function(buffer, mode, lhs, rhs, opts)
+    opts = opts or {}
+    opts.buffer = buffer
+    M.keymap.set(mode, lhs, rhs, opts)
+end
+
 M.num = {
     in_range_inc = function(x, low, high)
         return x >= low and x <= high

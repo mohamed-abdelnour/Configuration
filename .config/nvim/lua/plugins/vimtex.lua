@@ -6,12 +6,11 @@ local M = {
 }
 
 M.vimtex.config = function()
-    local set_keymap = vim.keymap.set
-    local opts = { silent = true }
+    local set_keymap = require("modules.functions").keymap.set
 
-    set_keymap("n", "<leader>lc", "<cmd>VimtexClean<cr>", opts)
-    set_keymap("n", "<leader>lC", "<cmd>VimtexClean!<cr>", opts)
-    set_keymap("n", "<leader>ll", "<cmd>VimtexCompileSS<cr>", opts)
+    set_keymap("n", "<leader>lc", "<cmd>VimtexClean<cr>")
+    set_keymap("n", "<leader>lC", "<cmd>VimtexClean!<cr>")
+    set_keymap("n", "<leader>ll", "<cmd>VimtexCompileSS<cr>")
 
     vim.g.tex_flavor = "latex"
     vim.g.tex_indent_brace = 0
