@@ -79,17 +79,14 @@ M.luasnip.config = function()
 
     local luasnip = require("luasnip")
 
-    set_keymap("<tab>", function()
-        if luasnip.expand_or_locally_jumpable() then
-            luasnip.jump(1)
-        else
-            return "<tab>"
+    local jump = function(n)
+        return function()
+            luasnip.jump(n)
         end
-    end, { expr = true })
+    end
 
-    set_keymap("<s-tab>", function()
-        luasnip.jump(-1)
-    end)
+    set_keymap("<c-j>", jump(1))
+    set_keymap("<c-k>", jump(-1))
 end
 
 return M
