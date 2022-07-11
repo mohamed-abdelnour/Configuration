@@ -13,7 +13,6 @@ local main = function()
 
     use_modules({
         "autocommands",
-        "diagnostic",
         "functions",
         "icons",
         "lsp",
@@ -21,6 +20,7 @@ local main = function()
         "options",
         "telescope",
         "term",
+        "vim",
         -- Call require("modules.plugins") last.
         "plugins",
     })

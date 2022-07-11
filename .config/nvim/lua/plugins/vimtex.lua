@@ -6,7 +6,7 @@ local M = {
 }
 
 M.vimtex.config = function()
-    local set_keymap = require("modules.functions").keymap.set
+    local set_keymap = vim.keymap.set
 
     set_keymap("n", "<leader>lc", "<cmd>VimtexClean<cr>")
     set_keymap("n", "<leader>lC", "<cmd>VimtexClean!<cr>")

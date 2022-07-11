@@ -33,7 +33,7 @@ M.telescope.config = function()
         },
     })
 
-    local set_keymap = require("modules.functions").keymap.set
+    local set_keymap = vim.keymap.set
 
     local builtin = require("telescope.builtin")
     set_keymap("n", "<leader>fb", builtin.buffers)

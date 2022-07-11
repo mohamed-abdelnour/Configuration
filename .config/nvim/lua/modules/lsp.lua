@@ -18,9 +18,8 @@ end
 M.on_attach = function(client, buffer, arg)
     arg = arg or {}
 
-    local keymap = require("modules.functions").keymap
     local set_keymap = function(lhs, rhs)
-        keymap.buffer_set(buffer, "n", lhs, rhs)
+        vim.keymap.buffer_set(buffer, "n", lhs, rhs)
     end
 
     local base = function()

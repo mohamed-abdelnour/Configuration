@@ -6,7 +6,7 @@ local main = function()
     vim.g.maplocalleader = " "
 
     local functions = require("modules.functions")
-    local set_keymap = functions.keymap.set
+    local set_keymap = vim.keymap.set
 
     -- Delete buffer
     set_keymap("n", "<leader>k", "<cmd>bd<cr>")

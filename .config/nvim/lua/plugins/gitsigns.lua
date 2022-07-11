@@ -21,9 +21,8 @@ M.gitsigns.config = function()
         on_attach = function(buffer)
             local gs = require("gitsigns")
 
-            local keymap = require("modules.functions").keymap
             local set_keymap = function(mode, lhs, rhs, opts)
-                keymap.buffer_set(buffer, mode, lhs, rhs, opts)
+                vim.keymap.buffer_set(buffer, mode, lhs, rhs, opts)
             end
 
             set_keymap("n", "<leader>hR", gs.reset_buffer)
