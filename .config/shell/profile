@@ -25,6 +25,8 @@ set_env() {
     LS_COLORS="$(vivid generate modus-vivendi)"
     GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
 
+    eval "$(luarocks --tree "${XDG_DATA_HOME}/luarocks" path --no-bin)"
+
     PATH="${PATH}:${GEM_HOME}/bin"
 
     set +o allexport

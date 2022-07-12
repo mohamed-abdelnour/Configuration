@@ -62,6 +62,9 @@
 !.config/latexmk/
 !.config/latexmk/**
 
+!.config/luarocks/
+!.config/luarocks/**
+
 !.config/nix/
 !.config/nix/**
 .config/nix/registry.json
