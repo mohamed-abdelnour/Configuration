@@ -1,0 +1,5 @@
+#!/usr/bin/env dash
+
+file="$1"
+shift
+nvim --headless -c "luafile ${file}" "$@" -c 'echo ""' -c 'q!' 2>&1

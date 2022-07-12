@@ -3,6 +3,12 @@ base: "lua52"
 
 name: "nvim"
 
+__any: &__any
+  any: true
+
 globals:
   vim:
     any: true
+  Error: *__any
+  Iterator: *__any
+  Table: *__any

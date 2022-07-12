@@ -1,59 +1,61 @@
 local M = {
-    impatient = {
+    {
+        "ggandor/leap.nvim",
+        opt = false,
+
+        config = function()
+            local leap = require("leap")
+            leap.setup({ highlight_unlabeled = true })
+            leap.set_default_keymaps()
+        end,
+    },
+
+    {
         "lewis6991/impatient.nvim",
         opt = false,
     },
 
-    dressing = {
-        "stevearc/dressing.nvim",
+    {
+        "lewis6991/spaceless.nvim",
         opt = false,
-        requires = "telescope.nvim",
-    },
 
-    leap = {
-        "ggandor/leap.nvim",
-        opt = false,
-    },
-
-    modus_vivendi = {
-        "~/Projects/modus_themes.nvim",
         config = function()
-            require("modus_themes").vivendi()
+            require("spaceless").setup()
         end,
-        opt = false,
     },
 
-    plenary = {
+    {
         "nvim-lua/plenary.nvim",
         opt = false,
     },
 
-    spaceless = {
-        "lewis6991/spaceless.nvim",
-        config = function()
-            require("spaceless").setup()
-        end,
+    {
+        "stevearc/dressing.nvim",
         opt = false,
+        requires = "telescope.nvim",
+
+        config = function()
+            require("dressing").setup({
+                input = {
+                    insert_only = false,
+                    winblend = 0,
+                },
+                select = {
+                    backend = { "telescope" },
+                    telescope = require("modules.telescope").ivy,
+                },
+            })
+        end,
+    },
+
+    {
+        "~/Projects/modus_themes.nvim",
+        opt = false,
+
+        config = function()
+            require("modus_themes").vivendi()
+        end,
     },
 }
-
-M.dressing.config = function()
-    require("dressing").setup({
-        input = {
-            insert_only = false,
-            winblend = 0,
-        },
-        select = {
-            backend = { "telescope" },
-            telescope = require("modules.telescope").ivy,
-        },
-    })
-end
-
-M.leap.config = function()
-    local leap = require("leap")
-    leap.setup({ highlight_unlabeled = true })
-    leap.set_default_keymaps()
-end
 
 return M

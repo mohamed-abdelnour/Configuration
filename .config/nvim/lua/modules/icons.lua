@@ -10,14 +10,13 @@ local M = {
 }
 
 local main = function()
-    local signs = { "Error", "Warn", "Hint", "Info" }
-    for _, type in ipairs(signs) do
+    Table.from({ "Error", "Warn", "Hint", "Info" }):iter():for_each(function(type)
         local hl = "DiagnosticSign" .. type
         vim.fn.sign_define(hl, {
             text = M.U_25CF,
             texthl = hl,
         })
-    end
+    end)
 end
 
 main()

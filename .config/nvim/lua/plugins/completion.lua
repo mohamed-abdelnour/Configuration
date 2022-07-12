@@ -3,7 +3,29 @@ local source = function(name)
 end
 
 local M = {
-    cmp = {
+    {
+        "L3MON4D3/LuaSnip",
+        opt = false,
+
+        config = function()
+            local set = vim.keymap.set
+            local set_keymap = function(lhs, rhs, opts)
+                set({ "i", "s" }, lhs, rhs, opts)
+            end
+
+            local luasnip = require("luasnip")
+            local jump = function(n)
+                return function()
+                    luasnip.jump(n)
+                end
+            end
+
+            set_keymap("<c-j>", jump(1))
+            set_keymap("<c-k>", jump(-1))
+        end,
+    },
+
+    {
         "hrsh7th/nvim-cmp",
         opt = false,
         requires = {
@@ -11,82 +33,59 @@ local M = {
             source("hrsh7th/cmp-nvim-lsp"),
             source("hrsh7th/cmp-path"),
         },
-    },
 
-    luasnip = {
-        "L3MON4D3/LuaSnip",
-        opt = false,
-    },
-}
+        config = function()
+            local cmp = require("cmp")
+            cmp.setup({
+                completion = {
+                    completeopt = vim.o.completeopt,
+                },
 
-M.cmp.config = function()
-    local cmp = require("cmp")
-    cmp.setup({
-        completion = {
-            completeopt = vim.o.completeopt,
-        },
-
-        formatting = {
-            format = function(entry, item)
-                item.menu = ({
-                    buffer = "[Buffer]",
-                    nvim_lsp = "[LSP]",
-                    path = "[Path]",
-                })[entry.source.name]
-                return item
-            end,
-        },
-
-        mapping = cmp.mapping.preset.insert({
-            ["<c-space>"] = cmp.mapping.complete(),
-            ["<cr>"] = cmp.mapping.confirm({ select = false }),
-            ["<c-u>"] = cmp.mapping.scroll_docs(-4),
-            ["<c-d>"] = cmp.mapping.scroll_docs(4),
-        }),
-
-        snippet = {
-            expand = function(args)
-                require("luasnip").lsp_expand(args.body)
-            end,
-        },
-
-        sources = cmp.config.sources({
-            { name = "nvim_lsp" },
-        }, {
-            { name = "path" },
-        }, {
-            {
-                name = "buffer",
-                option = {
-                    get_bufnrs = function()
-                        return vim.api.nvim_list_bufs()
+                formatting = {
+                    format = function(entry, item)
+                        item.menu = ({
+                            buffer = "[Buffer]",
+                            nvim_lsp = "[LSP]",
+                            path = "[Path]",
+                        })[entry.source.name]
+                        return item
                     end,
                 },
-            },
-        }),
 
-        window = {
-            documentation = cmp.config.disable,
-        },
-    })
-end
+                mapping = cmp.mapping.preset.insert({
+                    ["<c-space>"] = cmp.mapping.complete(),
+                    ["<cr>"] = cmp.mapping.confirm({ select = false }),
+                    ["<c-u>"] = cmp.mapping.scroll_docs(-4),
+                    ["<c-d>"] = cmp.mapping.scroll_docs(4),
+                }),
 
-M.luasnip.config = function()
-    local keymap = require("modules.functions").keymap
-    local set_keymap = function(lhs, rhs, opts)
-        keymap.set({ "i", "s" }, lhs, rhs, opts)
-    end
+                snippet = {
+                    expand = function(args)
+                        require("luasnip").lsp_expand(args.body)
+                    end,
+                },
 
-    local luasnip = require("luasnip")
+                sources = cmp.config.sources({
+                    { name = "nvim_lsp" },
+                }, {
+                    { name = "path" },
+                }, {
+                    {
+                        name = "buffer",
+                        option = {
+                            get_bufnrs = function()
+                                return vim.api.nvim_list_bufs()
+                            end,
+                        },
+                    },
+                }),
 
-    local jump = function(n)
-        return function()
-            luasnip.jump(n)
-        end
-    end
-
-    set_keymap("<c-j>", jump(1))
-    set_keymap("<c-k>", jump(-1))
-end
+                window = {
+                    documentation = cmp.config.disable,
+                },
+            })
+        end,
+    },
+}
 
 return M

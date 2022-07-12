@@ -5,21 +5,15 @@ local new_job = require("telescope.finders").new_job
 local picker = require("telescope.pickers").new
 local sorter = require("telescope.sorters").highlighter_only
 
-local split_whitespace = require("modules.functions").str.split_whitespace
+local Parser = require("lib.parser")
 
-local M = {
-    ivy = ivy({
-        layout_config = {
-            height = 20,
-        },
-    }),
-}
+local M = {}
 
 local generator = function(arg)
     local command = arg.opts[arg.key] or arg.default
     arg.opts[arg.key] = command
     return function(prompt)
-        return vim.tbl_flatten({ command, prompt and split_whitespace(prompt) })
+        return vim.tbl_flatten({ command, prompt and Parser.from(prompt):args() })
     end
 end
 
@@ -51,6 +45,12 @@ M.fd = function(opts)
         previewer = config.file_previewer,
     })
 end
+
+M.ivy = ivy({
+    layout_config = {
+        height = 20,
+    },
+})
 
 M.rg = function(opts)
     tool(opts, {

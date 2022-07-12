@@ -1,14 +1,14 @@
+local M = vim
+
 local original = {
     diagnostic = {
-        open_float = vim.diagnostic.open_float,
+        open_float = M.diagnostic.open_float,
     },
 
     keymap = {
-        set = vim.keymap.set,
+        set = M.keymap.set,
     },
 }
-
-local M = vim
 
 M.diagnostic.open_float = function(opts, ...)
     opts = opts or {}
@@ -33,6 +33,15 @@ local main = function()
         severity_sort = true,
         virtual_text = false,
     })
+
+    rawset(M.opt, "toggle", function(self, key, f)
+        return function()
+            f = f or function()
+                return not self[key]:get()
+            end
+            self[key] = f()
+        end
+    end)
 end
 
 main()

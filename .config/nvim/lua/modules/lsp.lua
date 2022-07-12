@@ -1,3 +1,6 @@
+local cmp_lsp = require("cmp_nvim_lsp")
+local lsp = require("lspconfig")
+
 local M = {}
 
 M.format = function()
@@ -67,13 +70,11 @@ M.lsp_setup = function(arg)
         M.on_attach(client, buffer, arg).full()
     end
 
-    return require("cmp_nvim_lsp").update_capabilities(vim.tbl_extend("keep", arg, defaults))
+    return cmp_lsp.update_capabilities(vim.tbl_extend("keep", arg, defaults))
 end
 
 M.init_server = function(arg)
-    local lsp_setup = vim.tbl_extend("keep", M.lsp_setup(arg), arg)
-    local lsp = require("lspconfig")
-    lsp[arg.name].setup(lsp_setup)
+    lsp[arg.name].setup(M.lsp_setup(arg))
 end
 
 return M

@@ -1,4 +1,17 @@
+local Iterator = require("lib.iterator")
+
 local M = string
+
+M.lines = function(self)
+    local done = false
+    local last = Iterator.from(function()
+        if not done then
+            done = true
+            return self:match("([^\n]+)$")
+        end
+    end)
+    return Iterator.from(self:gmatch("(.-)\n")):extend(last)
+end
 
 M.shell_expand = function(self)
     if self then
