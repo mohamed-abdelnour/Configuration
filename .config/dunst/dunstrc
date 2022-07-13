@@ -1,6 +1,7 @@
 [global]
     follow = mouse
     font = monospace Regular 13
+    format = %s\n%b
     frame_width = 2
     height = 400
     horizontal_padding = 8
