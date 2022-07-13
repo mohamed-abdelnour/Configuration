@@ -1,11 +1,12 @@
-local packer = nil
-local packer_bootstrap = nil
+local M = {}
 
-local bootstrap = function()
+M.bootstrapped = false
+
+M.bootstrap = function()
     local fn = vim.fn
     local install_path = fn.stdpath("data") .. "/site/pack/packer/opt/packer.nvim"
     if fn.empty(fn.glob(install_path)) > 0 then
-        packer_bootstrap = fn.system({
+        M.bootstrapped = fn.system({
             "git",
             "clone",
             "--depth",
@@ -17,7 +18,7 @@ local bootstrap = function()
 end
 
 local main = function()
-    bootstrap()
+    M.bootstrap()
 
     -- Load `packer.nvim`
     vim.cmd("packadd packer.nvim")
@@ -25,12 +26,12 @@ local main = function()
         require("packer_compiled")
     end)
 
-    packer = require("packer")
+    M.packer = require("packer")
 end
 
 main()
 
-local M = packer.startup({
+M.packer = M.packer.startup({
     function(use)
         local use_plugin = function(suffix)
             Table.from(require("plugins." .. suffix)):iter():for_each(use)
@@ -54,8 +55,8 @@ local M = packer.startup({
 
         use("wbthomason/packer.nvim")
 
-        if packer_bootstrap then
-            packer.sync()
+        if M.bootstrapped then
+            M.packer.sync()
         end
     end,
 

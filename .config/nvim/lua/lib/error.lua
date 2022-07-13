@@ -1,16 +1,22 @@
 local M = require("lib.table").default()
 
 M.guard = function(self, f)
-    local status, err = pcall(f)
+    local status, err = xpcall(f, debug.traceback)
     if not status then
         self:push(err)
     end
+    return status
+end
+
+M.notify = print
+
+M.notifier = function(self, notify)
+    self.notify = notify
 end
 
 M.report = function(self)
-    local writeln = vim.api.nvim_err_writeln
-    self:iter():for_each(function(t)
-        tostring(t):lines():map(vim.trim):for_each(writeln)
+    self:iter():for_each(function(err)
+        tostring(err):lines():for_each(M.notify)
     end)
 end
 

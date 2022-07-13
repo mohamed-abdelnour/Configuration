@@ -19,6 +19,10 @@ local main = function()
             _G[arg[1]] = use_lib(arg[2])
         end)
 
+    Error:notifier(function(err)
+        return vim.api.nvim_echo({ { err, "ErrorMsg" } }, false, {})
+    end)
+
     Error:guard(function()
         require("impatient").enable_profile()
     end)
@@ -31,9 +35,11 @@ local main = function()
         :for_each(use_lib)
 
     local use_module = function(module)
+        local result
         Error:guard(function()
-            use("modules.")(module)
+            result = use("modules.")(module)
         end)
+        return result
     end
 
     Table.from({
@@ -44,13 +50,15 @@ local main = function()
         "options",
         "telescope",
         "term",
-        -- Call require("modules.plugins") last.
-        "plugins",
     })
         :iter()
         :for_each(use_module)
 
-    Error:report()
+    local plugins = use_module("plugins")
+
+    if not plugins.bootstrapped then
+        Error:report()
+    end
 end
 
 main()
