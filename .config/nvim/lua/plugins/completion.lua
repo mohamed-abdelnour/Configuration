@@ -13,13 +13,7 @@ local M = {
                 set({ "i", "s" }, lhs, rhs, opts)
             end
 
-            local luasnip = require("luasnip")
-            local jump = function(n)
-                return function()
-                    luasnip.jump(n)
-                end
-            end
-
+            local jump = Defer(require("luasnip").jump)
             set_keymap("<c-j>", jump(1))
             set_keymap("<c-k>", jump(-1))
         end,

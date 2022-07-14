@@ -5,15 +5,14 @@ local new_job = require("telescope.finders").new_job
 local picker = require("telescope.pickers").new
 local sorter = require("telescope.sorters").highlighter_only
 
-local Parser = require("lib.parser")
-
 local M = {}
 
 local generator = function(arg)
     local command = arg.opts[arg.key] or arg.default
     arg.opts[arg.key] = command
     return function(prompt)
-        return vim.tbl_flatten({ command, prompt and Parser.from(prompt):args() })
+        local cmd = Table.from(command):iter():chain(Iterator.once(prompt)):intersperse(" ")
+        return { "dash", "-c", tostring(cmd) }
     end
 end
 
@@ -34,7 +33,13 @@ local tool = function(opts, builder)
     }):find()
 end
 
-M.fd = function(opts)
+M.ivy = ivy({
+    layout_config = {
+        height = 20,
+    },
+})
+
+function M.fd(opts)
     tool(opts, {
         title = "fd",
         command = {
@@ -46,13 +51,7 @@ M.fd = function(opts)
     })
 end
 
-M.ivy = ivy({
-    layout_config = {
-        height = 20,
-    },
-})
-
-M.rg = function(opts)
+function M.rg(opts)
     tool(opts, {
         title = "rg",
         command = {

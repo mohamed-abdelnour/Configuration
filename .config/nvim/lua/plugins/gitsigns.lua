@@ -43,15 +43,13 @@ local M = {
                     end)
 
                     local hunk = function(lhs, rhs)
-                        local navigate = function()
-                            return function()
-                                if vim.wo.diff then
-                                    return lhs
-                                end
-                                vim.schedule(rhs)
-                                return "<ignore>"
+                        local navigate = Defer(function()
+                            if vim.wo.diff then
+                                return lhs
                             end
-                        end
+                            vim.schedule(rhs)
+                            return "<ignore>"
+                        end)
 
                         set_keymap("n", lhs, navigate(), { expr = true })
                     end

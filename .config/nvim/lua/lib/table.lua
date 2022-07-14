@@ -4,33 +4,32 @@ local M = {}
 
 M.__index = M
 
-M.default = function()
-    local t = {}
+function M.from(t)
     setmetatable(t, M)
     return t
 end
 
-M.extend = function(self, iter)
+function M.default()
+    local t = {}
+    return M.from(t)
+end
+
+function M:push(value)
+    self[#self + 1] = value
+end
+
+function M:extend(iter)
     iter:for_each(function(item)
         self:push(item)
     end)
 end
 
-M.from = function(t)
-    setmetatable(t, M)
-    return t
-end
-
-M.iter = function(self)
+function M:iter()
     local i = 0
     return Iterator.from(function()
         i = i + 1
         return self[i]
     end)
-end
-
-M.push = function(self, value)
-    self[#self + 1] = value
 end
 
 return M

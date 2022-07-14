@@ -1,6 +1,8 @@
 local M = require("lib.table").default()
 
-M.guard = function(self, f)
+M.notify = print
+
+function M:guard(f)
     local status, err = xpcall(f, debug.traceback)
     if not status then
         self:push(err)
@@ -8,13 +10,11 @@ M.guard = function(self, f)
     return status
 end
 
-M.notify = print
-
-M.notifier = function(self, notify)
+function M:notifier(notify)
     self.notify = notify
 end
 
-M.report = function(self)
+function M:report()
     self:iter():for_each(function(err)
         tostring(err):lines():for_each(M.notify)
     end)

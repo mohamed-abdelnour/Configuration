@@ -9,6 +9,9 @@ __any: &__any
 globals:
   vim:
     any: true
+  Defer: *__any
   Error: *__any
   Iterator: *__any
+  Mem: *__any
   Table: *__any
+  std: *__any

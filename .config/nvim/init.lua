@@ -10,8 +10,11 @@ local main = function()
     Table = use_lib("table")
 
     Table.from({
+        { "Defer", "function.defer" },
         { "Error", "error" },
         { "Iterator", "iterator" },
+        { "Mem", "mem" },
+        { "std", "std" },
     })
         :iter()
         :for_each(function(arg)
