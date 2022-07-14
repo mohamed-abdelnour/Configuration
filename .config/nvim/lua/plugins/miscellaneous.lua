@@ -1,5 +1,17 @@
 local M = {
     {
+        "dstein64/vim-startuptime",
+        cmd = "InitTime",
+
+        config = function()
+            vim.api.nvim_create_user_command("InitTime", function()
+                vim.g.startuptime_exe_args = { "-R", vim.fn.expand("%:p") }
+                vim.cmd("StartupTime")
+            end, {})
+        end,
+    },
+
+    {
         "ggandor/leap.nvim",
         opt = false,
 
