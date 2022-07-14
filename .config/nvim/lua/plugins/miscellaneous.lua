@@ -49,6 +49,11 @@ local M = {
     },
 
     {
+        "tpope/vim-repeat",
+        opt = false,
+    },
+
+    {
         "~/Projects/modus_themes.nvim",
         opt = false,
 
