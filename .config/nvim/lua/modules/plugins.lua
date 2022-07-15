@@ -18,15 +18,15 @@ function M.bootstrap()
 end
 
 local main = function()
-    M.bootstrap()
-
-    -- Load `packer.nvim`
-    vim.cmd("packadd packer.nvim")
     Error:guard(function()
-        require("packer_compiled")
-    end)
+        M.bootstrap()
 
-    M.packer = require("packer")
+        -- Load `packer.nvim`
+        vim.cmd("packadd packer.nvim")
+        require("packer_compiled")
+
+        M.packer = require("packer")
+    end)
 end
 
 main()

@@ -4,16 +4,18 @@ local M = {
         opt = false,
 
         config = function()
-            require("Comment").setup({
-                toggler = {
-                    line = ";;",
-                    block = ";b",
-                },
-                opleader = {
-                    line = "g;",
-                    block = "gb",
-                },
-            })
+            Error:guard(function()
+                require("Comment").setup({
+                    toggler = {
+                        line = ";;",
+                        block = ";b",
+                    },
+                    opleader = {
+                        line = "g;",
+                        block = "gb",
+                    },
+                })
+            end)
         end,
     },
 }

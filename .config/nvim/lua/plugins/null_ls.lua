@@ -5,181 +5,183 @@ local M = {
         requires = "plenary.nvim",
 
         config = function()
-            local null_ls = require("null-ls")
-            local helpers = require("null-ls.helpers")
-            local methods = require("null-ls.methods")
+            Error:guard(function()
+                local null_ls = require("null-ls")
+                local helpers = require("null-ls.helpers")
+                local methods = require("null-ls.methods")
 
-            local make_tool = function(overrides)
-                local tool = function(arg)
-                    local defaults = {
-                        name = arg.name,
-                        filetypes = arg.ft,
-                        generator_opts = vim.tbl_extend("keep", arg, overrides.opts),
-                    }
-                    return helpers.make_builtin(vim.tbl_extend("keep", overrides, defaults))
+                local make_tool = function(overrides)
+                    local tool = function(arg)
+                        local defaults = {
+                            name = arg.name,
+                            filetypes = arg.ft,
+                            generator_opts = vim.tbl_extend("keep", arg, overrides.opts),
+                        }
+                        return helpers.make_builtin(vim.tbl_extend("keep", overrides, defaults))
+                    end
+
+                    return tool
                 end
 
-                return tool
-            end
-
-            local make_formatter = make_tool({
-                method = methods.internal.FORMATTING,
-                factory = helpers.formatter_factory,
-                opts = {
-                    cwd = function()
-                        return vim.fn.expand("%:p:h")
-                    end,
-                    to_stdin = true,
-                },
-            })
-
-            -- selene: allow(unused_variable)
-            local make_linter = make_tool({
-                method = methods.internal.DIAGNOSTICS_ON_SAVE,
-                factory = helpers.generator_factory,
-                opts = {
-                    to_stdin = true,
-                },
-            })
-
-            local builtins = null_ls.builtins
-            local actions = builtins.code_actions
-            local linters = builtins.diagnostics
-
-            local sources = Table.from({
-                -- Shellcheck
-                actions.shellcheck,
-
-                -- eslint_d
-                actions.eslint_d,
-
-                -- gitsigns.nvim
-                actions.gitsigns,
-            })
-
-            sources:extend(Table.from({
-                make_formatter({
-                    name = "Alejandra",
-                    command = "alejandra",
-                    ft = { "nix" },
-                }),
-
-                make_formatter({
-                    name = "Black",
-                    command = "black",
-                    args = { "-q", "-" },
-                    ft = { "python" },
-                }),
-
-                make_formatter({
-                    name = "ClangFormat",
-                    command = "clang-format",
-                    args = { "--assume-filename", "$FILENAME" },
-                    ft = { "c", "cpp", "cs" },
-                }),
-
-                make_formatter({
-                    name = "Prettier",
-                    command = "prettier",
-                    args = { "--stdin-filepath", "$FILENAME" },
-                    ft = {
-                        "css",
-                        "graphql",
-                        "html",
-                        "javascript",
-                        "javascriptreact",
-                        "json",
-                        "less",
-                        "markdown",
-                        "scss",
-                        "typescript",
-                        "typescriptreact",
-                        "vue",
-                        "yaml",
+                local make_formatter = make_tool({
+                    method = methods.internal.FORMATTING,
+                    factory = helpers.formatter_factory,
+                    opts = {
+                        cwd = function()
+                            return vim.fn.expand("%:p:h")
+                        end,
+                        to_stdin = true,
                     },
-                }),
+                })
 
-                make_formatter({
-                    name = "Rustfmt",
-                    command = "rustfmt",
-                    args = { "--edition=2021" },
-                    ft = { "rust" },
-                }),
+                -- selene: allow(unused_variable)
+                local make_linter = make_tool({
+                    method = methods.internal.DIAGNOSTICS_ON_SAVE,
+                    factory = helpers.generator_factory,
+                    opts = {
+                        to_stdin = true,
+                    },
+                })
 
-                make_formatter({
-                    name = "StyLua",
-                    command = "stylua",
-                    args = { "-s", "-" },
-                    ft = { "lua" },
-                }),
+                local builtins = null_ls.builtins
+                local actions = builtins.code_actions
+                local linters = builtins.diagnostics
 
-                make_formatter({
-                    name = "brittany",
-                    command = "brittany",
-                    ft = { "haskell" },
-                }),
+                local sources = Table.from({
+                    -- Shellcheck
+                    actions.shellcheck,
 
-                make_formatter({
-                    name = "google-java-format",
-                    command = "google-java-format",
-                    args = { "-" },
-                    ft = { "java" },
-                }),
+                    -- eslint_d
+                    actions.eslint_d,
 
-                make_formatter({
-                    name = "latexindent",
-                    command = "latexindent",
-                    args = { "-g", "/dev/null" },
-                    ft = { "tex" },
-                }),
+                    -- gitsigns.nvim
+                    actions.gitsigns,
+                })
 
-                make_formatter({
-                    name = "shfmt",
-                    command = "shfmt",
-                    args = { "-i", "4", "-ci" },
-                    ft = { "sh" },
-                }),
-            }):iter())
+                sources:extend(Table.from({
+                    make_formatter({
+                        name = "Alejandra",
+                        command = "alejandra",
+                        ft = { "nix" },
+                    }),
 
-            local builtin_linter = function(linter, arg)
-                local defaults = {
-                    method = null_ls.methods.DIAGNOSTICS_ON_SAVE,
-                }
-                return linters[linter].with(vim.tbl_extend("keep", arg or {}, defaults))
-            end
+                    make_formatter({
+                        name = "Black",
+                        command = "black",
+                        args = { "-q", "-" },
+                        ft = { "python" },
+                    }),
 
-            sources:extend(Table.from({
-                -- Pylint
-                builtin_linter("pylint", {
-                    args = { "-j0", "-f", "json", "$FILENAME" },
-                    timeout = 10000,
-                }),
+                    make_formatter({
+                        name = "ClangFormat",
+                        command = "clang-format",
+                        args = { "--assume-filename", "$FILENAME" },
+                        ft = { "c", "cpp", "cs" },
+                    }),
 
-                -- Shellcheck
-                builtin_linter("shellcheck"),
+                    make_formatter({
+                        name = "Prettier",
+                        command = "prettier",
+                        args = { "--stdin-filepath", "$FILENAME" },
+                        ft = {
+                            "css",
+                            "graphql",
+                            "html",
+                            "javascript",
+                            "javascriptreact",
+                            "json",
+                            "less",
+                            "markdown",
+                            "scss",
+                            "typescript",
+                            "typescriptreact",
+                            "vue",
+                            "yaml",
+                        },
+                    }),
 
-                -- deadnix
-                builtin_linter("deadnix"),
+                    make_formatter({
+                        name = "Rustfmt",
+                        command = "rustfmt",
+                        args = { "--edition=2021" },
+                        ft = { "rust" },
+                    }),
 
-                -- eslint_d
-                builtin_linter("eslint_d", {
-                    args = { "-f", "json", "$FILENAME" },
-                }),
+                    make_formatter({
+                        name = "StyLua",
+                        command = "stylua",
+                        args = { "-s", "-" },
+                        ft = { "lua" },
+                    }),
 
-                -- selene
-                builtin_linter("selene"),
+                    make_formatter({
+                        name = "brittany",
+                        command = "brittany",
+                        ft = { "haskell" },
+                    }),
 
-                -- statix
-                builtin_linter("statix"),
-            }):iter())
+                    make_formatter({
+                        name = "google-java-format",
+                        command = "google-java-format",
+                        args = { "-" },
+                        ft = { "java" },
+                    }),
 
-            null_ls.setup({
-                diagnostics_format = "[#{c}] #{m} (#{s})",
-                on_attach = function(client, buffer)
-                    require("modules.lsp").on_attach(client, buffer).base()
-                end,
-                sources = sources,
-            })
+                    make_formatter({
+                        name = "latexindent",
+                        command = "latexindent",
+                        args = { "-g", "/dev/null" },
+                        ft = { "tex" },
+                    }),
+
+                    make_formatter({
+                        name = "shfmt",
+                        command = "shfmt",
+                        args = { "-i", "4", "-ci" },
+                        ft = { "sh" },
+                    }),
+                }):iter())
+
+                local builtin_linter = function(linter, arg)
+                    local defaults = {
+                        method = null_ls.methods.DIAGNOSTICS_ON_SAVE,
+                    }
+                    return linters[linter].with(vim.tbl_extend("keep", arg or {}, defaults))
+                end
+
+                sources:extend(Table.from({
+                    -- Pylint
+                    builtin_linter("pylint", {
+                        args = { "-j0", "-f", "json", "$FILENAME" },
+                        timeout = 10000,
+                    }),
+
+                    -- Shellcheck
+                    builtin_linter("shellcheck"),
+
+                    -- deadnix
+                    builtin_linter("deadnix"),
+
+                    -- eslint_d
+                    builtin_linter("eslint_d", {
+                        args = { "-f", "json", "$FILENAME" },
+                    }),
+
+                    -- selene
+                    builtin_linter("selene"),
+
+                    -- statix
+                    builtin_linter("statix"),
+                }):iter())
+
+                null_ls.setup({
+                    diagnostics_format = "[#{c}] #{m} (#{s})",
+                    on_attach = function(client, buffer)
+                        require("modules.lsp").on_attach(client, buffer).base()
+                    end,
+                    sources = sources,
+                })
+            end)
         end,
     },
 }

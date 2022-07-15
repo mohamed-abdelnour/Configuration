@@ -4,10 +4,12 @@ local M = {
         cmd = "InitTime",
 
         config = function()
-            vim.api.nvim_create_user_command("InitTime", function()
-                vim.g.startuptime_exe_args = { "-R", vim.fn.expand("%:p") }
-                vim.cmd("StartupTime")
-            end, {})
+            Error:guard(function()
+                vim.api.nvim_create_user_command("InitTime", function()
+                    vim.g.startuptime_exe_args = { "-R", vim.fn.expand("%:p") }
+                    vim.cmd("StartupTime")
+                end, {})
+            end)
         end,
     },
 
@@ -16,9 +18,11 @@ local M = {
         opt = false,
 
         config = function()
-            local leap = require("leap")
-            leap.setup({ highlight_unlabeled = true })
-            leap.set_default_keymaps()
+            Error:guard(function()
+                local leap = require("leap")
+                leap.setup({ highlight_unlabeled = true })
+                leap.set_default_keymaps()
+            end)
         end,
     },
 
@@ -32,7 +36,9 @@ local M = {
         opt = false,
 
         config = function()
-            require("spaceless").setup()
+            Error:guard(function()
+                require("spaceless").setup()
+            end)
         end,
     },
 
@@ -47,16 +53,18 @@ local M = {
         requires = "telescope.nvim",
 
         config = function()
-            require("dressing").setup({
-                input = {
-                    insert_only = false,
-                    winblend = 0,
-                },
-                select = {
-                    backend = { "telescope" },
-                    telescope = require("modules.telescope").ivy,
-                },
-            })
+            Error:guard(function()
+                require("dressing").setup({
+                    input = {
+                        insert_only = false,
+                        winblend = 0,
+                    },
+                    select = {
+                        backend = { "telescope" },
+                        telescope = require("modules.telescope").ivy,
+                    },
+                })
+            end)
         end,
     },
 
@@ -70,7 +78,9 @@ local M = {
         opt = false,
 
         config = function()
-            require("modus_themes").vivendi()
+            Error:guard(function()
+                require("modus_themes").vivendi()
+            end)
         end,
     },
 }

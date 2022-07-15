@@ -4,12 +4,14 @@ local M = {
         opt = false,
 
         config = function()
-            require("fidget").setup({
-                window = {
-                    blend = 0,
-                    relative = "editor",
-                },
-            })
+            Error:guard(function()
+                require("fidget").setup({
+                    window = {
+                        blend = 0,
+                        relative = "editor",
+                    },
+                })
+            end)
         end,
     },
 
@@ -18,18 +20,20 @@ local M = {
         opt = false,
 
         config = function()
-            vim.lsp.set_log_level(vim.lsp.log_levels.OFF)
+            Error:guard(function()
+                vim.lsp.set_log_level(vim.lsp.log_levels.OFF)
 
-            local init_server = require("modules.lsp").init_server
+                local init_server = require("modules.lsp").init_server
 
-            Table.from({
-                { name = "hls" },
-                { name = "html" },
-                { name = "pyright" },
-                { name = "rnix" },
-            })
-                :iter()
-                :for_each(init_server)
+                Table.from({
+                    { name = "hls" },
+                    { name = "html" },
+                    { name = "pyright" },
+                    { name = "rnix" },
+                })
+                    :iter()
+                    :for_each(init_server)
+            end)
         end,
     },
 }

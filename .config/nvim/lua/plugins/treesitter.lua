@@ -4,7 +4,9 @@ local M = {
         opt = false,
 
         config = function()
-            require("spellsitter").setup()
+            Error:guard(function()
+                require("spellsitter").setup()
+            end)
         end,
     },
 
@@ -13,30 +15,32 @@ local M = {
         opt = false,
 
         config = function()
-            local disable = {
-                "latex",
-                "make",
-            }
+            Error:guard(function()
+                local disable = {
+                    "latex",
+                    "make",
+                }
 
-            require("nvim-treesitter.configs").setup({
-                highlight = {
-                    enable = true,
-                    disable = disable,
-                },
-                incremental_selection = {
-                    enable = true,
-                    keymaps = {
-                        init_selection = "gnn",
-                        node_decremental = "grm",
-                        node_incremental = "grn",
-                        scope_incremental = "grc",
+                require("nvim-treesitter.configs").setup({
+                    highlight = {
+                        enable = true,
+                        disable = disable,
                     },
-                },
-                rainbow = {
-                    enable = true,
-                    disable = disable,
-                },
-            })
+                    incremental_selection = {
+                        enable = true,
+                        keymaps = {
+                            init_selection = "gnn",
+                            node_decremental = "grm",
+                            node_incremental = "grn",
+                            scope_incremental = "grc",
+                        },
+                    },
+                    rainbow = {
+                        enable = true,
+                        disable = disable,
+                    },
+                })
+            end)
         end,
     },
 
