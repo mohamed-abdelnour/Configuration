@@ -15,8 +15,8 @@ local M = {
                 end
 
                 local jump = Defer(require("luasnip").jump)
+                set_keymap("<c-h>", jump(-1))
                 set_keymap("<c-j>", jump(1))
-                set_keymap("<c-k>", jump(-1))
             end)
         end,
     },
