@@ -12,6 +12,6 @@ globals:
   Defer: *__any
   Error: *__any
   Iterator: *__any
-  Mem: *__any
+  Mut: *__any
   Table: *__any
   std: *__any

@@ -1,7 +1,7 @@
-local Mem = require("lib.mem")
+local Mut = require("lib.mut")
 
 return function(value)
-    local t = { __value = Mem.from(value) }
+    local t = { __value = Mut.from(value) }
 
     function t:next()
         return self.__value:take()

@@ -13,7 +13,7 @@ local main = function()
         { "Defer", "function.defer" },
         { "Error", "error" },
         { "Iterator", "iterator" },
-        { "Mem", "mem" },
+        { "Mut", "mut" },
         { "std", "std" },
     })
         :iter()

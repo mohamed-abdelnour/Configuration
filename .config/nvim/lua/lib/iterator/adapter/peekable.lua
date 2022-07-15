@@ -1,9 +1,9 @@
-local Mem = require("lib.mem")
+local Mut = require("lib.mut")
 
 return function(iter)
     local t = {
         __iter = iter,
-        __peeked = Mem.from(),
+        __peeked = Mut.from(),
     }
 
     function t:next()
