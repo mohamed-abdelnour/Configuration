@@ -1,4 +1,18 @@
-local M = require("lib.table").default()
+require("lib.string")
+
+local meta = {
+    __index = require("lib.table"),
+}
+
+function meta:__tostring()
+    return tostring(self:iter()
+        :map(function(message)
+            return message:lines():map(string.expand_tabs):intersperse("\n")
+        end)
+        :intersperse("\n"))
+end
+
+local M = {}
 
 M.notify = print
 
@@ -15,9 +29,9 @@ function M:notifier(notify)
 end
 
 function M:report()
-    self:iter():for_each(function(err)
-        tostring(err):lines():for_each(M.notify)
-    end)
+    M.notify(tostring(self))
 end
+
+setmetatable(M, meta)
 
 return M
