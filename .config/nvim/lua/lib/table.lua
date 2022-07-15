@@ -4,6 +4,12 @@ local M = {}
 
 M.__index = M
 
+function M:__tostring()
+    return tostring(
+        Iterator.once("["):chain(self:iter():intersperse(", ")):chain(Iterator.once("]"))
+    )
+end
+
 function M.from(t)
     setmetatable(t, M)
     return t
