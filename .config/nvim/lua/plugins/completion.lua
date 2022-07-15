@@ -14,9 +14,14 @@ local M = {
                     set({ "i", "s" }, lhs, rhs, opts)
                 end
 
-                local jump = Defer(require("luasnip").jump)
+                local luasnip = require("luasnip")
+                local jump = Defer(luasnip.jump)
                 set_keymap("<c-h>", jump(-1))
                 set_keymap("<c-j>", jump(1))
+
+                luasnip.config.setup({
+                    region_check_events = "InsertEnter",
+                })
             end)
         end,
     },
