@@ -2,6 +2,12 @@ local Iterator = require("lib.iterator")
 
 local M = string
 
+M.EXPANDED_TAB = "    "
+
+function M:expand_tabs()
+    return self:gsub("\t", M.EXPANDED_TAB)
+end
+
 function M:lines()
     return Iterator.from(self:gmatch("([^\n]*)\n?"))
 end
