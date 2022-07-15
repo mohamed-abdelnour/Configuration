@@ -18,7 +18,7 @@ function M:__call()
 end
 
 function M:__tostring()
-    return table.concat(self:collect())
+    return table.concat(self:map(tostring):collect())
 end
 
 -- Constructors
