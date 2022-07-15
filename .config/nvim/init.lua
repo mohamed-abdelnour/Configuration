@@ -26,7 +26,7 @@ local main = function()
         return vim.api.nvim_echo({ { err, "ErrorMsg" } }, false, {})
     end)
 
-    Error:guard(function()
+    Error:aggregate(function()
         require("impatient").enable_profile()
     end)
 
@@ -39,7 +39,7 @@ local main = function()
 
     local use_module = function(module)
         local result
-        Error:guard(function()
+        Error:aggregate(function()
             result = use("modules.")(module)
         end)
         return result

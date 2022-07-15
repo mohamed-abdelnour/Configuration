@@ -18,7 +18,7 @@ function M.bootstrap()
 end
 
 local main = function()
-    Error:guard(function()
+    Error:aggregate(function()
         M.bootstrap()
 
         -- Load `packer.nvim`

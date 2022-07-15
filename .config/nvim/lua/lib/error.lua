@@ -1,4 +1,5 @@
 require("lib.string")
+local std = require("lib.std")
 
 local meta = {
     __index = require("lib.table"),
@@ -14,14 +15,23 @@ end
 
 local M = {}
 
-M.notify = print
-
-function M:guard(f)
+function M:__guard(f, handler)
     local status, err = xpcall(f, debug.traceback)
     if not status then
         self:push(err)
+        handler(err)
     end
     return status
+end
+
+M.notify = print
+
+function M:aggregate(f)
+    return self:__guard(f, std.identity)
+end
+
+function M:guard(f)
+    return self:__guard(f, self.notify)
 end
 
 function M:notifier(notify)
@@ -29,7 +39,7 @@ function M:notifier(notify)
 end
 
 function M:report()
-    M.notify(tostring(self))
+    self.notify(tostring(self))
 end
 
 setmetatable(M, meta)
