@@ -1,11 +1,21 @@
+local Table = require("lib.table")
+
+local PATTERN = "^#!/usr/bin/env (.*)$"
+
+local shebangs = {
+    bash = "sh",
+    dash = "sh",
+    python3 = "python",
+}
+
 local match_shebang = function(buffer)
-    local regex = "^#!/usr/bin/env (.*)$"
-    local shebang = vim.api.nvim_buf_get_lines(buffer, 0, 1, true)[1]:match(regex)
-    local shebangs = {
-        bash = "sh",
-        dash = "sh",
-        python3 = "python",
-    }
+    local shebang = Table.from(vim.api.nvim_buf_get_lines(buffer, 0, 1, true))
+        :iter()
+        :map(function(s)
+            return s:match(PATTERN)
+        end)
+        :next()
+
     return shebangs[shebang] or shebang
 end
 
