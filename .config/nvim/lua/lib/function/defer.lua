@@ -1,11 +1,13 @@
+local std = require("lib.std")
+
 local M = {}
 
 M.__index = M
 
 function M:__call(...)
-    local args = ...
+    local args = { ... }
     return function()
-        return self.__f(args)
+        return self.__f(std.unpack(args))
     end
 end
 

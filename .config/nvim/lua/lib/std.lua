@@ -6,4 +6,6 @@ end
 
 function M.nop() end
 
+M.unpack = table.unpack or unpack
+
 return M
