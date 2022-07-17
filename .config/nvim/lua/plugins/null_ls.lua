@@ -10,35 +10,32 @@ local M = {
                 local helpers = require("null-ls.helpers")
                 local methods = require("null-ls.methods")
 
-                local make_tool = function(overrides)
-                    local tool = function(arg)
-                        local defaults = {
-                            name = arg.name,
-                            filetypes = arg.ft,
-                            generator_opts = vim.tbl_extend("keep", arg, overrides.opts),
-                        }
-                        return helpers.make_builtin(vim.tbl_extend("keep", overrides, defaults))
+                local check_exit_code = function(name, code)
+                    if code ~= 0 then
+                        local format = [["%s" failed with exit code: %s]]
+                        local message = string.format(format, name, code)
+                        vim.schedule(Defer(vim.notify)(message, vim.log.levels.ERROR))
                     end
+                    return code
+                end
 
-                    return tool
+                local make_tool = function(default)
+                    return function(arg)
+                        arg = vim.tbl_deep_extend("keep", arg, default)
+                        arg.generator_opts.check_exit_code = function(code)
+                            return check_exit_code(arg.name, code)
+                        end
+                        return helpers.make_builtin(arg)
+                    end
                 end
 
                 local make_formatter = make_tool({
                     method = methods.internal.FORMATTING,
                     factory = helpers.formatter_factory,
-                    opts = {
+                    generator_opts = {
                         cwd = function()
                             return vim.fn.expand("%:p:h")
                         end,
-                        to_stdin = true,
-                    },
-                })
-
-                -- selene: allow(unused_variable)
-                local make_linter = make_tool({
-                    method = methods.internal.DIAGNOSTICS_ON_SAVE,
-                    factory = helpers.generator_factory,
-                    opts = {
                         to_stdin = true,
                     },
                 })
@@ -61,29 +58,33 @@ local M = {
                 sources:extend(Table.from({
                     make_formatter({
                         name = "Alejandra",
-                        command = "alejandra",
-                        ft = { "nix" },
+                        filetypes = { "nix" },
+                        generator_opts = {
+                            command = "alejandra",
+                        },
                     }),
 
                     make_formatter({
                         name = "Black",
-                        command = "black",
-                        args = { "-q", "-" },
-                        ft = { "python" },
+                        filetypes = { "python" },
+                        generator_opts = {
+                            command = "black",
+                            args = { "-q", "-" },
+                        },
                     }),
 
                     make_formatter({
                         name = "ClangFormat",
-                        command = "clang-format",
-                        args = { "--assume-filename", "$FILENAME" },
-                        ft = { "c", "cpp", "cs" },
+                        filetypes = { "c", "cpp", "cs" },
+                        generator_opts = {
+                            command = "clang-format",
+                            args = { "--assume-filename", "$FILENAME" },
+                        },
                     }),
 
                     make_formatter({
                         name = "Prettier",
-                        command = "prettier",
-                        args = { "--stdin-filepath", "$FILENAME" },
-                        ft = {
+                        filetypes = {
                             "css",
                             "graphql",
                             "html",
@@ -98,55 +99,70 @@ local M = {
                             "vue",
                             "yaml",
                         },
+                        generator_opts = {
+                            command = "prettier",
+                            args = { "--stdin-filepath", "$FILENAME" },
+                        },
                     }),
 
                     make_formatter({
                         name = "Rustfmt",
-                        command = "rustfmt",
-                        args = { "--edition=2021" },
-                        ft = { "rust" },
+                        filetypes = { "rust" },
+                        generator_opts = {
+                            command = "rustfmt",
+                            args = { "--edition=2021" },
+                        },
                     }),
 
                     make_formatter({
                         name = "StyLua",
-                        command = "stylua",
-                        args = { "-s", "-" },
-                        ft = { "lua" },
+                        filetypes = { "lua" },
+                        generator_opts = {
+                            command = "stylua",
+                            args = { "-s", "-" },
+                        },
                     }),
 
                     make_formatter({
                         name = "brittany",
-                        command = "brittany",
-                        ft = { "haskell" },
+                        filetypes = { "haskell" },
+                        generator_opts = {
+                            command = "brittany",
+                        },
                     }),
 
                     make_formatter({
                         name = "google-java-format",
-                        command = "google-java-format",
-                        args = { "-" },
-                        ft = { "java" },
+                        filetypes = { "java" },
+                        generator_opts = {
+                            command = "google-java-format",
+                            args = { "-" },
+                        },
                     }),
 
                     make_formatter({
                         name = "latexindent",
-                        command = "latexindent",
-                        args = { "-g", "/dev/null" },
-                        ft = { "tex" },
+                        filetypes = { "tex" },
+                        generator_opts = {
+                            command = "latexindent",
+                            args = { "-g", "/dev/null" },
+                        },
                     }),
 
                     make_formatter({
                         name = "shfmt",
-                        command = "shfmt",
-                        args = { "-i", "4", "-ci" },
-                        ft = { "sh" },
+                        filetypes = { "sh" },
+                        generator_opts = {
+                            command = "shfmt",
+                            args = { "-i", "4", "-ci" },
+                        },
                     }),
                 }):iter())
 
                 local builtin_linter = function(linter, arg)
-                    local defaults = {
-                        method = null_ls.methods.DIAGNOSTICS_ON_SAVE,
-                    }
-                    return linters[linter].with(vim.tbl_extend("keep", arg or {}, defaults))
+                    arg = arg or {}
+                    arg.method = arg.method or null_ls.methods.DIAGNOSTICS_ON_SAVE
+                    return linters[linter].with(arg)
                 end
 
                 sources:extend(Table.from({
