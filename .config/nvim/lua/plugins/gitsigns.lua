@@ -55,12 +55,8 @@ local M = {
                             set_keymap("n", lhs, navigate(), { expr = true })
                         end
 
-                        hunk("[c", function()
-                            gs.prev_hunk()
-                        end)
-                        hunk("]c", function()
-                            gs.next_hunk()
-                        end)
+                        hunk("[c", gs.prev_hunk)
+                        hunk("]c", gs.next_hunk)
                     end,
                 })
             end)
