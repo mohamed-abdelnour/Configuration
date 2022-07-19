@@ -28,6 +28,10 @@ local M = {
                 local file = function()
                     local SUFFIX_LENGTH = 40
 
+                    local shorten = function(s)
+                        return s:sub(-SUFFIX_LENGTH):gsub(".-(/.*)", "...%1")
+                    end
+
                     local modifier = function(predicate, foreground)
                         return {
                             condition = predicate,
@@ -46,7 +50,8 @@ local M = {
                         end,
                         provider = function()
                             local buffer = vim.api.nvim_buf_get_name(0)
-                            return vim.fn.fnamemodify(buffer, ":~:."):sub(-SUFFIX_LENGTH)
+                            local name = vim.fn.fnamemodify(buffer, ":~:.")
+                            return #name > SUFFIX_LENGTH and shorten(name) or name
                         end,
                     }
 
