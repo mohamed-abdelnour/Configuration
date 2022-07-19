@@ -21,7 +21,7 @@ function M:__tostring()
     return table.concat(self:map(tostring):collect())
 end
 
--- Constructors
+-- Producers
 function M.new(t)
     setmetatable(t, M)
     return t
