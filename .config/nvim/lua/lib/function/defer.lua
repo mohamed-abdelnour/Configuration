@@ -13,6 +13,5 @@ end
 
 return function(f)
     local t = { __f = f }
-    setmetatable(t, M)
-    return t
+    return setmetatable(t, M)
 end

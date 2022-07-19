@@ -3,8 +3,7 @@ local M = {}
 M.__index = M
 
 function M.new(t)
-    setmetatable(t, M)
-    return t
+    return setmetatable(t, M)
 end
 
 function M.from(value)

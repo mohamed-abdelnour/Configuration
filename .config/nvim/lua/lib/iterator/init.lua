@@ -23,8 +23,7 @@ end
 
 -- Producers
 function M.new(t)
-    setmetatable(t, M)
-    return t
+    return setmetatable(t, M)
 end
 
 function M.from(next)

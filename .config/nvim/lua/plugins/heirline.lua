@@ -68,8 +68,7 @@ local M = {
 
                 function Signs.new(key, fg, sign)
                     local t = { key = key, fg = fg, sign = sign, count = 0 }
-                    setmetatable(t, Signs)
-                    return t
+                    return setmetatable(t, Signs)
                 end
 
                 function Signs:fmt(left, right, sign)

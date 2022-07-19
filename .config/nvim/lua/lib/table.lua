@@ -11,8 +11,7 @@ function M:__tostring()
 end
 
 function M.from(t)
-    setmetatable(t, M)
-    return t
+    return setmetatable(t, M)
 end
 
 function M.default()
