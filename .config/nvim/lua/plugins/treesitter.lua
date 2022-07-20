@@ -51,7 +51,6 @@ local M = {
 
     {
         "p00f/nvim-ts-rainbow",
-        after = "nvim-treesitter",
         opt = false,
         requires = "nvim-treesitter",
     },
