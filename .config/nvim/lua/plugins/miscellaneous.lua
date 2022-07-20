@@ -74,6 +74,11 @@ local M = {
     },
 
     {
+        "wbthomason/packer.nvim",
+        opt = false,
+    },
+
+    {
         "~/Projects/modus_themes.nvim",
         opt = false,
 

@@ -4,7 +4,7 @@ M.bootstrapped = false
 
 function M.bootstrap()
     local fn = vim.fn
-    local install_path = fn.stdpath("data") .. "/site/pack/packer/opt/packer.nvim"
+    local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
     if fn.empty(fn.glob(install_path)) > 0 then
         M.bootstrapped = fn.system({
             "git",
@@ -14,6 +14,8 @@ function M.bootstrap()
             "https://github.com/wbthomason/packer.nvim.git",
             install_path,
         })
+
+        vim.cmd("packadd packer.nvim")
     end
 end
 
@@ -21,54 +23,51 @@ local main = function()
     Error:aggregate(function()
         M.bootstrap()
 
-        -- Load `packer.nvim`
-        vim.cmd("packadd packer.nvim")
-        require("packer_compiled")
+        local compile_path = vim.fn.stdpath("cache") .. "/packer.nvim/packer_compiled.lua"
 
-        M.packer = require("packer")
+        local packer = require("packer")
+
+        packer.startup({
+            function(use)
+                local use_plugin = function(suffix)
+                    Table.from(require("plugins." .. suffix)):iter():for_each(use)
+                end
+
+                Table.from({
+                    "comment",
+                    "completion",
+                    "gitsigns",
+                    "heirline",
+                    "languages",
+                    "lsp",
+                    "miscellaneous",
+                    "null_ls",
+                    "telescope",
+                    "treesitter",
+                    "vimtex",
+                })
+                    :iter()
+                    :for_each(use_plugin)
+
+                if M.bootstrapped then
+                    packer.sync()
+                else
+                    dofile(compile_path)
+                end
+            end,
+
+            config = {
+                compile_path = compile_path,
+                opt_default = true,
+                transitive_opt = false,
+                profile = {
+                    enable = true,
+                },
+            },
+        })
     end)
 end
 
 main()
-
-M.packer = M.packer.startup({
-    function(use)
-        local use_plugin = function(suffix)
-            Table.from(require("plugins." .. suffix)):iter():for_each(use)
-        end
-
-        Table.from({
-            "comment",
-            "completion",
-            "gitsigns",
-            "heirline",
-            "languages",
-            "lsp",
-            "miscellaneous",
-            "null_ls",
-            "telescope",
-            "treesitter",
-            "vimtex",
-        })
-            :iter()
-            :for_each(use_plugin)
-
-        use("wbthomason/packer.nvim")
-
-        if M.bootstrapped then
-            M.packer.sync()
-        end
-    end,
-
-    -- Configure `packer.nvim`
-    config = {
-        compile_path = vim.fn.stdpath("config") .. "/lua/packer_compiled.lua",
-        opt_default = true,
-        transitive_opt = false,
-        profile = {
-            enable = true,
-        },
-    },
-})
 
 return M
