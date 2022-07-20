@@ -39,7 +39,7 @@ M.ivy = ivy({
     },
 })
 
-function M.fd(opts)
+M.fd = function(opts)
     tool(opts, {
         title = "fd",
         command = {
@@ -51,7 +51,7 @@ function M.fd(opts)
     })
 end
 
-function M.rg(opts)
+M.rg = function(opts)
     tool(opts, {
         title = "rg",
         command = {

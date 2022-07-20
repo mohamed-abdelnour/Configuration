@@ -61,23 +61,23 @@ local M = {
 
                 Signs.__index = Signs
 
-                function Signs:__tostring()
+                Signs.__tostring = function(self)
                     return table.concat({ self.left, self.sign, self.count, self.right })
                 end
 
-                function Signs.new(key, fg, sign)
+                Signs.new = function(key, fg, sign)
                     local t = { key = key, fg = fg, sign = sign, count = 0 }
                     return setmetatable(t, Signs)
                 end
 
-                function Signs:fmt(left, right, sign)
+                Signs.fmt = function(self, left, right, sign)
                     self.left = left
                     self.right = right
                     self.sign = sign or self.sign
                     return self
                 end
 
-                function Signs:define()
+                Signs.define = function(self)
                     return {
                         hl = { fg = self.fg },
                         provider = function(line)

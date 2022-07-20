@@ -10,19 +10,19 @@ local original = {
     },
 }
 
-function M.diagnostic.open_float(opts, ...)
+M.diagnostic.open_float = function(opts, ...)
     opts = opts or {}
     opts.border = opts.border or "single"
     return original.diagnostic.open_float(opts, ...)
 end
 
-function M.keymap.set(mode, lhs, rhs, opts)
+M.keymap.set = function(mode, lhs, rhs, opts)
     opts = opts or {}
     opts.silent = true
     original.keymap.set(mode, lhs, rhs, opts)
 end
 
-function M.keymap.buffer_set(buffer, mode, lhs, rhs, opts)
+M.keymap.buffer_set = function(buffer, mode, lhs, rhs, opts)
     opts = opts or {}
     opts.buffer = buffer
     M.keymap.set(mode, lhs, rhs, opts)

@@ -5,7 +5,7 @@ local meta = {
     __index = require("lib.table"),
 }
 
-function meta:__tostring()
+meta.__tostring = function(self)
     return tostring(self:iter()
         :map(function(message)
             return message:lines():map(string.expand_tabs):intersperse("\n")
@@ -15,7 +15,7 @@ end
 
 local M = {}
 
-function M:__guard(f, handler)
+M.__guard = function(self, f, handler)
     local status, err = xpcall(f, debug.traceback)
     if not status then
         self:push(err)
@@ -26,19 +26,19 @@ end
 
 M.notify = print
 
-function M:aggregate(f)
+M.aggregate = function(self, f)
     return self:__guard(f, std.identity)
 end
 
-function M:guard(f)
+M.guard = function(self, f)
     return self:__guard(f, self.notify)
 end
 
-function M:notifier(notify)
+M.notifier = function(self, notify)
     self.notify = notify
 end
 
-function M:report()
+M.report = function(self)
     self.notify(tostring(self))
 end
 

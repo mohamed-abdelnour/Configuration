@@ -3,14 +3,14 @@ local lsp = require("lspconfig")
 
 local M = {}
 
-function M.format()
+M.format = function()
     vim.lsp.buf.format({
         async = true,
         name = "null-ls",
     })
 end
 
-function M.rename()
+M.rename = function()
     vim.lsp.buf.rename(nil, {
         filter = function(client)
             return client.name ~= "null-ls"
@@ -18,7 +18,7 @@ function M.rename()
     })
 end
 
-function M.on_attach(client, buffer, arg)
+M.on_attach = function(client, buffer, arg)
     arg = arg or {}
 
     local set_keymap = function(lhs, rhs)
@@ -62,7 +62,7 @@ function M.on_attach(client, buffer, arg)
     }
 end
 
-function M.lsp_setup(arg)
+M.lsp_setup = function(arg)
     arg = arg or {}
 
     local defaults = vim.lsp.protocol.make_client_capabilities()
@@ -73,7 +73,7 @@ function M.lsp_setup(arg)
     return cmp_lsp.update_capabilities(vim.tbl_extend("keep", arg, defaults))
 end
 
-function M.init_server(arg)
+M.init_server = function(arg)
     lsp[arg.name].setup(M.lsp_setup(arg))
 end
 

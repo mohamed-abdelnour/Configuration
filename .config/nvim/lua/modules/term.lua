@@ -1,6 +1,6 @@
 local M = {}
 
-function M.term_open()
+M.term_open = function()
     vim.cmd("startinsert")
     local opt = vim.opt_local
     opt.relativenumber = false

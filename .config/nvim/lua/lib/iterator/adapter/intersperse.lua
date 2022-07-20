@@ -5,7 +5,7 @@ return function(iter, separator)
         __needs_sep = false,
     }
 
-    function t:next()
+    t.next = function(self)
         if self.__needs_sep and self.__iter:peek() then
             self.__needs_sep = false
             return self.__separator

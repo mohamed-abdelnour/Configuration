@@ -4,7 +4,7 @@ return function(a, b)
         __b = b,
     }
 
-    function t:next()
+    t.next = function(self)
         return self.__a:next() or self.__b:next()
     end
 

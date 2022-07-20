@@ -4,7 +4,7 @@ return function(iter, f)
         __f = f,
     }
 
-    function t:next()
+    t.next = function(self)
         local item = self.__iter:next()
         return item and self.__f(item)
     end

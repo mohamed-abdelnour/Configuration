@@ -6,11 +6,11 @@ return function(iter)
         __peeked = Mut.from(),
     }
 
-    function t:next()
+    t.next = function(self)
         return self.__peeked:take() or self.__iter:next()
     end
 
-    function t:peek()
+    t.peek = function(self)
         self.__peeked:replace(self.__iter:next())
         return self.__peeked:get()
     end

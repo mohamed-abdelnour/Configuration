@@ -13,38 +13,38 @@ local M = {}
 -- Metamethods
 M.__index = M
 
-function M:__call()
+M.__call = function(self)
     return self:next()
 end
 
-function M:__tostring()
+M.__tostring = function(self)
     return table.concat(self:map(tostring):collect())
 end
 
 -- Producers
-function M.new(t)
+M.new = function(t)
     return setmetatable(t, M)
 end
 
-function M.from(next)
+M.from = function(next)
     local t = { next = next }
     return M.new(t)
 end
 
 M.empty = Defer(M.from)(std.nop)
 
-function M.once(value)
+M.once = function(value)
     return M.new(Once(value))
 end
 
 -- Consumers
-function M:for_each(f)
+M.for_each = function(self, f)
     for item in self do
         f(item)
     end
 end
 
-function M:collect()
+M.collect = function(self)
     local t = require("lib.table").default()
     self:for_each(function(item)
         t:push(item)
@@ -53,19 +53,19 @@ function M:collect()
 end
 
 -- Adapters
-function M:chain(other)
+M.chain = function(self, other)
     return M.new(Chain(self, other))
 end
 
-function M:intersperse(separator)
+M.intersperse = function(self, separator)
     return M.new(Intersperse(self, separator))
 end
 
-function M:map(f)
+M.map = function(self, f)
     return M.new(Map(self, f))
 end
 
-function M:peekable()
+M.peekable = function(self)
     return M.new(Peekable(self))
 end
 

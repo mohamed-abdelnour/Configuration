@@ -4,15 +4,15 @@ local M = string
 
 M.EXPANDED_TAB = "    "
 
-function M:expand_tabs()
+M.expand_tabs = function(self)
     return self:gsub("\t", M.EXPANDED_TAB)
 end
 
-function M:lines()
+M.lines = function(self)
     return Iterator.from(self:gmatch("([^\n]*)\n?"))
 end
 
-function M:wrap(left, right)
+M.wrap = function(self, left, right)
     local wrapped = table.concat({ left or "[", "%1", right or "]" })
     return self:gsub("^.*$", wrapped)
 end

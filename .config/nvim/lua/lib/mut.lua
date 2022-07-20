@@ -2,26 +2,26 @@ local M = {}
 
 M.__index = M
 
-function M.new(t)
+M.new = function(t)
     return setmetatable(t, M)
 end
 
-function M.from(value)
+M.from = function(value)
     local t = { __inner = value }
     return M.new(t)
 end
 
-function M:get()
+M.get = function(self)
     return self.__inner
 end
 
-function M:replace(src)
+M.replace = function(self, src)
     local value = self.__inner
     self.__inner = src
     return value
 end
 
-function M:take()
+M.take = function(self)
     return self:replace()
 end
 

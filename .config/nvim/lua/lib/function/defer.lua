@@ -4,7 +4,7 @@ local M = {}
 
 M.__index = M
 
-function M:__call(...)
+M.__call = function(self, ...)
     local args = { ... }
     return function()
         return self.__f(std.unpack(args))
