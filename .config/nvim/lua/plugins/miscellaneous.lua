@@ -79,7 +79,8 @@ local M = {
     },
 
     {
-        "~/Projects/modus_themes.nvim",
+        "~/Projects/modus_themes.nvim/next",
+        as = "modus_themes.nvim",
         opt = false,
 
         config = function()
