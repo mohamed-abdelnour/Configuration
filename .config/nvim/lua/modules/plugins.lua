@@ -9,8 +9,7 @@ M.bootstrap = function()
         M.bootstrapped = fn.system({
             "git",
             "clone",
-            "--depth",
-            "1",
+            "--depth=1",
             "https://github.com/wbthomason/packer.nvim.git",
             install_path,
         })
