@@ -1,9 +1,10 @@
+local fn = vim.fn
+
 local M = {}
 
 M.bootstrapped = false
 
 M.bootstrap = function()
-    local fn = vim.fn
     local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
     if fn.empty(fn.glob(install_path)) > 0 then
         M.bootstrapped = fn.system({
@@ -22,7 +23,13 @@ local main = function()
     Error:aggregate(function()
         M.bootstrap()
 
-        local compile_path = vim.fn.stdpath("cache") .. "/packer.nvim/packer_compiled.lua"
+        local MODULE = "packer_compiled"
+        local compile_path = table.concat({
+            fn.stdpath("data"),
+            "/site/pack/cache/start/cache/lua/",
+            MODULE,
+            "/init.lua",
+        })
 
         local packer = require("packer")
 
@@ -51,7 +58,7 @@ local main = function()
                 if M.bootstrapped then
                     packer.sync()
                 else
-                    dofile(compile_path)
+                    require(MODULE)
                 end
             end,
 
